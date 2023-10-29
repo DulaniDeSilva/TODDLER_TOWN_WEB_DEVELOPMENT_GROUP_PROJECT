@@ -1,6 +1,8 @@
 import React from 'react';
 import Homenavigation from '../Components/HomeComponents/Homenavigation';
 import '../Assets/Styles/Home.css';
+import Category from '../Components/HomeComponents/Category';
+import FeaturesCard from '../Components/HomeComponents/FeaturesCard';
 
 
 export default function Home() {
@@ -10,6 +12,9 @@ export default function Home() {
 
         {/* Homenavigation component */}
         <Homenavigation/>
+        <Category/>
+        <FeaturesCard/>
+        
     </div>
   )
 }

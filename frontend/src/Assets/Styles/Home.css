@@ -1,59 +1,156 @@
-/* navigation bar */
+/* ######################################################## NAVIGATION BAR MAIN IMAGE ############################# */
 .navbarall{
+    /* width: 1550px; */
+    width: 100%;
     background-color: #F8BDEB;
-    padding: 15px;;
+    padding: 1.3rem ;
+    font-size: 1.2rem;
     font-family: 'AR One Sans', sans-serif;
     font-family: 'Caveat', cursive;
     font-family: 'IBM Plex Sans', sans-serif;
     font-family: 'Merriweather', serif;
     font-family: 'Ubuntu', sans-serif;
+    min-height: max-content;
   }
   
-  .actionbutton{
-   margin: 10px; 
+  .mainbutton{
+    margin-top: 0px;
+   display: flex;
+   justify-content: flex-end;
+   flex-wrap: wrap;
+   padding: 10px;
   }
-
+  .actionbutton{
+    margin:10px;
+  }
   .actionbutton:hover{
     background-color: #940B92;
   }
 
-
-  .parent h3{
-    position:absolute;
-    top: 150px;
-    left: 680px;
-    letter-spacing:0.2rem;;
-    font-size: 7.0rem;
-   font-family: 'Caveat', cursive;  
+  .mainimg{
+    object-fit: cover;
+    height: 40rem;
+    width: 50rem;
+    display: flex;
+    justify-content:flex-start;
+    padding:5%;
+    margin: 2% 5% 5% 0.5%;
+    padding-right: 0px;
   }
   
+  .maintitle{
+    display: flex;
+    flex-wrap: wrap;
+   font-family: 'Caveat', cursive; 
+   font-size: 7.0rem;
+   margin-top: 10%;
+  }
+
+
 
   .mainimagebutterfly{
+    display: flex;
+    justify-content: flex-end;
     height: 100px;
     width: 100px;
     position: absolute;
-    top:110px;
-    left:1300px;
+    left: 86%;
+    
+  }
+
+
+  /* ####################################### HOME CARDS ############################################### */
+
+  /* main div */
+  .categorydiv{
+    background-color:#ccc;
+    padding: 3%;
+    margin: 5% 0%;
+  
+  }
+
+  .categorycontainer{
+    margin: 2% 8%;
+  }
+
+  .categorycol{
+   position: relative;
+   margin: 2% 3%;
+   min-height: max-content;
+   border: 0.2rem solid black;
+   
+  }
+
+  .categorycol-01{
+    background-color: red;
+  }
+  
+  .categorycol-02{
+    background-color: green;
+  }
+  
+  .categorycol-03{
+    background-color: yellow;
+  }
+  
+  .categoryimg{
+   border-radius: 5rem;
+   max-height: 50rem;
+   padding: 10% 10% 2% 10%;
+  }
+
+  .categorydiv h1{
+   font-family: 'Caveat', cursive; ;
+   text-align: center;
+   padding: 2%;
+   font-size: 3rem;
   }
   
 
-  .mainimg{
-    width: 800px;
-    height:600px;
-    position:relative;
-    top: 30px;
-    padding: 40px;
-  }
+
+  /* ################################ FEATURES CARDS ###################### */
+
+
+    .featurecolumn h3{
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      position: relative;
+      top: 3%;
+      
+    }
+    
+    .featurecolumn p{
+      font-family: 'Merriweather', serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      position: relative;
+      top: 3%;
+
+    }
+    .icons{
+      min-height: 4.5rem;
+      color:#F8BDEB;
+      
+    }
+    
+    .icons :hover{
+      color: #940B92;
+    }
+    
+  
+  
+  
+  
+  
+  
   
 
-  .homeimage h1{
-    color: #5B0888;
-    position: relative;
-    text-align:left;
-    font-size: 5rem;;
-    font-family: 'AR One Sans', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
-  }
+
+
+
+
+  
+
 
   
   
@@ -78,12 +175,7 @@
 
 
 
-  
-  /* #########################Category######### */
-  .categoryrow{
-    padding: 20px;
-  }
-  
+
   
   
   /* #######################Carousel */
@@ -99,46 +191,7 @@
   }
   
   
-  /* #######################################feauture componenet */
-  .featurescard{
-    margin:10px;
-    padding: 10px;
-    position: relative;
-    top: 20px;
-    
-  
-  }
-  .featurecolumn {
-    position: relative;
-    text-align: center;
-    padding:10px;
-   
-  }
-  .featurecolumn h3{
-    padding: 6px auto;
-    margin: 8px auto;
-    
-    
-  }
-  
-  .featurecolumn p{
-    padding: 4px auto;
-    margin: 1px auto;;
-    
-  }
-  .icons{
-    font-size: 5rem;
-    width: 70px;
-    height: 70px;
-    margin: 10px;
-    color:#F8BDEB;
-    padding: 2px;
-  }
-  
-  .icons :hover{
-    color: #940B92;
-  }
-  
+
   
   /*###################################################### entrollment register */
   
@@ -420,50 +473,7 @@
   
   
   
-  /* #############################CATEGORY  */
-  
-  .categorydiv{
-    padding: 80px;
-    text-align: center;
-    font-style: italic;
-    opacity: 0.9;
-  }
-  .categorycol-01{
-    background-color: red;
-    margin-left: 50px;
-    margin-right: 50px;
-   
-    height: 550px;
-  }
-  
-  .categorycol-02{
-    background-color: green;
-    margin-left: 50px;
-    margin-right: 50px;
-   
-    height: 550px;
-  }
-  
-  .categorycol-03{
-    background-color: yellow;
-    margin-left: 50px;
-    margin-right: 50px;
-   
-    height: 550px;
-  }
-  
-  .categoryimg{
-    border-radius: 100px;
-    margin: 30px auto 60px auto;
-    padding-top: 30px;
-    height: 400px;
-  }
-  
-  .categorydiv h1{
-    position: relative;
-    padding-bottom:30px;
-  }
-  
+
   
    /* ###########################FOOTER */
   
