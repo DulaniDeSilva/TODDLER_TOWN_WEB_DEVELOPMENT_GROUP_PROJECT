@@ -137,13 +137,59 @@
       color: #940B92;
     }
     
+
+    /* ############################ TEAM COMPONENT #################### */
+
   
-  
-  
-  
-  
-  
-  
+.teamcards{
+  position: relative;
+  text-align: center;
+  min-height: fit-content;
+  padding: 3%;
+}
+
+.teamcards h3{
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.teamcards h6{
+  margin-top: 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.teamcards p{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  opacity: 0.5;
+}
+
+.teamcolumn{
+  display: grid;
+  position: relative;
+  text-align: center;
+}
+
+.teamlogo{
+ margin: 2% 20%;
+ border-radius: 2%;
+ width: 60%;
+
+}
+    
+    /* .teams-block .image .overlay {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transition: all 0.3s linear;
+      -webkit-transition: all 0.2s linear;
+      vertical-align: middle;
+      background: rgba(246, 75, 75, 0.9);
+      opacity: 0;
+    }
+     */
+
 
 
 
@@ -422,54 +468,7 @@
   
   
   
-   /* #################Team component ############## */
   
-  .teamcontainer h3{
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: bold;
-    opacity: 0.8;
-  }
-  
-  
-  
-   .teamcards{
-  
-   margin: 100px;
-   padding: 20px;
-   }
-  
-  
-  
-   .teamcolumn{
-    text-align: center;
-   }
-  
-   .teamrow h4{
-      color: black;
-      opacity: 0.7;
-   }
-  
-   .teamrow h6{
-    color: ash;
-    font-size: 1.5rem;
-    opacity: 1.0;
-  }
-  
-  .teamrow p{
-    font-weight:350;
-    font-size: 1.0rem;
-  }
-  
-  
-  
-   .teamlogo{
-    margin: 40px;
-    /* border-radius: 10px 20px 30px 40px/30px; */
-    border-radius: 150px;;
-    border: 5px solid #F8BDEB ;
-  
-   }
   
   
   
