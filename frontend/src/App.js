@@ -1,5 +1,8 @@
 
+// style sheet relevant to the react bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Home from './Pages/Home';
 
 // IMPORTS NILMI
 
@@ -14,12 +17,11 @@ import './App.css';
 
 
 
-
 function App() {
   return (
     <div className="App">
 
-
+   
 
 
     {/* ADDING ROUTER PATHS */}
@@ -42,6 +44,8 @@ function App() {
 
 
     {/* DULANI ROUTER PATHS */}
+    <Home/>
+   
 
  
     </div>

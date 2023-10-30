@@ -1,0 +1,761 @@
+/* ######################################################## NAVIGATION BAR MAIN IMAGE ############################# */
+.navbarall{
+    /* width: 1550px; */
+    width: 100%;
+    background-color: #F8BDEB;
+    padding: 1.3rem ;
+    font-size: 1.2rem;
+    font-family: 'AR One Sans', sans-serif;
+    font-family: 'Caveat', cursive;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Ubuntu', sans-serif;
+    min-height: max-content;
+  }
+  
+  .mainbutton{
+    margin-top: 0px;
+   display: flex;
+   justify-content: flex-end;
+   flex-wrap: wrap;
+   padding: 10px;
+  }
+  .actionbutton{
+    margin:10px;
+  }
+  .actionbutton:hover{
+    background-color: #940B92;
+  }
+
+  .mainimg{
+    object-fit: cover;
+    height: 40rem;
+    width: 50rem;
+    display: flex;
+    justify-content:flex-start;
+    padding:5%;
+    margin: 2% 5% 5% 0.5%;
+    padding-right: 0px;
+  }
+  
+  .maintitle{
+    display: flex;
+    flex-wrap: wrap;
+   font-family: 'Caveat', cursive; 
+   font-size: 7.0rem;
+   margin-top: 10%;
+  }
+
+
+
+  .mainimagebutterfly{
+    display: flex;
+    justify-content: flex-end;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 86%;
+    
+  }
+
+
+  /* ####################################### HOME CARDS ############################################### */
+
+  /* main div */
+  .categorydiv{
+    background-color:#ccc;
+    padding: 3%;
+    margin: 5% 0%;
+  
+  }
+
+  .categorycontainer{
+    margin: 2% 8%;
+  }
+
+  .categorycol{
+   position: relative;
+   margin: 2% 3%;
+   min-height: max-content;
+   border: 0.2rem solid black;
+   
+  }
+
+  .categorycol-01{
+    background-color: red;
+  }
+  
+  .categorycol-02{
+    background-color: green;
+  }
+  
+  .categorycol-03{
+    background-color: yellow;
+  }
+  
+  .categoryimg{
+   border-radius: 5rem;
+   max-height: 50rem;
+   padding: 10% 10% 2% 10%;
+  }
+
+  .categorydiv h1{
+   font-family: 'Caveat', cursive; ;
+   text-align: center;
+   padding: 2%;
+   font-size: 3rem;
+  }
+  
+
+
+  /* ################################ FEATURES CARDS ###################### */
+
+
+    .featurecolumn h3{
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      position: relative;
+      top: 3%;
+      
+    }
+    
+    .featurecolumn p{
+      font-family: 'Merriweather', serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      position: relative;
+      top: 3%;
+
+    }
+    .icons{
+      min-height: 4.5rem;
+      color:#F8BDEB;
+      
+    }
+    
+    .icons :hover{
+      color: #940B92;
+    }
+    
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+  
+
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  /* #######################Carousel */
+  .carousel{
+    margin: 100px;
+  }
+  
+  .carouselimage{
+    width: 100%;
+    height: 650px;
+    border-radius:20px;
+    opacity: 0.9;
+  }
+  
+  
+
+  
+  /*###################################################### entrollment register */
+  
+  .schedulecontainer{
+    text-align: center;
+  
+    padding: 80px;
+    margin: 10px;
+   
+  }
+  
+  .Scheduleimage{
+    height: 400px;
+    width: 100%;
+    margin: 20px auto ;
+    padding: 0px;
+    border-radius: 10px;
+    
+  }
+  
+  
+  .schedulecontainer h3 p{
+    padding: 5px;
+    margin: 2px;
+  }
+  
+  .schedulecontainer input[type =email]{
+    width: 80%;
+    padding: 3px;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+  
+  .scheduleButton {
+    margin: 8px auto;
+    width: 30%;
+  }
+  
+  
+  /* ###################################################main login page */
+  .mainlogin{
+    margin: 50px;
+    /* text-align: center; */
+    /* background-color: #F8BDEB; */
+    
+    
+  }
+  
+  .formlabel{
+    margin: 8px;
+  }
+  .forminput{
+   margin: 2px 4px;
+    
+  }
+  
+  .mainlogin h2{
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .form{
+    width: 60%;
+    position: relative;
+    margin: 10px auto;
+    border: 1px solid gray;;
+    
+  }
+  
+  
+  
+  
+  
+  .loginsubmitbutton{
+    margin: 10px;
+    display: flex;
+    justify-content: right;
+  
+  }
+  
+  .mainloginrow{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 50px auto;
+   
+  }
+  .mainloginprogressbar{
+    margin: 100px;
+  }
+  
+  
+  
+  /*######################################################### Sign in form */
+  
+  .signincomponent{
+  
+    position: relative;
+    top: 150px;
+    margin:auto;
+    margin-top: 0px;
+    width: 50%;
+    height: 600px;
+    font-weight: bolder;
+    font-family: 'Merriweather', serif;;
+    text-align: center;
+    border: 2px solid black;
+    
+  
+  }
+  
+  .signincomponent h2 {
+    padding: 20px;
+    margin:0px;
+    text-align: center;
+    /* background-color: white; */
+   
+  }
+  
+  .signincomponent h1{
+    padding: 30px;
+    margin:2px;
+    text-align: center;
+    /* background-color: white; */
+   
+  }
+  
+  .signinlabel{
+    position: relative;
+    text-align: right;
+  }
+  
+  .signinform {
+    top: 5px;
+    width: 60%;
+    position: relative;
+    margin: 0px auto;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+  
+    height: 250px;
+  
+  }
+  
+  .signinsubmit{
+    margin: 5px;
+    margin-left: 10px;
+  }
+  
+  
+  
+  .loginform{
+    width: 60%;
+    position: relative;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+   
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .logincomponent h2{
+    padding: 10px;
+    margin:20px;
+    text-align: center;
+  }
+  
+  .loginsubmit{
+    float: right;
+    margin: 10px;
+     
+   }
+  
+  
+  
+  
+  
+   /* ##################Registrationform.js############################## */
+  
+  .headerRow{
+    background-color: lightcyan;
+  }
+  
+  
+  .headerlogo{
+    width: 100px;
+    height: 100px;
+    /* padding: 10px; */
+    display: flex;
+   
+    margin: 4px 5px 4px auto;
+    border-radius: 8px;
+  
+  }
+  
+  .headerSubRow{
+    padding: 5px;
+    
+  }
+  
+  .headerSubRow h1{
+   margin: 5px;
+  }
+  
+  .formcontainer{
+    width: 60%;
+  }
+  
+  .formheading{
+    font-weight: bold;
+    padding: 5px;
+    text-decoration: underline;
+    font-size: 1.5rem;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+   /* #################Team component ############## */
+  
+  .teamcontainer h3{
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  
+  
+  
+   .teamcards{
+  
+   margin: 100px;
+   padding: 20px;
+   }
+  
+  
+  
+   .teamcolumn{
+    text-align: center;
+   }
+  
+   .teamrow h4{
+      color: black;
+      opacity: 0.7;
+   }
+  
+   .teamrow h6{
+    color: ash;
+    font-size: 1.5rem;
+    opacity: 1.0;
+  }
+  
+  .teamrow p{
+    font-weight:350;
+    font-size: 1.0rem;
+  }
+  
+  
+  
+   .teamlogo{
+    margin: 40px;
+    /* border-radius: 10px 20px 30px 40px/30px; */
+    border-radius: 150px;;
+    border: 5px solid #F8BDEB ;
+  
+   }
+  
+  
+  
+
+  
+   /* ###########################FOOTER */
+  
+   .homeimage{
+    position: relative;
+    text-align: right;
+    /* background-color: #610C9F; */
+    background-color: #F8BDEB;
+    padding: 70px;
+    height: 650px;
+  
+  }
+  
+  
+  
+  .logoimage{
+    /* transform: rotate(10deg); */
+    border-radius: 50px;
+    position: relative;
+    margin: 10px auto 10px auto;
+    /* margin-right: 200px;
+    margin-bottom: 100px; */
+   
+  
+  }
+  
+  
+  
+  
+  .homeimage h1{
+    /* color: white; */
+    /* color:#610C9F; */
+    color: #5B0888;
+    position: relative;
+    text-align:left;
+    font-size: 5rem;;
+  
+    font-family: 'AR One Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  }
+  .little{
+    color: white;
+    text-align: left;
+    margin: 50px;
+    font-size:3rem;
+    margin-left: 0px;
+  
+    font-family: 'AR One Sans', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+    
+  }
+  
+  
+  @media(max-width:1028px){
+  
+   
+  
+    .logoimage{
+        position: static;
+        transform: rotate(0);
+    }
+  }
+  
+  /* testimonial */
+  
+  .carousel{
+    margin: 100px;
+  }
+  
+  .carouselimage{
+    width: 100%;
+    height: 500px;
+    border-radius:20px;
+    opacity: 0.9;
+  }
+  
+  
+  /* feauture componenet */
+  .featurescard{
+    margin: 100px;
+  
+  }
+  .featurecolumn {
+    position: relative;
+    text-align: center;
+   
+  }
+  .featurecolumn h3{
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  
+  .icons{
+    font-size: 3rem;
+    margin: 10px;
+    color:#F8BDEB;
+  }
+  
+  .icons :hover{
+    color: #940B92;
+  }
+  
+  
+  
+  
+  /*Footer Component*/
+  
+  /* Footer Styles */
+  
+  .footer {
+    background-color: #473747;
+    padding: 50px;
+    
+  }
+  
+  .footer_section_padding {
+    padding: 1rem 4rem; 
+  }
+  
+  .footer_logoimage {
+    width: 100px;
+    height: auto;
+    max-width: none;
+    /*
+    padding: 5px;
+    max-width:5%;
+    height: auto;
+    margin-top: 5px;
+    border-radius: 50%;*/
+  }
+  @media (max-width: 767px) {
+    .footer_logoimage {
+      width: 50px; /* Adjust the value for smaller screens if needed */
+      max-width: none; /* Ensure it doesn't exceed the specified width */
+    }
+  }
+  
+  .footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ece3e3;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .footer_links {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .footer_links h4 {
+    color: #F8BDEB;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .footer_links a {
+    color: #a89f9f;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .footer_links a:hover {
+    text-decoration: underline;
+  }
+  
+  .socialmedia a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    
+  }
+  
+  .socialmedia a:last-child {
+    margin-right: 0;
+  }
+  
+  .socialmedia svg {
+    width: 30px;
+    height: 30px;
+    fill: #d496bf;
+   
+  }
+  .footer_links .socialmedia {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer_below {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+  }
+  
+  .footer_below_links {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .footer_below_links a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    color: #a89f9f;
+  }
+  
+  .footer_below_links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer_copyright p {
+   text-align: left;
+  }
+  
+  .footer_below_links p {
+    font-size: 13px;
+    line-height: 15px;
+    margin-left: 2rem;
+    color: white;
+    font-weight: 600;
+  }
+  
+  hr {
+    color: white !important;
+    width: 100%;
+  }
+  
+  .footer_copyright p {
+    font-size: 13px;
+    line-height: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+  }
+  
+  
+    
+  
+  
+  
+  
+   /* ###############REGISTRATION FORM#################### */
+  
+  /* child infor */
+  .mainform{
+   
+    width: 80%;
+    position: relative;
+    right: 100px;
+    left: 100px;
+    top: 50px;
+    margin-bottom: 200px;
+    padding: 50px;
+    
+  }
+  
+  .buttoncontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  
+  
+  
+  /* ###################Welcome################################### */
+  .welcomeparent{
+    /* background-color: red; */
+    position:relative;
+    top:10px;
+  }
+  
+  .welcomeparent h1{
+    top: 20px;
+  }
+  
+  .welcomeparent img{
+    position: absolute;
+    height: 1000px;
+    width: 1000px;
+    left:100px;
+    top: 10;
+  }
