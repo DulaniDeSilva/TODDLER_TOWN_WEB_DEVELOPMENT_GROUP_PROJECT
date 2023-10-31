@@ -1,0 +1,28 @@
+.signinmaindiv{
+    padding: 5%;
+    background-color:#F8BDEB ;
+    text-align: center;
+}
+
+.signincontainer{
+    padding: 2%;
+    background-color: hsl(339, 64%, 82%);
+    border-radius: 3rem;
+    
+}
+
+.signincontainer h1{
+    padding: 1rem;
+    font-family: 'Merriweather', serif;;
+    font-weight: bold;
+}
+.signincontainer h2{
+    font-family: 'AR One Sans', sans-serif;
+    font-weight: bold;
+    padding: 1%;;
+}
+.signupimage{
+    width: 100%;
+    position: relative;
+    top: 20%
+}

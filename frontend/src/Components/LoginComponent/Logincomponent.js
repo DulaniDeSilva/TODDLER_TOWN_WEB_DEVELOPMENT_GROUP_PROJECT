@@ -5,6 +5,16 @@ import Form from 'react-bootstrap/Form';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+// import login from "../../Assets/Images/LogSign/login.png";
+import login from "../../Assets/Images/LogSign/login3.jpg";
+
+
+
+import Spline from '@splinetool/react-spline';
+import FormGroup from "react-bootstrap/esm/FormGroup";
 
 function LoginComponent() {
 
@@ -28,119 +38,115 @@ function LoginComponent() {
   };
 
   axios(configuration)
-   .then((result)=>{
+    .then((result)=>{
       setRegister(true);
-   })
-   .catch((error)=>{
+  })
+    .catch((error)=>{
       error = new Error();
-   })
+  })
 
 
 
 
-    
-
+  // 🥰
+  
 
   return (
-    <div className="signincomponent">
-{/* start of the div */}
-      <h1> 🥰 Welcome To Toddler Town </h1>
-     <h2  >  SIGN IN</h2>
-    
+    <div className="maindiv">
 
-<Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="mb-3"
-      justify
-    >
-      <Tab eventKey="home" title=" 👩 Parent Sign In" className="tabkey">
-      <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="signinlabel">Email address</Form.Label>
-        <Form.Control 
-        type="email" 
-        name = "email"
-        value = {email}
-        onChange = {(e) => setEmail(e.target.value)}
-        placeholder="Enter email"
-        className="signincontrol" />
-      </Form.Group>
+      <Container flex className="MainContainer">
+          <Row> <h1>  Welcome To Toddler Town PreSchool and ChildCare Center </h1>
+          </Row>
+          <Row>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className="signinlabel" >Password</Form.Label>
-        <Form.Control
-        type="password" 
-        name='password'
-        value={password}
-        onChange = {(e) =>setPassword(e.target.value)}
-        placeholder="Password" 
-        className="signincontrol"
-        />
-      </Form.Group>
+          {/* begining col */}
+            <Col md = {8}>
+            
+            <img className="loginimage"  src={login} alt = "Loginimg" />
+            {/* ending col image */}
+            </Col>
 
-   
+            {/*  column open */}
+            <Col md = {4}>
+            <Row> <h2>  SIGN IN</h2> </Row>
+            <Tabs
+                defaultActiveKey="profile"
+                id="justify-tab-example"
+                className="mb-3 allform"
+                justify
+            >
+            <Tab eventKey="home" title=" 👩 Parent Sign In" className="tabkey">
+            <Form onSubmit = {(e) => handleSubmit(e)} className="loginform">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="loglabel">Email address*</Form.Label>
+              <Form.Control 
+                type="email" 
+                name = "email"
+                value = {email}
+                onChange = {(e) => setEmail(e.target.value)}
+                placeholder="Enter email"
+                className="logincontrol" />
+              </Form.Group>
 
-      {/* <Button variant="primary"
-       type="submit"
-       onClick={(e) => handleSubmit(e)} className="signinsubmit">
-       <Link to = "/registerMainform"> Register</Link>
-  
-      </Button> */}
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="loginlabel" >Password*</Form.Label>
+              <Form.Control
+                type="password" 
+                name='password'
+                value={password}
+                onChange = {(e) =>setPassword(e.target.value)}
+                placeholder="Password" 
+                className="logincontrol"
+                />
+              </Form.Group>
 
-
-      
-      <Link to="/parent" >
-      <Button  className="signinsubmit ">
-         LogIn
+              <Form.Group className="mb-3" >
+              <Link to="/parent" >
+        <Button  className="loginsubmit ">
+          LogIn
         </Button>
       </Link>
 
       <Link to="/" >
-      <Button  className="signinsubmit ">
-         Home
+        <Button  className="loginsubmit ">
+          Home
         </Button>
-      </Link>
+      </Link>  
+              </Form.Group>
 
-      {/* {login ? (
-        <p className="text-success"> You are logged in successfully</p>
-      ):(
-        <p className = "text-danger"> You are not logged in</p>
-      )} */}
+              
+      
+    
     </Form>
 
-      </Tab>
+  </Tab>
 
 
+  <Tab eventKey="profile" title=" 👨‍💻 Admin Sign In">
 
+  <Form onSubmit = {(e) => handleSubmit(e)} className="loginform">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="loglabel">Email address *</Form.Label>
+              <Form.Control 
+                type="email" 
+                name = "email"
+                value = {email}
+                onChange = {(e) => setEmail(e.target.value)}
+                placeholder="Enter email"
+                className="logincontrol" />
+              </Form.Group>
 
-
-
-
-      <Tab eventKey="profile" title=" 👨‍💻 Admin Sign In">
-         <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="signinlabel">Email address</Form.Label>
-        <Form.Control 
-        type="email" 
-        name = "email"
-        value = {email}
-        onChange = {(e) => setEmail(e.target.value)}
-        placeholder="Enter email"
-        className="signincontrol" />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className="signinlabel" >Password</Form.Label>
-        <Form.Control
-        type="password" 
-        name='password'
-        value={password}
-        onChange = {(e) =>setPassword(e.target.value)}
-        placeholder="Password" 
-        className="signincontrol"
-        />
-      </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="loginlabel" >Password *</Form.Label>
+              <Form.Control
+                type="password" 
+                name='password'
+                value={password}
+                onChange = {(e) =>setPassword(e.target.value)}
+                placeholder="Password" 
+                className="logincontrol"
+                />
+              </Form.Group>
 
 
     
@@ -152,8 +158,8 @@ function LoginComponent() {
 
       <Link to="/" >
       <Button  className="signinsubmit">
-         Home
-        </Button>
+           Home
+      </Button>
       </Link>
 
 {/* 
@@ -173,29 +179,30 @@ function LoginComponent() {
 
 
       <Tab eventKey="longer-tab" title=" 👩🏻‍🏫 Staff Sign In">
-        <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="signinlabel">Email address</Form.Label>
-        <Form.Control 
-        type="email" 
-        name = "email"
-        value = {email}
-        onChange = {(e) => setEmail(e.target.value)}
-        placeholder="Enter email"
-        className="signincontrol" />
-      </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className="signinlabel" >Password</Form.Label>
-        <Form.Control
-        type="password" 
-        name='password'
-        value={password}
-        onChange = {(e) =>setPassword(e.target.value)}
-        placeholder="Password" 
-        className="signincontrol"
-        />
-      </Form.Group>
+ <Form onSubmit = {(e) => handleSubmit(e)} className="loginform">
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label className="loglabel">Email address *</Form.Label>
+              <Form.Control 
+                type="email" 
+                name = "email"
+                value = {email}
+                onChange = {(e) => setEmail(e.target.value)}
+                placeholder="Enter email"
+                className="logincontrol" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="loginlabel" >Password*</Form.Label>
+              <Form.Control
+                type="password" 
+                name='password'
+                value={password}
+                onChange = {(e) =>setPassword(e.target.value)}
+                placeholder="Password" 
+                className="logincontrol"
+                />
+              </Form.Group>
 
      
 
@@ -216,17 +223,28 @@ function LoginComponent() {
 
 
 
-      {/* {login ? (
-        <p className="text-success"> You are logged in successfully</p>
-      ):(
-        <p className = "text-danger"> You are not logged in</p>
-      )} */}
+   
     </Form>
        
        
       </Tab>
      
     </Tabs>
+
+            </Col>
+          </Row>
+       </Container>
+
+
+
+
+
+
+
+
+     
+    
+
 
 
        

@@ -5,7 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import {Link } from 'react-router-dom';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import signin from "../../Assets/Images/LogSign/signin2.png";
+// import signin from "../../Assets/Images/LogSign/signin.png";
 function SigninComponent() {
 
     const[email, setEmail] = useState("");
@@ -38,41 +42,51 @@ function SigninComponent() {
 
 
   return (
-    <div className="signincomponent">
+    <div className="signinmaindiv">
 {/* start of the div */}
-      <h1> 😊 Welcome To Toddler Town </h1>
-     <h2  >  SIGN UP</h2>
 
-<Tabs
-      defaultActiveKey="profile"
-      id="justify-tab-example"
-      className="mb-3"
-      justify
-    >
-      <Tab eventKey="home" title=" 👩 Parent Sign In" className="tabkey">
-      <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className="signinlabel">Email address</Form.Label>
-        <Form.Control 
-        type="email" 
-        name = "email"
-        value = {email}
-        onChange = {(e) => setEmail(e.target.value)}
-        placeholder="Enter email"
-        className="signincontrol" />
-      </Form.Group>
+    <Container flex className="signincontainer">
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label className="signinlabel" >Password</Form.Label>
-        <Form.Control
-        type="password" 
-        name='password'
-        value={password}
-        onChange = {(e) =>setPassword(e.target.value)}
-        placeholder="Password" 
-        className="signincontrol"
-        />
-      </Form.Group>
+   
+      <Row>
+        <h1> Welcome To Toddler Town PreSchool and ChildCare Center </h1>
+      </Row>
+      
+      <Row>
+        <Col md = {4}>
+          <Row><h2> SIGNUP</h2></Row>
+          {/* begin */}
+          <Row> 
+          <Tabs
+              defaultActiveKey="profile"
+              id="justify-tab-example"
+              className="mb-3 "
+              justify
+          >
+          <Tab eventKey="home" title=" 👩 Parent SignUp" className="tabkey">
+          <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label className="signinlabel">Email address</Form.Label>
+          <Form.Control 
+            type="email" 
+            name = "email"
+            value = {email}
+            onChange = {(e) => setEmail(e.target.value)}
+            placeholder="Enter email"
+            className="signincontrol" />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label className="signinlabel" >Password</Form.Label>
+          <Form.Control
+          type="password" 
+          name='password'
+          value={password}
+          onChange = {(e) =>setPassword(e.target.value)}
+          placeholder="Password" 
+          className="signincontrol"
+          />
+          </Form.Group>
 
    
 
@@ -112,7 +126,7 @@ function SigninComponent() {
 
 
 
-      <Tab eventKey="profile" title=" 👨‍💻 Admin Sign In">
+      <Tab eventKey="profile" title=" 👨‍💻 Admin SignUp">
          <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className="signinlabel">Email address</Form.Label>
@@ -167,7 +181,7 @@ function SigninComponent() {
 
 
 
-      <Tab eventKey="longer-tab" title=" 👩🏻‍🏫 Staff Sign In">
+      <Tab eventKey="longer-tab" title=" 👩🏻‍🏫 Staff SignUp">
         <Form onSubmit = {(e) => handleSubmit(e)} className="signinform">
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label className="signinlabel">Email address</Form.Label>
@@ -223,11 +237,22 @@ function SigninComponent() {
       </Tab>
      
     </Tabs>
+          
+          </Row>
+          {/* row end */}
+        </Col>
+
+        <Col md ={8}>
+        <img className="signupimage"  src={signin} alt = "Signimg" />
+        </Col>
+      </Row>
+
+
 
 
        
    
-    
+      </Container>
     </div>
   )
 

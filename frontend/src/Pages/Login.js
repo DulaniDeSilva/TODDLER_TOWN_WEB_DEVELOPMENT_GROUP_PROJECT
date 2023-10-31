@@ -1,14 +1,16 @@
 import React from 'react';
 import Logincomponent from '../Components/LoginComponent/Logincomponent';
-import purple2 from './../Assets/Images/LogSign/purple2.jpg';
-
+// import purple2 from './../Assets/Images/LogSign/purple2.jpg';
+import '../Assets/Styles/Login.css';
+import '../Assets/Styles/Minifooter.css';
+import Minifootercomponent from '../Components/LoginComponent/Minifootercomponent';
 
 
 export default function Login() {
  
   return (
     <div style={{
-        backgroundImage: `url(${purple2})`,
+        // backgroundImage: `url(${purple2})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -16,6 +18,7 @@ export default function Login() {
       }}>
 
         <Logincomponent/>
+        <Minifootercomponent/>
         
     </div>
   )

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Assets/Styles/Signup.css';
 import Signupcomponent from '../Components/SignupComponent/Signupcomponent';
 import purple from './../Assets/Images/LogSign/purple.jpg';
 
@@ -8,7 +9,7 @@ export default function Signup() {
  
   return (
     <div style={{
-        backgroundImage: `url(${purple})`,
+        // backgroundImage: `url(${purple})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',

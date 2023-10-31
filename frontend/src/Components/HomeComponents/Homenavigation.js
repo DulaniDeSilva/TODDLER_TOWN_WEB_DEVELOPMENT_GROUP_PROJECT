@@ -24,7 +24,7 @@ function Homenavigation() {
   };
 
   const navigateSignin = () =>{
-    navigate("/signin");
+    navigate("/signup");
   }
 
   return (
