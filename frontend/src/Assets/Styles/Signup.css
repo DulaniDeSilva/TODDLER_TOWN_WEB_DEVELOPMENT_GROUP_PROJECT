@@ -6,7 +6,7 @@
 
 .signincontainer{
     padding: 2%;
-    background-color: hsl(339, 64%, 82%);
+    background-color: #b3afe9;
     border-radius: 3rem;
     
 }
@@ -23,6 +23,31 @@
 }
 .signupimage{
     width: 100%;
-    position: relative;
-    top: 20%
+   
+}
+
+.allform {
+   
+    border: 1rem solid #8897d1 ;
+    width: 100%;
+    font-weight: bold ;
+    
+}
+0 
+.allform :active{
+    background-color: #8897d1;
+}
+.loginform{
+    border: 1rem solid #8897d1 ;
+    width: 100%;
+    margin-top: 0;
+    padding-bottom: 6rem;
+    font-weight: bold ;
+   
+}
+.loginsubmit{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 2.5rem;
 }

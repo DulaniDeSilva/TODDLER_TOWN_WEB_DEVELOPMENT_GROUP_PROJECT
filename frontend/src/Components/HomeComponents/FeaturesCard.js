@@ -7,6 +7,9 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faShield } from '@fortawesome/free-solid-svg-icons';
 import { faChild } from '@fortawesome/free-solid-svg-icons';
 import { faSmile } from '@fortawesome/free-solid-svg-icons';
+ import Button from 'react-bootstrap/Button';
+ import {Link } from 'react-router-dom';
+
 
 
 
@@ -45,6 +48,15 @@ function FeaturesCard() {
 
 
        </Container>
+
+
+{/* testing button should delete ! */}
+<Link to="/inventory" >
+      <Button  className="signinsubmit">
+         Inventory System
+        </Button>
+      </Link>
+
 
 
 
