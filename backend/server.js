@@ -32,6 +32,10 @@ connection.once('open', () =>{
 const childrenRouter = require("./routes/children.js");
 app.use("/children", childrenRouter);
 
+const inventoryRouter = require("./routes/inventory.js");
+app.use("/inventory", inventoryRouter);
+
+
 app.listen(PORT, () => {
     console.log("Server Started listening at port", PORT)
 });
