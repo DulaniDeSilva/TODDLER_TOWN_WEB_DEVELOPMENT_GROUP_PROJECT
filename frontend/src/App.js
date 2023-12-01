@@ -62,10 +62,10 @@ function App() {
         <Route path='/' element = {<Home/>} />
         <Route path = "/signup" element = {<Signup/>}/>
         <Route path = "/login" element = {<Login/>}/>
-        {/* <Route path = "/inventory" element = {<InventorySystem/>}/> */}
+        <Route path = "/inventory" element = {<InventorySystem/>}/>
         <Route path = "/inventoryPage" element = {<InventoryPage/>}/>
 
-        
+
         <Route path = "/childinfo" element = {<Childinfo/>}/>
         <Route path = "/parentinfo" element = {<Parentinfo/>}/>
         <Route path = "/guardianinfo" element = {<Guardianinfo/>}/>

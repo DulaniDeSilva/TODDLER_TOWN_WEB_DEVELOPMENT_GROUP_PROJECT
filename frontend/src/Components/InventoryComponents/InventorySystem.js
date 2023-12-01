@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import './../../Assets/Styles/Admin/Inventory.css';
+// import './../../Assets/Styles/InventoryComponents/Inventory.css';
 //import DatePicker from 'react-datepicker';
 //import 'react-datepicker/dist/react-datepicker.css';
 import Container from 'react-bootstrap/Container';

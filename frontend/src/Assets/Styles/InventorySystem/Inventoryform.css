@@ -1,7 +1,4 @@
 
-h4{
-  text-transform: uppercase;
-}
 
 label, input{
     display: block;
@@ -42,4 +39,5 @@ div.error{
 
 input.error{
     border: 1px solid red;
+    box-shadow: 0 0 2px red;
 }

@@ -10,7 +10,7 @@ const session = require('express-session');
 const cookieSession = require("cookie-session");
 const config = require("./configs")
 const passportSetup = require("./configs/google.auth.js");
-// import { googleAuth } from "./configs/google.auth.js";
+
 
 
 
@@ -22,30 +22,8 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3001;
 
-app.use(
-   cookieSession({
-    name:"session",
-    keys: ["toddlerTown"],
-    maxAge: 24*60*60*100,
-   })
-)
 
-app.use(
-    session({
-        secret:process.env.SESSION_SECRET,
-        resave:false,
-        saveUninitialized:false,
-        cookie:{
-            secure:false,
-            expires:new Date(Date.now() + 10000 ),
-            maxAge:10000
 
-        }
-
-    })
-)
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 
@@ -58,6 +36,15 @@ app.use("/children", childrenRouter);
 const inventoryRouter = require("./routes/inventory.js");
 app.use("/inventory", inventoryRouter);
 // /invntory/get
+
+//signup login
+const userRouter = require("./routes/user.js");
+app.use("/user", userRouter);
+
+
+
+
+
 
 const parentRouter = require("./routes/parent.js");
 app.use("/parentauth", parentRouter);
