@@ -1,25 +1,41 @@
-import React from 'react';
-import '../Assets/Styles/Signup.css';
-import Signupcomponent from '../Components/SignupComponent/Signupcomponent';
-import purple from './../Assets/Images/LogSign/purple.jpg';
+import { useState } from "react"
+import { useSignup } from "../hooks/useSignup";
 
 
 
-export default function Signup() {
- 
-  return (
-    <div style={{
-        // backgroundImage: `url(${purple})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        minHeight: '110vh',
-      }}>
+const Signup = () =>{
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const {signup, error, isLoading} = useSignup();
 
-        <Signupcomponent/>
-        {/* <img  src={purple} alt = "logo" className='carouselimage'/> */}
-                
-        
-    </div>
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    await signup(email,password);
+  }
+
+  return(
+    <form onSubmit={handleSubmit}>
+      <h3>Sign up</h3>
+
+      <label>Email</label>
+      <input
+        type = "email"
+        onChange = {(e) => setEmail(e.target.value)}
+        value = {email}
+      />
+
+      <label>Password</label>
+      <input
+        type = "password"
+        onChange = {(e) => setPassword(e.target.value)}
+        value = {password}
+      />
+
+      <button disabled = {isLoading}>Sign up</button>
+      {error && <div className = "error">{error}</div>}
+
+    </form>
   )
-}
+};
+
+export default Signup;

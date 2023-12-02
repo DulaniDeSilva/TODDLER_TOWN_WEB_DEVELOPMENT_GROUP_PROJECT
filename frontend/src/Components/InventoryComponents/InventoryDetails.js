@@ -1,13 +1,20 @@
 import { useInventoryContext } from "../../hooks/useInventoryContext";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const InventoryDetails = ({inventory})=>{
     const {dispatch} = useInventoryContext();
-
-    const handleClick = async() =>{
+    const {user} = useAuthContext();
+    
+     const handleClick = async() =>{
+        if(!user){
+            return 
+        }
         const response = await fetch('/inventory/' + inventory._id,{
-            method:'DELETE'
+            method:'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json();
 

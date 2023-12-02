@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const express = require('express');
 
 const {
     createInventory,
@@ -7,7 +7,13 @@ const {
     deleteInventory,
     updateInventory
 
-} = require('../controllers/inventorycontroller')
+} = require('../controllers/inventorycontroller');
+const requireAuth = require('../middlerware/requireAuth');
+
+const router = express.Router();
+
+//require auth for all inventory routes
+router.use(requireAuth)
 
 // let Inventory = require("../models/inventoryModel");
 

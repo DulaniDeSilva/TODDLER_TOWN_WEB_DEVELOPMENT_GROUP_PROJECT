@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { InventoryContextProvider } from './context/InventoryContext';
-
+import { AuthContextProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+  <AuthContextProvider>
     <InventoryContextProvider>
       <App/>
     </InventoryContextProvider>
+  </AuthContextProvider>
   </React.StrictMode>
 );

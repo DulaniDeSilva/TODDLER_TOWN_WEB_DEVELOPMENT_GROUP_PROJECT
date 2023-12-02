@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigationbarhome from './Navigationbarhome';
 import { useNavigate} from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -21,6 +22,7 @@ function Homenavigation() {
 
   const navigateLogin = () =>{
     navigate("/login");
+   
   };
 
   const navigateSignin = () =>{
@@ -54,8 +56,9 @@ function Homenavigation() {
 
           <Col>
             <div className='mainbutton'>
-              <Button variant="outline-success" onClick = {navigateLogin} className='actionbutton'>LogIn</Button>
-              <Button variant="outline-success" onClick = {navigateSignin} className='actionbutton'>SignUp</Button>
+              {/* <Button variant="outline-success" onClick = {navigateLogin} className='actionbutton'>LogIn</Button>
+              <Button variant="outline-success" onClick = {navigateSignin} className='actionbutton'>SignUp</Button> */}
+              <Navigationbarhome/>
             </div>
           </Col>
         </Row>

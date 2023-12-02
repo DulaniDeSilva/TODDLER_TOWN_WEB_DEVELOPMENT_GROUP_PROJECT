@@ -1,25 +1,51 @@
-import React from 'react';
-import Logincomponent from '../Components/LoginComponent/Logincomponent';
-// import purple2 from './../Assets/Images/LogSign/purple2.jpg';
-import '../Assets/Styles/Login.css';
-import '../Assets/Styles/Minifooter.css';
-import Minifootercomponent from '../Components/LoginComponent/Minifootercomponent';
+import { useState } from "react"
+import Navigationbarhome from "../Components/HomeComponents/Navigationbarhome";
+import {useLogin} from "../hooks/useLogin";
 
 
-export default function Login() {
- 
-  return (
-    <div style={{
-        // backgroundImage: `url(${purple2})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        minHeight: '110vh',
-      }}>
+const Login = () =>{
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const {login, error, isLoading} = useLogin();
 
-        <Logincomponent/>
-        <Minifootercomponent/>
-        
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    await login(email, password);
+  }
+
+  return(
+
+    <div>
+    <Navigationbarhome/>
+
+
+<form onSubmit={handleSubmit}>
+
+<h3>Log in</h3>
+
+<label>Email</label>
+<input
+  type = "email"
+  onChange = {(e) => setEmail(e.target.value)}
+  value = {email}
+/>
+
+<label>Password</label>
+<input
+  type = "password"
+  onChange = {(e) => setPassword(e.target.value)}
+  value = {password}
+/>
+
+<button disabled = {isLoading}>Log in</button>
+{error && <div className = "error">{error}</div>}
+
+
+</form>
+
     </div>
+    
   )
-}
+};
+
+export default Login;

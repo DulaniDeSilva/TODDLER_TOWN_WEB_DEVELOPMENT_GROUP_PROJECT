@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 
 //get all inventoy
 const getInventory = async(req, res)=>{
-    const inventoy = await Inventory.find({}).sort({createdAt:-1});
+    const user_id = req.user._id;
+    const inventoy = await Inventory.find({user_id}).sort({createdAt:-1});
 
     res.status(200).json(inventoy);
 }
@@ -48,7 +49,8 @@ const createInventory = async (req, res)=>{
 
     //adding to the db
     try{
-        const inventory = await Inventory.create({itemName, description, quantity, date});
+        const user_id = req.user._id;
+        const inventory = await Inventory.create({itemName, description, quantity, date, user_id});
         res.status(200).json(inventory);
     }catch(error){
         res.status(400).json({error:error.message});

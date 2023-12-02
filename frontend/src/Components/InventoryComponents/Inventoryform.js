@@ -1,8 +1,12 @@
 import {useState} from 'react'
 import { useInventoryContext } from '../../hooks/useInventoryContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
+
 
 const Inventoryform =()=>{
     const {dispatch} = useInventoryContext();
+    const {user} = useAuthContext();
+
     const [itemName, setItemName] = useState('');
     const [description, setDescription] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -13,20 +17,27 @@ const Inventoryform =()=>{
     const handleSubmit = async (e) =>{
         e.preventDefault();
 
+        if(!user){
+            setError('You must be logged in');
+            return 
+        }
+
         const inventory = {itemName, description, quantity, date};
 
         const response = await fetch('/inventory',{
             method: 'POST',
             body: JSON.stringify(inventory),
             headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
+
             }
         })
         const json = await response.json();
 
         if(!response.ok){
             setError(json.error);
-            setEmptyFields(json.emptyFields);
+            setEmptyFields(json.emptyFields || []);
         }
         if(response.ok){
             setItemName('');

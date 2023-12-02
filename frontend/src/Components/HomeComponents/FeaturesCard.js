@@ -51,7 +51,7 @@ function FeaturesCard() {
 
 
 {/* testing button should delete ! */}
-<Link to="/inventory" >
+<Link to="/inventoryPage" >
       <Button  className="signinsubmit">
          Inventory System
         </Button>

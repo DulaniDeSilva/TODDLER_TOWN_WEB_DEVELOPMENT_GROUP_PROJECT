@@ -7,6 +7,7 @@ const inventorySchema = new Schema({
     description: {type:String},
     quantity: {type:Number, required:true},
     date: {type:Date, default:Date.now},
+    user_id:{type:String, required:true},
 }, {timestamps:true});
 
 

@@ -1,4 +1,5 @@
-import {useEffect} from 'react'
+import {useEffect} from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
 import '../Assets/Styles/InventorySystem/Navbar.css';
 import '../Assets/Styles/InventorySystem/InventoryDetails.css';
 import '../Assets/Styles/InventorySystem/InventoryPage.css';
@@ -10,10 +11,15 @@ import Inventoryform from '../Components/InventoryComponents/Inventoryform';
 import Navbar from '../Components/InventoryComponents/Navbar';
 const InventoryPage = ()=>{
     const {inventory, dispatch} = useInventoryContext();
-   
+    const {user} = useAuthContext();
     useEffect(()=>{
         const fetchInventory = async () =>{
-            const response = await fetch('/inventory');
+            const response = await fetch('/inventory',{
+                headers:{
+                    'Authorization': `Bearer ${user.token}`
+
+                }
+            });
             const json = await response.json();
 
             if(response.ok){
@@ -21,8 +27,12 @@ const InventoryPage = ()=>{
             }
         };
 
-        fetchInventory()
-    }, [dispatch]);
+        if(user){
+            fetchInventory()
+        }
+
+       
+    }, [dispatch, user]);
 
 
 
