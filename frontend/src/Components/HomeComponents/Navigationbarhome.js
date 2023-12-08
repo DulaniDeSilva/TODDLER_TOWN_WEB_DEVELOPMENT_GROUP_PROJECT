@@ -22,8 +22,8 @@ const Navigationbarhome = () =>{
                    
                     {!user && (
                     <div>
-                        <Link to = "/login">Login</Link>
-                        <Link to = "/signup">Sign up</Link>
+                        <Link to = "/loginPage">Login</Link>
+                        <Link to = "/signupPage">Sign up</Link>
                     </div>
                     )}
                 </nav>

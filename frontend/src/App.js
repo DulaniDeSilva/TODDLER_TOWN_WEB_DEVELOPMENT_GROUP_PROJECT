@@ -16,9 +16,7 @@ import './App.css';
 // IMPORTS DULANI
 import Home from './Pages/Home';
 
-import Signup from './Pages/Signup';
-import Login from './Pages/Login';
-import InventorySystem from './Components/InventoryComponents/InventorySystem';
+
 import Childinfo from './Components/RegistrationFormComponent/Childinfo';
 import Parentinfo from './Components/RegistrationFormComponent/Parentinfo';
 import Guardianinfo from './Components/RegistrationFormComponent/Guardianinfo';
@@ -26,9 +24,11 @@ import Officeinfo from './Components/RegistrationFormComponent/Officeinfo';
 import Staffinfo from './Components/RegistrationFormComponent/Staffinfo';
 import Bankinfo from './Components/RegistrationFormComponent/Bankinfo';
 import Maininterface from './Components/ParentComponents/Maininterface';
-import InventoryPage from './Pages/InventoryPage';
 import ChildInterface from "./Pages/ChildInterface";
 
+import InventoryPage from './Pages/InventoryPage';
+import SignupPage from "./Pages/SignupPage";
+import LoginPage from "./Pages/LoginPage";
 
 
 
@@ -65,11 +65,18 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element = {<Home/>} />
-        <Route path = "/signup" element = {!user ? <Signup/> : <Navigate to = "/" />}/>
-        <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/>
-        <Route path = "/inventory" element = {<InventorySystem/>}/>
-        <Route path = "/inventoryPage" element = {user ? <InventoryPage/>: <Navigate to= "/login"/>}/>
+      
+      
        
+      
+        <Route path = "/inventoryPage" element = {user ? <InventoryPage/>: <Navigate to= "/loginPage"/>}/>
+
+        {/* <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/> */}
+        <Route path = "/loginPage" element = {!user ? <LoginPage/> : <Navigate to = "/" />}/>
+
+
+        <Route path = "/signupPage" element = {!user ? <SignupPage/> : <Navigate to = "/" />}/>
+         {/* <Route path = "/signup" element = {!user ? <Signup/> : <Navigate to = "/" />}/> */}
 
        
         <Route path = "/childinterface" element = {<ChildInterface/>}/>
