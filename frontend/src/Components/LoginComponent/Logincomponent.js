@@ -5,11 +5,12 @@ import {useLogin} from "../../hooks/useLogin";
 const Logincomponent = () =>{
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState('');
   const {login, error, isLoading} = useLogin();
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
-    await login(email, password);
+    await login(email, password,userType);
   }
 
   return(
@@ -21,6 +22,32 @@ const Logincomponent = () =>{
 <form onSubmit={handleSubmit}>
 
 <h3>Log in</h3>
+
+<label>Login As: </label>
+<label>Admin</label>
+<input 
+  type = "radio"
+  name = "userType"
+  value = "Admin"
+  onChange={(e) => setUserType(e.target.value)}
+/>
+
+<label>Parent</label>
+<input 
+  type = "radio"
+  name = "userType"
+  value = "Parent"
+  onChange={(e) => setUserType(e.target.value)}
+/>
+
+<label>Staff</label>
+<input 
+  type = "radio"
+  name = "userType"
+  value = "Staff"
+  onChange={(e) => setUserType(e.target.value)}
+/>
+
 
 <label>Email</label>
 <input

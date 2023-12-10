@@ -36,6 +36,9 @@ function App() {
 
   const {user} = useAuthContext();
 
+ 
+
+
   return (
     <div className="App">
   
@@ -69,7 +72,7 @@ function App() {
       
        
       
-        <Route path = "/inventoryPage" element = {user ? <InventoryPage/>: <Navigate to= "/loginPage"/>}/>
+        <Route path = "/inventoryPage" element = { user ? (<InventoryPage/>) : (<Navigate to= "/loginPage"/>)}/>
 
         {/* <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/> */}
         <Route path = "/loginPage" element = {!user ? <LoginPage/> : <Navigate to = "/" />}/>
@@ -88,7 +91,7 @@ function App() {
         <Route path = "/officeinfo" element = {<Officeinfo/>}/>
         <Route path = "/staffinfo" element = {<Staffinfo/>}/>
         <Route path = "/maininterface" element = {<Maininterface/>}/>
- 
+        <Route path = "*" element = {<div>Page Not found</div>}/>
       </Routes>
    
     </BrowserRouter>
