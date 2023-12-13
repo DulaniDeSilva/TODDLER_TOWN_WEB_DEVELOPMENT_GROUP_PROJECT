@@ -1,80 +1,39 @@
-const router = require("express").Router();
+const express =  require('express');
 
-let Children = require("../models/Children");
+const {
+    getChildren,
+    getSingleChild,
+    createChild,
+    deleteChild,
+    updateChild
+} =  require('../controllers/childcontroller');
 
-//create
-router.route("/add").post((req, res)=>{
-    const {initials, firstName, lastName, enrollmentNo, birthday, age, gender
-    ,mainStreet, subStreet, apartment, city, stateNo, zip} = req.body;
+const requireAuth = require('../middlerware/requireAuth');
 
-    
-    const newChild = new Children({
-       initials, firstName, lastName, enrollmentNo, birthday,
+const router = express.Router();
 
-        age, gender, mainStreet, subStreet, apartment, city, stateNo, zip
-
-    });
-    //created object passed to the database
-    newChild.save().then(()=>{
-        //success
-        res.json("Child created successfully");
-    }).catch(()=>{
-        console.log(err);
-    })
-})
-
-//display
-router.route("/").get((req, res)=>{
-    Children.find().then((Children)=>{
-        res.json(Children)
-    }).catch((err)=>{
-        console.log(err);
-    })
-})
+//require auth for child routes
+router.use(requireAuth);
 
 
-//updating
-router.route("/update/:id").put(async(req, res)=>{
-    let userId = req.params.id;
-    //destructure
-    const {initials, firstName, lastName, enrollmentNo, birthday, age, gender
-        ,mainStreet, subStreet, apartment, city, stateNo, zip} = req.body;
+// //get all the children list
+// router.get('/', (req, res) => {
+//     res.json({mssg: 'get all children'});
+// });
 
-    //object is created 
-    const updateChildren  = { initials, firstName, lastName, enrollmentNo, birthday, age, gender
-        ,mainStreet, subStreet, apartment, city, stateNo, zip
-        
-    }
+//get all the children list
+router.get('/', getChildren);
 
-    const update = await Children.findByIdAndUpdate(userId,updateChildren).then(()=>{
-        res.status(200).send({status: "User updated"})
-    }).catch((err)=>{
-        console.log(err);
-    })
-    
-})
+//get single child
+router.get("/:id",getSingleChild);
 
+//post a child
+router.post("/", createChild);
 
-//deleting
-router.route("/delete/:id").delete(async(req, res)=>{
-    let userId = req.params.id;
+//delte a child
+router.delete('/:id', deleteChild);
 
-    await Children.findByIdAndDelete(userId).then(()=>{
-        res.status(200).send({status:"User deleted"});
-    }).catch((err)=>{
-        res.status(500).send({status:"Error with deleting"})
-    })
-})
-
-//getting only one user information
-router.route("/get/:id").get(async (req, res) =>{
-    let userId = req.params.id;
-    const user =  await Children.findById(userId).then(()=>{
-        res.status(200).send({status:"User fetched", user:user})
-    }).catch(()=>{
-        console.log(err.message);
-        res.status(500).send({status:"Error with get user"})
-    })
-})
+//update a child
+router.patch('/:id', updateChild);
 
 module.exports = router;

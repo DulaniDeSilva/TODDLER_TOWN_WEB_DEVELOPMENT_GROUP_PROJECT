@@ -1,272 +1,272 @@
-import React, {useState, useEffect} from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import React from 'react'
+import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/esm/Container'
 import ListGroup from 'react-bootstrap/ListGroup';
-//import logo from "../Assets/Images/logo.jpg";
-import {Link } from 'react-router-dom';
-import Axios from 'axios';
-
-function Childinfo() {
-
- const [listOfChildren, setListOfChildren] = useState([]);
- const [initials, setInitials] = useState("");
- const [firstName, setFirstName] = useState("");
- const [lastName, setLastName] = useState("");
- const [birthday, setBirthday] = useState("");
- const [gender, setGender] = useState("");
- const [mainStreet, setMainStreet] = useState("");
- const [subStreet, setsubStreet] = useState("");
- const [apartment, setApartment] = useState("");
- const [city, setCity] = useState("");
- const [stateNo, setStateNo] = useState("");
- const [zip, setZip] = useState("");
 
 
-useEffect(()=>{
-  Axios.get("http://localhost:3001/getChild")
-  .then((response) =>{
-    setListOfChildren(response.data);
-  });
-},[]);
-
-const createUser = () =>{
-  Axios.post("http://localhost:3001/createUser", {
-    initials,
-    firstName,
-    lastName,
-    birthday,
-    gender,
-    mainStreet,
-    subStreet,
-    apartment,
-    city,
-    stateNo,
-    zip,
-  }).then((response) =>{
-    setListOfChildren([
-        ...listOfChildren,
-        {
-          initials,
-          firstName,
-          lastName,
-          birthday,
-          gender,
-          mainStreet,
-          subStreet,
-          apartment,
-          city,
-          stateNo,
-          zip,
-        },
-    ]);
-  });
-};
-
-
-
+export default function Childinfo() {
   return (
-    // opening div
     <div>
+      <Container>
+      <Form>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" placeholder="Andrea Jane Charlote Eyre" />
+        </Form.Group>
+      </Row>
 
-    {/* top header */}
-      <Container className='header'>
-        <Row className='headerRow' xs={12} md={8}>
-          {/* <Col className='headerCol' xs = {4}>  <img className='headerlogo' src={logo} alt = "logo"/></Col> */}
-          <Col className='headerCol' xs = {8}>
-            <Row className='headerSubRow'> <h1>REGISTRATION FORM </h1></Row>
-            <Row className='headerSubRow'> <h4>Toddler Town Pre School and Childcare center </h4> </Row>
-          </Col>
-        </Row>
-      </Container>    
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridInitials">
+          <Form.Label>Initials</Form.Label>
+          <Form.Control type="text" placeholder="A.J" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridFirstName">
+          <Form.Label>First Name</Form.Label>
+          <Form.Control type="text" placeholder="Jane" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridLastName">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control type="text" placeholder="Eyre" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEnrollmentNo">
+          <Form.Label>Enroll No</Form.Label>
+          <Form.Control type="text" placeholder="T001" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridBirthDay">
+          <Form.Label>Birthday</Form.Label>
+          <Form.Control type="date" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridAge">
+          <Form.Label>Age</Form.Label>
+          <Form.Control type="number" placeholder='2' max={16} />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridGender">
+          <Form.Label>Gender</Form.Label>
+          <Form.Select defaultValue="Gender">
+            <option>Male</option>
+            <option>Female</option>
+          </Form.Select>
+        </Form.Group>
+      </Row>
+
+      <Form.Group className="mb-3" controlId="formGridAddress1">
+        <Form.Label>Address</Form.Label>
+        <Form.Control type="text" placeholder="T001" />
+      </Form.Group>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>City</Form.Label>
+          <Form.Control />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>Zip</Form.Label>
+          <Form.Control />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridService">
+          <Form.Label>Service Type</Form.Label>
+          <Form.Select defaultValue="Toddler Service">
+            <option>Toddler Service</option>
+            <option>Pre-School Service</option>
+            <option>After-School Service</option>
+          </Form.Select>
+        </Form.Group>
+      </Row>
+
+      {/* information about mother */}
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridFatherName">
+          <Form.Label>Name of Mother </Form.Label>
+          <Form.Control type="text" placeholder="A.F.Perera" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+       <Form.Group className="mb-3" controlId="formGridFatherAddress">
+         <Form.Label>Address </Form.Label>
+         <Form.Control as="textarea" rows={3} />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Occupation</Form.Label>
+          <Form.Control type="text" placeholder="School Teacher" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>NIC No </Form.Label>
+          <Form.Control type="text" placeholder="5243535v" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Telephone No</Form.Label>
+          <Form.Control type="text" placeholder="078-1111111" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>Telephone No (Work) </Form.Label>
+          <Form.Control type="text" placeholder="078-1111111" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Mother@email.com" />
+        </Form.Group>
+      </Row>
+
+    {/* information about father*/}
+    <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridFatherName">
+          <Form.Label>Name of Father </Form.Label>
+          <Form.Control type="text" placeholder="A.F.Perera" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+       <Form.Group className="mb-3" controlId="formGridFatherAddress">
+         <Form.Label>Address </Form.Label>
+         <Form.Control as="textarea" rows={3} />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Occupation</Form.Label>
+          <Form.Control type="text" placeholder="School Teacher" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>NIC No </Form.Label>
+          <Form.Control type="text" placeholder="5243535v" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Telephone No</Form.Label>
+          <Form.Control type="text" placeholder="078-1111111" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>Telephone No (Work) </Form.Label>
+          <Form.Control type="text" placeholder="078-1111111" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Father@email.com" />
+        </Form.Group>
+      </Row>
 
 
+      {/* Guardian information */}
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridFatherName">
+          <Form.Label>Name of Guardian </Form.Label>
+          <Form.Control type="text" placeholder="A.F.Perera" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+       <Form.Group className="mb-3" controlId="formGridFatherAddress">
+         <Form.Label>Address </Form.Label>
+         <Form.Control as="textarea" rows={3} />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridZip">
+          <Form.Label>NIC No </Form.Label>
+          <Form.Control type="text" placeholder="5243535v" />
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Telephone No</Form.Label>
+          <Form.Control type="text" placeholder="078-1111111" />
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Guardian@email.com" />
+        </Form.Group>
+      </Row>
 
 
-    {/* form */}
-   
-   
-    {listOfChildren.map((child)=>{
-        return(
-          <div>
+      {/* bank information */}
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>CardHolder Name</Form.Label>
+          <Form.Control type="text" placeholder="A.K.Jane" />
+        </Form.Group>
+      </Row>
 
-            <Container className='formcontainer'>
-            <Form className='mainform'>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Name on the card</Form.Label>
+          <Form.Control type="text" placeholder= "BOC eplus" />
+        </Form.Group>
+      </Row>
 
-    
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="">
-                  <Form.Label className='formheading'>1. Child Details </Form.Label>
-                </Form.Group>
-              </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Card Number</Form.Label>
+          <Form.Control type="number" placeholder= "3498 9948 8922" />
+        </Form.Group>
 
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Expiration</Form.Label>
+          <Form.Control type="date" />
+        </Form.Group>
 
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="">
-                  <Form.Label>Name with initials: </Form.Label>
-                  <Form.Control 
-                    type="text" 
-                    placeholder="A.F.Perera"
-                    onChange = {(event) =>{
-                      setInitials(event.target.value);
-                    }}
-                    />
-                </Form.Group>
-              </Row>
+        <Form.Group as={Col} controlId="formGridCity">
+          <Form.Label>Card Number</Form.Label>
+          <Form.Control type="number" placeholder= "432" maxLength={3} />
+        </Form.Group>
+      </Row>
 
+      <Row className="mb-3">
+        <Form.Group controlId="formFileMultiple">
+         <Form.Label>Please Input following documents (pdf format)</Form.Label>
+            <ListGroup as="ol" numbered>
+            <ListGroup.Item as="li">NIC Father/ Mother/ Guardian</ListGroup.Item>
+            <ListGroup.Item as="li">Grame Sewaka Certificate</ListGroup.Item>
+            <ListGroup.Item as="li">Birth Certificate of Child</ListGroup.Item>
+            <ListGroup.Item as="li">Medical Records of the Child</ListGroup.Item>
+            </ListGroup>
+          <Form.Control type="file" multiple />
+        </Form.Group>
+      </Row>
 
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="">
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control 
-                    type="text" 
-                    placeholder="Famila"
-                    onChange = {(event) =>{
-                      setFirstName(event.target.value);
-                    }} />
-                </Form.Group>
+      <Form.Group className="mb-3" id="formGridCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
 
-                <Form.Group as={Col} controlId="">
-                  <Form.Label>Last Name</Form.Label>
-                  <Form.Control 
-                    type="text" 
-                    placeholder="Perera"
-                    onChange = {(event) =>{
-                      setLastName(event.target.value);
-                    }}/>
-                 </Form.Group>
-            </Row>
-
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="">
-                <Form.Label>Birth Day</Form.Label>
-                <Form.Control 
-                    type="date"
-                    onChange = {(event) =>{
-                      setBirthday(event.target.value);
-                    }}  />
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="" >
-                <Form.Label>Gender:</Form.Label>
-                <Form.Check 
-                  type="radio" 
-                  label="Male" 
-                  name = "gender"
-                  value = "Male"
-                  checked = {gender === "Male"}
-                  onChange = {(event) =>{
-                      setGender(event.target.value);
-                    }}
-                  />
-                <Form.Check 
-                  type="radio" 
-                  label="Male" 
-                  name = "gender"
-                  value = "Female"
-                  checked = {gender === "ale"}
-                  onChange = {(event) =>{
-                      setGender(event.target.value);
-                    }} />
-                </Form.Group>
-            </Row>
-
-            <Row className="mb-3">
-              <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Address</Form.Label>
-                <Form.Control 
-                  placeholder="1234 Main St"
-                  onChange = {(event) =>{
-                      setMainStreet(event.target.value);
-                    }} />
-                <Form.Control 
-                  placeholder="1234 Main St"
-                  onChange = {(event) =>{
-                      setsubStreet(event.target.value);
-                    }} />
-                <Form.Control 
-                  placeholder="Apartment, studio, or floor"
-                  onChange = {(event) =>{
-                      setApartment(event.target.value);
-                    }} />
-              </Form.Group>
-            </Row>
-
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridCity">
-                <Form.Label>City</Form.Label>
-                <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridState">
-                  <Form.Label>State</Form.Label>
-                    <Form.Select defaultValue="Choose...">
-                      <option>Choose...</option>
-                      <option>...</option>
-                    </Form.Select>
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridZip">
-                  <Form.Label>Zip</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-              </Row>
-
-                <Form.Group controlId="formFileMultiple" className="mb-3">
-                  <Form.Label>Please upload following documents
-                  <ListGroup  horizontal>
-                    <ListGroup.Item as="li">Birth Certificate</ListGroup.Item>
-                    <ListGroup.Item as="li">Medical Records (If Any)</ListGroup.Item>
-                    <ListGroup.Item as="li">Photograph of the Child (Passport Size)</ListGroup.Item>
-                  </ListGroup>
-                  </Form.Label>
-                  <Form.Control type="file" multiple />
-                  </Form.Group>
-
-
-
-
-
-      <div className='buttoncontainer'>
-        <Link to="/Signin" >
-          <Button  className="signinsubmit back">
-              Back
-          </Button>
-        </Link>
-
-        <Link to="/parentinfo" >
-          <Button  className="signinsubmit front">
-           Next Page
-        </Button>
-        </Link>
-
-                {/* just for testing shoul delete this */}
-        <Link to="/maininterface" >
-          <Button onClick = {createUser} className="signinsubmit front">
-              Submit: parent interface
-        </Button>
-        </Link>
-       </div>
- 
-
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
-    </Container>
-
-
-
-          </div>
-        );
-      })} 
-    {/* closing div */}
+      </Container>
     </div>
   )
 }
-
-
-export default Childinfo;
-
-
-
-

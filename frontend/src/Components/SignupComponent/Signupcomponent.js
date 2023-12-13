@@ -52,13 +52,6 @@ const Signupcomponent = () =>{
         onChange={(e) => setUserType(e.target.value)}
         />
 
-
-      {/* <select onChange = {(e) => setUserType(e.target.value)} >
-        <option value = "Admin">Administrator</option>
-        <option value = "Parent">Parent</option>
-        <option value = "Staff Member">Staff</option>
-      </select> */}
-
       {userType === "Admin"?(<div><label>Admin Secret Key: </label>
         <input 
           type = "text"
