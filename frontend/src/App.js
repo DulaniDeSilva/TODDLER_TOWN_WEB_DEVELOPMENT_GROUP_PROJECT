@@ -1,53 +1,23 @@
+//app.js 
 
+import {BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // style sheet relevant to the react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './Pages/Home';
-
-// IMPORTS NILMI
-
-// IMPORTS CHAMITHTHREE
-
-
-// IMPORTS CHALANI
-
-
-// IMPORTS DULANI
-
-
+import TeacherPage from "./Pages/TeacherPage";
 
 
 function App() {
   return (
     <div className="App">
+      
+         <Routes>
 
-   
-
-
-    {/* ADDING ROUTER PATHS */}
-    {/* NILMI ROUTER PATHS */}
-
-
-
-
-
-    {/* CHALANI ROUTER PATHS */}
-
-
-
-
-
-    {/* CHAMITHTHREE ROUTER PATHS */}
-
-
-
-
-
-    {/* DULANI ROUTER PATHS */}
-    <Home/>
-   
-
- 
+            <Route path='/' element = {<Home/>} />
+            <Route path = "/teacherInterface" element = {<TeacherPage/>}/>
+          </Routes>
+        
     </div>
   );
 }
