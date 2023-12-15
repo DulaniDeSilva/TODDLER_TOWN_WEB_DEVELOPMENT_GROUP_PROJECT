@@ -13,7 +13,6 @@ import attendanceImage from '../Assets/Images/TeacherPage/calendar.jpg';
 import healthImage from '../Assets/Images/TeacherPage/health.jpg';
 import lessonPlanImage from '../Assets/Images/TeacherPage/lessonPlan.jpg';
 import googleClassroomImage from '../Assets/Images/TeacherPage/lessonPlan.jpg';
-//teacher page
 import salaryImage from '../Assets/Images/TeacherPage/salary.jpg';
 import reportImage from '../Assets/Images/TeacherPage/report.jpg';
 
