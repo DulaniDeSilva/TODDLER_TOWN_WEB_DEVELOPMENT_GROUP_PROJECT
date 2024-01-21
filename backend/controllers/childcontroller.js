@@ -12,7 +12,10 @@ const getChildren = async(req, res)=>{
 
 //get single child
 const getSingleChild = async(req, res)=>{
+    //getting the id
     const {id} = req.params;
+
+    //checking if the id valid
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error:"No such Child enrolled"});
     }
@@ -35,18 +38,20 @@ const createChild = async (req, res)=>{
         birthday,
         age,
         gender,
-        address,
-        city,
-        zip,
-        serviceType,
-        mother,
-        father,
-        guardian,
-        bankInformation,
-        documents} = req.body;
+        // address,
+        // city,
+        // zip,
+        // serviceType,
+        // mother,
+        // father,
+        // guardian,
+        // bankInformation,
+        // documents
+    } = req.body;
 
     let emptyFields = [];
-    if (!name || !initials || !firstName || !lastName || !enrollmentNo || !birthday || !age || !gender || !address || !city || !zip || !serviceType || !mother || !father || !guardian || !bankInformation || !documents) {
+    if (!name || !initials || !firstName || !lastName || !enrollmentNo || !birthday || !age || !gender ) {
+        // || !address || !city || !zip || !serviceType || !mother || !father || !guardian || !bankInformation || !documents
         emptyFields.push('One or more required fields are missing');
     }
    
@@ -67,15 +72,15 @@ const createChild = async (req, res)=>{
             birthday,
             age,
             gender,
-            address,
-            city,
-            zip,
-            serviceType,
-            mother,
-            father,
-            guardian,
-            bankInformation,
-            documents,
+            // address,
+            // city,
+            // zip,
+            // serviceType,
+            // mother,
+            // father,
+            // guardian,
+            // bankInformation,
+            // documents,
             user_id});
         res.status(200).json(child);
     }catch(error){
@@ -115,15 +120,15 @@ const updateChild = async(req, res) => {
                 birthday: req.body.birthday,
                 age: req.body.age,
                 gender: req.body.gender,
-                address: req.body.address,
-                city: req.body.city,
-                zip: req.body.zip,
-                serviceType: req.body.serviceType,
-                mother: req.body.mother,
-                father: req.body.father,
-                guardian: req.body.guardian,
-                bankInformation: req.body.bankInformation,
-                documents: req.body.documents
+                // address: req.body.address,
+                // city: req.body.city,
+                // zip: req.body.zip,
+                // serviceType: req.body.serviceType,
+                // mother: req.body.mother,
+                // father: req.body.father,
+                // guardian: req.body.guardian,
+                // bankInformation: req.body.bankInformation,
+                // documents: req.body.documents
             },
             { new: true }
         );

@@ -1,17 +1,18 @@
 import {createContext, useReducer} from 'react';
 
+//creating a new context and store it in inventoryContext
 export const inventoryContext = createContext();
 
 export const inventoryReducer = (state, action)=>{
     switch(action.type){
         case 'SET_INVENTORY':
             return{
-                
+                //getting all
                 inventory:action.payload
             }
         case 'CREATE_INVENTORY':
             return{
-              
+              //single object(new one): [action.payload], get the rest ...state.inventory
                 inventory: [action.payload, ...state.inventory]
             }
         case 'DELETE_INVENTORY':

@@ -4,33 +4,23 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-
-// IMPORTS NILMI
-
-// IMPORTS CHAMITHTHREE
-
-
-// IMPORTS CHALANI
-
-
 // IMPORTS DULANI
 import Home from './Pages/Home';
 
-
-import Childinfo from './Components/RegistrationFormComponent/Childinfo';
 import Parentinfo from './Components/RegistrationFormComponent/Parentinfo';
 import Guardianinfo from './Components/RegistrationFormComponent/Guardianinfo';
 import Officeinfo from './Components/RegistrationFormComponent/Officeinfo';
 import Staffinfo from './Components/RegistrationFormComponent/Staffinfo';
 import Bankinfo from './Components/RegistrationFormComponent/Bankinfo';
 import Maininterface from './Components/ParentComponents/Maininterface';
-import ChildInterface from "./Pages/ChildInterface";
+
 
 import InventoryPage from './Pages/InventoryPage';
 import SignupPage from "./Pages/SignupPage";
 import LoginPage from "./Pages/LoginPage";
-
-
+import ChildEnrollmentPage from "./Pages/ChildEnrollmentPage";
+import ChildRegistrationPage from "./Pages/ChildRegistrationPage";
+import PaymentPage from "./Pages/PaymentPage";
 
 function App() {
 
@@ -42,28 +32,6 @@ function App() {
   return (
     <div className="App">
   
-   
-
-
-    {/* ADDING ROUTER PATHS */}
-    {/* NILMI ROUTER PATHS */}
-
-
-
-
-
-    {/* CHALANI ROUTER PATHS */}
-
-
-
-
-
-    {/* CHAMITHTHREE ROUTER PATHS */}
-
-
-
-
-
     {/* DULANI ROUTER PATHS */}
     <BrowserRouter>
       <Routes>
@@ -81,10 +49,12 @@ function App() {
         <Route path = "/signupPage" element = {!user ? <SignupPage/> : <Navigate to = "/" />}/>
          {/* <Route path = "/signup" element = {!user ? <Signup/> : <Navigate to = "/" />}/> */}
 
-       
-        <Route path = "/childinterface" element = {<ChildInterface/>}/>
+        <Route path = "/childEnrollmentPage" element = {<ChildEnrollmentPage/>}/>
+        <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
+
+        <Route path = "/paymentPage" element = {<PaymentPage/>}/>
+
       
-        <Route path = "/childinfo" element = {<Childinfo/>}/>
         <Route path = "/parentinfo" element = {<Parentinfo/>}/>
         <Route path = "/guardianinfo" element = {<Guardianinfo/>}/>
         <Route path = "/bankinfo" element = {<Bankinfo/>}/>

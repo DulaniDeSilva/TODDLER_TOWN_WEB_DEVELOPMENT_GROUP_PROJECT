@@ -11,43 +11,43 @@ const childSchema = new Schema({
    birthday:{type:Date, required:true, default: Date.now},
    age: {type:Number, required:true,  min: 1, max: 16, default: 2},
    gender:{type:String, enum:['Male','Female']},
-   adress:{type:String, required:true, default:'Parakum Road, Kurunegala' },
-   city:{type:String, required:true, default: 'Colombo'},
-   zip:{type:String,required:true, default: '58889'},
-   serviceTYpe: {type:String, enum: ['Toddler Service', 'Pre-School Service', 'After School Service']},
-   mother:{
-      name:{type:String, required:true},
-      address:{type:String, required:true},
-      occupation:{type:String, required:true},
-      nicNo:{type:String, required:true},
-      telephoneNo: {type:String, required:true,match: /^\d{3}-\d{7}$/},
-      workTelephoneNo:{type:String, required:true,match: /^\d{3}-\d{7}$/},
-      email:{type:String, required:true}
-   },
-   father:{
-      name:{type:String, required:true},
-      address:{type:String, required:true},
-      occupation:{type:String, required:true},
-      nicNo:{type:String, required:true},
-      telephoneNo: {type:String, required:true,match: /^\d{3}-\d{7}$/},
-      workTelephoneNo:{type:String, required:true,match: /^\d{3}-\d{7}$/},
-      email:{type:String, required:true}
-   },
-   guardian:{
-      name:{type:String, required:true},
-      address:{type:String, required:true},
-      nicNo:{type:String, required:true},
-      telephoneNo: {type:String, required:true,match: /^\d{3}-\d{7}$/},
-      email:{type:String, required:true}
-   },
-   bankInformation:{
-      cardHolderName:{type:String, required:true},
-      nameOnCard: {type:String, required:true},
-      cardNumber:{type:String, required:true, match: /^\d{16}$/},
-      expiration:{type:Date, required:true},
-      cvv:{type:String, required:true,match: /^\d{3}$/}
-   },
-   documents: {type: [String], required:true},
+   // adress:{type:String, required:true, default:'Parakum Road, Kurunegala' },
+   // city:{type:String, required:true, default: 'Colombo'},
+   // zip:{type:String,required:true, default: '58889'},
+   // serviceTYpe: {type:String, enum: ['Toddler Service', 'Pre-School Service', 'After School Service']},
+   // mother:{
+   //    name:{type:String, required:true},
+   //    address:{type:String, required:true},
+   //    occupation:{type:String, required:true},
+   //    nicNo:{type:String, required:true},
+   //    telephoneNo: {type:String, required:true},
+   //    workTelephoneNo:{type:String, required:true},
+   //    email:{type:String, required:true}
+   // },
+   // father:{
+   //    name:{type:String, required:true},
+   //    address:{type:String, required:true},
+   //    occupation:{type:String, required:true},
+   //    nicNo:{type:String, required:true},
+   //    telephoneNo: {type:String, required:true},
+   //    workTelephoneNo:{type:String, required:true},
+   //    email:{type:String, required:true}
+   // },
+   // guardian:{
+   //    name:{type:String, required:true},
+   //    address:{type:String, required:true},
+   //    nicNo:{type:String, required:true},
+   //    telephoneNo: {type:String, required:true},
+   //    email:{type:String, required:true}
+   // },
+   // bankInformation:{
+   //    cardHolderName:{type:String, required:true},
+   //    nameOnCard: {type:String, required:true},
+   //    cardNumber:{type:String, required:true, match: /^\d{16}$/},
+   //    expiration:{type:Date, required:true},
+   //    cvv:{type:String, required:true,match: /^\d{3}$/}
+   // },
+   // documents: {type: [String], required:true},
    user_id:{type:String, required:true}
 });
 

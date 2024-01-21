@@ -57,6 +57,12 @@ function FeaturesCard() {
         </Button>
       </Link>
 
+      <Link to="/paymentPage" >
+      <Button  className="signinsubmit">
+         Payment Page
+        </Button>
+      </Link>
+
 
 
 

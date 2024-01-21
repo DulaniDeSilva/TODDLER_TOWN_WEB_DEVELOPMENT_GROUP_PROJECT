@@ -8,8 +8,7 @@ require('dotenv').config();
 const passport = require('passport');
 const session = require('express-session');
 const cookieSession = require("cookie-session");
-const config = require("./configs")
-const passportSetup = require("./configs/google.auth.js");
+
 
 
 
@@ -41,16 +40,13 @@ app.use("/inventory", inventoryRouter);
 const userRouter = require("./routes/user.js");
 app.use("/user", userRouter);
 
+//payment
+const paymentRouter = require("./routes/payment.js");
+app.use("/payment", paymentRouter);
 
 
 
 
-
-const parentRouter = require("./routes/parent.js");
-app.use("/parentauth", parentRouter);
-
-const authRouter = require("./routes/auth.js");
-app.use("/auth", authRouter);
 
 
 

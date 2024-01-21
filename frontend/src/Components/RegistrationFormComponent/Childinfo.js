@@ -1,272 +1,224 @@
-import React from 'react'
+import React, {Children, useState} from 'react'
+// import { useChildEnrollmentContext } from '../../hooks/useChildEnrollmentContext';
+import { useAuthContext } from '../../hooks/useAuthContext';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/esm/Container'
-import ListGroup from 'react-bootstrap/ListGroup';
-
-
+import FormContainer from './FormContainer';
+import ChildInterface from '../../Pages/ChildInterface';
 export default function Childinfo() {
+ 
+
+ 
+  // State hook for documents
+  const [documents, setDocuments] = useState([]);
+  // State hooks for error handling
+  // const [error, setError] = useState(null);
+  const [emptyFields, setEmptyFields] = useState([]);
+
+
+  const calcAge = (dateString) =>{
+    const today = new Date()
+    const birthDate = new Date(dateString)
+    let age = today.getFullYear() - birthDate.getFullYear()
+    const m = today.getMonth() - birthDate.getMonth()
+    if(m<0 || (m ===0 && today.getDate() < birthDate.getDate())){
+      age--
+    }
+    return age
+  }
+
+
+  const [form, setForm] = useState([]);
+  const [error, setError] = useState([]);
+  const [message, setMessage] = useState([]);
+  const setField = (field, value) =>{
+    setForm({
+      ...form,
+      [field]:value
+    })
+    if(!!error[field])
+    setError({
+      ...error,
+      [field]:null
+    })
+  }
+
+
+
+
+
+
+
+  const validateForm = () =>{
+    const {name, initials, firstName,lastName, enrollmentNo, date, age,gender}  = form;
+    const newErrors = {};
+
+    if(!name || name === '')
+      newErrors.name = "Please enter a name"
+    if(!initials || initials === '')
+      newErrors.initials = "Enter initials"
+    if(!firstName || firstName === '')
+      newErrors.firstName = "Enter first name"
+    if(!lastName || lastName === '')
+      newErrors.lastName = "Enter last name"
+    if(!enrollmentNo || enrollmentNo === '')
+      newErrors.enrollmentNo = "Enter enrollment"
+    if(!date || date === '')
+      newErrors.date = "Enter birth date"
+    else if(calcAge(date) >16 || age === '')
+      newErrors.age = "Age <16"
+    if(!gender || gender === '')
+      newErrors.gender = "Enter gender"
+    return newErrors;
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setMessage('');
+
+    const formErrors = validateForm();
+    if(Object.keys(formErrors).length >0 ){
+      setError(formErrors)
+      setMessage("Whoops, please check for errors below hightlighted");
+    }else{
+      console.log(form)
+      
+    }
+    
+
+  }
+  
+
   return (
     <div>
-      <Container>
-      <Form>
+      <FormContainer>
+      <h2>Registration Form</h2>
+      <Form >
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Andrea Jane Charlote Eyre" />
+          <Form.Control type="text" 
+              placeholder="Andrea Jane Charlote Eyre" 
+              onChange = {(e) =>setField('name',e.target.value)}
+              value = {form.name}
+              isInvalid = {!!error.name}
+              className = {emptyFields.includes('name')? 'error': ''}
+              />
         </Form.Group>
+        <Form.Control.Feedback type = 'invalid'>
+          {error.name}
+        </Form.Control.Feedback>
       </Row>
+
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridInitials">
           <Form.Label>Initials</Form.Label>
-          <Form.Control type="text" placeholder="A.J" />
+          <Form.Control type="text" 
+              placeholder="A.J"
+              onChange = {(e) =>setField('initials', e.target.value)}
+              value = {form.initials}
+              isInvalid = {!!error.initials}
+              className = {emptyFields.includes('initials')? 'error': ''}
+               />
+                <Form.Control.Feedback type = 'invalid'>
+                  {error.name}
+                </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group as={Col} controlId="formGridFirstName">
           <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Jane" />
+          <Form.Control type="text" 
+            placeholder="Jane"
+            onChange = {(e) =>setField('firstName',e.target.value)}
+            value = {form.firstName}
+            isInvalid = {!!error.firstName}
+            className = {emptyFields.includes('firstName')? 'error': ''} />
+             <Form.Control.Feedback type = 'invalid'>
+              {error.name}
+            </Form.Control.Feedback>
         </Form.Group>
+
 
         <Form.Group as={Col} controlId="formGridLastName">
           <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Eyre" />
+          <Form.Control type="text" 
+              placeholder="Eyre"
+              onChange = {(e) =>setField('lastName',e.target.value)}
+              value = {form.lastName}
+              isInvalid = {!!error.lastName}
+              className = {emptyFields.includes('lastName')? 'error': ''} />
         </Form.Group>
       </Row>
 
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridEnrollmentNo">
           <Form.Label>Enroll No</Form.Label>
-          <Form.Control type="text" placeholder="T001" />
+          <Form.Control type="text" 
+            placeholder="T001" 
+            onChange = {(e) =>setField('enrollmentNo',e.target.value)}
+            value = {form.enrollmentNo}
+            isInvalid = {!!error.enrollmentNo}
+            className = {emptyFields.includes('name')? 'error': ''}
+            />
+          <Form.Control.Feedback type = 'invalid'>
+            {error.enrollmentNo}
+          </Form.Control.Feedback>
         </Form.Group>
+
 
         <Form.Group as={Col} controlId="formGridBirthDay">
           <Form.Label>Birthday</Form.Label>
-          <Form.Control type="date" />
+          <Form.Control type="date"
+               onChange = {(e) =>setField('date', e.target.value)}
+              value = {form.date}
+              isInvalid = {!!error.date}
+              className = {emptyFields.includes('date')? 'error': ''}
+               />
+                <Form.Control.Feedback type = 'invalid'>
+                  {error.date}
+                </Form.Control.Feedback>
         </Form.Group>
+
+
 
         <Form.Group as={Col} controlId="formGridAge">
           <Form.Label>Age</Form.Label>
-          <Form.Control type="number" placeholder='2' max={16} />
+          <Form.Control type="number" 
+            placeholder='2'
+            onChange = {(e) =>setField('age',e.target.value)}
+            value = {form.age}
+            className = {emptyFields.includes('age')? 'error': ''}
+            isInvalid = {!!error.age}
+            max={16} />
+                <Form.Control.Feedback type = 'invalid'>
+                  {error.age}
+                </Form.Control.Feedback>
         </Form.Group>
+
 
         <Form.Group as={Col} controlId="formGridGender">
           <Form.Label>Gender</Form.Label>
-          <Form.Select defaultValue="Gender">
+          <Form.Select defaultValue="Gender" onChange={(e) => setField('gender',e.target.value)}>
             <option>Male</option>
             <option>Female</option>
           </Form.Select>
+            <Form.Control.Feedback type = 'invalid'>
+                  {error.age}
+            </Form.Control.Feedback>
         </Form.Group>
       </Row>
-
-      <Form.Group className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Address</Form.Label>
-        <Form.Control type="text" placeholder="T001" />
-      </Form.Group>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>City</Form.Label>
-          <Form.Control />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridService">
-          <Form.Label>Service Type</Form.Label>
-          <Form.Select defaultValue="Toddler Service">
-            <option>Toddler Service</option>
-            <option>Pre-School Service</option>
-            <option>After-School Service</option>
-          </Form.Select>
-        </Form.Group>
-      </Row>
-
-      {/* information about mother */}
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFatherName">
-          <Form.Label>Name of Mother </Form.Label>
-          <Form.Control type="text" placeholder="A.F.Perera" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-       <Form.Group className="mb-3" controlId="formGridFatherAddress">
-         <Form.Label>Address </Form.Label>
-         <Form.Control as="textarea" rows={3} />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Occupation</Form.Label>
-          <Form.Control type="text" placeholder="School Teacher" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>NIC No </Form.Label>
-          <Form.Control type="text" placeholder="5243535v" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Telephone No</Form.Label>
-          <Form.Control type="text" placeholder="078-1111111" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Telephone No (Work) </Form.Label>
-          <Form.Control type="text" placeholder="078-1111111" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Mother@email.com" />
-        </Form.Group>
-      </Row>
-
-    {/* information about father*/}
-    <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFatherName">
-          <Form.Label>Name of Father </Form.Label>
-          <Form.Control type="text" placeholder="A.F.Perera" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-       <Form.Group className="mb-3" controlId="formGridFatherAddress">
-         <Form.Label>Address </Form.Label>
-         <Form.Control as="textarea" rows={3} />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Occupation</Form.Label>
-          <Form.Control type="text" placeholder="School Teacher" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>NIC No </Form.Label>
-          <Form.Control type="text" placeholder="5243535v" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Telephone No</Form.Label>
-          <Form.Control type="text" placeholder="078-1111111" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>Telephone No (Work) </Form.Label>
-          <Form.Control type="text" placeholder="078-1111111" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Father@email.com" />
-        </Form.Group>
-      </Row>
-
-
-      {/* Guardian information */}
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridFatherName">
-          <Form.Label>Name of Guardian </Form.Label>
-          <Form.Control type="text" placeholder="A.F.Perera" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-       <Form.Group className="mb-3" controlId="formGridFatherAddress">
-         <Form.Label>Address </Form.Label>
-         <Form.Control as="textarea" rows={3} />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridZip">
-          <Form.Label>NIC No </Form.Label>
-          <Form.Control type="text" placeholder="5243535v" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Telephone No</Form.Label>
-          <Form.Control type="text" placeholder="078-1111111" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Guardian@email.com" />
-        </Form.Group>
-      </Row>
-
-
-      {/* bank information */}
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>CardHolder Name</Form.Label>
-          <Form.Control type="text" placeholder="A.K.Jane" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Name on the card</Form.Label>
-          <Form.Control type="text" placeholder= "BOC eplus" />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Card Number</Form.Label>
-          <Form.Control type="number" placeholder= "3498 9948 8922" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Expiration</Form.Label>
-          <Form.Control type="date" />
-        </Form.Group>
-
-        <Form.Group as={Col} controlId="formGridCity">
-          <Form.Label>Card Number</Form.Label>
-          <Form.Control type="number" placeholder= "432" maxLength={3} />
-        </Form.Group>
-      </Row>
-
-      <Row className="mb-3">
-        <Form.Group controlId="formFileMultiple">
-         <Form.Label>Please Input following documents (pdf format)</Form.Label>
-            <ListGroup as="ol" numbered>
-            <ListGroup.Item as="li">NIC Father/ Mother/ Guardian</ListGroup.Item>
-            <ListGroup.Item as="li">Grame Sewaka Certificate</ListGroup.Item>
-            <ListGroup.Item as="li">Birth Certificate of Child</ListGroup.Item>
-            <ListGroup.Item as="li">Medical Records of the Child</ListGroup.Item>
-            </ListGroup>
-          <Form.Control type="file" multiple />
-        </Form.Group>
-      </Row>
-
-      <Form.Group className="mb-3" id="formGridCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
+      
+      
+      <Button variant="primary" type="submit" onClick = {handleSubmit}>
         Submit
       </Button>
+
+      {/* {error && <div className ="error">{error}</div>} */}
     </Form>
-      </Container>
+    </FormContainer>
     </div>
   )
 }

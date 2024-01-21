@@ -9,6 +9,7 @@ import { useInventoryContext } from '../hooks/useInventoryContext';
 import InventoryDetails from '../Components/InventoryComponents/InventoryDetails';
 import Inventoryform from '../Components/InventoryComponents/Inventoryform';
 import Navbar from '../Components/InventoryComponents/Navbar';
+
 const InventoryPage = ()=>{
     const {inventory, dispatch} = useInventoryContext();
     const {user} = useAuthContext();
