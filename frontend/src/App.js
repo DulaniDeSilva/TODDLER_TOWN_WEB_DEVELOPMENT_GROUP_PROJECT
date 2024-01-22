@@ -21,6 +21,7 @@ import LoginPage from "./Pages/LoginPage";
 import ChildEnrollmentPage from "./Pages/ChildEnrollmentPage";
 import ChildRegistrationPage from "./Pages/ChildRegistrationPage";
 import PaymentPage from "./Pages/PaymentPage";
+import Payment from "./Pages/Payment";
 
 function App() {
 
@@ -53,6 +54,10 @@ function App() {
         <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
+        <Route path = "/gotoPayment" element = {<Payment/>}/>
+
+      
+
 
       
         <Route path = "/parentinfo" element = {<Parentinfo/>}/>

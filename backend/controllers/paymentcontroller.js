@@ -27,9 +27,12 @@ const getSinglePayment = async(req, res)=>{
 
 //create a new payment
 const createPayment = async (req, res)=>{
-    const {paymentName, description, amount, date} = req.body;
+    const {paymentType, paymentName, description, amount, date} = req.body;
 
     let emptyFields = [];
+    if(!paymentType){
+        emptyFields.push('paymentType');
+    }
     if(!paymentName){
         emptyFields.push('paymentName');
     }
@@ -50,7 +53,7 @@ const createPayment = async (req, res)=>{
     //adding to the db
     try{
         const user_id = req.user._id;
-        const payment = await Payment.create({paymentName, description, amount, date, user_id});
+        const payment = await Payment.create({paymentType,paymentName, description, amount, date, user_id});
         res.status(200).json(payment);
     }catch(error){
         res.status(400).json({error:error.message});
