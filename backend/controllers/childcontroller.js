@@ -30,7 +30,8 @@ const getSingleChild = async(req, res)=>{
 
 //create a new child
 const createChild = async (req, res)=>{
-    const {  name,
+    const {  
+        name,
         initials,
         firstName,
         lastName,
@@ -53,6 +54,7 @@ const createChild = async (req, res)=>{
         fatherAddress,
         fatherOccupation,
         fatherNicNo,
+        fatherEmail,
         fatherTelephoneNo,
         fatherWorkTelephoneNo,
         guardianName,
@@ -71,7 +73,7 @@ const createChild = async (req, res)=>{
     if (!name || !initials || !firstName || !lastName || !enrollmentNo || !birthday || !age || !gender  
         || !address || !city || !zip || !serviceType || !motherName || !motherAddress || !motherOccupation ||
         !motherNicNo || !motherTelephoneNo || !motherWorkTelephoneNo || !motherEmail || !fatherName || !fatherAddress
-        || !fatherOccupation || !fatherNicNo || !fatherTelephoneNo || !fatherWorkTelephoneNo || !guardianName ||
+        || !fatherOccupation || !fatherNicNo || !fatherEmail || !fatherTelephoneNo || !fatherWorkTelephoneNo || !guardianName ||
         !guardianAddress || !guardianNicNo || !guardianTelephoneNo || !guardianEmail || !cardHolderName || !nameOnCard ||
         !cardNumber || !expiration || !cvv
          ) {
@@ -87,7 +89,8 @@ const createChild = async (req, res)=>{
     //adding to the db
     try{
         const user_id = req.user._id;
-        const child = await Children.create({ name,
+        const child = await Children.create({ 
+            name,
             initials,
             firstName,
             lastName,
@@ -110,6 +113,7 @@ const createChild = async (req, res)=>{
             fatherAddress,
             fatherOccupation,
             fatherNicNo,
+            fatherEmail,
             fatherTelephoneNo,
             fatherWorkTelephoneNo,
             guardianName,
@@ -176,6 +180,7 @@ const updateChild = async(req, res) => {
                 fatherAddress: req.body.fatherAddress,
                 fatherOccupation: req.body.fatherOccupation,
                 fatherNicNo: req.body.fatherNicNo,
+                fatherEmail: req.body.fatherEmail,
                 fatherTelephoneNo: req.body.fatherTelephoneNo,
                 fatherWorkTelephoneNo: req.body.fatherWorkTelephoneNo,
                 guardianName:req.body.guardianName,

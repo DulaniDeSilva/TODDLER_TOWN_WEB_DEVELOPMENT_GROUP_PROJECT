@@ -16,7 +16,7 @@ const childSchema = new Schema({
    zip:{type:String,required:true, default: '58889'},
    serviceType: {type:String, enum: ['Toddler Service', 'Pre-School Service', 'After School Service']},
    motherName:{type:String, required:true},
-   motheraddress:{type:String, required:true},
+   motherAddress:{type:String, required:true},
    motherOccupation:{type:String, required:true},
    motherNicNo:{type:String, required:true},
    motherTelephoneNo: {type:String, required:true},

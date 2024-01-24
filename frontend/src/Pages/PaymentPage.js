@@ -2,6 +2,8 @@ import PaymentTable from '../Components/PaymentComponent/PaymentTable';
 import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
 import Button from 'react-bootstrap/Button';
 import {Link } from 'react-router-dom';
+import '../Assets/Styles/PaymentPage/paymentPage.css';
+
 
 const PaymentPage = ()=>{
     
