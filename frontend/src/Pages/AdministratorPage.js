@@ -3,7 +3,7 @@ import '../App.css';
 
 import Attendance from '../Components/AdminisratorComponents/attendance/Attendance';
 import LessonPlans from '../Components/TeacherComponents/lessonPlans/LessonPlans';
-import ActivityPlans from '../Components/AdminisratorComponents/activityPlans/ActivityPlans'
+import ActivityPlans from '../Components/CaregiverComponents/activityPlans/ActivityPlans'
 import HealthRecords from '../Components/TeacherComponents/healthRecords/HealthRecords';
 import Reports from '../Components/AdminisratorComponents/report/Reports';
 import SalaryDetails from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails';
