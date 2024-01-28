@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import '../attendance/Attendance.css';
+import './Attendance.css';
 
 function Attendance() {
     const [students, setStudents] = useState([

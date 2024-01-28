@@ -1,0 +1,34 @@
+.cctv-container {
+    font-size: 18px; /* This sets the default font size for the container */
+}
+
+.cctv-container h2 {
+    font-size: 30px; /* Size for the heading */
+}
+
+.cctv-container .input-group label {
+    display: block; /* Ensures the label is on its own line */
+    margin-bottom: 5px;
+}
+
+.cctv-container .input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cctv-container button {
+    background-color: #ce9cdf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cctv-container button:hover {
+    background-color: #bb74e8;
+}
