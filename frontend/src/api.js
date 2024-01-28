@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const LESSON_PLAN_ENDPOINT = `${BASE_URL}/api/lessonPlans`;
+const ACTIVITY_PLAN_ENDPOINT = `${BASE_URL}/api/activityPlans`;
 const HEALTH_RECORD_ENDPOINT = `${BASE_URL}/api/healthRecords`;
 
 export const addLessonPlan = async (lessonPlan) => {
@@ -42,6 +43,68 @@ export const updateLessonPlan = async (month, trackingData) => {
         throw error;
     }
 };
+export const updateLessonPlanTracking = async (month, trackingData) => {
+    try {
+      const response = await axios.put(`${BASE_URL}/update/${month}`, { trackingData });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+
+  //activity plan
+
+  export const addActivityPlan = async (lessonPlan) => {
+    try {
+        const response = await axios.post(`${ACTIVITY_PLAN_ENDPOINT}/add`, lessonPlan);
+        return response.data;
+    } catch (error) {
+        console.error("Failed to add activity plan:", error);
+        throw error;
+    }
+};
+
+export const getAllActivityPlans = async () => {
+    try {
+        const response = await axios.get(ACTIVITY_PLAN_ENDPOINT);
+        return response.data;
+    } catch (error) {
+        console.error("Failed to fetch activity plans:", error);
+        throw error;
+    }
+};
+export const getActivityPlanByMonth = async (month) => {
+    try {
+        const response = await axios.get(`${ACTIVITY_PLAN_ENDPOINT}/month/${month}`);
+        return response.data;
+    } catch (error) {
+        console.error(`Failed to fetch activity plan for ${month}:`, error);
+        throw error;
+    }
+};
+
+export const updateActivityPlan = async (month, trackingData) => {
+    try {
+        const response = await axios.put(`${ACTIVITY_PLAN_ENDPOINT}/update/${month}`, { trackingData });
+        return response.data;
+    } catch (error) {
+        console.error(`Failed to update activity plan for ${month}:`, error);
+        throw error;
+    }
+};
+export const updateActivityPlanTracking = async (month, trackingData) => {
+    try {
+      const response = await axios.put(`${BASE_URL}/update/${month}`, { trackingData });
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  //healthrecord
+
+
 
 export const addHealthRecord = async (data) => {
     try {
@@ -72,11 +135,3 @@ export const updateHealthRecord = async (regNumber, data) => {
         throw error;
     }
 };
-export const updateLessonPlanTracking = async (month, trackingData) => {
-    try {
-      const response = await axios.put(`${BASE_URL}/update/${month}`, { trackingData });
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  };

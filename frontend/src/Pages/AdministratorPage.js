@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import '../App.css';
 
 import Attendance from '../Components/AdminisratorComponents/attendance/Attendance';
-import LessonPlans from '../Components/AdminisratorComponents/lessonPlans/LessonPlans';
+import LessonPlans from '../Components/TeacherComponents/lessonPlans/LessonPlans';
 import ActivityPlans from '../Components/AdminisratorComponents/activityPlans/ActivityPlans'
-import HealthRecords from '../Components/AdminisratorComponents/healthRecords/HealthRecords';
+import HealthRecords from '../Components/TeacherComponents/healthRecords/HealthRecords';
 import Reports from '../Components/AdminisratorComponents/report/Reports';
 import SalaryDetails from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails';
 import Information from '../Components/AdminisratorComponents/Information/Information';

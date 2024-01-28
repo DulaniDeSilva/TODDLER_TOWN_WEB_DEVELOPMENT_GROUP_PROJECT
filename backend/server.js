@@ -18,11 +18,15 @@ app.use(express.json());
 const healthRecordsRoutes = require('./Routes/TeacherRoutes/healthRecords');
 //const attendanceRoutes = require('./routes/AttendanceRoutes');
 const lessonPlanRoutes = require('./Routes/TeacherRoutes/LessonPlanRoutes');
+const activityPlanRoutes = require('./Routes/CaregiverRoutes/ActivityPlanRoutes');
+
 
 // Consistent route structure
-app.use('/api/attendance', attendanceRoutes); 
+//app.use('/api/attendance', attendanceRoutes); 
 app.use('/api/healthRecords', healthRecordsRoutes);
 app.use('/api/lessonPlans', lessonPlanRoutes);
+app.use('/api/activityPlans', activityPlanRoutes);
+
 
 // Database connection
 const uri = process.env.MONGODB_URI;
