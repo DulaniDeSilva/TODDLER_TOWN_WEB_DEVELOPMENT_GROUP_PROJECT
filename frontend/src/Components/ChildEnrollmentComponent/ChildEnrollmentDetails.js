@@ -29,6 +29,7 @@ const ChildEnrollmentDetails = ({child})=>{
 
     return(
         <div className = "childenrollment-details">
+            
             <div>
                 <h6><strong>Child Name:</strong> {child.name}</h6>
                 <p><strong>Initials:</strong> {child.initials}</p>

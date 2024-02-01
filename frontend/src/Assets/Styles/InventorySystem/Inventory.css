@@ -1,4 +1,4 @@
-
+/* 
 
 
 .header_{
@@ -9,7 +9,7 @@
   .headerlogo{
     width: 100px;
     height: 100px;
-    /* padding: 10px; */
+  
     display: flex;
    
     margin: 4px 5px 4px auto;
@@ -55,11 +55,11 @@
   }
   
   .selectRow button {
-   /* padding:  4px 6px; */
+
    margin-top: 6px;
    border-radius: 100%;
   }
   
   
   
-    
+     */

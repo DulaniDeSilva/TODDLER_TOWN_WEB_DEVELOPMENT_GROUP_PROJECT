@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import { usePaymentContext } from '../../hooks/usePaymentContext';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const PaymentDetail =()=>{
@@ -55,74 +58,114 @@ const PaymentDetail =()=>{
 
     return(
         <div>
-
+            <Container>
             <form onSubmit = {handleSubmit}>
-                <h4> List of Payments</h4>
+                <header> List of Payments</header>
 
+                <Row>
+                
+                <Col>
+                <div class = "input-field">
                 <label>Payment Type</label>
+              
+                
                 <select
                     value = {paymentType}
                     onChange = {(e) => setPaymentType(e.target.value)}
-                    className = {emptyFields.includes('paymentType')? 'error': ''} >
+                    className={` ${emptyFields.includes('paymentType') ? 'error' : ''} inputs`}
+                    >
                     <option>Select Payment Type</option>
                     <option>Toddler Payment</option>
                     <option>AfterSchool Payment</option>
                     <option>PreSchool Payment</option>
                 </select>
+                
+                </div>
+                </Col>
+                
 
+
+                <Col>
+                <div class = "input-field">
+                
                 <label>Payment Name</label>
+                
+
+                
                 <select
                     value = {paymentName}
                     onChange = {(e) => setPaymentName(e.target.value)}
-                    className = {emptyFields.includes('paymentName')? 'error': ''} >
+                    className={` ${emptyFields.includes('paymentName') ? 'error' : ''} inputs`}
+                    >
                     <option>Select Payment Name</option>
                     <option>Admission</option>
                     <option>Supplies</option>
                     <option>Food and drinks</option>
                 </select>
+            
+                </div>
+                </Col>
+            </Row>
 
+            <Row>
+                <Col>
+                <div class = "input-field">
                 <label>Description</label>
                 <select
                     value = {description}
                     onChange = {(e) => setDescription(e.target.value)}
-                    className = {emptyFields.includes('description')? 'error': ''} >
+                    className={` ${emptyFields.includes('description') ? 'error' : ''} inputs`}
+                    >
                     <option>Description about payment</option>
                     <option>Toddler Payment</option>
                     <option>AfterSchool Payment</option>
                     <option>PreSchool Payment</option>
                 </select>
+                </div>
+                </Col>
 
+                <Col>
+                <div class = "input-field">
                 <label>Amount</label>
                 <select
                     value = {amount}
                     onChange = {(e) => setAmount(e.target.value)}
-                    className = {emptyFields.includes('amount')? 'error': ''} >
+                    className={` ${emptyFields.includes('amount') ? 'error' : ''} inputs`}
+                     >
                     <option>Amount</option>
                     <option>20000</option>
                     <option>23444</option>
                     <option>1233</option>
                 </select>
+                </div>
+                </Col>
 
+                <Col>
+                <div class = "input-field">
                 <label>Date</label>
                 <input
                     type = "date"
                     onChange={(e)=> setDate(e.target.value)}
                     value = {date}
-                    className = {emptyFields.includes('date')? 'error': ''}
+                    className={` ${emptyFields.includes('date') ? 'error' : ''} inputs`}
+                    
                 />
-
+                </div>
+                </Col>
+                
+                </Row>
 
                 
 
 
                 
-
-                <button>Add To Inventory</button>
-                {error && <div className ="error">{error}</div>}
-
+                <Row>
+                <button className='pay-button '>Add To Payment List</button>
+                {error  && <div className ="error">{error}</div>}
+                </Row>
 
             </form>
-
+</Container>
         </div>
     )
 };

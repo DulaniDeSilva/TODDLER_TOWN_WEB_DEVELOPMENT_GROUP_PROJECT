@@ -1,20 +1,21 @@
 
-
-
-
 .inventory-details{
-    background-color: #fff;
+    font-weight: bold;
+    font-size: 1.8em;
+    width: 40%;
+    background-color:#f1f1f1;
     border-radius:4px;
-    margin: 20px auto;
+    margin: 40px auto;
+    margin-left: 30px;
     padding:20px;
-    position: relative;
+    position: absolute;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5  );
 }
 
 .inventory-details h6{
     margin: 0 0 10px 0;
     font-size: 1.2rem;
-    color: var(--primary);
+    color: var(--primary); 
 }
 
 .inventory-details p{
@@ -23,7 +24,8 @@
     color: #555;
 }
 
-.workout-details span{
+
+.inventory-details span{
     position:absolute;
     top: 20px;
     right:20px;

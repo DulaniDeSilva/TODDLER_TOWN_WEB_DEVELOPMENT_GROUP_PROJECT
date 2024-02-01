@@ -20,6 +20,13 @@ export const childenrollmentReducer = (state, action)=>{
                 // child:state.child.filter((w) =>w._id !==action.payload._id)
                 child: state.child ? state.child.filter((w) => w._id !== action.payload._id) : null
             }
+        case 'UPDATE_CHILD':
+            const updatedChildren =  state.child.map((child) =>
+                child._id === action.payload._id ? action.payload : child
+            );
+            return{
+                child:updatedChildren,
+            }
         default:
             return state
     }

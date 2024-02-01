@@ -1,36 +1,86 @@
+body{
+margin: 0px;
+padding: 0px;
+}
+
+
 /* ######################################################## NAVIGATION BAR MAIN IMAGE ############################# */
 .navbarall{
-    /* width: 1550px; */
     width: 100%;
     background-color: #F8BDEB;
-    padding: 1.3rem ;
+    /* width: 1542px; */
+    padding: 1.6rem ;
     font-size: 1.2rem;
-    font-family: 'AR One Sans', sans-serif;
-    font-family: 'Caveat', cursive;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-family: 'Merriweather', serif;
+    position: fixed;
+    /* font-family: 'AR One Sans', sans-serif; */
+    /* font-family: 'Caveat', cursive; */
+    /* font-family: 'IBM Plex Sans', sans-serif; */
+    /* font-family: 'Merriweather', serif; */
     font-family: 'Ubuntu', sans-serif;
     min-height: max-content;
+    z-index: 1000;
   }
+
+.navbar-links{
+ 
+  padding-left: 50px;
+}
+
+.navigationbarhome{
+  color:dimgray;
+}
+
+.mainnav-logout button{
+  background: none;
+  border:none;
+  padding:5px;
+  cursor:pointer;
+}
+
+.mainnav-logout button:hover{
+  text-decoration: underline;
+}
+
+
+.links{
+  text-decoration: none;
+  color:dimgray;
+  padding: 5px;
+}
+
+.navigationbarhome{
+  position: relative;
+  left: 700px;
+}
+
+
+.main_image{
+  padding-top: 8px;
+  margin-top: 6.2rem;
+  width: 1542px;
   
-  .mainbutton{
-    margin-top: 0px;
-   display: flex;
-   justify-content: flex-end;
-   flex-wrap: wrap;
-   padding: 10px;
-  }
-  .actionbutton{
-    margin:10px;
-  }
-  .actionbutton:hover{
-    background-color: #940B92;
-  }
+}
+
+
+
+  
+
+
+
+ 
+
+
+
+
+
+
 
   .mainimg{
     object-fit: cover;
     height: 40rem;
-    width: 50rem;
+    width: 100%;
+    max-width: 50rem;
+    
     display: flex;
     justify-content:flex-start;
     padding:5%;
@@ -42,7 +92,7 @@
     display: flex;
     flex-wrap: wrap;
    font-family: 'Caveat', cursive; 
-   font-size: 7.0rem;
+    font-size: 7.0rem;
    margin-top: 10%;
   }
 
@@ -58,12 +108,171 @@
     
   }
 
+  .main_image{
+    background-color: #F8BDEB ;
+  }
+
+
+
+  
+
+
+  /* laptop large 1440px */
+  @media(max-width:1440px){
+    .mainimg{
+      height:auto;
+      max-width: 100%;
+      margin: 0px;
+    }
+    .maintitle{
+      /* font for smaller size screens */
+      font-size:6.0rem;
+      text-align: left;
+    }
+    .mainimagebutterfly{
+      /* display:none; */
+      height: auto;
+      width: 60px;
+    }
+    .navigationbarhome{
+      position: relative;
+      left: 600px;
+    }
+   
+  }
+
+
+/* laptop 1025px */
+  @media(max-width:1024px){
+    .mainimg{
+      height:auto;
+      max-width: 100%;
+      margin: 0px;
+    }
+    .maintitle{
+      /* font for smaller size screens */
+      font-size:4.0rem;
+    }
+    .mainimagebutterfly{
+      /* display:none; */
+      height: auto;
+      width: 60px;
+    }
+    .navigationbarhome{
+      position: relative;
+      left: 300px;
+    }
+  }
+
+ /* tablet view */
+ @media(max-width:768px){
+  .mainimg{
+    height:auto;
+    max-width: 100%;
+    margin: 2%;
+  }
+  .maintitle{
+    /* font for smaller size screens */
+    font-size: 3.2rem !important;
+    padding:none;
+  }
+  .mainimagebutterfly{
+    width: 60px;
+    height: auto;
+  }
+  .navigationbarhome{
+    position: relative;
+    left: 28px;
+  }
+}
+
+  /*  */
+  @media(max-width:500px){
+    .mainimg{
+      height:auto;
+      max-width: 100%;
+      text-align: center;
+      margin: 0px;
+    }
+    .maintitle{
+      /* font for smaller size screens */
+      font-size:1.5rem;
+      text-align: center;
+      padding: 0px;
+      margin:0px;
+    }
+    .mainimagebutterfly{
+      display:none;
+    }
+    .navigationbarhome{
+      position: relative;
+      /* left: 28px; */
+    }
+   
+  
+  }
+
+  /* mobile view */
+  @media(max-width:320px){
+    .mainimg{
+      height:auto;
+      max-width: 100%;
+      text-align: center;
+      margin: 0px;
+    }
+    .maintitle{
+      /* font for smaller size screens */
+      font-size:1.5rem;
+      text-align: center;
+      padding: 0px;
+      margin:0px;
+    }
+    .mainimagebutterfly{
+      display:none;
+    }
+  }
+
+/* ########################   Welcome  */
+.welcome{
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  color:#999393;
+  border-radius: 10px;
+  font-size:1.2rem;
+  line-height:1.5;
+  margin: 50px auto;
+  width: 80%;
+  padding: 2%;
+
+ 
+}
+
+.welcome header{
+  font-size:1.5rem;
+  font-weight: bold;
+  color:#940B92
+}
+
+.welcome p{
+  margin-top: 10px;
+}
+
+.welcome footer{
+  margin-top:20px;
+  font-weight: bold;
+  
+}
+
+
+
+
+
 
   /* ####################################### HOME CARDS ############################################### */
 
   /* main div */
-  .categorydiv{
-    background-color:#ccc;
+  .category-cards{
+    background-color:#F8BDEB;
     padding: 3%;
     margin: 5% 0%;
   
@@ -140,6 +349,57 @@
 
     /* ############################ TEAM COMPONENT #################### */
 
+    .card {
+      width: 17em;
+      height: 22.5em;
+      background: #940B92;
+      /* transition: 1s ease-in-out; */
+      /* clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px); */
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card span {
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      display: block;
+      font-size: 1.3em;
+    }
+
+    .card .info {
+      font-weight: 400;
+      color: white;
+      display: block;
+      text-align: center;
+      font-size: 1.0em;
+      margin: 1em;
+    }
+
+     .image {
+      width: 6.8em;
+      height: 6.8em;
+      background: white;
+      border-radius: 25%;
+      margin: 20px auto;
+    }
+    .card .share {
+      margin-top: 1em;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+    .card a {
+      color: white;
+      transition: .4s ease-in-out;
+    }
+    
+    .card a:hover {
+      color: red;
+    }
+    
   
 .teamcards{
   position: relative;
@@ -224,194 +484,20 @@
 
   
   
-  /* #######################Carousel */
-  .carousel{
-    margin: 100px;
-  }
-  
-  .carouselimage{
-    width: 100%;
-    height: 650px;
-    border-radius:20px;
-    opacity: 0.9;
-  }
-  
-  
 
   
-  /*###################################################### entrollment register */
+
+
+
   
-  .schedulecontainer{
-    text-align: center;
-  
-    padding: 80px;
-    margin: 10px;
-   
-  }
-  
-  .Scheduleimage{
-    height: 400px;
-    width: 100%;
-    margin: 20px auto ;
-    padding: 0px;
-    border-radius: 10px;
-    
-  }
-  
-  
-  .schedulecontainer h3 p{
-    padding: 5px;
-    margin: 2px;
-  }
-  
-  .schedulecontainer input[type =email]{
-    width: 80%;
-    padding: 3px;
-    border-radius: 5px;
-    margin: 10px auto;
-  }
-  
-  .scheduleButton {
-    margin: 8px auto;
-    width: 30%;
-  }
-  
-  
-  
+
   
   
   
 
   
   
-
   
-  
-   /* ##################Registrationform.js############################## */
-  
-  .headerRow{
-    background-color: lightcyan;
-  }
-  
-  
-  .headerlogo{
-    width: 100px;
-    height: 100px;
-    /* padding: 10px; */
-    display: flex;
-   
-    margin: 4px 5px 4px auto;
-    border-radius: 8px;
-  
-  }
-  
-  .headerSubRow{
-    padding: 5px;
-    
-  }
-  
-  .headerSubRow h1{
-   margin: 5px;
-  }
-  
-  .formcontainer{
-    width: 60%;
-  }
-  
-  .formheading{
-    font-weight: bold;
-    padding: 5px;
-    text-decoration: underline;
-    font-size: 1.5rem;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-   /* ###########################FOOTER */
-  
-   .homeimage{
-    position: relative;
-    text-align: right;
-    /* background-color: #610C9F; */
-    background-color: #F8BDEB;
-    padding: 70px;
-    height: 650px;
-  
-  }
-  
-  
-  
-  .logoimage{
-    /* transform: rotate(10deg); */
-    border-radius: 50px;
-    position: relative;
-    margin: 10px auto 10px auto;
-    /* margin-right: 200px;
-    margin-bottom: 100px; */
-   
-  
-  }
-  
-  
-  
-  
-  .homeimage h1{
-    /* color: white; */
-    /* color:#610C9F; */
-    color: #5B0888;
-    position: relative;
-    text-align:left;
-    font-size: 5rem;;
-  
-    font-family: 'AR One Sans', sans-serif;
-  font-family: 'Ubuntu', sans-serif;
-  }
-  .little{
-    color: white;
-    text-align: left;
-    margin: 50px;
-    font-size:3rem;
-    margin-left: 0px;
-  
-    font-family: 'AR One Sans', sans-serif;
-  font-family: 'Ubuntu', sans-serif;
-    
-  }
-  
-  
-  @media(max-width:1028px){
-  
-   
-  
-    .logoimage{
-        position: static;
-        transform: rotate(0);
-    }
-  }
-  
-  /* testimonial */
-  
-  .carousel{
-    margin: 100px;
-  }
-  
-  .carouselimage{
-    width: 100%;
-    height: 500px;
-    border-radius:20px;
-    opacity: 0.9;
-  }
   
   
   /* feauture componenet */
@@ -441,184 +527,3 @@
   
   
   
-  
-  /*Footer Component*/
-  
-  /* Footer Styles */
-  
-  .footer {
-    background-color: #473747;
-    padding: 50px;
-    
-  }
-  
-  .footer_section_padding {
-    padding: 1rem 4rem; 
-  }
-  
-  .footer_logoimage {
-    width: 100px;
-    height: auto;
-    max-width: none;
-    /*
-    padding: 5px;
-    max-width:5%;
-    height: auto;
-    margin-top: 5px;
-    border-radius: 50%;*/
-  }
-  @media (max-width: 767px) {
-    .footer_logoimage {
-      width: 50px; /* Adjust the value for smaller screens if needed */
-      max-width: none; /* Ensure it doesn't exceed the specified width */
-    }
-  }
-  
-  .footer p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ece3e3;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .footer_links {
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .footer_links h4 {
-    color: #F8BDEB;
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .footer_links a {
-    color: #a89f9f;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .footer_links a:hover {
-    text-decoration: underline;
-  }
-  
-  .socialmedia a {
-    text-decoration: none;
-    display: inline-block;
-    margin-right: 10px;
-    
-  }
-  
-  .socialmedia a:last-child {
-    margin-right: 0;
-  }
-  
-  .socialmedia svg {
-    width: 30px;
-    height: 30px;
-    fill: #d496bf;
-   
-  }
-  .footer_links .socialmedia {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer_below {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 0.2rem;
-  }
-  
-  .footer_below_links {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .footer_below_links a {
-    text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
-    color: #a89f9f;
-  }
-  
-  .footer_below_links a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer_copyright p {
-   text-align: left;
-  }
-  
-  .footer_below_links p {
-    font-size: 13px;
-    line-height: 15px;
-    margin-left: 2rem;
-    color: white;
-    font-weight: 600;
-  }
-  
-  hr {
-    color: white !important;
-    width: 100%;
-  }
-  
-  .footer_copyright p {
-    font-size: 13px;
-    line-height: 15px;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-  }
-  
-  
-    
-  
-  
-  
-  
-   /* ###############REGISTRATION FORM#################### */
-  
-  /* child infor */
-  .mainform{
-   
-    width: 80%;
-    position: relative;
-    right: 100px;
-    left: 100px;
-    top: 50px;
-    margin-bottom: 200px;
-    padding: 50px;
-    
-  }
-  
-  .buttoncontainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  
-  
-  
-  /* ###################Welcome################################### */
-  .welcomeparent{
-    /* background-color: red; */
-    position:relative;
-    top:10px;
-  }
-  
-  .welcomeparent h1{
-    top: 20px;
-  }
-  
-  .welcomeparent img{
-    position: absolute;
-    height: 1000px;
-    width: 1000px;
-    left:100px;
-    top: 10;
-  }

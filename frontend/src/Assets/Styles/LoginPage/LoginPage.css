@@ -1,9 +1,10 @@
-=.login{
+/* .login{
     height:700px;
-    /* width:100%; */
+    width:100%;
     background:radial-gradient(#653d84, #332042);
     position:relative;
 }
+
 
 .login_box{
     width:1050px;
@@ -56,7 +57,11 @@
     font-size: 14px;
 }
 
-/* radio buttons */
+
+
+
+
+
 
 .container label{
     display:flex;
@@ -106,7 +111,12 @@
     
 }
 
-/* right */
+
+
+
+
+
+
 
 .right{
     position: relative;
@@ -116,7 +126,7 @@
     position: absolute;
     height: 100%;
     overflow: hidden;
-    /* transform: translate(-50%, 0%); */
+   
 }
 
 .right-inductor img{
@@ -150,4 +160,4 @@
     font-size:0.875rem;
     line-height:1.25rem;
     text-align:center;
-}
+} */

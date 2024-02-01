@@ -5,7 +5,7 @@ const Navbar = () =>{
         <header>
             <div className = "container ">
                 <Link to = '/inventoryPage'>
-                    <h1> Inventory System</h1>
+                    {/* <h1> Inventory System</h1> */}
                 </Link>
             </div>
         </header>

@@ -22,6 +22,7 @@ import ChildEnrollmentPage from "./Pages/ChildEnrollmentPage";
 import ChildRegistrationPage from "./Pages/ChildRegistrationPage";
 import PaymentPage from "./Pages/PaymentPage";
 import Payment from "./Pages/Payment";
+import Contacts from "./Components/HomeComponents/Contacts";
 
 function App() {
 
@@ -56,7 +57,7 @@ function App() {
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
         <Route path = "/gotoPayment" element = {<Payment/>}/>
 
-      
+        <Route path = "/Aboutus" element = {<Contacts/>}/>
 
 
       

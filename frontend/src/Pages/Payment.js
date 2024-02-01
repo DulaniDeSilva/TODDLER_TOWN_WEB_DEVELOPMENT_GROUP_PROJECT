@@ -1,76 +1,88 @@
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import '../Assets/Styles/PaymentPage/Payment.css';
+import React, {useEffect, useState } from 'react';
 
+import {useChildEnrollmentContext} from "../hooks/useChildEnrollmentContext"
+import { useAuthContext } from '../hooks/useAuthContext';
+import CardDetails from '../Components/PaymentComponent/CardDetails';
+import CardUpdate from '../Components/PaymentComponent/CardUpdate';
+// import '../Assets/Styles/PaymentPage/PaymentNewCard.css';
+const Payment = ()=>{
 
-
-
-export default function Payment() {
-  return (
-    <div class = "modal">
-
-    <h1> Payment Details</h1>
-    <Form>
-    <fieldset>
-        <Form.Group as={Row} className="mb-3">
-          <Form.Label as="legend" column sm={2}>
-            Radios
-          </Form.Label>
-          <Col sm={10}>
-            <Form.Check
-              type="radio"
-              label="first radio"
-              name="formHorizontalRadios"
-              id="formHorizontalRadios1"
-            />
-            <Form.Check
-              type="radio"
-              label="second radio"
-              name="formHorizontalRadios"
-              id="formHorizontalRadios2"
-            />
-          </Col>
-        </Form.Group>
-      </fieldset>
-
-      <Row className="mb-3">
-        <Form.Group as={Col} controlId="formGridEmail">
-          <Form.Label>Card Number</Form.Label>
-          <Form.Control type="number" placeholder="Card Number" />
-        </Form.Group>
-
-        <Form.Group as={Col}  controlId="formGridEmail">
-          <Form.Label>Name on the card</Form.Label>
-          <Form.Control type="text" placeholder="BOC eplus" />
-       </Form.Group>
-       </Row>
-      
-    <Row className="mb-3">
-      <Form.Group as={Col} className="mb-3" controlId="formGridAddress1">
-        <Form.Label>Expiry Date</Form.Label>
-        <Form.Control type = "date"  />
-      </Form.Group>
-
-      <Form.Group as={Col} className="mb-3" controlId="formGridAddress2">
-        <Form.Label>CVV</Form.Label>
-        <Form.Control type = "number" placeholder = "234" />
-      </Form.Group>
-    </Row>
-
-    <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
-        <Col sm={{ span: 10, offset: 2 }}>
-          <Form.Check label="Save my Card" />
-        </Col>
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Pay Now
-      </Button>
-    </Form>
     
+    const [PaymentType, setPaymentType] = useState('');
+    const {children, dispatch} = useChildEnrollmentContext();
+    const {user} = useAuthContext();
+    useEffect(()=>{
+        const fetchChildren = async () =>{
+            const response = await fetch('/children',{
+                headers:{
+                    'Authorization': `Bearer ${user.token}`
 
+                }
+            });
+            const json = await response.json();
+
+            if(response.ok){
+               dispatch({type: 'SET_CHILD', payload: json});
+            }
+        };
+
+        if(user){
+            fetchChildren()
+        }
+
+       
+    }, [dispatch, user]);
+  return (
+    <div>
+      <div className='container'>
+     
+      <form>
+        <fieldset>
+
+        <label>
+            <input 
+              className="radio"
+              type = "radio"
+              name = "PaymentType"
+              value = "Existing_Card"
+              onChange={(e) => setPaymentType(e.target.value)}
+            />
+            <span>Existing Card</span>
+        </label>
+
+        <label>
+            <input 
+              className="radio"
+              type = "radio"
+              name = "PaymentType"
+              value = "New_Card"
+              onChange={(e) => setPaymentType(e.target.value)}
+            />
+            <span>New Card</span>
+        </label>
+
+        {PaymentType === "Existing_Card"?(
+                <div>
+                  <CardDetails/>
+               </div> ):null}
+
+        {PaymentType === "New_Card"?(
+                <div>
+                  <CardUpdate/>
+                </div> ):null}
+              
+        </fieldset>
+        <div style={{ textAlign: 'left' }}>
+        <button className='pay-button space-button '>Back</button>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+        <button className='pay-button  space-button'>Proceed to Pay</button>
+        </div>
+
+      </form>
     </div>
-  )
+    </div>
+  );
 }
+
+export default Payment;

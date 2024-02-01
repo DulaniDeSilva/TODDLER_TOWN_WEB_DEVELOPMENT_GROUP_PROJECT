@@ -2,10 +2,9 @@ import {useState} from 'react'
 import { useChildEnrollmentContext } from '../../hooks/useChildEnrollmentContext';
 import { useAuthContext } from '../../hooks/useAuthContext';
 
-import Container from 'react-bootstrap/Container';
-
-
-
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faAddressBook, faAddressCard, faBirthdayCake, faChalkboardTeacher, faChild, faCity, faCreditCardAlt, faExplosion,  faHeart, faICursor, faIdCard, faMailReply, faPen, faPerson, faPersonShelter, faPhone, faPhoneFlip, faShieldBlank, faTransgenderAlt } from '@fortawesome/free-solid-svg-icons';
+// import {Link} from 'react-router-dom';
 
 const ChildEnrollmentform =()=>{
     const {dispatch} = useChildEnrollmentContext();
@@ -126,320 +125,546 @@ const ChildEnrollmentform =()=>{
         }
     }
 
+    const buttonstyle = {
+        backgroundColor: '#F8BDEB',
+        margin: '10px',
+        display: 'flex',
+        justifyContent: 'space-between',  
+        alignItems: 'center',
+        padding: '20px',
+      };
+
+    const back = {
+        margin: '0 5px',
+        textAlign: 'center',
+        display: 'flex',
+        alignItems: 'right',
+        fontSize: '1.5em',
+        fontColor: 'black',
+    }
+
     return(
         <div>
-            <Container>
-            <h2>Registration Form</h2>
-            <form onSubmit = {handleSubmit}>
+             <div style={buttonstyle} >
+                        <span className='submit' style = {back}>Back to Sign up</span>
+                        <span style = {back} className='submit'>Home</span>
+                        {/* <Link to = "/loginPage" style = {linkStyle}>Login</Link> */}
+                        {/* <Link to = "/signupPage" style = {linkStyle}>Sign up</Link> */}
+                    </div>
 
+
+
+            <div class = "container">
+                <header>Registration Form</header>
+                
+            <form onSubmit = {handleSubmit} className = "form">
+                <fieldset>
+                <div class = "input-field">
                 <label>Name: </label>
+                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='Andrea Joane Jane Eyre'
                     type="text"
                     onChange = {(e) =>setName(e.target.value)}
                     value = {name}
-                    className = {emptyFields.includes('name') ? 'error': ''}
+                    className={` ${emptyFields.includes('name') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+
+
+                <div class = "input-field">
                 <label>Initials: </label>
+                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='A.J'
                     type="text"
                     onChange = {(e) =>setInitials(e.target.value)}
                     value = {initials}
-                    className = {emptyFields.includes('initials') ? 'error': ''}
+                    // className = {emptyFields.includes('initials') ? 'error': ''}
+                    className={` ${emptyFields.includes('initials') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+                <div class = "input-field">
                 <label>First Name: </label>
+                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='Jane'
                     type="text"
                     onChange = {(e) =>setFirstName(e.target.value)}
                     value = {firstName}
-                    className = {emptyFields.includes('firstName') ? 'error': ''}
+                    // className = {emptyFields.includes('firstName') ? 'error': ''}
+                    className={` ${emptyFields.includes('firstName') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+
+                <div class = "input-field">
                 <label>Last Name: </label>
+                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='Eyre'
                     type="text"
                     onChange = {(e) =>setLastName(e.target.value)}
                     value = {lastName}
-                    className = {emptyFields.includes('lastName') ? 'error': ''}
+                    // className = {emptyFields.includes('lastName') ? 'error': ''}
+                    className={` ${emptyFields.includes('lastName') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+                <div class = "input-field">
                 <label>Enrollment No: </label>
+                <FontAwesomeIcon icon = {faIdCard } className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='T001'
                     type="text"
                     onChange = {(e) =>setEnrollmentNo(e.target.value)}
                     value = {enrollmentNo}
-                    className = {emptyFields.includes('enrollmentNo') ? 'error': ''}
+                    // className = {emptyFields.includes('enrollmentNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('enrollmentNo') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+                <div class = "input-field">
                 <label>Birth day: </label>
+                <FontAwesomeIcon icon = {faBirthdayCake} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='12-3-2020'
                     type="date"
                     onChange = {(e) =>setBirthday(e.target.value)}
                     value = {birthday}
-                    className = {emptyFields.includes('birthday') ? 'error': ''}
+                    // className = {emptyFields.includes('birthday') ? 'error': ''}
+                    className={` ${emptyFields.includes('birthday') ? 'error' : ''} inputs`}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Age: </label>
+                <FontAwesomeIcon icon = {faHeart} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='2'
                     type="number"
                     onChange = {(e) =>setAge(e.target.value)}
                     value = {age}
-                    className = {emptyFields.includes('age') ? 'error': ''}
+                    // className = {emptyFields.includes('age') ? 'error': ''}
+                    className={` ${emptyFields.includes('age') ? 'error' : ''} inputs`}
                 />
+                </div>
 
                 
-                
-                <label>Gender: </label>
+<div class = "input-field">
+                <label className='gender'>Gender: </label>
+                <FontAwesomeIcon icon = {faTransgenderAlt} className='icon'></FontAwesomeIcon>
                 <select
                     name = "gender"
                     onChange = {(e) =>setGender(e.target.value)}
                     value = {gender}
-                    className = {emptyFields.includes('gender') ? 'error': ''}
-                >
+                    // className = {emptyFields.includes('gender') ? 'error': ''}
+                    className={` ${emptyFields.includes('gender') ? 'error' : ''} inputs`}
+                >   
+                    <option>Choose ...</option>
                     <option>Male</option>
                     <option>Female</option>
                 </select>
+                </div>
 
-                <label>Address: </label>
+                <div class = "input-field">
+                <label className='message'>Address: </label>
+                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
                 <input 
-                    type="text"
+                    type="textarea"
                     placeholder="ABC road, Colombo"
                     onChange = {(e) =>setAddress(e.target.value)}
                     value = {address}
-                    className = {emptyFields.includes('address') ? 'error': ''}
+                    // className = {emptyFields.includes('address') ? 'error': ''}
+                    className={` ${emptyFields.includes('address') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+<div class = "input-field">
                 <label>City: </label>
+                <FontAwesomeIcon icon = {faCity} className='icon'></FontAwesomeIcon>
                 <input 
                     type="text"
                     placeholder='Colombo'
                     onChange = {(e) =>setCity(e.target.value)}
                     value = {city}
-                    className = {emptyFields.includes('city') ? 'error': ''}
+                    // className = {emptyFields.includes('city') ? 'error': ''}
+                    className={` ${emptyFields.includes('city') ? 'error' : ''} inputs`}
                 />
+                </div>
 
+<div class = "input-field">
                 <label>Zip: </label>
+                <FontAwesomeIcon icon = {faPersonShelter} className='icon'></FontAwesomeIcon>
                 <input 
                     type="text"
                     placeholder='60000'
                     onChange = {(e) =>setZip(e.target.value)}
                     value = {zip}
-                    className = {emptyFields.includes('zip') ? 'error': ''}
+                    className={` ${emptyFields.includes('zip') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('zip') ? 'error': ''}
                 />
+                </div>
 
+<div class = "input-field">
                 <label>Service Type: </label>
+                <FontAwesomeIcon icon = {faChalkboardTeacher} className='icon'></FontAwesomeIcon>
                 <select
                     name = 'serviceType'
                     onChange = {(e) =>setServiceType(e.target.value)}
                     value = {serviceType}
-                    className = {emptyFields.includes('serviceType') ? 'error': ''}
+                    className={` ${emptyFields.includes('serviceType') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('serviceType') ? 'error': ''}
                 >
+                    <option>Choose ...</option>
                     <option>Toddler Service</option>
                     <option>Pre-School Service</option>
                     <option>After School Service</option>
                 </select>
-
+                </div>
+                </fieldset>
                 
-           
-                <h1>Mother Information</h1>
+                <fieldset>
+                <header>Mother Information</header>
             
+                <div class = "input-field">
                 <label>Name: </label>
+                <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='A.K.Hilary Perera'
                     type="text"
                     onChange = {(e) =>setMotherName(e.target.value)}
                     value = {motherName}
-                    className = {emptyFields.includes('motherName') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherName') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherName') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Address: </label>
+                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="ABC road, Colombo"
                     type="text"
                     onChange = {(e) =>setMotherAddress(e.target.value)}
                     value = {motherAddress}
-                    className = {emptyFields.includes('motherAddress') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherAddress') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherAddress') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Occupation: </label>
+                <FontAwesomeIcon icon = {faPen} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='Teacher'
                     type="text"
                     onChange = {(e) =>setMotherOccupation(e.target.value)}
                     value = {motherOccupation}
-                    className = {emptyFields.includes('motherOccupation') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherOccupation') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherOccupation') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>NIC No: </label>
+                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="897866473v"
                     type="text"
                     onChange = {(e) =>setMotherNicNo(e.target.value)}
                     value = {motherNicNo}
-                    className = {emptyFields.includes('motherNicNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherNicNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherNicNo') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Email: </label>
+                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="Hil45@gmail.com"
                     type="email"
                     onChange = {(e) =>setMotherEmail(e.target.value)}
                     value = {motherEmail}
-                    className = {emptyFields.includes('motherEmail') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherEmail') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherEmail') ? 'error': ''}
                 />
-                <label>Telephone nameOnCard: </label>
+                </div>
+
+<div class = "input-field">
+                <label>Telephone No: </label>
+                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='0934487698'
                     type="text"
                     onChange = {(e) =>setMotherTelephoneNo(e.target.value)}
                     value = {motherTelephoneNo}
-                    className = {emptyFields.includes('motherTelephoneNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherTelephoneNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherTelephoneNo') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Work Telephone No: </label>
+                <FontAwesomeIcon icon = {faPhoneFlip} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='8763345893'
                     type="text"
                     onChange = {(e) =>setMotherWorkTelephoneNo(e.target.value)}
                     value = {motherWorkTelephoneNo}
-                    className = {emptyFields.includes('motherWorkTelephoneNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('motherWorkTelephoneNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('motherWorkTelephoneNo') ? 'error': ''}
                 />
+                </div>
+                </fieldset>
 {/* father information */}
+                <fieldset>
+                <header>Father Information</header>
             
-                <h1>Father Information</h1>
-            
-
+                <div class = "input-field">
             <label>Name: </label>
+            <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='w.K.I.Peris'
                     type="text"
                     onChange = {(e) =>setFatherName(e.target.value)}
                     value = {fatherName}
-                    className = {emptyFields.includes('fatherName') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherName') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherName') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Address: </label>
+                <FontAwesomeIcon icon = {faAddressCard} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="ABC road, Colombo"
                     type="text"
                     onChange = {(e) =>setFatherAddress(e.target.value)}
                     value = {fatherAddress}
-                    className = {emptyFields.includes('fatherAddress') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherAddress') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherAddress') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Occupation: </label>
+                <FontAwesomeIcon icon = {faPen} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="Army Officer"
                     type="text"
                     onChange = {(e) =>setFatherOccupation(e.target.value)}
                     value = {fatherOccupation}
-                    className = {emptyFields.includes('fatherOccupation') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherOccupation') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherOccupation') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>NIC No: </label>
+                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="873455786v"
                     type="text"
                     onChange = {(e) =>setFatherNicNo(e.target.value)}
                     value = {fatherNicNo}
-                    className = {emptyFields.includes('fatherNicNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherNicNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherNicNo') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Email: </label>
+                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="John@gmail.com"
                     type="email"
                     onChange = {(e) =>setFatherEmail(e.target.value)}
                     value = {fatherEmail}
-                    className = {emptyFields.includes('fatherEmail') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherEmail') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherEmail') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Telephone No: </label>
+                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='9873345674'
                     type="text"
                     onChange = {(e) =>setFatherTelephoneNo(e.target.value)}
                     value = {fatherTelephoneNo}
-                    className = {emptyFields.includes('fatherTelephoneNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherTelephoneNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherTelephoneNo') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Work Telephone No: </label>
+                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='9873345674'
                     type="text"
                     onChange = {(e) =>setFatherWorkTelephoneNo(e.target.value)}
                     value = {fatherWorkTelephoneNo}
-                    className = {emptyFields.includes('fatherWorkTelephoneNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('fatherWorkTelephoneNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('fatherWorkTelephoneNo') ? 'error': ''}
                 />
-                
+                </div>
+                </fieldset>
         
 {/* guardian  */}
 
 
-
-                <h1>Guardian Information</h1>
+                <fieldset>
+                <header>Guardian Information</header>
             
-
+                <div class = "input-field">
             <label>Name: </label>
+            <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='Edward smith'
                     type="text"
                     onChange = {(e) =>setGuardianName(e.target.value)}
                     value = {guardianName}
-                    className = {emptyFields.includes('guardianName') ? 'error': ''}
+                    className={` ${emptyFields.includes('guardianName') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('guardianName') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Address: </label>
+                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="New town road, Colombo"
                     type="text"
                     onChange = {(e) =>setGuardianAddress(e.target.value)}
                     value = {guardianAddress}
-                    className = {emptyFields.includes('guardianAddress') ? 'error': ''}
+                    className={` ${emptyFields.includes('guardianAddress') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('guardianAddress') ? 'error': ''}
                 />
+                </div>
                 
+                <div class = "input-field">
                 <label>NIC No: </label>
+                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="347866738v"
                     type="text"
                     onChange = {(e) =>setGuardianNicNo(e.target.value)}
                     value = {guardianNicNo}
-                    className = {emptyFields.includes('guardianNicNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('guardianNicNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('guardianNicNo') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Email: </label>
+                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="snith@gmail.com"
                     type="email"
                     onChange = {(e) =>setGuardianEmail(e.target.value)}
                     value = {guardianEmail}
-                    className = {emptyFields.includes('guardianEmail') ? 'error': ''}
+                    className={` ${emptyFields.includes('guardianEmail') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('guardianEmail') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Telephone : </label>
+                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="9873345783"
                     type="text"
                     onChange = {(e) =>setGuardianTelephoneNo(e.target.value)}
                     value = {guardianTelephoneNo}
-                    className = {emptyFields.includes('guardianTelephoneNo') ? 'error': ''}
+                    className={` ${emptyFields.includes('guardianTelephoneNo') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('guardianTelephoneNo') ? 'error': ''}
                 />
-               
+                </div>
+               </fieldset>
 
 {/* bank information */}
+            <fieldset>
+            <header>Bank Information</header>
             
-            <h1>Bank Information</h1>
-            
+            <div class = "input-field">
                 <label>Card Holder Name: </label>
+                <FontAwesomeIcon icon = {faShieldBlank} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="Jane Smith"
                     type="text"
                     onChange = {(e) =>setCardHolderName(e.target.value)}
                     value = {cardHolderName}
-                    className = {emptyFields.includes('cardHolderName') ? 'error': ''}
+                    className={` ${emptyFields.includes('cardHolderName') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('cardHolderName') ? 'error': ''}
                 />
+             </div>
+
+<div class = "input-field">
                 <label>Name on Card: </label>
+                <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="BOC eplus"
                     type="text"
                     onChange = {(e) =>setNameOnCard(e.target.value)}
                     value = {nameOnCard}
-                    className = {emptyFields.includes('nameOnCard') ? 'error': ''}
+                    className={` ${emptyFields.includes('nameOnCard') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('nameOnCard') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Card Number: </label>
+                <FontAwesomeIcon icon = {faCreditCardAlt} className='icon'></FontAwesomeIcon>
                 <input 
+                     placeholder="0987 4567 3456 2345"
                     type="text"
                     onChange = {(e) =>setCardNumber(e.target.value)}
                     value = {cardNumber}
-                    className = {emptyFields.includes('cardNumber') ? 'error': ''}
+                    className={` ${emptyFields.includes('cardNumber') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('cardNumber') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>Expire Date: </label>
+                <FontAwesomeIcon icon = {faExplosion} className='icon'></FontAwesomeIcon>
+                
                 <input 
+                    placeholder='2-23-2025'
                     type="date"
                     onChange = {(e) =>setExpiration(e.target.value)}
                     value = {expiration}
-                    className = {emptyFields.includes('expiration') ? 'error': ''}
+                    className={` ${emptyFields.includes('expiration') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('expiration') ? 'error': ''}
                 />
+                </div>
+
+<div class = "input-field">
                 <label>CVV: </label>
+                <FontAwesomeIcon icon = {faICursor} className='icon'></FontAwesomeIcon>
                 <input 
+                    placeholder='344'
                     type="text"
                     onChange = {(e) =>setCvv(e.target.value)}
                     value = {cvv}
-                    className = {emptyFields.includes('cvv') ? 'error': ''}
+                    className={` ${emptyFields.includes('cvv') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('cvv') ? 'error': ''}
                 />
-
+                </div>
+                </fieldset>
         
-                <button>Add To Enrollment List</button>
-                {error && <div className ="error">{error}</div>}
+                <button className = "submit">Add To Enrollment List</button>
+                {error && <div className ="error ">{error}</div>}
 
 
             </form>
-            </Container>
+            </div>
         </div>
     )
 };

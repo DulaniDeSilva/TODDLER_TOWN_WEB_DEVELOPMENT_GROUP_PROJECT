@@ -19,6 +19,13 @@ export const paymentReducer = (state, action)=>{
             return{
                 payment:state.payment.filter((w) =>w._id !==action.payload._id)
             }
+        case 'UPDATE_PAYMENT':
+            const updatedPayments = state.payment.map((payment) =>
+                payment._id === action.payload._id ? action.payload : payment
+            );
+            return{
+                payment:updatedPayments,
+            }
         default:
             return state
     }

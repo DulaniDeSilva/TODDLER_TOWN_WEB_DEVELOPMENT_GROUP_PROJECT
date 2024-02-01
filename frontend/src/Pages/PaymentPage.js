@@ -2,7 +2,7 @@ import PaymentTable from '../Components/PaymentComponent/PaymentTable';
 import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
 import Button from 'react-bootstrap/Button';
 import {Link } from 'react-router-dom';
-import '../Assets/Styles/PaymentPage/paymentPage.css';
+import '../Assets/Styles/PaymentPage/Payment.css';
 
 
 const PaymentPage = ()=>{
@@ -12,14 +12,13 @@ const PaymentPage = ()=>{
            
         <div className="PaymentHome">
            <div>
-            <h1>Payment Page</h1>
                 <PaymentDetail/>
            </div>
         <PaymentTable/>    
        </div>
 
        <Link to="/gotoPayment" >
-        <Button  className="signinsubmit">
+        <Button  className="pay-button new-button">
          Procced to Pay
         </Button>
       </Link>

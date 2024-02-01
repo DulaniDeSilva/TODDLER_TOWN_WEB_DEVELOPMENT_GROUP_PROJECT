@@ -12,24 +12,27 @@ import img5 from "../../Assets/Images/Home/img5.jpg";
 
 function Category() {
   return (
-    <div className='categorydiv'>
-      <Container className='categorycontainer'>
+    <div className='category-cards'>
+      <Container >
           <Row>
             <Col className='categorycol-01 categorycol' md = {3} lg = {3} >
             
-              <Row><img  src={img1} alt = "logo" className='categoryimg'/> </Row>
-              <Row> <h1> PreSchool</h1></Row>
+              <Row className = 'category-image'><img  src={img1} alt = "" /> </Row>
+              <Row className='category-content'> <span> PreSchool Service</span></Row>
             </Col>
+
             <Col className='categorycol-02 categorycol' md = {3} lg = {3} >
            
               <Row><img  src={img4} alt = "logo" className='categoryimg'/> </Row>
-              <Row><h1> Toddler Care</h1></Row>
+              <Row className='category-content'> <span> Toddler Service</span></Row>
             </Col>
+
             <Col className='categorycol-03 categorycol' md = {3} lg = {3} >
             
               <Row><img  src={img5} alt = "logo" className='categoryimg'/> </Row>
-              <Row><h1> After School</h1></Row>
+              <Row className='category-content'> <span> After School Child Care</span></Row>
             </Col>
+
           </Row>
 
       </Container>

@@ -16,10 +16,14 @@ import { faSmile } from '@fortawesome/free-solid-svg-icons';
 
 function FeaturesCard() {
 
+
+  
+
    
 
   return (
     <div class = "featurescard">
+    
        <Container className= "featurecontainer">
         <Row className='featurerow'>
             <Col md = {3} className='featurecolumn'>

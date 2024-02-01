@@ -3,6 +3,11 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Table from 'react-bootstrap/Table';
 import {useEffect} from 'react';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 const PaymentTable = ()=>{
     const {payment, dispatch} = usePaymentContext();
@@ -47,11 +52,12 @@ const PaymentTable = ()=>{
     }
 
     return(
-        <div className = "payment-details">
+        <div className = "container">
+            
             <Table striped bordered hover>
             <thead>
              <tr>
-                <th>Payment Type</th>
+                <th className = "heading">Payment Type</th>
                 <th>Payment Name</th>
                 <th>Description</th>
                 <th>Amount</th>
@@ -69,7 +75,7 @@ const PaymentTable = ()=>{
                 <td>{payment.description}</td>
                 <td>{payment.amount}</td>
                 <td>{payment.date}{formatDistanceToNow(new Date(payment.createdAt), {addSuffix:true})}</td>
-                <td><button><span onClick={() =>handleClick(payment._id)}>Delete</span></button></td>
+                <td><button><span onClick={() =>handleClick(payment._id)}><FontAwesomeIcon icon = {faTrash} className='icon'></FontAwesomeIcon></span></button></td>
             </tr>
 
             ))}

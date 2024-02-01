@@ -1,7 +1,16 @@
+form h4{
+    text-transform: capitalize;
+    text-decoration: underline;
+}
 
+form{
+    margin: 40px;
+    margin-top: 50px;
+}
 
 label, input{
     display: block;
+    font-weight: bold;
 }
 
 input{
