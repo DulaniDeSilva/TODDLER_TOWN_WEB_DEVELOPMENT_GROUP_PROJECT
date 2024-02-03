@@ -34,7 +34,7 @@ export const paymentReducer = (state, action)=>{
 
 export const PaymentContextProvider = ({children})=>{
     const [state, dispatch] = useReducer(paymentReducer, {
-        payment: null
+        payment: []
     })
     return(
         <paymentContext.Provider value = {{...state, dispatch}}>

@@ -1,17 +1,24 @@
 import React from 'react';
 
 import Navigationbarhome from './Navigationbarhome';
-
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 
 function Homenavigation() {
+  const {user} = useAuthContext();
+
+  
+
   return (
   <div className='navbarall'>
+               
+              
+
             <Navbar expand="lg"  >
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -25,13 +32,28 @@ function Homenavigation() {
                       <NavDropdown.Item href="">Child-Care</NavDropdown.Item>
                       <NavDropdown.Item href="">After-Schooler-Care</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href = "/Blog">Get a Spot</Nav.Link>
+                    <Nav.Link href = "/waitingList">Get a Spot</Nav.Link>
+                    {user && (
+                    <div >
+                    <NavDropdown title="Go To Dashboard" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/childInterface">Child Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="//staffInterface">Staff Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="/adminInterface">Admin Interface</NavDropdown.Item>
+                    </NavDropdown>
+                    </div>
+                    )}
+
+
+
                   </Nav>
 
                 <div className='navigationbarhome '>
                 <Navigationbarhome/>
                 </div>
                   
+
+
+           
                 
                   
                   

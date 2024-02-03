@@ -1,9 +1,7 @@
 import {useState} from 'react'
 import { useChildEnrollmentContext } from '../../hooks/useChildEnrollmentContext';
 import { useAuthContext } from '../../hooks/useAuthContext';
-// import Col from 'react-bootstrap/Col';
-// import Form from 'react-bootstrap/Form';
-// import Row from 'react-bootstrap/Row';
+
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {   faCreditCardAlt, faExplosion, faICursor,  faPerson } from '@fortawesome/free-solid-svg-icons';
 import '../../Assets/Styles/PaymentPage/PaymentNewCard.css';
@@ -29,8 +27,8 @@ const CardUpdate =()=>{
 
         const children = {cardNumber, nameOnCard, expiration, cvv};
 
-        const response = await fetch('/children',{
-            method: 'PUT',
+        const response = await fetch('/children/$(user._id)',{
+            method: 'PATCH',
             body: JSON.stringify(children),
             headers:{
                 'Content-Type': 'application/json',
@@ -52,7 +50,7 @@ const CardUpdate =()=>{
             setError(null);
             setEmptyFields([]);
             console.log("new card added", json);
-            dispatch({type: 'CREATE_CHILD', payload: json});
+            dispatch({type: 'UPDATE_CHILD', payload: json});
         }
     }
 
@@ -71,12 +69,12 @@ const CardUpdate =()=>{
                     type="text"
                     onChange = {(e) =>setNameOnCard(e.target.value)}
                     value = {nameOnCard}
-                    className={` ${emptyFields.includes('nameOnCard') ? 'error' : ''} inputs`}
-                    // className = {emptyFields.includes('nameOnCard') ? 'error': ''}
+                    // className={` ${emptyFields.includes('nameOnCard') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('nameOnCard') ? 'error': ''}
                 />
                 </div>
 
-<div class = "input-field">
+                <div class = "input-field">
                 <label>Card Number: </label>
                 <FontAwesomeIcon icon = {faCreditCardAlt} className='icon'></FontAwesomeIcon>
                 <input 
@@ -84,12 +82,12 @@ const CardUpdate =()=>{
                     type="text"
                     onChange = {(e) =>setCardNumber(e.target.value)}
                     value = {cardNumber}
-                    className={` ${emptyFields.includes('cardNumber') ? 'error' : ''} inputs`}
-                    // className = {emptyFields.includes('cardNumber') ? 'error': ''}
+                    // className={` ${emptyFields.includes('cardNumber') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('cardNumber') ? 'error': ''}
                 />
                 </div>
 
-<div className = "input-field">
+                <div className = "input-field">
                 <label>Expire Date: </label>
                 <FontAwesomeIcon icon = {faExplosion} className='icon'></FontAwesomeIcon>
                 
@@ -98,8 +96,8 @@ const CardUpdate =()=>{
                     type="date"
                     onChange = {(e) =>setExpiration(e.target.value)}
                     value = {expiration}
-                    className={` ${emptyFields.includes('expiration') ? 'error' : ''} inputs`}
-                    // className = {emptyFields.includes('expiration') ? 'error': ''}
+                    // className={` ${emptyFields.includes('expiration') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('expiration') ? 'error': ''}
                 />
                 </div>
 
@@ -111,13 +109,13 @@ const CardUpdate =()=>{
                     type="text"
                     onChange = {(e) =>setCVV(e.target.value)}
                     value = {cvv}
-                    className={` ${emptyFields.includes('cvv') ? 'error' : ''} inputs`}
-                    // className = {emptyFields.includes('cvv') ? 'error': ''}
+                    // className={` ${emptyFields.includes('cvv') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('cvv') ? 'error': ''}
                 />
                 </div>
 
                 
-                <button className='pay-button center-button'>Add Card</button>
+                <button className='pay-button center-button'>Save Card</button>
                 {error && <div className ="error">{error}</div>}
                 
                

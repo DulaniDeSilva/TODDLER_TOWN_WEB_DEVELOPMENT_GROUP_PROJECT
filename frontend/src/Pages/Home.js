@@ -13,6 +13,8 @@ import '../Assets/Styles/Home.css';
 import butterfly from "../Assets/Images/Home/butterfly.png";
 import group3 from "../Assets/Images/Home/group3.png";
 import Welcome from '../Components/HomeComponents/Welcome';
+import WaitingList from '../Components/HomeComponents/WaitingList';
+import Footer from '../Components/HomeComponents/Footer';
 
 export default function Home() {
   return (
@@ -47,12 +49,17 @@ export default function Home() {
           <Welcome/>
         </Row>
           
-
-          
         <Category/>
         <TeamComponent/>
+
         <FeaturesCard/>
+
+        <WaitingList/>
+
+        <Welcome/>
           
+
+        <Footer/>
 
         
        

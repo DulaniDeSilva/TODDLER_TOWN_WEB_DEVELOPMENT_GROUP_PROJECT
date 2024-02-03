@@ -12,22 +12,20 @@ const Navigationbarhome = () =>{
         logout();
     }
 
- 
- 
     return(
-        <div className='mainnav-button-area' >
+        <div  >
                
                     {user &&(
-                        <div className = "mainnav-logout">
+                        <div >
                         <span>{user.email}</span>
-                        <button onClick = {handleClick} className='links' >Log out</button>
+                        <button onClick = {handleClick} className = "common-button" >Log out</button>
                         </div>
                     )}
                    
                     {!user && (
-                    <div className = "mainnav-logout">
-                        <Link to = "/loginPage" className='links' >Login</Link>
-                        <Link to = "/signupPage" className='links'>Sign up</Link>
+                    <div >
+                        <Link to = "/loginPage" className='common-link' >Login</Link>
+                        <Link to = "/signupPage" className='common-link'>Sign up</Link>
                     </div>
                     )}
               

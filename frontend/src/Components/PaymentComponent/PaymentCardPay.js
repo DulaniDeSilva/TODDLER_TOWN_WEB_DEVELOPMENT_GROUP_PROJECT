@@ -1,11 +1,12 @@
 import React, {useEffect, useState } from 'react';
 
-import {useChildEnrollmentContext} from "../hooks/useChildEnrollmentContext"
-import { useAuthContext } from '../hooks/useAuthContext';
-import CardDetails from '../Components/PaymentComponent/CardDetails';
-import CardUpdate from '../Components/PaymentComponent/CardUpdate';
+import {useChildEnrollmentContext} from "../../hooks/useChildEnrollmentContext"
+import { useAuthContext } from '../../hooks/useAuthContext';
+import CardDetails from './CardDetails';
+import CardUpdate from './CardUpdate';
+
 // import '../Assets/Styles/PaymentPage/PaymentNewCard.css';
-const Payment = ()=>{
+const PaymentCardPay = ()=>{
 
     
     const [PaymentType, setPaymentType] = useState('');
@@ -34,6 +35,8 @@ const Payment = ()=>{
     }, [dispatch, user]);
   return (
     <div>
+
+
       <div className='container'>
      
       <form>
@@ -72,17 +75,18 @@ const Payment = ()=>{
                 </div> ):null}
               
         </fieldset>
-        <div style={{ textAlign: 'left' }}>
-        <button className='pay-button space-button '>Back</button>
-        </div>
-        <div style={{ textAlign: 'right' }}>
-        <button className='pay-button  space-button'>Proceed to Pay</button>
+      
+        <div>
+        <button>Proceed to Pay</button>
         </div>
 
       </form>
+      
     </div>
+
+
     </div>
   );
 }
 
-export default Payment;
+export default PaymentCardPay;

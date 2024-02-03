@@ -6,6 +6,7 @@ import { InventoryContextProvider } from './context/InventoryContext';
 import { AuthContextProvider } from './context/AuthContext';
 import { ChildEnrollmentContextProvider } from './context/ChildEnrollmentContext';
 import { PaymentContextProvider } from './context/PaymentContext';
+import { WaitingListContextProvider } from './context/WaitingListContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +16,9 @@ root.render(
   <PaymentContextProvider>
    <ChildEnrollmentContextProvider>
     <InventoryContextProvider>
-      <App/>
+      <WaitingListContextProvider>
+        <App/>
+      </WaitingListContextProvider>
     </InventoryContextProvider>
     </ChildEnrollmentContextProvider>
     </PaymentContextProvider>

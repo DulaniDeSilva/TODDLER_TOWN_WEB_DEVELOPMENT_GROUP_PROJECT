@@ -44,6 +44,10 @@ app.use("/user", userRouter);
 const paymentRouter = require("./routes/payment.js");
 app.use("/payment", paymentRouter);
 
+//waitinglist
+const waitinglistRouter = require("./routes/waitingList.js");
+app.use("/waitingList", waitinglistRouter);
+
 
 
 

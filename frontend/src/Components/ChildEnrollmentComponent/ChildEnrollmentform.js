@@ -4,6 +4,8 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faAddressBook, faAddressCard, faBirthdayCake, faChalkboardTeacher, faChild, faCity, faCreditCardAlt, faExplosion,  faHeart, faICursor, faIdCard, faMailReply, faPen, faPerson, faPersonShelter, faPhone, faPhoneFlip, faShieldBlank, faTransgenderAlt } from '@fortawesome/free-solid-svg-icons';
+import Container from 'react-bootstrap/esm/Container';
+import Col from 'react-bootstrap/esm/Col';
 // import {Link} from 'react-router-dom';
 
 const ChildEnrollmentform =()=>{
@@ -154,14 +156,23 @@ const ChildEnrollmentform =()=>{
 
 
 
-            <div class = "container">
+            <div class = "registrationform-container">
                 <header>Registration Form</header>
-                
-            <form onSubmit = {handleSubmit} className = "form">
-                <fieldset>
+
+
+
+            <Container>
+                <Col>
+
+                </Col>
+
+
+                <Col>
+                <form onSubmit = {handleSubmit} >
+                <fieldset className='registrationform-fieldset'>
                 <div class = "input-field">
                 <label>Name: </label>
-                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faChild} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='Andrea Joane Jane Eyre'
                     type="text"
@@ -175,7 +186,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label>Initials: </label>
-                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faChild} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='A.J'
                     type="text"
@@ -188,7 +199,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label>First Name: </label>
-                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faChild} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='Jane'
                     type="text"
@@ -202,7 +213,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label>Last Name: </label>
-                <FontAwesomeIcon icon = {faChild} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faChild} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='Eyre'
                     type="text"
@@ -215,7 +226,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label>Enrollment No: </label>
-                <FontAwesomeIcon icon = {faIdCard } className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faIdCard } className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='T001'
                     type="text"
@@ -228,7 +239,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label>Birth day: </label>
-                <FontAwesomeIcon icon = {faBirthdayCake} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faBirthdayCake} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='12-3-2020'
                     type="date"
@@ -241,7 +252,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Age: </label>
-                <FontAwesomeIcon icon = {faHeart} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faHeart} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='2'
                     type="number"
@@ -255,7 +266,7 @@ const ChildEnrollmentform =()=>{
                 
 <div class = "input-field">
                 <label className='gender'>Gender: </label>
-                <FontAwesomeIcon icon = {faTransgenderAlt} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faTransgenderAlt} className='registrationform-icon'></FontAwesomeIcon>
                 <select
                     name = "gender"
                     onChange = {(e) =>setGender(e.target.value)}
@@ -271,7 +282,7 @@ const ChildEnrollmentform =()=>{
 
                 <div class = "input-field">
                 <label className='message'>Address: </label>
-                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faAddressBook} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     type="textarea"
                     placeholder="ABC road, Colombo"
@@ -284,7 +295,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>City: </label>
-                <FontAwesomeIcon icon = {faCity} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faCity} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     type="text"
                     placeholder='Colombo'
@@ -297,7 +308,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Zip: </label>
-                <FontAwesomeIcon icon = {faPersonShelter} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPersonShelter} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     type="text"
                     placeholder='60000'
@@ -310,7 +321,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Service Type: </label>
-                <FontAwesomeIcon icon = {faChalkboardTeacher} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faChalkboardTeacher} className='registrationform-icon'></FontAwesomeIcon>
                 <select
                     name = 'serviceType'
                     onChange = {(e) =>setServiceType(e.target.value)}
@@ -326,12 +337,12 @@ const ChildEnrollmentform =()=>{
                 </div>
                 </fieldset>
                 
-                <fieldset>
+                <fieldset className = "registrationform-fieldset">
                 <header>Mother Information</header>
             
                 <div class = "input-field">
                 <label>Name: </label>
-                <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPerson} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='A.K.Hilary Perera'
                     type="text"
@@ -344,7 +355,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Address: </label>
-                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faAddressBook} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="ABC road, Colombo"
                     type="text"
@@ -357,7 +368,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Occupation: </label>
-                <FontAwesomeIcon icon = {faPen} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPen} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='Teacher'
                     type="text"
@@ -370,7 +381,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>NIC No: </label>
-                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faIdCard} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="897866473v"
                     type="text"
@@ -383,7 +394,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Email: </label>
-                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faMailReply} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="Hil45@gmail.com"
                     type="email"
@@ -396,7 +407,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Telephone No: </label>
-                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPhone} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='0934487698'
                     type="text"
@@ -409,7 +420,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Work Telephone No: </label>
-                <FontAwesomeIcon icon = {faPhoneFlip} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPhoneFlip} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='8763345893'
                     type="text"
@@ -421,12 +432,12 @@ const ChildEnrollmentform =()=>{
                 </div>
                 </fieldset>
 {/* father information */}
-                <fieldset>
+                <fieldset className = "registrationform-fieldset">
                 <header>Father Information</header>
             
                 <div class = "input-field">
             <label>Name: </label>
-            <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
+            <FontAwesomeIcon icon = {faPerson} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='w.K.I.Peris'
                     type="text"
@@ -439,7 +450,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Address: </label>
-                <FontAwesomeIcon icon = {faAddressCard} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faAddressCard} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="ABC road, Colombo"
                     type="text"
@@ -452,7 +463,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Occupation: </label>
-                <FontAwesomeIcon icon = {faPen} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPen} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="Army Officer"
                     type="text"
@@ -465,7 +476,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>NIC No: </label>
-                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faIdCard} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="873455786v"
                     type="text"
@@ -478,7 +489,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Email: </label>
-                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faMailReply} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="John@gmail.com"
                     type="email"
@@ -491,7 +502,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Telephone No: </label>
-                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPhone} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='9873345674'
                     type="text"
@@ -504,7 +515,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Work Telephone No: </label>
-                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPhone} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='9873345674'
                     type="text"
@@ -519,12 +530,12 @@ const ChildEnrollmentform =()=>{
 {/* guardian  */}
 
 
-                <fieldset>
+                <fieldset className = "registrationform-fieldset">
                 <header>Guardian Information</header>
             
                 <div class = "input-field">
             <label>Name: </label>
-            <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
+            <FontAwesomeIcon icon = {faPerson} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='Edward smith'
                     type="text"
@@ -537,7 +548,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Address: </label>
-                <FontAwesomeIcon icon = {faAddressBook} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faAddressBook} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="New town road, Colombo"
                     type="text"
@@ -550,7 +561,7 @@ const ChildEnrollmentform =()=>{
                 
                 <div class = "input-field">
                 <label>NIC No: </label>
-                <FontAwesomeIcon icon = {faIdCard} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faIdCard} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="347866738v"
                     type="text"
@@ -563,7 +574,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Email: </label>
-                <FontAwesomeIcon icon = {faMailReply} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faMailReply} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="snith@gmail.com"
                     type="email"
@@ -576,7 +587,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Telephone : </label>
-                <FontAwesomeIcon icon = {faPhone} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPhone} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="9873345783"
                     type="text"
@@ -589,12 +600,12 @@ const ChildEnrollmentform =()=>{
                </fieldset>
 
 {/* bank information */}
-            <fieldset>
+            <fieldset className = "registrationform-fieldset">
             <header>Bank Information</header>
             
             <div class = "input-field">
                 <label>Card Holder Name: </label>
-                <FontAwesomeIcon icon = {faShieldBlank} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faShieldBlank} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="Jane Smith"
                     type="text"
@@ -607,7 +618,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Name on Card: </label>
-                <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPerson} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="BOC eplus"
                     type="text"
@@ -620,7 +631,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Card Number: </label>
-                <FontAwesomeIcon icon = {faCreditCardAlt} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faCreditCardAlt} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="0987 4567 3456 2345"
                     type="text"
@@ -633,7 +644,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>Expire Date: </label>
-                <FontAwesomeIcon icon = {faExplosion} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faExplosion} className='registrationform-icon'></FontAwesomeIcon>
                 
                 <input 
                     placeholder='2-23-2025'
@@ -647,7 +658,7 @@ const ChildEnrollmentform =()=>{
 
 <div class = "input-field">
                 <label>CVV: </label>
-                <FontAwesomeIcon icon = {faICursor} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faICursor} className='registrationform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='344'
                     type="text"
@@ -664,6 +675,11 @@ const ChildEnrollmentform =()=>{
 
 
             </form>
+                </Col>
+            </Container>
+
+                
+           
             </div>
         </div>
     )

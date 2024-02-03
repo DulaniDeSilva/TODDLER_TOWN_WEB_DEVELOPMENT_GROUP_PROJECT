@@ -3,6 +3,8 @@ import { useAuthContext } from "./hooks/useAuthContext";
 // style sheet relevant to the react bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import './Assets/Styles/CommonStyles/linkStyles.css';
+
 
 // IMPORTS DULANI
 import Home from './Pages/Home';
@@ -21,8 +23,10 @@ import LoginPage from "./Pages/LoginPage";
 import ChildEnrollmentPage from "./Pages/ChildEnrollmentPage";
 import ChildRegistrationPage from "./Pages/ChildRegistrationPage";
 import PaymentPage from "./Pages/PaymentPage";
-import Payment from "./Pages/Payment";
-import Contacts from "./Components/HomeComponents/Contacts";
+import WaitingList from "./Components/HomeComponents/WaitingList";
+import ChildInterface from "./Pages/ChildInterface";
+import CardDetails from "./Components/PaymentComponent/CardDetails";
+
 
 function App() {
 
@@ -53,11 +57,16 @@ function App() {
 
         <Route path = "/childEnrollmentPage" element = {<ChildEnrollmentPage/>}/>
         <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
+        <Route path = "/childInterface" element = {<ChildInterface/>}/>
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
-        <Route path = "/gotoPayment" element = {<Payment/>}/>
+        <Route path = "/cardDetails"  element = {<CardDetails/>}/>
 
-        <Route path = "/Aboutus" element = {<Contacts/>}/>
+
+
+        <Route path = "/waitingList" element = {<WaitingList/>}/>
+        
+      
 
 
       
