@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import ChildEnrollmentPage from '../../Pages/ChildEnrollmentPage';
 import PaymentPage from '../../Pages/PaymentPage';
+import WaitingList from '../HomeComponents/WaitingList';
+import CctvComponent from '../CctvComponent';
 // import Homenavigation from '../HomeComponents/Homenavigation';
 
 
@@ -23,6 +25,10 @@ export default function ChildInterfaceNavigation() {
                 return <ChildEnrollmentPage/>;
             case 'payment':
                 return <PaymentPage/>;
+            case 'cctv':
+                return <CctvComponent/>;
+            case 'message':
+                return <WaitingList/>
             default:
                 return null;
         }
@@ -55,7 +61,7 @@ export default function ChildInterfaceNavigation() {
         </Row>
 
         <Row className = 'child-nav-sidebar-row'>
-        <button className = " child-sidebar-button" >
+        <button className = " child-sidebar-button"onClick = {() =>handleLinkClick('cctv')} >
             <FontAwesomeIcon icon = {faCamera}   className='child-nav-sidebar-icons' ></FontAwesomeIcon>   
             <span>Request CCTV access</span>
         </button>
@@ -69,7 +75,7 @@ export default function ChildInterfaceNavigation() {
         </Row>
 
         <Row className = 'child-nav-sidebar-row'>
-        <button className = " child-sidebar-button" >
+        <button className = " child-sidebar-button" onClick = {() =>handleLinkClick('message')}>
             <FontAwesomeIcon icon = {faMessage}   className='child-nav-sidebar-icons' ></FontAwesomeIcon>
             <span>Send a message</span>
         </button>

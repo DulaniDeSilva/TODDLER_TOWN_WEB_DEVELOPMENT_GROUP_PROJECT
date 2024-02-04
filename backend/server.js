@@ -48,8 +48,12 @@ app.use("/payment", paymentRouter);
 const waitinglistRouter = require("./routes/waitingList.js");
 app.use("/waitingList", waitinglistRouter);
 
+//payment card infromation
+const paymentCardRouter = require("./routes/paymentCard.js");
+app.use("/paymentCard", paymentCardRouter);
 
-
+const otpRouter = require("./routes/otp.js");
+app.use("/otp", otpRouter);
 
 
 

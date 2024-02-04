@@ -26,6 +26,10 @@ import PaymentPage from "./Pages/PaymentPage";
 import WaitingList from "./Components/HomeComponents/WaitingList";
 import ChildInterface from "./Pages/ChildInterface";
 import CardDetails from "./Components/PaymentComponent/CardDetails";
+import Services from "./Components/HomeComponents/Services";
+import ToddlerService from "./Components/HomeComponents/ToddlerService";
+import AfterService from "./Components/HomeComponents/AfterService";
+
 
 
 function App() {
@@ -65,6 +69,9 @@ function App() {
 
 
         <Route path = "/waitingList" element = {<WaitingList/>}/>
+        <Route path = "/preschoolservice" element = {<Services/>}/>
+        <Route path = "/toddlerservice" element = {<ToddlerService/>}/>
+        <Route path = "/afterschoolservice" element = {<AfterService/>}/>
         
       
 

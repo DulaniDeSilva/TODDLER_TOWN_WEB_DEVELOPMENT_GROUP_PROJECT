@@ -28,9 +28,9 @@ function Homenavigation() {
                     <Nav.Link href="/Gallery">Gallery</Nav.Link>
                     <Nav.Link href="/Blog">Blog</Nav.Link> 
                     <NavDropdown title="Services" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="">Pre-School</NavDropdown.Item>
-                      <NavDropdown.Item href="">Child-Care</NavDropdown.Item>
-                      <NavDropdown.Item href="">After-Schooler-Care</NavDropdown.Item>
+                      <NavDropdown.Item href="/preschoolservice">Pre-School</NavDropdown.Item>
+                      <NavDropdown.Item href="/toddlerservice">Child-Care</NavDropdown.Item>
+                      <NavDropdown.Item href="/afterschoolservice">After-Schooler-Care</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href = "/waitingList">Get a Spot</Nav.Link>
                     {user && (

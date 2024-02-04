@@ -1,0 +1,47 @@
+.services-container h2{
+    text-align: center;
+    /* padding:20px; */
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+.preschool-into-img{
+    width: 100%;
+    /* height: 500px; */
+    height: fit-content;
+    padding: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 800px;
+}
+
+.services-container{
+margin-top: 10%;
+}
+
+.services-container p{
+    margin-top: 5%;
+    margin-bottom:3%;
+    font-size: 1.2rem;
+}
+
+.services-container li{
+   font-size: 1.2rem;
+}
+
+
+
+
+.services-button{
+    width: 80%;
+    padding:20px;
+    font-size: 1.3rem;
+    margin-top:40px;
+    background-color:#F8BDEB;
+    border-radius: 50px;
+    border:none;
+}
+
+
+

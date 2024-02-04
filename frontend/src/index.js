@@ -7,6 +7,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import { ChildEnrollmentContextProvider } from './context/ChildEnrollmentContext';
 import { PaymentContextProvider } from './context/PaymentContext';
 import { WaitingListContextProvider } from './context/WaitingListContext';
+import { PaymentCardContextProvider } from './context/PaymentCardContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,7 @@ root.render(
   <React.StrictMode>
   <AuthContextProvider>
   <PaymentContextProvider>
+  <PaymentCardContextProvider>
    <ChildEnrollmentContextProvider>
     <InventoryContextProvider>
       <WaitingListContextProvider>
@@ -21,6 +23,7 @@ root.render(
       </WaitingListContextProvider>
     </InventoryContextProvider>
     </ChildEnrollmentContextProvider>
+    </PaymentCardContextProvider>
     </PaymentContextProvider>
   </AuthContextProvider>
   </React.StrictMode>

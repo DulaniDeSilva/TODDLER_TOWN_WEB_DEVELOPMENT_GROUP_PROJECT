@@ -1,0 +1,152 @@
+.paymentDetails-container{
+   
+    padding: 4px;
+    margin: 5px;
+}
+.paymentDetails-container header{
+    background-color: #F8BDEB;
+    padding: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px;
+}
+
+.paymentDetails-input-field{
+   
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border-radius: 10px; */
+    font-size: 1.1em;
+}
+.paymentDetails-input-field label{
+    color: rgb(82, 78, 78);
+    padding-left:4px;
+  
+}
+
+.paymentDetails-input-field input{
+    background-color: white;
+    border-radius: 20px;
+}
+.paymentDetails-input-field select{
+    margin-left: 2px;
+    border-radius: 20px;
+    font-size: 1.0rem;
+}
+
+.paymentDetails-button{
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 30px;
+    color:white;
+    background-color: #e3b2e3;
+    transition: ease-out 0.8s;
+}
+
+.paymentDetails-button:hover{
+    background-color: blueviolet;
+}
+
+
+/* ####################PAYMENT PAGE MAIN CSS */
+.paymentPage-fieldset label{
+    background-color: red;
+    width: 20%;
+    display:inline-block;
+    
+}
+.paymentPage-span{
+    padding: 0px;
+}
+
+.cardDetails-maindiv{
+  
+    border-radius: 20px;
+    border:2px solid #ccc;
+    margin: 20px;
+    width:30%;
+    padding: 10px;
+}
+.cardDetails-maindiv button{
+    background: transparent ;
+    color: black;
+    position: relative;
+    left:90%;
+    
+}
+
+.cardDetails-maindiv button:hover{
+    color:blueviolet;
+}
+
+
+
+/* #######cardupdateform css */
+.cardUpdateform-container{
+    padding: 5px;
+    margin: 5px;
+    margin-top:30px;
+    border:1px solid #ccc;
+    border-radius:40px;
+}
+
+.cardUpdateform-container h4{
+    text-align: center;
+    background-color: #F8BDEB;
+    padding:5px;
+    font-size: 1.3rem;
+    text-decoration:none;
+    width: 60%;
+    border-radius:20px;
+    margin-left:20%;
+}
+
+.cardUpdateform-container fieldset{
+    background-color: yellow;
+    margin-top: 30px;
+    font-size: 1.0rem;
+}
+
+fieldset {
+    border: 1px solid #d4d4d4;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  .input-field {
+    display: flex;
+    margin-bottom: 15px;
+    border-radius: 9px;
+    font-size: 1.2em;
+  }
+
+  label {
+    margin-right: 25px;
+    margin-top: 5px;
+    width: 30%;
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .icon{
+    margin-top: 9px;
+    margin-right: 2px;
+    background:#e2e2e2;
+    color: black;
+    min-width: 35px;
+    border: 2px solid #e2e2e2;
+    border-right: none;
+    text-align: center;
+    padding: 7px;
+    border-radius: 9px;
+    
+  }
+
+  .inputs {
+    padding: 3px 10px;
+    border: 2px solid #e2e2e2;
+    width: 70%;
+  } 

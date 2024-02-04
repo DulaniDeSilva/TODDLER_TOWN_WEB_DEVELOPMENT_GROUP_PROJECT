@@ -1,6 +1,7 @@
 /* button style */
 
 .common-button {
+    width: max-content;
     display: inline-block;
     margin: 15px;
     padding: 5px 5px;

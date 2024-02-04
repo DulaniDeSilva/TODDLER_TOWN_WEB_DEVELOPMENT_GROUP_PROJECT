@@ -272,49 +272,52 @@ font-family: 'Ubuntu', sans-serif;
 
   /* main div */
   .category-cards{
-    background-color:#F8BDEB;
-    padding: 3%;
-    margin: 5% 0%;
-  
+    width: 90%;
+    margin-left: 10%;
   }
 
-  .categorycontainer{
-    margin: 2% 8%;
-  }
-
+ 
   .categorycol{
    position: relative;
    margin: 2% 3%;
-   min-height: max-content;
+   /* min-height: max-content; */
    border: 0.2rem solid black;
+   border-radius:30px;
+   height: 400px;
    
+
   }
 
   .categorycol-01{
-    background-color: red;
+    background-color: rgb(249, 164, 164);
   }
   
   .categorycol-02{
-    background-color: green;
+    background-color: rgb(160, 244, 160);
   }
   
   .categorycol-03{
-    background-color: yellow;
+    background-color: rgb(247, 247, 178);
   }
   
   .categoryimg{
-   border-radius: 5rem;
-   max-height: 50rem;
-   padding: 10% 10% 2% 10%;
+    width: 60%;
+    height: auto;
+    border-radius: 100px;
+    margin-left:20%;
+    margin-top: 10%;
   }
 
-  .categorydiv h1{
-   font-family: 'Caveat', cursive; ;
-   text-align: center;
-   padding: 2%;
-   font-size: 3rem;
+  .category-content span{
+    text-align: center;
+    margin-top:30px;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
   
+  .category-content-button{
+    margin-left:28%;
+  }
 
 
   /* ################################ FEATURES CARDS ###################### */
@@ -349,156 +352,80 @@ font-family: 'Ubuntu', sans-serif;
 
     /* ############################ TEAM COMPONENT #################### */
 
-    .card {
-      width: 17em;
-      height: 22.5em;
-      background: #940B92;
-      /* transition: 1s ease-in-out; */
-      /* clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px); */
-      border-top-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-      display: flex;
-      flex-direction: column;
-    }
 
-    .card span {
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      display: block;
-      font-size: 1.3em;
-    }
+  .teamcards{
+    width: 90%;
+    margin-left: 5%;
+    padding: 3%;
+    min-height: fit-content;
+    text-align: center;
+    /* background-color: #F8BDEB; */
+    
+  }
 
-    .card .info {
-      font-weight: 400;
-      color: white;
-      display: block;
-      text-align: center;
-      font-size: 1.0em;
-      margin: 1em;
-    }
+  .teamcontainer{
+    padding: 20px;
+  }
 
-     .image {
+  .teamcontainer h3{
+    font-size: 2.5rem;
+  }
+  .teamcontainer h6{
+    font-size:1.2rem;
+  }
+
+  .teamrow{
+    padding: 10px;
+  }
+
+  .teamcolumn{
+    background-color: rgb(244, 213, 238);
+    border: 2px solid black;
+    margin: 10px;
+    margin-left: 60px;
+    width: 25%;
+    display: grid;
+    border-radius: 30px;
+  }
+
+  .team-share{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 10px;
+    font-size: 1.3rem;
+    padding-top:5px;
+  
+  }
+
+
+  .team-image {
       width: 6.8em;
       height: 6.8em;
       background: white;
       border-radius: 25%;
       margin: 20px auto;
     }
-    .card .share {
-      margin-top: 1em;
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-    }
-    .card a {
-      color: white;
-      transition: .4s ease-in-out;
-    }
-    
-    .card a:hover {
-      color: red;
-    }
-    
-  
-.teamcards{
-  position: relative;
-  text-align: center;
-  min-height: fit-content;
-  padding: 3%;
-}
-
-.teamcards h3{
-
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
 
 .teamcards h6{
   margin-top: 1rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.teamcolumn span{
+  font-weight: bold;
+  color: #383737;
+  margin: 15px;
+  font-size:1.2rem;
 }
 
-.teamcards p{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  opacity: 0.5;
-}
 
-.teamcolumn{
-  display: grid;
-  position: relative;
-  text-align: center;
-}
 
-.teamlogo{
- margin: 2% 20%;
- border-radius: 2%;
- width: 60%;
 
-}
     
-    /* .teams-block .image .overlay {
-      position: absolute;
-      top: 50%;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transition: all 0.3s linear;
-      -webkit-transition: all 0.2s linear;
-      vertical-align: middle;
-      background: rgba(246, 75, 75, 0.9);
-      opacity: 0;
-    }
-     */
 
 
 
 
-
-
-  
-
-
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  
-
-
-
-  
-
-  
-  
-  
-
-  
-  
-  
-  
   
   /* feauture componenet */
   .featurescard{
@@ -527,29 +454,27 @@ font-family: 'Ubuntu', sans-serif;
   
 
 
-/* ################################################## */
+/* ################################################## Visiting list*/
 .waiting-list-container{
   background-color: #f7d9d7;
-  padding: 3%;
+  /* padding: 3%; */
   border-radius: 20px;
-
+  height: 500px;
+  margin-top: 15px;
+  margin-bottom:50px;
 }
 
 
 
 .waiting-list-img{
   width: 98%;
-  height: 450px;
+  height: 510px;
   /* height: auto; */
   padding-bottom: 15px;
   border-radius: 5px;
   
 }
 
-.waiting-list-container{
-  height: 500px;
-  
-}
 
 .waiting-list-col2 h2{
   text-align: center;
@@ -752,6 +677,44 @@ font-family: 'Ubuntu', sans-serif;
     margin-bottom: 0;
   }
   
+
+  /* caurasal */
+  .carousel{
+    margin: 100px;
+    padding: 20px;
+    color: black;
+  }
+  
+  .carouselimage{
+    width: 100%;
+    height: 500px;
+    border-radius:20px;
+    opacity: 0.9;
+    
+  }
+
+  .carousel h3{
+    color: black;
+  }
+  
+  .carousel p{
+    color: black;
+    margin-top:10px;
+  }
+  .carouselimage-small{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    padding: 10px;
+  }
+  .carousel-content{
+    margin-top: 10px;
+  }
+  
+
+
+
+
       
     
 

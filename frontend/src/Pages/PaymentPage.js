@@ -1,30 +1,101 @@
+import React, {useEffect, useState } from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
+
 import PaymentTable from '../Components/PaymentComponent/PaymentTable';
 import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
 // import Button from 'react-bootstrap/Button';
 // import {Link } from 'react-router-dom';
-import '../Assets/Styles/PaymentPage/Payment.css';
-import PaymentCardPay from '../Components/PaymentComponent/PaymentCardPay';
+
+import CardDetails from '../Components/PaymentComponent/CardDetails';
+// import PaymentCardPay from '../Components/PaymentComponent/PaymentCardPay';
+import { useChildEnrollmentContext } from '../hooks/useChildEnrollmentContext';
+import CardUpdateForm from '../Components/PaymentComponent/CardUpdateForm';
+import UpdatedPaymentCards from '../Components/PaymentComponent/UpdatedPaymentCards';
 
 
 const PaymentPage = ()=>{
+  
+  const {children, dispatch} = useChildEnrollmentContext();
+  const {user} = useAuthContext();
+  const [PaymentType, setPaymentType] = useState('');
+
+  useEffect(() =>{
+    const fetchChildrenData = async() =>{
+      const response = await fetch('/children',{
+        headers:{
+          'Authorization': `Bearer ${user.token}`
+        }
+      });
+      const json = await response.json();
+
+      if(response.ok){
+        dispatch({type: 'SET_CHILD',payload:json});
+      }
+    };
+
     
+      if(user){
+        fetchChildrenData();
+      }
+
+  },[dispatch, user]);
+
+
     return(
-        <div className='pages'>
+        <div className='paymentPage'>
            
-        <div className="PaymentHome">
+        <div className="paymentPage">
            <div>
                 <PaymentDetail/>
            </div>
         <PaymentTable/>    
        </div>
 
-       {/* <Link to="/gotoPayment" >
-        <Button  className="pay-button new-button">
-         Procced to Pay
-        </Button>
-      </Link> */}
+      <form>
+        <fieldset className='paymentPage-fieldset'>
 
-      <PaymentCardPay/>
+        <label>
+            <input 
+              className="radio"
+              type = "radio"
+              name = "PaymentType"
+              value = "Existing_Card"
+              onChange={(e) => setPaymentType(e.target.value)}
+            />
+            <span className = "paymentPage-span">Existing Card</span>
+        </label>
+
+        <label>
+            <input 
+              className="radio"
+              type = "radio"
+              name = "PaymentType"
+              value = "New_Card"
+              onChange={(e) => setPaymentType(e.target.value)}
+            />
+            <span class>New Card</span>
+        </label>
+
+        {PaymentType === "Existing_Card"?(
+                <div>
+                  <CardDetails/>
+
+                  <UpdatedPaymentCards/>
+                  
+               </div> ):null}
+
+        {PaymentType === "New_Card"?(
+                <div>
+                  <CardUpdateForm/>
+                </div> ):null}
+              
+        </fieldset>
+      
+        <div>
+        <button>Proceed to Pay</button>
+        </div>
+
+      </form>
 
         </div>
     )

@@ -1,13 +1,14 @@
 import {useState} from 'react'
-import { useChildEnrollmentContext } from '../../hooks/useChildEnrollmentContext';
+import { usePaymentCardContext } from '../../hooks/usePaymentCardContext';
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {   faCreditCardAlt, faExplosion, faICursor,  faPerson } from '@fortawesome/free-solid-svg-icons';
 import '../../Assets/Styles/PaymentPage/PaymentNewCard.css';
 
-const CardUpdate =()=>{
-    const {dispatch} = useChildEnrollmentContext();
+const CardUpdateForm =()=>{
+    
+    const {dispatch} = usePaymentCardContext();
     const {user} = useAuthContext();
 
     const [cardNumber, setCardNumber] = useState('');
@@ -17,27 +18,23 @@ const CardUpdate =()=>{
     const [error, setError] = useState(null);
     const [emptyFields, setEmptyFields] = useState([])
     
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
-
+        
         if(!user){
             setError('You must be logged in');
-            return 
+            return
         }
-
-        const children = {cardNumber, nameOnCard, expiration, cvv};
-
-        const response = await fetch('/children/$(user._id)',{
-            method: 'PATCH',
-            body: JSON.stringify(children),
+        const child = {cardNumber, nameOnCard, expiration, cvv};
+        const response = await fetch('/paymentCard'+ child._id,{
+            method: 'POST',
+            body: JSON.stringify(child),
             headers:{
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
-
-            }
-        })
+            },
+        });
         const json = await response.json();
-
         if(!response.ok){
             setError(json.error);
             setEmptyFields(json.emptyFields || []);
@@ -49,21 +46,20 @@ const CardUpdate =()=>{
             setCVV('');
             setError(null);
             setEmptyFields([]);
-            console.log("new card added", json);
-            dispatch({type: 'UPDATE_CHILD', payload: json});
+            dispatch({type: 'CREATE_PAYMENTCARD', payload:json});
         }
     }
 
     return(
-        <div className='container'>
+        <div className='cardUpdateform-container'>
 
             <form onSubmit = {handleSubmit}>
                 <h4> Add a new card </h4>
 
             <fieldset>
-            <div class = "input-field">
+            <div class = "cardUpdateform-input-div">
                 <label>Name on Card: </label>
-                <FontAwesomeIcon icon = {faPerson} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faPerson} className='cardUpdateform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="BOC eplus"
                     type="text"
@@ -74,9 +70,9 @@ const CardUpdate =()=>{
                 />
                 </div>
 
-                <div class = "input-field">
+                <div class = "cardUpdateform-input-div">
                 <label>Card Number: </label>
-                <FontAwesomeIcon icon = {faCreditCardAlt} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faCreditCardAlt} className='cardUpdateform-icon'></FontAwesomeIcon>
                 <input 
                      placeholder="0987 4567 3456 2345"
                     type="text"
@@ -87,9 +83,9 @@ const CardUpdate =()=>{
                 />
                 </div>
 
-                <div className = "input-field">
+                <div class = "cardUpdateform-input-div">
                 <label>Expire Date: </label>
-                <FontAwesomeIcon icon = {faExplosion} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faExplosion} className='cardUpdateform-icon'></FontAwesomeIcon>
                 
                 <input 
                     placeholder='2-23-2025'
@@ -101,9 +97,9 @@ const CardUpdate =()=>{
                 />
                 </div>
 
-            <div className = "input-field">
+            <div  class = "cardUpdateform-input-div">
                 <label>CVV: </label>
-                <FontAwesomeIcon icon = {faICursor} className='icon'></FontAwesomeIcon>
+                <FontAwesomeIcon icon = {faICursor}className='cardUpdateform-icon'></FontAwesomeIcon>
                 <input 
                     placeholder='344'
                     type="text"
@@ -115,7 +111,7 @@ const CardUpdate =()=>{
                 </div>
 
                 
-                <button className='pay-button center-button'>Save Card</button>
+                <button className='cardUpdateForm-button'>Save Card</button>
                 {error && <div className ="error">{error}</div>}
                 
                
@@ -128,4 +124,4 @@ const CardUpdate =()=>{
     )
 };
 
-export default CardUpdate;
+export default CardUpdateForm;

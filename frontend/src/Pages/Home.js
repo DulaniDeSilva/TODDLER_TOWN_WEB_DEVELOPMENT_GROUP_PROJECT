@@ -15,6 +15,7 @@ import group3 from "../Assets/Images/Home/group3.png";
 import Welcome from '../Components/HomeComponents/Welcome';
 import WaitingList from '../Components/HomeComponents/WaitingList';
 import Footer from '../Components/HomeComponents/Footer';
+import CarouselComponent from '../Components/HomeComponents/CarouselComponent';
 
 export default function Home() {
   return (
@@ -48,15 +49,20 @@ export default function Home() {
         <Row>
           <Welcome/>
         </Row>
-          
-        <Category/>
-        <TeamComponent/>
 
+        <Category/>
+        
         <FeaturesCard/>
+          
+       
+        <TeamComponent/>
+        <CarouselComponent/>
+
+       
 
         <WaitingList/>
 
-        <Welcome/>
+      
           
 
         <Footer/>

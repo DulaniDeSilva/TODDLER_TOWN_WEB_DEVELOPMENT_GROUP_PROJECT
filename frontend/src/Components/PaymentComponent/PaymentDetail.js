@@ -58,14 +58,14 @@ const PaymentDetail =()=>{
 
     return(
         <div>
-            <Container>
+            <Container className = "paymentDetails-container">
             <form onSubmit = {handleSubmit}>
                 <header> List of Payments</header>
 
                 <Row>
                 
                 <Col>
-                <div class = "input-field">
+                <div class = "paymentDetails-input-field">
                 <label>Payment Type</label>
               
                 
@@ -86,7 +86,7 @@ const PaymentDetail =()=>{
 
 
                 <Col>
-                <div class = "input-field">
+                <div class = "paymentDetails-input-field">
                 
                 <label>Payment Name</label>
                 
@@ -109,7 +109,7 @@ const PaymentDetail =()=>{
 
             <Row>
                 <Col>
-                <div class = "input-field">
+                <div class = "paymentDetails-input-field">
                 <label>Description</label>
                 <select
                     value = {description}
@@ -125,7 +125,7 @@ const PaymentDetail =()=>{
                 </Col>
 
                 <Col>
-                <div class = "input-field">
+                <div class = "paymentDetails-input-field">
                 <label>Amount</label>
                 <select
                     value = {amount}
@@ -141,7 +141,7 @@ const PaymentDetail =()=>{
                 </Col>
 
                 <Col>
-                <div class = "input-field">
+                <div class = "paymentDetails-input-field">
                 <label>Date</label>
                 <input
                     type = "date"
@@ -160,7 +160,7 @@ const PaymentDetail =()=>{
 
                 
                 <Row>
-                <button className='pay-button '>Add To Payment List</button>
+                <button className='paymentDetails-button '>Add To Payment List</button>
                 {error  && <div className ="error">{error}</div>}
                 </Row>
 
