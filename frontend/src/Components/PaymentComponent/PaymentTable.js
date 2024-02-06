@@ -2,7 +2,7 @@ import { usePaymentContext } from "../../hooks/usePaymentContext";
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Table from 'react-bootstrap/Table';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,6 +12,9 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 const PaymentTable = ()=>{
     const {payment, dispatch} = usePaymentContext();
     const {user} = useAuthContext();
+    const [totalAmount, setTotalAmount] = useState(0);
+
+
     useEffect(()=>{
         const fetchPayment = async () =>{
             const response = await fetch('/payment',{
@@ -51,16 +54,24 @@ const PaymentTable = ()=>{
         }
     }
 
+    useEffect(()=>{
+        if(payment){
+            const total = payment.reduce((acc, curr)=>acc + curr.amount,0);
+            setTotalAmount(total);
+        }
+    }, [payment]);
+
+
     return(
-        <div className = "container">
+        <div className = "paymenttable-container">
             
             <Table striped bordered hover>
             <thead>
              <tr>
-                <th className = "heading">Payment Type</th>
+                <th className = "paymenttable-heading">Payment Type</th>
                 <th>Payment Name</th>
                 <th>Description</th>
-                <th>Amount</th>
+                <th>Amount(Rs)</th>
                 <th>Time</th>
                 <th> </th>
                 </tr>
@@ -75,7 +86,7 @@ const PaymentTable = ()=>{
                 <td>{payment.description}</td>
                 <td>{payment.amount}</td>
                 <td>{payment.date}{formatDistanceToNow(new Date(payment.createdAt), {addSuffix:true})}</td>
-                <td><button><span onClick={() =>handleClick(payment._id)}><FontAwesomeIcon icon = {faTrash} className='icon'></FontAwesomeIcon></span></button></td>
+                <td><button><span onClick={() =>handleClick(payment._id)}><FontAwesomeIcon icon = {faTrash} className='paymenttable-button'></FontAwesomeIcon></span></button></td>
             </tr>
 
             ))}
@@ -83,7 +94,7 @@ const PaymentTable = ()=>{
            
             </tbody>
              </Table>
-
+            <div><h5 className = "payment-table-total">Total Amount:<span> Rs.{totalAmount}.00</span></h5></div>
 
 
         </div>

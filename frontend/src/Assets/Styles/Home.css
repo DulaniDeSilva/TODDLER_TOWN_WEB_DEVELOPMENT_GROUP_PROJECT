@@ -20,6 +20,8 @@ font-family: 'Ubuntu', sans-serif;
     font-family: 'Ubuntu', sans-serif;
     min-height: max-content;
     z-index: 1000;
+    top:0;
+    left:0;
   }
 
 .navbar-links{
@@ -460,7 +462,7 @@ font-family: 'Ubuntu', sans-serif;
   /* padding: 3%; */
   border-radius: 20px;
   height: 500px;
-  margin-top: 15px;
+  margin-top: 10%;
   margin-bottom:50px;
 }
 
@@ -680,7 +682,9 @@ font-family: 'Ubuntu', sans-serif;
 
   /* caurasal */
   .carousel{
-    margin: 100px;
+    /* margin: 100px; */
+    margin-left: 100px;
+    margin-right: 100px;
     padding: 20px;
     color: black;
   }
@@ -710,7 +714,70 @@ font-family: 'Ubuntu', sans-serif;
   .carousel-content{
     margin-top: 10px;
   }
-  
+
+
+
+  /* ########################## US */
+  .us-image{
+    border-radius: 100px;
+    width:220px;
+    height:220px;
+  }
+
+  .us-component{
+    margin:20px;
+  }
+
+  .us-component header{
+    color:#ccc;
+    padding:20px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+.us-component span{
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  display: flex;
+  margin-top: 60px;
+}
+
+.col12{
+  background-color: #FFB996;
+}
+
+.col14{
+  background-color: #92C7CF;
+}
+
+.col16{
+  background-color: #BFD8AF;
+}
+
+.col21{
+  background-color: #FFCF81;
+}
+
+.col23{
+  background-color: #FDFFAB;
+}
+
+.col25{
+  background-color: #DC8686;
+}
+
+.col32{
+  background-color: #D0BFFF;
+}
+.col34{
+  background-color: #D7E5CA;
+}
+
+.col36{
+  background-color: #FFD9B7;
+}
+
 
 
 

@@ -16,6 +16,10 @@ import Welcome from '../Components/HomeComponents/Welcome';
 import WaitingList from '../Components/HomeComponents/WaitingList';
 import Footer from '../Components/HomeComponents/Footer';
 import CarouselComponent from '../Components/HomeComponents/CarouselComponent';
+import flowers from "../Assets/Images/Home/flowers.png";
+import Us from '../Components/HomeComponents/Us';
+
+
 
 export default function Home() {
   return (
@@ -50,6 +54,10 @@ export default function Home() {
           <Welcome/>
         </Row>
 
+        <Row>
+          <Us/>
+        </Row>
+
         <Category/>
         
         <FeaturesCard/>
@@ -63,7 +71,20 @@ export default function Home() {
         <WaitingList/>
 
       
-          
+        <Row>
+                <Col lg ={3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+            </Row>
 
         <Footer/>
 

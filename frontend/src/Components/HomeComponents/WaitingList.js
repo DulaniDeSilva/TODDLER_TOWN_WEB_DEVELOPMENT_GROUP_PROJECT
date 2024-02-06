@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useWaitingListContext } from '../../hooks/useWaitingListContext';
-import { useAuthContext } from '../../hooks/useAuthContext';
+// import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 // import girl from "../../Assets/Images/LogSign/girl.png";
@@ -13,7 +13,7 @@ import Container from 'react-bootstrap/esm/Container';
 export default function WaitingList() {
 
   const {dispatch} = useWaitingListContext();
-  const {user} = useAuthContext();
+  // const {user} = useAuthContext();
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -25,10 +25,10 @@ export default function WaitingList() {
   const handleSubmit = async (e) =>{
     e.preventDefault();
 
-    if(!user){
-      setError('You must be logged in');
-      return;
-    }
+    // if(!user){
+    //   setError('You must be logged in');
+    //   return;
+    // }
     const waitingList = {fullName, email, description};
 
     const response = await fetch('/waitingList',{
@@ -36,7 +36,7 @@ export default function WaitingList() {
       body:JSON.stringify(waitingList),
       headers:{
         'Content-Type' : 'application/json',
-        'Authorization': `Bearer ${user.token}`
+        // 'Authorization': `Bearer ${user.token}`
       }
     });
     const json = await response.json();
@@ -57,6 +57,8 @@ export default function WaitingList() {
  
   return (
     <div>
+          
+
       <Container className='waiting-list-container'>
         <Row>
       
@@ -104,6 +106,7 @@ export default function WaitingList() {
         
         </Row>
       </Container>
+
 
 
 

@@ -18,7 +18,10 @@ const Navigationbarhome = () =>{
                     {user &&(
                         <div >
                         <span>{user.email}</span>
-                        <button onClick = {handleClick} className = "common-button" >Log out</button>
+                        <Link to = "/" className='common-link' >
+                            <button onClick = {handleClick} className = "common-button" >Log out</button>
+                        </Link>
+                        
                         </div>
                     )}
                    

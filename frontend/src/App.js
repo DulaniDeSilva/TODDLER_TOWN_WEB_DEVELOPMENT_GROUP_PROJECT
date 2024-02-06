@@ -9,11 +9,7 @@ import './Assets/Styles/CommonStyles/linkStyles.css';
 // IMPORTS DULANI
 import Home from './Pages/Home';
 
-import Parentinfo from './Components/RegistrationFormComponent/Parentinfo';
-import Guardianinfo from './Components/RegistrationFormComponent/Guardianinfo';
-import Officeinfo from './Components/RegistrationFormComponent/Officeinfo';
-import Staffinfo from './Components/RegistrationFormComponent/Staffinfo';
-import Bankinfo from './Components/RegistrationFormComponent/Bankinfo';
+// import Bankinfo from './Components/RegistrationFormComponent/Bankinfo';
 import Maininterface from './Components/ParentComponents/Maininterface';
 
 
@@ -29,6 +25,8 @@ import CardDetails from "./Components/PaymentComponent/CardDetails";
 import Services from "./Components/HomeComponents/Services";
 import ToddlerService from "./Components/HomeComponents/ToddlerService";
 import AfterService from "./Components/HomeComponents/AfterService";
+import GetASpot from "./Components/HomeComponents/GetASpot";
+import Us from "./Components/HomeComponents/Us";
 
 
 
@@ -50,7 +48,10 @@ function App() {
       
        
       
-        <Route path = "/inventoryPage" element = { user ? (<InventoryPage/>) : (<Navigate to= "/loginPage"/>)}/>
+        {/* <Route path = "/inventoryPage" element = { user ? (<InventoryPage/>) : (<Navigate to= "/loginPage"/>)}/> */}
+
+        <Route path = "/inventoryPage" element = {<InventoryPage/>} />
+
 
         {/* <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/> */}
         <Route path = "/loginPage" element = {!user ? <LoginPage/> : <Navigate to = "/" />}/>
@@ -72,16 +73,14 @@ function App() {
         <Route path = "/preschoolservice" element = {<Services/>}/>
         <Route path = "/toddlerservice" element = {<ToddlerService/>}/>
         <Route path = "/afterschoolservice" element = {<AfterService/>}/>
+        <Route path = "/getSpot" element = {<GetASpot/>}/>
+        <Route path = "/us" element = {<Us/>}/>
         
       
 
 
       
-        <Route path = "/parentinfo" element = {<Parentinfo/>}/>
-        <Route path = "/guardianinfo" element = {<Guardianinfo/>}/>
-        <Route path = "/bankinfo" element = {<Bankinfo/>}/>
-        <Route path = "/officeinfo" element = {<Officeinfo/>}/>
-        <Route path = "/staffinfo" element = {<Staffinfo/>}/>
+        
         <Route path = "/maininterface" element = {<Maininterface/>}/>
         <Route path = "*" element = {<div>Page Not found</div>}/>
       </Routes>

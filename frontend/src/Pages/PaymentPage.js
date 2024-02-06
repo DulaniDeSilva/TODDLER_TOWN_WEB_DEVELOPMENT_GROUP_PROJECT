@@ -54,6 +54,7 @@ const PaymentPage = ()=>{
       <form>
         <fieldset className='paymentPage-fieldset'>
 
+        <div className = "login-container">
         <label>
             <input 
               className="radio"
@@ -65,6 +66,7 @@ const PaymentPage = ()=>{
             <span className = "paymentPage-span">Existing Card</span>
         </label>
 
+        
         <label>
             <input 
               className="radio"
@@ -75,6 +77,11 @@ const PaymentPage = ()=>{
             />
             <span class>New Card</span>
         </label>
+
+
+        </div>
+        
+
 
         {PaymentType === "Existing_Card"?(
                 <div>
@@ -92,7 +99,7 @@ const PaymentPage = ()=>{
         </fieldset>
       
         <div>
-        <button>Proceed to Pay</button>
+        <button className='cardUpdateForm-button common-button '>Proceed to Pay</button>
         </div>
 
       </form>

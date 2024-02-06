@@ -6,7 +6,17 @@ import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faAddressBook, faAddressCard, faBirthdayCake, faChalkboardTeacher, faChild, faCity, faCreditCardAlt, faExplosion,  faHeart, faICursor, faIdCard, faMailReply, faPen, faPerson, faPersonShelter, faPhone, faPhoneFlip, faShieldBlank, faTransgenderAlt } from '@fortawesome/free-solid-svg-icons';
 import Container from 'react-bootstrap/esm/Container';
 import Col from 'react-bootstrap/esm/Col';
+import Row from 'react-bootstrap/esm/Row';
+import Homenavigation from '../HomeComponents/Homenavigation';
 // import {Link} from 'react-router-dom';
+import flowers from "../../Assets/Images/Home/flowers.png";
+import dog from "../../Assets/Images/Home/dog.png";
+// import butterfly from "../../Assets/Images/Home/butterfly.png";
+import Footer from '../HomeComponents/Footer';
+import {Link } from 'react-router-dom';
+
+
+
 
 const ChildEnrollmentform =()=>{
     const {dispatch} = useChildEnrollmentContext();
@@ -127,43 +137,34 @@ const ChildEnrollmentform =()=>{
         }
     }
 
-    const buttonstyle = {
-        backgroundColor: '#F8BDEB',
-        margin: '10px',
-        display: 'flex',
-        justifyContent: 'space-between',  
-        alignItems: 'center',
-        padding: '20px',
-      };
-
-    const back = {
-        margin: '0 5px',
-        textAlign: 'center',
-        display: 'flex',
-        alignItems: 'right',
-        fontSize: '1.5em',
-        fontColor: 'black',
-    }
+   
 
     return(
         <div>
-             <div style={buttonstyle} >
-                        <span className='submit' style = {back}>Back to Sign up</span>
-                        <span style = {back} className='submit'>Home</span>
-                        {/* <Link to = "/loginPage" style = {linkStyle}>Login</Link> */}
-                        {/* <Link to = "/signupPage" style = {linkStyle}>Sign up</Link> */}
-                    </div>
+            <div >
+                <Homenavigation/> 
+            </div>
+
+           
+            <Row>
+            {/* registration form main row */}
+           
 
 
 
+
+
+            {/* registration form */}
+           
             <div class = "registrationform-container">
-                <header>Registration Form</header>
-
-
-
+                <Row>
+                    <Col lg = {4}> <img src={dog} alt = "logo" className = "registrationform-image"/></Col>
+                    <Col lg = {8}> <header className='registration-maintopic'>Registration Form</header></Col>
+                </Row>
+               
             <Container>
                 <Col>
-
+              
                 </Col>
 
 
@@ -338,7 +339,7 @@ const ChildEnrollmentform =()=>{
                 </fieldset>
                 
                 <fieldset className = "registrationform-fieldset">
-                <header>Mother Information</header>
+                <header className='registrationform-topic'>Mother Information</header>
             
                 <div class = "input-field">
                 <label>Name: </label>
@@ -433,7 +434,7 @@ const ChildEnrollmentform =()=>{
                 </fieldset>
 {/* father information */}
                 <fieldset className = "registrationform-fieldset">
-                <header>Father Information</header>
+                <header className='registrationform-topic'>Father Information</header>
             
                 <div class = "input-field">
             <label>Name: </label>
@@ -531,7 +532,7 @@ const ChildEnrollmentform =()=>{
 
 
                 <fieldset className = "registrationform-fieldset">
-                <header>Guardian Information</header>
+                <header className='registrationform-topic'>Guardian Information</header>
             
                 <div class = "input-field">
             <label>Name: </label>
@@ -601,7 +602,7 @@ const ChildEnrollmentform =()=>{
 
 {/* bank information */}
             <fieldset className = "registrationform-fieldset">
-            <header>Bank Information</header>
+            <header className='registrationform-topic'>Bank Information</header>
             
             <div class = "input-field">
                 <label>Card Holder Name: </label>
@@ -670,7 +671,10 @@ const ChildEnrollmentform =()=>{
                 </div>
                 </fieldset>
         
-                <button className = "submit">Add To Enrollment List</button>
+                <Link to="/loginPage" >
+                <button className = "common-button registration-button">REGISTER NOW</button>  
+                </Link>
+
                 {error && <div className ="error ">{error}</div>}
 
 
@@ -681,6 +685,30 @@ const ChildEnrollmentform =()=>{
                 
            
             </div>
+            
+
+            </Row>
+
+            
+            <Row>
+                <Col lg ={3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+                <Col lg = {3}>
+                    <img src={flowers} alt = "logo" className = "registrationform-image"/>
+                </Col>
+            </Row>
+           
+           <Footer/>
+
+           
+        
         </div>
     )
 };

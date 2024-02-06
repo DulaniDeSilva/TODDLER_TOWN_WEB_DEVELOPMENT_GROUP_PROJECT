@@ -9,7 +9,7 @@ const UpdatedPaymentCards = ()=>{
     const {user} = useAuthContext();
     useEffect(()=>{
         const fetchPyamentCard = async () =>{
-            const response = await fetch('/paymentCard',{
+            const response = await fetch('/paymentCard/',{
                 headers:{
                     'Authorization': `Bearer ${user.token}`
 

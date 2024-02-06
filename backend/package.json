@@ -27,6 +27,7 @@
     "otp-generator": "^4.0.1",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
+    "twilio": "^4.21.0",
     "validator": "^13.11.0"
   }
 }

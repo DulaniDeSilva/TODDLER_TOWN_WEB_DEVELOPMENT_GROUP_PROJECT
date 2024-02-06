@@ -7,6 +7,7 @@ import '../Assets/Styles/ChildInterface/sidebar.css';
 import '../Assets/Styles/ChildInterface/profile.css';
 import '../Assets/Styles/CommonStyles/buttonStyle.css';
 import '../Assets/Styles/ChildInterface/payment.css';
+import '../Assets/Styles/ChildInterface/cctv.css';
 import ChildInterfaceNavBar from '../Components/ChildInterfaceComponent/ChildInterfaceNavBar';
 
 

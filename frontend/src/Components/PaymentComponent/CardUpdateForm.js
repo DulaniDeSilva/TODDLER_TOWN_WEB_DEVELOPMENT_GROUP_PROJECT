@@ -26,7 +26,7 @@ const CardUpdateForm =()=>{
             return
         }
         const child = {cardNumber, nameOnCard, expiration, cvv};
-        const response = await fetch('/paymentCard'+ child._id,{
+        const response = await fetch('/paymentCard',{
             method: 'POST',
             body: JSON.stringify(child),
             headers:{
@@ -46,6 +46,7 @@ const CardUpdateForm =()=>{
             setCVV('');
             setError(null);
             setEmptyFields([]);
+            console.log("New Payment Card Added",json)
             dispatch({type: 'CREATE_PAYMENTCARD', payload:json});
         }
     }
@@ -58,8 +59,8 @@ const CardUpdateForm =()=>{
 
             <fieldset>
             <div class = "cardUpdateform-input-div">
-                <label>Name on Card: </label>
-                <FontAwesomeIcon icon = {faPerson} className='cardUpdateform-icon'></FontAwesomeIcon>
+                <label>Name on Card:<FontAwesomeIcon icon = {faPerson} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                
                 <input 
                      placeholder="BOC eplus"
                     type="text"
@@ -71,8 +72,8 @@ const CardUpdateForm =()=>{
                 </div>
 
                 <div class = "cardUpdateform-input-div">
-                <label>Card Number: </label>
-                <FontAwesomeIcon icon = {faCreditCardAlt} className='cardUpdateform-icon'></FontAwesomeIcon>
+                <label>Card Number:<FontAwesomeIcon icon = {faCreditCardAlt} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                
                 <input 
                      placeholder="0987 4567 3456 2345"
                     type="text"
@@ -84,8 +85,8 @@ const CardUpdateForm =()=>{
                 </div>
 
                 <div class = "cardUpdateform-input-div">
-                <label>Expire Date: </label>
-                <FontAwesomeIcon icon = {faExplosion} className='cardUpdateform-icon'></FontAwesomeIcon>
+                <label>Expire Date: <FontAwesomeIcon icon = {faExplosion} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                
                 
                 <input 
                     placeholder='2-23-2025'
@@ -98,8 +99,8 @@ const CardUpdateForm =()=>{
                 </div>
 
             <div  class = "cardUpdateform-input-div">
-                <label>CVV: </label>
-                <FontAwesomeIcon icon = {faICursor}className='cardUpdateform-icon'></FontAwesomeIcon>
+                <label>CVV:<FontAwesomeIcon icon = {faICursor}className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                
                 <input 
                     placeholder='344'
                     type="text"
@@ -111,7 +112,7 @@ const CardUpdateForm =()=>{
                 </div>
 
                 
-                <button className='cardUpdateForm-button'>Save Card</button>
+                <button className='cardUpdateForm-button common-button'>Save Card</button>
                 {error && <div className ="error">{error}</div>}
                 
                

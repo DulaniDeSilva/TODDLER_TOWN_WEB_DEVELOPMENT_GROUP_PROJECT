@@ -51,7 +51,7 @@
 
 /* ####################PAYMENT PAGE MAIN CSS */
 .paymentPage-fieldset label{
-    background-color: red;
+   
     width: 20%;
     display:inline-block;
     
@@ -87,7 +87,7 @@
     padding: 5px;
     margin: 5px;
     margin-top:30px;
-    border:1px solid #ccc;
+    /* border:1px solid #ccc; */
     border-radius:40px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .cardUpdateform-container fieldset{
-    background-color: yellow;
+   box-shadow: #ccc;
     margin-top: 30px;
     font-size: 1.0rem;
 }
@@ -114,39 +114,86 @@ fieldset {
     margin-bottom: 20px;
     border-radius: 8px;
     margin-top: 5px;
+    margin-left: 10%;
+    width: 80%;
   }
 
-  .input-field {
+
+.cardUpdateform-input-div{
     display: flex;
+}
+
+.cardUpdateform-input-div input {
     margin-bottom: 15px;
     border-radius: 9px;
-    font-size: 1.2em;
+    font-size: 1em;
+    width: 70%;
+    background-color: #ccc;
+    border: none;
+    border-bottom: 1px solid #f9a3a3;
   }
 
-  label {
+.cardUpdateform-input-div label {
     margin-right: 25px;
     margin-top: 5px;
     width: 30%;
-    text-align: right;
+    padding: 8px;
+    text-align: left;
     font-weight: bold;
   }
 
-  .icon{
-    margin-top: 9px;
-    margin-right: 2px;
-    background:#e2e2e2;
+  .cardUpdateform-icon{
+    margin-left: 5px;
     color: black;
-    min-width: 35px;
-    border: 2px solid #e2e2e2;
     border-right: none;
     text-align: center;
-    padding: 7px;
     border-radius: 9px;
     
   }
 
-  .inputs {
-    padding: 3px 10px;
-    border: 2px solid #e2e2e2;
-    width: 70%;
-  } 
+.cardUpdateForm-button{
+    margin-left:40%;
+}
+
+
+
+
+/* Payment table */
+
+.paymenttable-container{
+    width:80%;
+    margin-left:10%;
+}
+
+.paymenttable-container table th{
+    text-align: center;
+    color:#3f3d3d;
+}
+
+.paymenttable-container table td{
+    text-align:center;
+}
+.paymenttable-container button{
+    border:none;
+}
+
+.paymenttable-container button:hover{
+    background-color: #F8BDEB;
+}     
+
+
+.payment-table-total{
+    background-color: #ccc;
+    padding: 8px;
+    width: 40%;
+    border-radius: 50px;
+    border: 2px solid black;
+    text-align: center;
+    margin-left:25%;
+    margin-top:5%;
+
+}
+
+.payment-table-total span{
+    font-weight: bold;
+}

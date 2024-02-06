@@ -26,7 +26,7 @@ function TeamComponent() {
         <h6> Force Behind the success</h6>
 
         <Row className='teamrow'>
-            <Col md = {4} className='teamcolumn'>
+            <Col lg = {4} className='teamcolumn'>
             <img className=' team-image' src={principle} alt = "logo"/>
             <span> Mrs. H. K De Silva</span>
               <p >Principle</p>
@@ -38,7 +38,7 @@ function TeamComponent() {
             </Col>
 
 
-            <Col md = {4} className='teamcolumn'>
+            <Col lg = {4} className='teamcolumn'>
             <img className=' team-image' src={sub} alt = "logo"/>
             <span > Mrs. T Jayarathna</span>
               <p className = 'info'>Head of PreSchool</p>
@@ -51,7 +51,7 @@ function TeamComponent() {
             </Col>
            
 
-            <Col md = {4} className='teamcolumn'>
+            <Col lg = {4} className='teamcolumn'>
             <img className=' team-image' src={admin} alt = "logo"/>
               <span > Miss Maria Perara</span>
               <p className='info'>Administrator</p>
@@ -62,6 +62,8 @@ function TeamComponent() {
               <FontAwesomeIcon icon= {faInstagram}  ></FontAwesomeIcon>
               </div>
             </Col>
+
+         
             
 
         </Row>

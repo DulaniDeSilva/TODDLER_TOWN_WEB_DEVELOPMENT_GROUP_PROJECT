@@ -15,8 +15,9 @@ const InventoryPage = ()=>{
     const {user} = useAuthContext();
     useEffect(()=>{
         const fetchInventory = async () =>{
-            const response = await fetch('/inventory',{
+            const response = await fetch('/inventory/',{
                 headers:{
+                    
                     'Authorization': `Bearer ${user.token}`
 
                 }
@@ -24,12 +25,13 @@ const InventoryPage = ()=>{
             const json = await response.json();
 
             if(response.ok){
+                console.log(json);
                dispatch({type: 'SET_INVENTORY', payload: json});
             }
         };
 
         if(user){
-            fetchInventory()
+            fetchInventory();
         }
 
        

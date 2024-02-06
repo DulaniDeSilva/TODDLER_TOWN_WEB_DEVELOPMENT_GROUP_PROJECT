@@ -12,3 +12,8 @@
     position:relative;
     left: 800px;
 }
+
+.child-nav-sidebar-footer{
+    margin-left: 20%;
+    width: 80%;
+}

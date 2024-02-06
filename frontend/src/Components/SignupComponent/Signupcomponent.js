@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSignup } from "../../hooks/useSignup";
 import {Link } from 'react-router-dom';
 import login_image from "../../Assets/Images/LogSign/login.jpg";
+import Homenavigation from "../HomeComponents/Homenavigation";
 
 
 
@@ -26,16 +27,20 @@ const Signupcomponent = () =>{
   }
 
   return(
-    <div>
-      <div className = "login">
+    <div className = "login_page_all">
+      <div>
+        <Homenavigation/>
+      </div>
+
+
         <div className = "login_box">
-          <div className = "left">
-            <div className = "contact">
+          <div className = "login-left">
+            <div className = "login-type">
               {/* opening form */}
               <form onSubmit={handleSubmit}>
-                <h3>SIGN UP</h3>
+                <h3>REGISTER</h3>
 
-                <div className = "container">
+                <div className = "login-container">
                 <label>
                 <input 
                     type = "radio"
@@ -85,24 +90,39 @@ const Signupcomponent = () =>{
 
      
 
-                <label>Email</label>
+                <label className="input-lable">User Name</label>
               <input
                 type = "email"
                 onChange = {(e) => setEmail(e.target.value)}
                 value = {email}
+                className="input-input"
               />
 
-              <label>Password</label>
+              <label className="input-lable">Password</label>
               <input
                 type = "password"
                 onChange = {(e) => setPassword(e.target.value)}
                 value = {password}
+                className="input-input"
               />
 
-              <button disabled = {isLoading} className = "submit">Sign up</button>
+              
+              <Link to="/childRegistrationPage" className="common-link" >
+                  <button disabled = {isLoading} className = "login-button ">
+                  Register 
+                  </button> 
+              </Link>
+              
+
+
               <p class = "signup-link">Have account?
               <Link to="/loginPage" >
-                    Log in 
+                    Login
+              </Link>
+              </p>
+              <p class = "signup-link">
+              <Link to="/loginPage" >
+                    Need Help?
               </Link>
               </p>
               {error && <div className = "error">{error}</div>}
@@ -111,14 +131,13 @@ const Signupcomponent = () =>{
               {/* closing form */}
             </div>
           </div>
-          <div className="right">
+          <div className="login-right">
           <div class = "right-inductor">
           <img src ={login_image}  alt = "login background"/>
           </div>
           </div>
         </div>
-      </div>
-      
+    
     </div>
   )
 };

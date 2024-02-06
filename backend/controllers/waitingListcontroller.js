@@ -26,33 +26,51 @@ const getSingleWaitingList = async(req, res)=>{
 }
 
 //create a new subscription
+// const createWaitingList = async (req, res)=>{
+//     const {fullName, email,description} = req.body;
+
+//     let emptyFields = [];
+//     if(!fullName){
+//         emptyFields.push('fullName');
+//     }
+//     if(!description){
+//         emptyFields.push('description');
+//     }
+//     if(!email){
+//         emptyFields.push('email');
+//     }
+//     if(emptyFields.length >0){
+//         return res.status(400).json({error: 'Please fill in all the fields', emptyFields});
+//     }
+
+//     //adding to the db
+//     try{
+//         const user_id = req.user._id;
+//         const waitingList = await WaitingList.create({fullName, email,description, user_id});
+//         res.status(200).json(waitingList);
+//     }catch(error){
+//         res.status(400).json({error:error.message});
+//     }
+// }
+
+
 const createWaitingList = async (req, res)=>{
-    const {fullName, email,description} = req.body;
-
-    let emptyFields = [];
-    if(!fullName){
-        emptyFields.push('fullName');
-    }
-    if(!description){
-        emptyFields.push('description');
-    }
-    if(!email){
-        emptyFields.push('email');
-    }
-    if(emptyFields.length >0){
-        return res.status(400).json({error: 'Please fill in all the fields', emptyFields});
-    }
-
-
+    
     //adding to the db
     try{
-        const user_id = req.user._id;
-        const waitingList = await WaitingList.create({fullName, email,description, user_id});
-        res.status(200).json(waitingList);
+        const {fullName, email, description} = req.body;
+        const NewWaitingList = new WaitingList({fullName, email, description});
+        await NewWaitingList.save();
+        res.status(201).json({message: 'Form entry created successfully'});
     }catch(error){
         res.status(400).json({error:error.message});
     }
 }
+
+
+
+
+
 
 //delete a subscription
 const deleteWaitingList = async (req, res)=>{
@@ -88,10 +106,10 @@ const updateWaitingList = async(req, res) => {
 
 
 module.exports = {
-    getWaitingList,
-    getSingleWaitingList,
+    // getWaitingList,
+    // getSingleWaitingList,
     createWaitingList,
-    deleteWaitingList,
-    updateWaitingList,
+    // deleteWaitingList,
+    // updateWaitingList,
 
 }

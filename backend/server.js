@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const dotenv = require('dotenv');
 require('dotenv').config();
+// const twilio = require('twilio');
 
 const passport = require('passport');
 const session = require('express-session');
@@ -55,6 +56,9 @@ app.use("/paymentCard", paymentCardRouter);
 const otpRouter = require("./routes/otp.js");
 app.use("/otp", otpRouter);
 
+const phoneRouter = require('./routes/phone');
+app.use("/phone", phoneRouter);
+
 
 
 
@@ -91,6 +95,8 @@ mongoose.connect(process.env.MONGODB_URL)
     console.log(error);
 });
 
+
+// const twilioClient = twilio(config.twilioAccountSID, config.twilioAuthToken);
 
 
 

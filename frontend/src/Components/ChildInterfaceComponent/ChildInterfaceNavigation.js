@@ -7,7 +7,10 @@ import { useState } from 'react';
 import ChildEnrollmentPage from '../../Pages/ChildEnrollmentPage';
 import PaymentPage from '../../Pages/PaymentPage';
 import WaitingList from '../HomeComponents/WaitingList';
-import CctvComponent from '../CctvComponent';
+import CctvComponent from './CctvComponent';
+import Footer from '../HomeComponents/Footer';
+// import PhoneVertificationComponent from '../PhoneVertification/PhoneVertificationComponent';
+
 // import Homenavigation from '../HomeComponents/Homenavigation';
 
 
@@ -28,7 +31,9 @@ export default function ChildInterfaceNavigation() {
             case 'cctv':
                 return <CctvComponent/>;
             case 'message':
-                return <WaitingList/>
+                return <WaitingList/>;
+            case 'health':
+                return null;
             default:
                 return null;
         }
@@ -54,7 +59,7 @@ export default function ChildInterfaceNavigation() {
         </Row>
     
         <Row className = 'child-nav-sidebar-row'>
-        <button className = " child-sidebar-button" >
+        <button className = " child-sidebar-button" onClick = {() =>handleLinkClick('health')}>
             <FontAwesomeIcon icon = {faHeartPulse}  className='child-nav-sidebar-icons' ></FontAwesomeIcon>
             <span>Child Health Record</span>
         </button>
@@ -87,6 +92,11 @@ export default function ChildInterfaceNavigation() {
             {renderSelectedComponent()}
         </Col>
         </Row>
+
+        <Row className= 'child-nav-sidebar-footer'>
+        <Footer/>
+        </Row>
+       
     
     
     </div>
