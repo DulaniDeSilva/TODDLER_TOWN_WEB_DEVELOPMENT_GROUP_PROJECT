@@ -1,0 +1,55 @@
+.child-nav-sidebar-col{
+    width: 20%;
+    position: fixed !important;
+    margin-top: 5%;
+    background-color: #F8BDEB;
+    height: 2500px;
+   
+
+
+}
+
+.child-nav-sidebar-row{
+    padding: 20px;
+}
+
+.child-sidebar-button{
+    width: 100%;
+    background-color: transparent;
+    border: 1px  dashed #ccc;
+    padding: 5px;
+    border-radius: 30px;
+    text-align: left;
+
+}
+
+.child-sidebar-button:hover{
+    background-color: rgb(247, 237, 247);
+}
+
+.child-nav-sidebar-icons{
+    padding: 2px;
+}
+
+.child-sidebar-button span{
+    font-size: 1.2rem;
+}
+
+.child-nav-sidebar-col2{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 20%;
+    margin-top: 5%;
+    background-color: rgb(247, 237, 247);
+    /* background: url('../../Images/Home/background.jpg') center center/cover no-repeat; */
+    /* background: url('../../Images/LogSign/purple2.jpg') center center/cover no-repeat; */
+    /* background: url('../../Images/LogSign/login.jpg') center center/cover no-repeat; */
+    /* background: url('../../Images/Home/12.jpg') center center/cover no-repeat; */
+    
+}
+
+
+
+.childenrollment-edit-button{
+    background-color: transparent;
+    border:none;
+}

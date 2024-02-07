@@ -1,0 +1,52 @@
+form h4{
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+form{
+    margin: 40px;
+    margin-top: 50px;
+}
+
+label, input{
+    display: block;
+    font-weight: bold;
+}
+
+input{
+    padding:10px;
+    margin-top:10px;
+    width:100%;
+    background-color: #ddd;
+    border: 1px solid black;
+    border-radius:4px;
+    box-sizing:border-box;
+}
+
+form button{
+    background: green ;
+    border:0;
+    color:#ddd;
+    padding:10px;
+    /* font-family:"Poppins"; */
+    border-radius: 4px;
+    cursor: pointer;;
+}
+
+form button :hover{
+    background-color: aqua;
+}
+
+div.error{
+    padding:10px;
+    background:#ffefef;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius:4px;
+    margin:20px 0;
+}
+
+input.error{
+    border: 1px solid red;
+    box-shadow: 0 0 2px red;
+}

@@ -1,0 +1,199 @@
+.paymentDetails-container{
+   
+    padding: 4px;
+    margin: 5px;
+}
+.paymentDetails-container header{
+    background-color: #F8BDEB;
+    padding: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px;
+}
+
+.paymentDetails-input-field{
+   
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* border-radius: 10px; */
+    font-size: 1.1em;
+}
+.paymentDetails-input-field label{
+    color: rgb(82, 78, 78);
+    padding-left:4px;
+  
+}
+
+.paymentDetails-input-field input{
+    background-color: white;
+    border-radius: 20px;
+}
+.paymentDetails-input-field select{
+    margin-left: 2px;
+    border-radius: 20px;
+    font-size: 1.0rem;
+}
+
+.paymentDetails-button{
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 30px;
+    color:white;
+    background-color: #e3b2e3;
+    transition: ease-out 0.8s;
+}
+
+.paymentDetails-button:hover{
+    background-color: blueviolet;
+}
+
+
+/* ####################PAYMENT PAGE MAIN CSS */
+.paymentPage-fieldset label{
+   
+    width: 20%;
+    display:inline-block;
+    
+}
+.paymentPage-span{
+    padding: 0px;
+}
+
+.cardDetails-maindiv{
+  
+    border-radius: 20px;
+    border:2px solid #ccc;
+    margin: 20px;
+    width:30%;
+    padding: 10px;
+}
+.cardDetails-maindiv button{
+    background: transparent ;
+    color: black;
+    position: relative;
+    left:90%;
+    
+}
+
+.cardDetails-maindiv button:hover{
+    color:blueviolet;
+}
+
+
+
+/* #######cardupdateform css */
+.cardUpdateform-container{
+    padding: 5px;
+    margin: 5px;
+    margin-top:30px;
+    /* border:1px solid #ccc; */
+    border-radius:40px;
+}
+
+.cardUpdateform-container h4{
+    text-align: center;
+    background-color: #F8BDEB;
+    padding:5px;
+    font-size: 1.3rem;
+    text-decoration:none;
+    width: 60%;
+    border-radius:20px;
+    margin-left:20%;
+}
+
+.cardUpdateform-container fieldset{
+   box-shadow: #ccc;
+    margin-top: 30px;
+    font-size: 1.0rem;
+}
+
+fieldset {
+    border: 1px solid #d4d4d4;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-left: 10%;
+    width: 80%;
+  }
+
+
+.cardUpdateform-input-div{
+    display: flex;
+}
+
+.cardUpdateform-input-div input {
+    margin-bottom: 15px;
+    border-radius: 9px;
+    font-size: 1em;
+    width: 70%;
+    background-color: #ccc;
+    border: none;
+    border-bottom: 1px solid #f9a3a3;
+  }
+
+.cardUpdateform-input-div label {
+    margin-right: 25px;
+    margin-top: 5px;
+    width: 30%;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .cardUpdateform-icon{
+    margin-left: 5px;
+    color: black;
+    border-right: none;
+    text-align: center;
+    border-radius: 9px;
+    
+  }
+
+.cardUpdateForm-button{
+    margin-left:40%;
+}
+
+
+
+
+/* Payment table */
+
+.paymenttable-container{
+    width:80%;
+    margin-left:10%;
+}
+
+.paymenttable-container table th{
+    text-align: center;
+    color:#3f3d3d;
+}
+
+.paymenttable-container table td{
+    text-align:center;
+}
+.paymenttable-container button{
+    border:none;
+}
+
+.paymenttable-container button:hover{
+    background-color: #F8BDEB;
+}     
+
+
+.payment-table-total{
+    background-color: #ccc;
+    padding: 8px;
+    width: 40%;
+    border-radius: 50px;
+    border: 2px solid black;
+    text-align: center;
+    margin-left:25%;
+    margin-top:5%;
+
+}
+
+.payment-table-total span{
+    font-weight: bold;
+}

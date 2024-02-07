@@ -1,0 +1,101 @@
+
+/* frontend/src/features/healthRecords/HealthRecords.css */
+body {
+    font-family: 'Arial, sans-serif';
+    background-color: #F2DEFB;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.headerh {
+    font-size: 30px;
+    
+    padding: 20px 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.button-containerr {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c399d7;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c399d7;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 50%;
+    
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #b387c7;
+    transform: scale(1.05);
+    
+}
+
+form, .search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input, select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #c399d7;
+    color: rgb(6, 6, 6)
+}
+
+.label {
+    font-size: 20px;  
+}
