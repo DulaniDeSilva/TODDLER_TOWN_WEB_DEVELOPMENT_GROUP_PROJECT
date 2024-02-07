@@ -22,7 +22,52 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3001;
 
+// ######################################################
+// Middleware
+// const corsOptions = {
+//     origin: 'http://localhost:3000' // assuming your React frontend runs on port 3000
+// };
+// app.use(cors(corsOptions)); // Consider restricting CORS in production
+// app.use(express.json());
 
+// Routes
+const healthRecordsRoutes = require('./routes/TeacherRoutes/healthRecords');
+//const attendanceRoutes = require('./routes/AttendanceRoutes');
+const lessonPlanRoutes = require('./routes/TeacherRoutes/LessonPlanRoutes');
+const activityPlanRoutes = require('./routes/CaregiverRoutes/ActivityPlanRoutes');
+const staffRoutes = require('./routes/AdministratorRoutes/StaffRoutes');
+
+
+
+// Consistent route structure
+//app.use('/api/attendance', attendanceRoutes); 
+app.use('/api/healthRecords', healthRecordsRoutes);
+app.use('/api/lessonPlans', lessonPlanRoutes);
+app.use('/api/activityPlans', activityPlanRoutes);
+app.use('/api/staff', staffRoutes);
+
+
+
+// // Database connection
+// const uri = process.env.MONGODB_URI;
+// mongoose.connect(uri, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
+// .then(() => console.log('MongoDB database connection established successfully'))
+// .catch(err => console.error('Failed to connect to MongoDB:', err));
+
+// Error handlig midleware
+app.use((err, req, res, next) => {
+  console.error(err.stack); // Log the error stack for debugging
+  res.status(500).send({ message: 'An internal server error occurred!' });
+});
+
+
+
+
+
+// ##################################################
 
 
 
@@ -59,12 +104,6 @@ app.use("/otp", otpRouter);
 
 const phoneRouter = require('./routes/phone');
 app.use("/phone", phoneRouter);
-
-
-
-
-
-
 
 app.get("/", (req, res, next)=>{
     res.send("Starting...");

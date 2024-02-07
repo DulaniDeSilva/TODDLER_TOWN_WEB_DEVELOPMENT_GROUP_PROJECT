@@ -4,7 +4,9 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import './Assets/Styles/CommonStyles/linkStyles.css';
-
+import TeacherPage from "./Pages/TeacherPage";
+import CaregiverPage from "./Pages/CaregiverPage";
+import AdministratorPage from "./Pages/AdministratorPage";
 
 // IMPORTS DULANI
 import Home from './Pages/Home';
@@ -45,6 +47,19 @@ function App() {
     {/* DULANI ROUTER PATHS */}
     <BrowserRouter>
       <Routes>
+
+        {/*################################## */}
+            <Route path = "/teacherInterface" element = {<TeacherPage/>}/>
+            <Route path = "/caregiverInterface" element = {<CaregiverPage/>}/>
+            <Route path = "/administratorInterface" element = {<AdministratorPage/>}/>
+
+
+        {/* ####################################### */}
+
+
+
+
+
         <Route path='/' element = {<Home/>} />
       
       
