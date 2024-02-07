@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -17,7 +17,39 @@ import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg
 
 function TeamComponent() {
 
-   
+  const [countStudents, setCountStudents] = useState(0);
+  const [countStaff, setCountStaff] = useState(0);
+  const [countTeachers, setCountTeachers] = useState(0);
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setCountStudents(prevCount=>{
+        if(prevCount >= 100){
+          return 1;
+        }else{
+          return prevCount +1;
+        }
+      });
+
+      setCountStaff(prevCount=>{
+        if(prevCount >= 15){
+          return 1;
+        }else{
+          return prevCount +1;
+        }
+      });
+
+      setCountTeachers(prevCount =>{
+        if(prevCount >= 30){
+          return 1;
+        }else{
+          return prevCount +1;
+        }
+      })
+      
+    }, 100);
+    return () => clearInterval(interval);
+  },[]);
 
   return (
     <div class = "teamcards">
@@ -44,9 +76,9 @@ function TeamComponent() {
               <p className = 'info'>Head of PreSchool</p>
               {/* <p> </p> */}
               <div className = "team-share">
-              <FontAwesomeIcon icon= {faFacebook} ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faYoutube} ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faInstagram}  ></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faFacebook} className='team-icons'></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faYoutube} className='team-icons' ></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faInstagram} className='team-icons' ></FontAwesomeIcon>
               </div>
             </Col>
            
@@ -57,18 +89,21 @@ function TeamComponent() {
               <p className='info'>Administrator</p>
               <p>  </p>
               <div className = "team-share">
-              <FontAwesomeIcon icon= {faFacebook} ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faYoutube} ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faInstagram}  ></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faFacebook} className='team-icons' ></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faYoutube} className='team-icons'></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faInstagram} className='team-icons' ></FontAwesomeIcon>
               </div>
             </Col>
-
-         
-            
 
         </Row>
 
 
+
+        <Row>
+            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>🏃‍♀️</span><span >{countStudents}+</span></Col>
+            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>🧑‍💼👩‍💼</span><span className = "count">{countTeachers}+</span></Col>
+            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>👩‍🏫🧑‍🏫</span><span className = "count">{countStaff}+</span></Col>
+        </Row>
        </Container>
 
 

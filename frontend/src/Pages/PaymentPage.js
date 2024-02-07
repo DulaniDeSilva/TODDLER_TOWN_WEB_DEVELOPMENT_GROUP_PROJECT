@@ -9,19 +9,20 @@ import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
 import CardDetails from '../Components/PaymentComponent/CardDetails';
 // import PaymentCardPay from '../Components/PaymentComponent/PaymentCardPay';
 import { useChildEnrollmentContext } from '../hooks/useChildEnrollmentContext';
+import { usePaymentCardContext } from '../hooks/usePaymentCardContext';
 import CardUpdateForm from '../Components/PaymentComponent/CardUpdateForm';
 import UpdatedPaymentCards from '../Components/PaymentComponent/UpdatedPaymentCards';
 
 
 const PaymentPage = ()=>{
   
-  const {children, dispatch} = useChildEnrollmentContext();
+  const {paymentCard, dispatch} = usePaymentCardContext();
   const {user} = useAuthContext();
   const [PaymentType, setPaymentType] = useState('');
 
   useEffect(() =>{
-    const fetchChildrenData = async() =>{
-      const response = await fetch('/children',{
+    const fetchPaymentCardData = async() =>{
+      const response = await fetch('/paymentCard',{
         headers:{
           'Authorization': `Bearer ${user.token}`
         }
@@ -29,13 +30,13 @@ const PaymentPage = ()=>{
       const json = await response.json();
 
       if(response.ok){
-        dispatch({type: 'SET_CHILD',payload:json});
+        dispatch({type: 'SET_PAYMENTCARD',payload:json});
       }
     };
 
     
       if(user){
-        fetchChildrenData();
+        fetchPaymentCardData();
       }
 
   },[dispatch, user]);
@@ -86,9 +87,6 @@ const PaymentPage = ()=>{
         {PaymentType === "Existing_Card"?(
                 <div>
                   <CardDetails/>
-
-                  <UpdatedPaymentCards/>
-                  
                </div> ):null}
 
         {PaymentType === "New_Card"?(

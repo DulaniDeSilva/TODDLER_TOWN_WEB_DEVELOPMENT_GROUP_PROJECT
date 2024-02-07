@@ -56,6 +56,7 @@ app.use("/paymentCard", paymentCardRouter);
 const otpRouter = require("./routes/otp.js");
 app.use("/otp", otpRouter);
 
+
 const phoneRouter = require('./routes/phone');
 app.use("/phone", phoneRouter);
 

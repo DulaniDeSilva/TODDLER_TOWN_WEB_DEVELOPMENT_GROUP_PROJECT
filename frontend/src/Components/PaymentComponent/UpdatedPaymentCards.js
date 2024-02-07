@@ -3,13 +3,14 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 import { usePaymentCardContext } from '../../hooks/usePaymentCardContext';
+import UpdatedPaymentCardsDetails from './UpdatedPaymentCardsDetails';
 
 const UpdatedPaymentCards = ()=>{
     const {child, dispatch} = usePaymentCardContext();
     const {user} = useAuthContext();
     useEffect(()=>{
         const fetchPyamentCard = async () =>{
-            const response = await fetch('/paymentCard/',{
+            const response = await fetch('/paymentCard',{
                 headers:{
                     'Authorization': `Bearer ${user.token}`
 
@@ -38,13 +39,13 @@ const UpdatedPaymentCards = ()=>{
            <div>
                {child && child.map((child)=>(
                 <div key={child._id}>
-                    <p><strong>Card Number:</strong>{child.cardNumber}</p>
-                    <p><strong>Name on Card:</strong>{child.nameOnCard}</p>
-                    <p><strong>Expiration:</strong>{child.expiration}</p>
-                    <p><strong>CVV:</strong>{child.cvv}</p>
+                    <UpdatedPaymentCardsDetails/>
+                    <UpdatedPaymentCardsDetails key ={child._id} paymentCard = {child}/>
                 </div>
                ))}
            </div>
+
+          
        </div>
         </div>
 

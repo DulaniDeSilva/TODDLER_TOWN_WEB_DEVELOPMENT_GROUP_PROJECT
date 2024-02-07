@@ -27,6 +27,8 @@ import ToddlerService from "./Components/HomeComponents/ToddlerService";
 import AfterService from "./Components/HomeComponents/AfterService";
 import GetASpot from "./Components/HomeComponents/GetASpot";
 import Us from "./Components/HomeComponents/Us";
+import CardUpdateForm from "./Components/PaymentComponent/CardUpdateForm";
+import UpdatedPaymentCards from "./Components/PaymentComponent/UpdatedPaymentCards";
 
 
 
@@ -66,6 +68,8 @@ function App() {
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
         <Route path = "/cardDetails"  element = {<CardDetails/>}/>
+        <Route path = "/cardUpdate"  element = {<CardUpdateForm/>}/>
+        <Route path = "/cardUpdateList"  element = {<UpdatedPaymentCards/>}/>
 
 
 

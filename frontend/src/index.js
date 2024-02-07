@@ -15,9 +15,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <AuthContextProvider>
+  <ChildEnrollmentContextProvider>
   <PaymentContextProvider>
   <PaymentCardContextProvider>
-   <ChildEnrollmentContextProvider>
     <InventoryContextProvider>
       <WaitingListContextProvider>
         <PhoneContextProvider>
@@ -25,9 +25,9 @@ root.render(
         </PhoneContextProvider>
       </WaitingListContextProvider>
     </InventoryContextProvider>
-    </ChildEnrollmentContextProvider>
     </PaymentCardContextProvider>
     </PaymentContextProvider>
+    </ChildEnrollmentContextProvider>
   </AuthContextProvider>
   </React.StrictMode>
 );

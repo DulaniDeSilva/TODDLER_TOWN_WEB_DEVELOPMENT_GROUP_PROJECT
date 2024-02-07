@@ -25,10 +25,10 @@ const CardUpdateForm =()=>{
             setError('You must be logged in');
             return
         }
-        const child = {cardNumber, nameOnCard, expiration, cvv};
+        const paymentCard = {cardNumber, nameOnCard, expiration, cvv};
         const response = await fetch('/paymentCard',{
             method: 'POST',
-            body: JSON.stringify(child),
+            body: JSON.stringify(paymentCard),
             headers:{
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${user.token}`
@@ -66,7 +66,6 @@ const CardUpdateForm =()=>{
                     type="text"
                     onChange = {(e) =>setNameOnCard(e.target.value)}
                     value = {nameOnCard}
-                    // className={` ${emptyFields.includes('nameOnCard') ? 'error' : ''} inputs`}
                     className = {emptyFields.includes('nameOnCard') ? 'error': ''}
                 />
                 </div>

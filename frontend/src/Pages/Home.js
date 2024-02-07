@@ -59,6 +59,16 @@ export default function Home() {
         </Row>
 
         <Category/>
+
+        <Row className='welcome'>
+        <header>Unleash Your Child's Potential 🚀"</header>
+
+        <p> Step into our institute, where excellence isn't just a goal—it's our standard. Our commitment to your child's growth and happiness is unmatched. Our team of dedicated professionals brings years of experience and expertise, ensuring top-notch care and education. From nurturing their curiosity to fostering their creativity, we go above and beyond to provide the best services possible. With us, your child will thrive in an environment filled with warmth, encouragement, and endless opportunities for growth. Choose us for a journey of learning and discovery like no other.
+
+          <footer>"Start the Journey Today! 🌟</footer>
+
+        </p>
+        </Row>
         
         <FeaturesCard/>
           

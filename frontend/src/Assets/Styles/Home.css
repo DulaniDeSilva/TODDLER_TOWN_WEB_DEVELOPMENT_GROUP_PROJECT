@@ -270,18 +270,20 @@ font-family: 'Ubuntu', sans-serif;
 
 
 
-  /* ####################################### HOME CARDS ############################################### */
+  /* ####################################### SERVICES CARD ############################################### */
 
   /* main div */
   .category-cards{
-    width: 90%;
+    /* width: 90%; */
     margin-left: 10%;
   }
 
  
   .categorycol{
+    width:20%;
    position: relative;
-   margin: 2% 3%;
+   margin: 10px;
+   margin-top:5%;
    /* min-height: max-content; */
    border: 0.2rem solid black;
    border-radius:30px;
@@ -291,36 +293,44 @@ font-family: 'Ubuntu', sans-serif;
   }
 
   .categorycol-01{
-    background-color: rgb(249, 164, 164);
+    background-color: #FF8080;
   }
   
   .categorycol-02{
-    background-color: rgb(160, 244, 160);
+    background-color: #DCFFB7;
   }
   
   .categorycol-03{
-    background-color: rgb(247, 247, 178);
+    background-color: #FFFC9B;
   }
   
   .categoryimg{
-    width: 60%;
+    width: 80%;
     height: auto;
     border-radius: 100px;
-    margin-left:20%;
+    margin-left:10%;
     margin-top: 10%;
   }
 
   .category-content span{
     text-align: center;
-    margin-top:30px;
-    font-size: 1.2rem;
+    margin-top:15%;
+    font-size: 1.3rem;
     font-weight: bold;
   }
   
   .category-content-button{
-    margin-left:28%;
+    margin-top:4%;
+    margin-left:20%;
   }
 
+
+  .category-visit-image{
+    margin-top:20%;
+    padding-right: 10px;
+    width: 100%;
+    height: 80%;
+  }
 
   /* ################################ FEATURES CARDS ###################### */
 
@@ -401,6 +411,14 @@ font-family: 'Ubuntu', sans-serif;
   
   }
 
+  .team-icons{
+    padding: 2px;
+    cursor: pointer;
+    color:#555454;
+  }
+  .team-icons:hover{
+    transform: scale(1.5);
+  }
 
   .team-image {
       width: 6.8em;
@@ -420,6 +438,18 @@ font-family: 'Ubuntu', sans-serif;
   font-size:1.2rem;
 }
 
+.team-component-count{
+  font-size: 9.0rem;
+  display: flex;
+  flex-direction: column;
+  margin-top:20px;
+  color:#F8BDEB;
+}
+
+.team-component-count-name{
+  font-size:6.0rem;
+  color:#980678;
+}
 
 
 

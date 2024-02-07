@@ -13,14 +13,14 @@ export const paymentCardReducer = (state, action)=>{
         case 'CREATE_PAYMENTCARD':
             return{
               //single object(new one): [action.payload], get the rest ...state.inventory
-                paymentCard: [action.payload, ...state.payment]
+                paymentCard: [action.payload, ...state.paymentCard]
             }
         case 'DELETE_PAYMENTCARD':
             return{
-                paymentCard:state.payment.filter((w) =>w._id !==action.payload._id)
+                paymentCard:state.paymentCard.filter((w) =>w._id !==action.payload._id)
             }
         case 'UPDATE_PAYMENTCARD':
-            const updatedPayments = state.payment.map((paymentCard) =>
+            const updatedPayments = state.paymentCard.map((paymentCard) =>
                 paymentCard._id === action.payload._id ? action.payload : paymentCard
             );
             return{
