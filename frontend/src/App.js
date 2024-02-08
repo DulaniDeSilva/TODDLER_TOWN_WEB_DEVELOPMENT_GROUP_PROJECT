@@ -7,6 +7,8 @@ import './Assets/Styles/CommonStyles/linkStyles.css';
 import TeacherPage from "./Pages/TeacherPage";
 import CaregiverPage from "./Pages/CaregiverPage";
 import AdministratorPage from "./Pages/AdministratorPage";
+
+// IMPORTS DULANI
 import Home from './Pages/Home';
 
 // import Bankinfo from './Components/RegistrationFormComponent/Bankinfo';
@@ -29,12 +31,16 @@ import GetASpot from "./Components/HomeComponents/GetASpot";
 import Us from "./Components/HomeComponents/Us";
 import CardUpdateForm from "./Components/PaymentComponent/CardUpdateForm";
 import UpdatedPaymentCards from "./Components/PaymentComponent/UpdatedPaymentCards";
-import ContactUs from "./Components/HomeComponents/ContactUs";
 
 
 
 function App() {
+
   const {user} = useAuthContext();
+
+ 
+
+
   return (
     <div className="App">
   
@@ -74,8 +80,6 @@ function App() {
         <Route path = "/childEnrollmentPage" element = {<ChildEnrollmentPage/>}/>
         <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
         <Route path = "/childInterface" element = {<ChildInterface/>}/>
-        <Route path = "/ContactUs" element = {<ContactUs/>}/>
-       
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
         <Route path = "/cardDetails"  element = {<CardDetails/>}/>
