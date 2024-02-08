@@ -1,7 +1,7 @@
 //frontend/api.js
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 const LESSON_PLAN_ENDPOINT = `${BASE_URL}/api/lessonPlans`;
 const ACTIVITY_PLAN_ENDPOINT = `${BASE_URL}/api/activityPlans`;
 const HEALTH_RECORD_ENDPOINT = `${BASE_URL}/api/healthRecords`;
