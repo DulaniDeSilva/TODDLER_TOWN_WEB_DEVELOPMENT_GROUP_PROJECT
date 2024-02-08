@@ -31,6 +31,7 @@ import GetASpot from "./Components/HomeComponents/GetASpot";
 import Us from "./Components/HomeComponents/Us";
 import CardUpdateForm from "./Components/PaymentComponent/CardUpdateForm";
 import UpdatedPaymentCards from "./Components/PaymentComponent/UpdatedPaymentCards";
+import ContactUs from "./Components/HomeComponents/ContactUs";
 
 
 
@@ -79,7 +80,9 @@ function App() {
 
         <Route path = "/childEnrollmentPage" element = {<ChildEnrollmentPage/>}/>
         <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
+
         <Route path = "/childInterface" element = {<ChildInterface/>}/>
+        
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>
         <Route path = "/cardDetails"  element = {<CardDetails/>}/>
@@ -94,6 +97,7 @@ function App() {
         <Route path = "/afterschoolservice" element = {<AfterService/>}/>
         <Route path = "/getSpot" element = {<GetASpot/>}/>
         <Route path = "/us" element = {<Us/>}/>
+        <Route path = "/ContactUs" element = {<ContactUs/>}/>
         
       
 

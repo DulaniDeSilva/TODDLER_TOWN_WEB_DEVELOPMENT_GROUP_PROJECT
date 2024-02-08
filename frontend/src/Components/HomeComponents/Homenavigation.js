@@ -38,8 +38,9 @@ function Homenavigation() {
                     <div >
                     <NavDropdown title="Go To Dashboard" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/childInterface">Child Interface</NavDropdown.Item>
-                    <NavDropdown.Item href="//staffInterface">Staff Interface</NavDropdown.Item>
-                    <NavDropdown.Item href="/adminInterface">Admin Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="/caregiverInterface">Care Giver Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="/administratorInterface">Admin Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="/teacherInterface">Teacher Interface</NavDropdown.Item>
                     </NavDropdown>
                     </div>
                     )}
