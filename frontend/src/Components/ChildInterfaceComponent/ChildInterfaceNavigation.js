@@ -9,6 +9,9 @@ import PaymentPage from '../../Pages/PaymentPage';
 import WaitingList from '../HomeComponents/WaitingList';
 import CctvComponent from './CctvComponent';
 import Footer from '../HomeComponents/Footer';
+import HealthRecords from '../TeacherComponents/healthRecords/HealthRecords';
+import Attendance from '../CaregiverComponents/attendance/Attendance';
+
 // import PhoneVertificationComponent from '../PhoneVertification/PhoneVertificationComponent';
 
 // import Homenavigation from '../HomeComponents/Homenavigation';
@@ -33,7 +36,9 @@ export default function ChildInterfaceNavigation() {
             case 'message':
                 return <WaitingList/>;
             case 'health':
-                return null;
+                return <HealthRecords/>;
+            case 'curriculum':
+                return <Attendance/>
             default:
                 return null;
         }
@@ -52,7 +57,7 @@ export default function ChildInterfaceNavigation() {
         </Row>
 
         <Row className = 'child-nav-sidebar-row'>
-        <button className = " child-sidebar-button">
+        <button className = " child-sidebar-button" onClick = {() =>handleLinkClick('curriculum')}>
             <FontAwesomeIcon icon = {faSchool}   className='child-nav-sidebar-icons' ></FontAwesomeIcon>
             <span>Child Curriculum</span>
         </button>

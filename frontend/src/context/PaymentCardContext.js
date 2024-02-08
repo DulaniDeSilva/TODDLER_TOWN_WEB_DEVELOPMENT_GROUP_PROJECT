@@ -8,6 +8,7 @@ export const paymentCardReducer = (state, action)=>{
         case 'SET_PAYMENTCARD':
             return{
                 //getting all
+                ...state,
                 paymentCard:action.payload
             }
         case 'CREATE_PAYMENTCARD':

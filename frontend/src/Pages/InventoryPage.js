@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
 import '../Assets/Styles/InventorySystem/Navbar.css';
 import '../Assets/Styles/InventorySystem/InventoryDetails.css';
@@ -8,27 +8,36 @@ import '../Assets/Styles/InventorySystem/Inventoryform.css';
 import { useInventoryContext } from '../hooks/useInventoryContext';
 import InventoryDetails from '../Components/InventoryComponents/InventoryDetails';
 import Inventoryform from '../Components/InventoryComponents/Inventoryform';
-import Navbar from '../Components/InventoryComponents/Navbar';
+// import Navbar from '../Components/InventoryComponents/Navbar';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 
 const InventoryPage = ()=>{
     const {inventory, dispatch} = useInventoryContext();
     const {user} = useAuthContext();
+    const [loading, setLoading] = useState(true);
     useEffect(()=>{
         const fetchInventory = async () =>{
-            const response = await fetch('/inventory/',{
-                headers:{
-                    
-                    'Authorization': `Bearer ${user.token}`
+            try{
+                const response = await fetch('/inventory/', {
+                    headers: {
+                        'Authorization': `Bearer ${user.token}`
+                    }
+                });
+                const json = await response.json();
 
+                if (response.ok) {
+                    dispatch({ type: 'SET_INVENTORY', payload: json });
+                } else {
+                    throw new Error(json.error || 'Failed to fetch inventory');
                 }
-            });
-            const json = await response.json();
-
-            if(response.ok){
-                console.log(json);
-               dispatch({type: 'SET_INVENTORY', payload: json});
+            }catch(error){
+                console.error('Error fetching payment cards:', error.message);
+            }finally{
+                setLoading(false);
             }
-        };
+        };    
 
         if(user){
             fetchInventory();
@@ -41,14 +50,25 @@ const InventoryPage = ()=>{
 
     return(
         <div className='pages'>
-            <Navbar/>
         <div className="InventoryHome">
-           <div>
-               {inventory && inventory.map((inventory)=>(
-                   <InventoryDetails key ={inventory._id} inventory = {inventory}/>
-               ))}
-           </div>
-           <Inventoryform />
+        
+        <Row>
+            <Col>
+                {loading ? (
+                    <p>Loading...</p>
+                    ) : (
+                    inventory.map(item => (
+                        <div key={item._id} className="inventory-item">
+                            <InventoryDetails inventory={item} />
+                        </div>
+                    ))
+                )}
+            </Col>
+
+            <Col>
+                <Inventoryform />
+            </Col>
+        </Row>
        </div>
         </div>
 

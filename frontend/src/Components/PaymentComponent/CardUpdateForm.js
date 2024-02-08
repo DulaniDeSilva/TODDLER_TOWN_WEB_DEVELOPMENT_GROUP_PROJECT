@@ -111,7 +111,7 @@ const CardUpdateForm =()=>{
                 </div>
 
                 
-                <button className='cardUpdateForm-button common-button'>Save Card</button>
+                <button type = "submit" className='cardUpdateForm-button common-button'>Save Card</button>
                 {error && <div className ="error">{error}</div>}
                 
                

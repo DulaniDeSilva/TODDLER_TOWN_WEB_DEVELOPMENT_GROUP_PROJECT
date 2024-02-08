@@ -98,8 +98,8 @@ app.use("/waitingList", waitinglistRouter);
 const paymentCardRouter = require("./routes/paymentCard.js");
 app.use("/paymentCard", paymentCardRouter);
 
-const otpRouter = require("./routes/otp.js");
-app.use("/otp", otpRouter);
+// const otpRouter = require("./routes/otp.js");
+// app.use("/otp", otpRouter);
 
 
 const phoneRouter = require('./routes/phone');

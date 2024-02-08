@@ -25,6 +25,7 @@ import inventoryImage from '../Assets/Images/Administrator/cctv.jpeg'
 import salaryImage from '../Assets/Images/Administrator/salary.jpg'
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
+import InventoryPage from './InventoryPage';
 
 
 function AdministratorPage() {
@@ -110,7 +111,7 @@ function AdministratorPage() {
           {activeComponent === 'reports' && <Reports />}
           {activeComponent === 'payment' && <SalaryDetails />}
           {activeComponent === 'cctv' && <CCTVManagement />}
-          {activeComponent === 'inventory' && <Inventory />}
+          {activeComponent === 'inventory' && <InventoryPage/>}
           {activeComponent === 'staffSalary' && <StaffSalary />}
 
         </div>

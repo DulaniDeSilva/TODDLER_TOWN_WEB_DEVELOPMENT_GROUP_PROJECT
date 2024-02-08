@@ -1,17 +1,10 @@
-.pages{
-    padding: 20px;
-    margin: 0 auto;
-}
 
-/* body{
-    background:  #F8BDEB;
-} */
-
-
+/* 
 .InventoryHome{
+    background-color: red;
     display: grid;
     grid-template-columns:3fr 1fr;
     gap:100px;
     
 
-}
+} */

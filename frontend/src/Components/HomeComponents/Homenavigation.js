@@ -32,7 +32,7 @@ function Homenavigation() {
                       <NavDropdown.Item href="/afterschoolservice">After-Schooler-Care</NavDropdown.Item>
                     </NavDropdown>
                     <Nav.Link href = "/getSpot">Get a Spot</Nav.Link>
-                    <Nav.Link href = "/joinus">Join Us</Nav.Link>
+                    <Nav.Link href = "/joinUsStaff">Join Us</Nav.Link>
 
                     {user && (
                     <div >

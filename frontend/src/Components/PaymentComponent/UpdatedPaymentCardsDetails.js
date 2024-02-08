@@ -5,15 +5,17 @@ import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {  faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
+
 const UpdatedPaymentCardsDetails = ({paymentCard})=>{
     const {dispatch} = usePaymentCardContext();
     const {user} = useAuthContext();
     
-     const handleClick = async() =>{
+     const handleClick = async(e) =>{
+        e.preventDefault();
         if(!user){
             return 
         }
-        const response = await fetch('/paymentCard' + paymentCard._id,{
+        const response = await fetch('/paymentCard/' + paymentCard._id,{
             method:'DELETE',
             headers: {
                 'Authorization': `Bearer ${user.token}`

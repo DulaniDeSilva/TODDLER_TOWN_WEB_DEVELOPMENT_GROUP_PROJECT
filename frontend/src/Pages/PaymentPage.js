@@ -1,5 +1,8 @@
 import React, {useEffect, useState } from 'react';
 import { useAuthContext } from '../hooks/useAuthContext';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 import PaymentTable from '../Components/PaymentComponent/PaymentTable';
 import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
@@ -16,30 +19,13 @@ import UpdatedPaymentCards from '../Components/PaymentComponent/UpdatedPaymentCa
 
 const PaymentPage = ()=>{
   
-  const {paymentCard, dispatch} = usePaymentCardContext();
+  
   const {user} = useAuthContext();
-  const [PaymentType, setPaymentType] = useState('');
+  // const [PaymentType, setPaymentType] = useState('');
 
-  useEffect(() =>{
-    const fetchPaymentCardData = async() =>{
-      const response = await fetch('/paymentCard',{
-        headers:{
-          'Authorization': `Bearer ${user.token}`
-        }
-      });
-      const json = await response.json();
-
-      if(response.ok){
-        dispatch({type: 'SET_PAYMENTCARD',payload:json});
-      }
-    };
-
-    
-      if(user){
-        fetchPaymentCardData();
-      }
-
-  },[dispatch, user]);
+  // const handleProceedToPay = (e) =>{
+  //   e.preventDefault();
+  // }
 
 
     return(
@@ -50,9 +36,24 @@ const PaymentPage = ()=>{
                 <PaymentDetail/>
            </div>
         <PaymentTable/>    
-       </div>
+        {/* <CardUpdateForm/> */}
 
-      <form>
+        <Row>
+          <Col>
+              <span>Existing cards:</span>
+              <CardDetails/>
+              <UpdatedPaymentCards/>
+          </Col>
+
+          <Col>
+              <span>Add a new Payment card</span>
+              <CardUpdateForm/>
+          </Col>
+        </Row>
+
+       </div>
+{/* 
+      <form onSubmit = {handleProceedToPay}>
         <fieldset className='paymentPage-fieldset'>
 
         <div className = "login-container">
@@ -87,6 +88,7 @@ const PaymentPage = ()=>{
         {PaymentType === "Existing_Card"?(
                 <div>
                   <CardDetails/>
+                  <UpdatedPaymentCards/>
                </div> ):null}
 
         {PaymentType === "New_Card"?(
@@ -95,13 +97,13 @@ const PaymentPage = ()=>{
                 </div> ):null}
               
         </fieldset>
-      
+      </form> */}
+
+
+
         <div>
         <button className='cardUpdateForm-button common-button '>Proceed to Pay</button>
         </div>
-
-      </form>
-
         </div>
     )
    
