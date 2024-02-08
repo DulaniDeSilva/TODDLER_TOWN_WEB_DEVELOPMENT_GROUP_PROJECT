@@ -124,7 +124,7 @@ app.get("/", (req, res, next)=>{
 
 
 
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     app.listen(PORT, () => {
         console.log("Server Started listening at port", PORT); 
