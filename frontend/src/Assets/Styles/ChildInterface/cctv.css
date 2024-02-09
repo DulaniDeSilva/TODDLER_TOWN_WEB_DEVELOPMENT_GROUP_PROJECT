@@ -7,15 +7,45 @@
     margin-left:10%;
 }
 
-.cctv-container h4{
+.cctv-topic{
     text-align: center;
     font-size: 1.6rem;
     letter-spacing: 5px;
+    margin: 5%;
+}
+
+/* ############################### */
+
+.cctv-page{
+    margin-top: 6%;
+    min-height: calc(100vh -60px);
+}
+
+.cctv-page p{
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin-top: 100px;
+    background-color: black;
+    padding: 5px;
+    width: 60%;
+    color: white;
+    margin-left: 20%;
+    border-radius: 20px;
 }
 
 .cctvpage-maindiv{
-    display: flex;
-    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.08rem;
+  letter-spacing: 0.3rem;
+  margin-top: 0;
+}
+
+.cctv-phone-button{
+    margin-left: 330px;
 }
 
 .cctvpage-maindiv form{
@@ -28,3 +58,30 @@
     padding-bottom: 0px;
 }
 
+.watch-cctv-button{
+    background-color: green;
+    padding: 20px;
+    border-radius: 30px;
+    border:none;
+    color:white;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    margin: 1%;
+    margin-left: 450px;
+}
+
+.watch-cctv-button:hover{
+    background-color: rgb(8, 187, 8);
+}
+
+.success-message{
+    color: green;
+    font-size: 1.0rem;
+    letter-spacing: 0.8rem;
+    font-weight: bold;
+    text-align:center;
+    margin-top: 0px;
+    padding: 10px;
+
+
+}

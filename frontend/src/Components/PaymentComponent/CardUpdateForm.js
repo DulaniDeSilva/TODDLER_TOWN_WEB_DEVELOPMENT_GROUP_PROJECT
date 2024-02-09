@@ -59,7 +59,7 @@ const CardUpdateForm =()=>{
 
             <fieldset>
             <div class = "cardUpdateform-input-div">
-                <label>Name on Card:<FontAwesomeIcon icon = {faPerson} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                <label>Name on Card<FontAwesomeIcon icon = {faPerson} className='cardUpdateform-icon'></FontAwesomeIcon>: </label>
                 
                 <input 
                      placeholder="BOC eplus"
@@ -71,7 +71,7 @@ const CardUpdateForm =()=>{
                 </div>
 
                 <div class = "cardUpdateform-input-div">
-                <label>Card Number:<FontAwesomeIcon icon = {faCreditCardAlt} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                <label>Card Number <FontAwesomeIcon icon = {faCreditCardAlt} className='cardUpdateform-icon'></FontAwesomeIcon>: </label>
                 
                 <input 
                      placeholder="0987 4567 3456 2345"
@@ -84,7 +84,7 @@ const CardUpdateForm =()=>{
                 </div>
 
                 <div class = "cardUpdateform-input-div">
-                <label>Expire Date: <FontAwesomeIcon icon = {faExplosion} className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                <label>Expire Date <FontAwesomeIcon icon = {faExplosion} className='cardUpdateform-icon'></FontAwesomeIcon>:</label>
                 
                 
                 <input 
@@ -98,7 +98,7 @@ const CardUpdateForm =()=>{
                 </div>
 
             <div  class = "cardUpdateform-input-div">
-                <label>CVV:<FontAwesomeIcon icon = {faICursor}className='cardUpdateform-icon'></FontAwesomeIcon> </label>
+                <label>CVV<FontAwesomeIcon icon = {faICursor}className='cardUpdateform-icon'></FontAwesomeIcon>: </label>
                 
                 <input 
                     placeholder='344'

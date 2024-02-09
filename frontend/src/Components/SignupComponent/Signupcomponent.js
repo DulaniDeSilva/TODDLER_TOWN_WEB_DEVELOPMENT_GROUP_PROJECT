@@ -147,7 +147,7 @@ const Signupcomponent = () =>{
           </div>
           <div className="login-right">
           <div class = "right-inductor">
-          {/* <img src ={login_image}  alt = "login background"/> */}
+          <img src ={login_image}  alt = "login background"/>
           </div>
           </div>
         </div>

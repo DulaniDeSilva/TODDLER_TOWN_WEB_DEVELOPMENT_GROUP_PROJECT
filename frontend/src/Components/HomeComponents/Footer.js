@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt ,faPhone} from '@fortawesome/free-solid-svg-icons';
 import {Link } from 'react-router-dom';
+import flowers from "../../Assets/Images/Home/flowers.png";
 
 
 function Footer() {
   return (
     <div className='footer'>
+
+          
         <Container className='footer_upper'>
             <Row>
                 <Col md={4} className='footer_links'>
@@ -66,6 +69,8 @@ function Footer() {
           </Col>
         </Row>
       </Container>
+
+     
     </div>
   )
 }

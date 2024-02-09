@@ -37,6 +37,7 @@ import Write from "./Pages/Blog/write/Write";
 import Single from "./Pages/Blog/single/Single";
 import BlogPage from "./Pages/BlogPage";
 import DriverPage from "./Pages/DriverPage";
+import CctvComponent from "./Components/ChildInterfaceComponent/CctvComponent";
 // import blogHome from "./Pages/Blog/blogHome/blogHome";
 
 
@@ -105,6 +106,7 @@ function App() {
         <Route path = "/cardDetails"  element = {<CardDetails/>}/>
         <Route path = "/cardUpdate"  element = {<CardUpdateForm/>}/>
         <Route path = "/cardUpdateList"  element = {<UpdatedPaymentCards/>}/>
+        <Route path = "/cctv" element = {<CctvComponent/>}/>
 
 
 

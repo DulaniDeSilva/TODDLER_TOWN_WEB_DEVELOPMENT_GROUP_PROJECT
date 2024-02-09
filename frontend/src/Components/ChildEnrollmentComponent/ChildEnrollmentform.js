@@ -706,7 +706,7 @@ const ChildEnrollmentform =()=>{
                 </Col>
             </Row>
            
-           <Footer/>
+           
 
            
         

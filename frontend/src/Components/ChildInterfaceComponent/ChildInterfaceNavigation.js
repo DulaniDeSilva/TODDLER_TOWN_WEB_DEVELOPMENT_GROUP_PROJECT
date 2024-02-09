@@ -1,17 +1,19 @@
 import React from 'react'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faHome, faCreditCard, faHeartPulse, faCamera, faSchool, faMessage} from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCreditCard, faHeartPulse, faCamera, faSchool, faMessage, faPencil} from '@fortawesome/free-solid-svg-icons';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import ChildEnrollmentPage from '../../Pages/ChildEnrollmentPage';
 import PaymentPage from '../../Pages/PaymentPage';
 import WaitingList from '../HomeComponents/WaitingList';
-import CctvComponent from './CctvComponent';
+// import CctvComponent from './CctvComponent';
 import Footer from '../HomeComponents/Footer';
 import HealthRecords from '../TeacherComponents/healthRecords/HealthRecords';
 import Attendance from '../CaregiverComponents/attendance/Attendance';
 import toddler_logo from "../../Assets/Images/LogSign/toddler_logo.png";
+import PhoneRegisterComponent from '../PhoneVertification/PhoneRegisterComponent';
+import ChildEnrollmentform from '../ChildEnrollmentComponent/ChildEnrollmentform';
 // import PhoneVertificationComponent from '../PhoneVertification/PhoneVertificationComponent';
 
 // import Homenavigation from '../HomeComponents/Homenavigation';
@@ -32,13 +34,15 @@ export default function ChildInterfaceNavigation() {
             case 'payment':
                 return <PaymentPage/>;
             case 'cctv':
-                return <CctvComponent/>;
+                return <PhoneRegisterComponent/>;
             case 'message':
                 return <WaitingList/>;
             case 'health':
                 return <HealthRecords/>;
             case 'curriculum':
                 return <Attendance/>
+            case 'registration-form':
+                return <ChildEnrollmentform/>
             default:
                 return null;
         }
@@ -49,6 +53,15 @@ export default function ChildInterfaceNavigation() {
         
         <Row >
         <Col className='child-nav-sidebar-col' lg = {2}>
+
+        <Row className = 'child-nav-sidebar-row'>
+        <button className = " child-sidebar-button" onClick = {() =>handleLinkClick('registration-form')}>
+            <FontAwesomeIcon icon = {faPencil}   className='child-nav-sidebar-icons'></FontAwesomeIcon>
+            <span>Registration Form</span>
+        </button>
+        </Row>
+
+
         <Row className = 'child-nav-sidebar-row'>
         <button className = " child-sidebar-button" onClick = {() =>handleLinkClick('childProfile')}>
             <FontAwesomeIcon icon = {faHome}   className='child-nav-sidebar-icons'></FontAwesomeIcon>

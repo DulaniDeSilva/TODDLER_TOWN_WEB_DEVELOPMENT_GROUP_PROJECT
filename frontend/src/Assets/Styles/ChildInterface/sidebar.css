@@ -1,14 +1,12 @@
 .child-nav-sidebar-col{
+    padding-top: 7%;
     width: 20%;
-    position: fixed !important;
-    margin-top: 4%;
+    margin-top: 2%;
     background: url('../../Images/LogSign/lo.jpg') center center/cover no-repeat;
-    /* background-color: #1F2544; */
-    /* background-color: #F8BDEB; */
-    height: 2500px;
-   
-
-
+    /* height: 2500px; */
+    /* min-height: calc(100vh - 600px); */
+     position: fixed;
+     overflow-y: auto;
 }
 
 .child-nav-sidebar-row{
@@ -17,21 +15,22 @@
 
 .child-sidebar-button{
     width: 100%;
-    background-color: transparent;
-    border: 1px  dashed #ccc;
-    padding: 5px;
+    background-color: rgb(58, 57, 57);
+    border: none;
+    /* padding: 5px; */
     border-radius: 30px;
     text-align: left;
     color: white;
+    font-size: 1.2rem;
 
 }
 
 .child-sidebar-button:hover{
-    background-color: rgb(247, 237, 247);
+    background-color: purple;
 }
 
 .child-nav-sidebar-icons{
-    padding: 2px;
+    padding: 5px;
 }
 
 .child-sidebar-button span{

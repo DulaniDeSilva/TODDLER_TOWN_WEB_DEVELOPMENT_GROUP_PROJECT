@@ -35,7 +35,6 @@ function Homenavigation() {
                     
                     {user && (
                     <div className='navbarall-afteruser'>
-                    <Nav.Link href="/childRegistrationPage">Registration Form</Nav.Link>
                     <NavDropdown title="Dashboard" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/childInterface">Child Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/caregiverInterface">Care Giver Interface</NavDropdown.Item>
@@ -46,6 +45,8 @@ function Homenavigation() {
                    
                     </div>
                     )}
+
+                    
 
 
 

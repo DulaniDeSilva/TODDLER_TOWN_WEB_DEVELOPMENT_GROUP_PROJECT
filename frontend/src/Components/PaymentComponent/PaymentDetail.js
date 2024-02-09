@@ -78,6 +78,7 @@ const PaymentDetail =()=>{
                     <option>Toddler Payment</option>
                     <option>AfterSchool Payment</option>
                     <option>PreSchool Payment</option>
+                    <option>Other Payment</option>
                 </select>
                 
                 </div>
@@ -101,6 +102,9 @@ const PaymentDetail =()=>{
                     <option>Admission</option>
                     <option>Supplies</option>
                     <option>Food and drinks</option>
+                    <option>Pick Up service charge</option>
+                    <option>Health checkup service</option>
+                    <option>Extra time child care</option>
                 </select>
             
                 </div>
@@ -117,9 +121,14 @@ const PaymentDetail =()=>{
                     className={` ${emptyFields.includes('description') ? 'error' : ''} inputs`}
                     >
                     <option>Description about payment</option>
-                    <option>Toddler Payment</option>
-                    <option>AfterSchool Payment</option>
-                    <option>PreSchool Payment</option>
+                    <option>Toddler food and drinks</option>
+                    <option>Preschool lunch</option>
+                    <option>Snaks</option>
+                    <option>Stationary Supplies</option>
+                    <option>Sanitory Supplies</option>
+                    <option>Clothing Supplies</option>
+                    <option>Playground Supplies</option>
+                    <option>PreSchool Academic Fees</option>
                 </select>
                 </div>
                 </Col>
@@ -133,9 +142,11 @@ const PaymentDetail =()=>{
                     className={` ${emptyFields.includes('amount') ? 'error' : ''} inputs`}
                      >
                     <option>Amount</option>
-                    <option>20000</option>
-                    <option>23444</option>
-                    <option>1233</option>
+                    <option>500</option>
+                    <option>1000</option>
+                    <option>1500</option>
+                    <option>2000</option>
+                    <option>2500</option>
                 </select>
                 </div>
                 </Col>
@@ -160,7 +171,7 @@ const PaymentDetail =()=>{
 
                 
                 <Row>
-                <button className='paymentDetails-button '>Add To Payment List</button>
+                <button className='paymentDetails-button '>ADD TO PAYMENT LIST</button>
                 {error  && <div className ="error">{error}</div>}
                 </Row>
 

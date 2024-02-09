@@ -38,7 +38,7 @@ const PaymentPage = ()=>{
         <PaymentTable/>    
         {/* <CardUpdateForm/> */}
 
-        <Row>
+        <Row className='PaymentPage-section'>
           <Col>
               <span className = "paymentPage-span">Existing cards:</span>
               <CardDetails/>
