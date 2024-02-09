@@ -24,7 +24,7 @@ function TeamComponent() {
   useEffect(()=>{
     const interval = setInterval(()=>{
       setCountStudents(prevCount=>{
-        if(prevCount >= 100){
+        if(prevCount >= 60){
           return 1;
         }else{
           return prevCount +1;
@@ -32,7 +32,7 @@ function TeamComponent() {
       });
 
       setCountStaff(prevCount=>{
-        if(prevCount >= 15){
+        if(prevCount >= 30){
           return 1;
         }else{
           return prevCount +1;
@@ -40,14 +40,14 @@ function TeamComponent() {
       });
 
       setCountTeachers(prevCount =>{
-        if(prevCount >= 30){
+        if(prevCount >= 15){
           return 1;
         }else{
           return prevCount +1;
         }
       })
       
-    }, 100);
+    }, 200);
     return () => clearInterval(interval);
   },[]);
 
@@ -100,9 +100,21 @@ function TeamComponent() {
 
 
         <Row>
-            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>🏃‍♀️</span><span >{countStudents}+</span></Col>
-            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>🧑‍💼👩‍💼</span><span className = "count">{countTeachers}+</span></Col>
-            <Col lg = {4} className = "team-component-count"><span className='team-component-count-name'>👩‍🏫🧑‍🏫</span><span className = "count">{countStaff}+</span></Col>
+            <Col lg = {4} className = "team-component-count">
+            <span className='team-component-count-name'>🧒👶👩</span>
+            <span className='team-component-count-name-count' >{countStudents}+</span>
+            <span className='team-component-count-name' >Students</span>
+            </Col>
+
+            <Col lg = {4} className = "team-component-count">
+            <span className='team-component-count-name'>🧑‍💼👩‍💼</span>
+            <span className='team-component-count-name-count' >{countTeachers}+</span>
+            <span className='team-component-count-name' >Teachers</span></Col>
+
+            <Col lg = {4} className = "team-component-count">
+            <span className='team-component-count-name'>👩‍🏫🧑‍🏫</span>
+            <span className='team-component-count-name-count'>{countStaff}+</span>
+            <span className='team-component-count-name' >Staff</span></Col>
         </Row>
        </Container>
 

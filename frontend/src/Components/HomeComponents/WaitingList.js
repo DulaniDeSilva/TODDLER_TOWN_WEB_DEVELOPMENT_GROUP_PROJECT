@@ -57,7 +57,9 @@ export default function WaitingList() {
  
   return (
     <div>
-          
+          <div className='waitinglist-topic'>
+            <h3>Want to know more? </h3>
+          </div>
 
       <Container className='waiting-list-container'>
         <Row>
@@ -70,7 +72,7 @@ export default function WaitingList() {
           <Col className='waiting-list-col2'>
             <form onSubmit = {handleSubmit}>
               
-                <h2> 🙋‍♀️Visit Us!💌</h2>
+                <h2> 🙋‍♀️Send Us Your Message!💌</h2>
               
                 <label>Full Name</label>
                 <input type="text" 
@@ -98,7 +100,7 @@ export default function WaitingList() {
                 />
                 
               
-              <button className='common-button'>SUBSCRIBE </button>
+              <button className='common-button'>SEND </button>
               {error && <div className ="error">{error}</div>}
 
             </form>

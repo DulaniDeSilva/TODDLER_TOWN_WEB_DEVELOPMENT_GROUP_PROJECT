@@ -1,6 +1,6 @@
 
 
-.lesson-plans-container {
+/* .lesson-plans-container {
     font-size: 30px; 
 }
 
@@ -8,9 +8,9 @@
 .lesson-plans-container h3,
 .lesson-plans-container h4 {
     font-size: 30px; 
-}
+} */
 
-.lesson-plans-container button {
+/* .lesson-plans-container button {
     padding: 10px 20px;
     font-size: 20px; 
     border: none;
@@ -19,14 +19,14 @@
     color: white; 
     transition: background-color 0.3s; 
     cursor: pointer; 
-}
+} */
 
-.lesson-plans-container button:hover {
+/* .lesson-plans-container button:hover {
     background-color: #ce9cdf; 
-}
+} */
 
 /* Styles for the form elements */
-.lesson-plans-container select,
+/* .lesson-plans-container select,
 .lesson-plans-container input,
 .lesson-plans-container textarea {
     padding: 8px;
@@ -34,17 +34,17 @@
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 20px;
-}
+} */
 
-.lesson-plans-container textarea {
+/* .lesson-plans-container textarea {
     width: 100%;
     height: 100px; 
     font-size: 20px;
 
-}
-
+} */
+/* 
 .lesson-plans-container label {
-    display: block; /* Makes labels appear on their own line */
+    display: block; 
     font-size: 20px;
 }
 
@@ -62,4 +62,4 @@
 .lesson-plans-container button:hover {
     background-color: #bb74e8; 
     cursor: pointer;
-}
+} */

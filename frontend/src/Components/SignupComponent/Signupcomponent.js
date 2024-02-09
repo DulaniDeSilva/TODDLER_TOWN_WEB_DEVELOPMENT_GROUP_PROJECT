@@ -12,17 +12,29 @@ const Signupcomponent = () =>{
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const {signup, error, isLoading} = useSignup();
+  const [emptyFields, setEmptyFields] = useState([]);
 
   const handleSubmit = async (e) =>{
+    e.preventDefault();
+   
+    if(!userType || !email || !password){
+      setEmptyFields(['userType', 'email', 'password']);
+      return;
+    }
+
+    if(emptyFields.length >0){
+      setEmptyFields(emptyFields);
+      return;
+    }
+
+
     if(userType === 'Admin' && secretKey !== "Jungle"){
-      e.preventDefault();
       alert("Invalid Admin");
     }else if(userType === "Staff" && secretKey !== "ToddlerStaff"){
-      e.preventDefault();
       alert("Invalid Staff");
     }else{
-      e.preventDefault();
       await signup(email,password,userType);
+      // console.log(email, password, userType);
     }
   }
 
@@ -96,6 +108,7 @@ const Signupcomponent = () =>{
                 onChange = {(e) => setEmail(e.target.value)}
                 value = {email}
                 className="input-input"
+                // className = {emptyFields.includes('email')? 'error': ''}
               />
 
               <label className="input-lable">Password</label>
@@ -104,15 +117,16 @@ const Signupcomponent = () =>{
                 onChange = {(e) => setPassword(e.target.value)}
                 value = {password}
                 className="input-input"
+                // className = {emptyFields.includes('password')? 'error': ''}
               />
 
               
-              <Link to="/childRegistrationPage" className="common-link" >
+              {/* <Link to="/childRegistrationPage" className="common-link" > */}
                   <button disabled = {isLoading} className = "login-button ">
                   Register 
                   </button> 
-              </Link>
-              
+              {/* </Link> */}
+              {error && <div className = "error">{error}</div>}
 
 
               <p class = "signup-link">Have account?
@@ -125,7 +139,7 @@ const Signupcomponent = () =>{
                     Need Help?
               </Link>
               </p>
-              {error && <div className = "error">{error}</div>}
+              
 
               </form>
               {/* closing form */}
@@ -133,7 +147,7 @@ const Signupcomponent = () =>{
           </div>
           <div className="login-right">
           <div class = "right-inductor">
-          <img src ={login_image}  alt = "login background"/>
+          {/* <img src ={login_image}  alt = "login background"/> */}
           </div>
           </div>
         </div>

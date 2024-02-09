@@ -1,11 +1,11 @@
-.lesson-plans-container {
+/* .lesson-plans-container {
     font-size: 10px;
 }
 
 .lesson-plans-container h2,
 .lesson-plans-container h3,
 .lesson-plans-container h4 {
-    font-size: 16px; /* Adjusted font size */
+    font-size: 16px; 
     font-weight: bold;
 }
 
@@ -22,10 +22,10 @@
 
 .lesson-plans-container button:hover {
     background-color: #ce9cdf;
-}
+} */
 
 /* Styles for the form elements */
-.lesson-plans-container select,
+/* .lesson-plans-container select,
 .lesson-plans-container input,
 .lesson-plans-container textarea {
     padding: 8px;
@@ -42,7 +42,7 @@
 }
 
 .lesson-plans-container label {
-    display: block; /* Makes labels appear on their own line */
+    display: block; 
     font-size: 10px;
 }
 
@@ -59,4 +59,4 @@
 .lesson-plans-container button:hover {
     background-color: #bb74e8;
     cursor: pointer;
-}
+} */

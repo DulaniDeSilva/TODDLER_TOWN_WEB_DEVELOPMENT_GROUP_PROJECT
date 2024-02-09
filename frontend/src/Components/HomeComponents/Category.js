@@ -22,6 +22,8 @@ function Category() {
   return (
     <div className='category-cards'>
       <Container >
+      <Row><h3>Main Service Categories</h3></Row>
+        
           <Row>
             <Col  md = {3} lg = {3} >
               <img  src={visit} alt = "" className='category-visit-image'/> 
@@ -51,7 +53,7 @@ function Category() {
             <Col className='categorycol-03 categorycol' md = {3} lg = {3} >
             
               <Row><img  src={child3} alt = "logo" className='categoryimg'/> </Row>
-              <Row className='category-content'> <span> After School Child Care</span></Row>
+              <Row className='category-content'> <span>  School Child Care</span></Row>
               <Row className='category-content-button'>
               <Link to = "/afterschoolservice" className='common-link' >
                 <button className = "common-button">Visit Now!</button> 

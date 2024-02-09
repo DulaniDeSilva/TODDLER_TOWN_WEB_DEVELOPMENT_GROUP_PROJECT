@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Import Font
 import { faEnvelope,faMapMarkerAlt ,faPhone} from '@fortawesome/free-solid-svg-icons';
 
 import '../../Assets/Styles/ContactUs.css'
+import Homenavigation from './Homenavigation';
+import Footer from './Footer';
 
 
 function ContactUs(props) {
@@ -24,6 +26,9 @@ function ContactUs(props) {
   };
   return (
     <div className='contactUs'>
+
+      <Homenavigation/>
+
       <Row className='contentHeader'>
        
           <p className='subHeadding'>get in touch</p>
@@ -38,7 +43,7 @@ function ContactUs(props) {
           <Col lg={6} className='contactUs_left'>
          
               <p><FontAwesomeIcon icon={faPhone}  className = "contactUs-icon"/> <span>012-3456789</span></p>
-              <p> <FontAwesomeIcon icon={faEnvelope} className = "contactUs-icon" /> <span>example@example.com</span></p>
+              <p> <FontAwesomeIcon icon={faEnvelope} className = "contactUs-icon" /> <span>toddlertown@gmail.com</span></p>
               <p><FontAwesomeIcon icon={faMapMarkerAlt} className = "contactUs-icon" /><span> 123 Main Street, Cityville</span></p>
           
           </Col>
@@ -46,28 +51,28 @@ function ContactUs(props) {
           <Col lg ={6} className='contactUs_right'>
             <form ref={form} action="" onSubmit={sendEmail}>
           
-              <div className='contactForm'>
+              <div className='contact-contactForm'>
                 <span className='input_Content'>Full Name</span>
-                <br />
+              
                 <input className="contactus-input" type="text" placeholder='Full Name' name='userName' required />
-                <br />
+                
                 <span className='input_Content'>Phone Number</span>
-                <br />
+              
                 <input className="contactus-input" type="text" placeholder='Phone Number' name='phoneNumber' required />
-                <br />
+                
                 <span className='input_Content'>Enter Email</span>
-                <br />
+               
                 <input className="contactus-input" type="email" placeholder='ABC@gmail.com' name='userEmail' required />
-                <br />
+                
                 <span className='input_Content'>Subject</span>
-                <br />
+                
                 <input className="contactus-input" type="text" placeholder='Subject' name='subject' required />
-                <br />
+                
                 <span className='input_Content'>Message</span>
-                <br />
-                <textarea className="contactus-input" type="text" placeholder='Type Your Message Here'name='message' cols='30' rows='10' required ></textarea>
-                <br />
-                <Button type='submit'>Send Message</Button>
+                
+                <textarea className="contactus-input" type="text" placeholder='Type Your Message Here'name='message' cols='40' rows='6' required ></textarea>
+                
+                <Button type='submit' className='common-button contactus-button'>Send Message</Button>
                 
               </div>
             </form>
@@ -96,10 +101,10 @@ function ContactUs(props) {
            
          
         </div>
-      
-      
+     
+        <Footer/>
     </div>
-
+    
     
   )
 }

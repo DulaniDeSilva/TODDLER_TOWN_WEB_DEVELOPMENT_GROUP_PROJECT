@@ -1,8 +1,10 @@
 .child-nav-sidebar-col{
     width: 20%;
     position: fixed !important;
-    margin-top: 5%;
-    background-color: #F8BDEB;
+    margin-top: 4%;
+    background: url('../../Images/LogSign/lo.jpg') center center/cover no-repeat;
+    /* background-color: #1F2544; */
+    /* background-color: #F8BDEB; */
     height: 2500px;
    
 
@@ -20,6 +22,7 @@
     padding: 5px;
     border-radius: 30px;
     text-align: left;
+    color: white;
 
 }
 
@@ -52,4 +55,11 @@
 .childenrollment-edit-button{
     background-color: transparent;
     border:none;
+}
+
+.child-nav-sidebar-logo{
+    width: 150px;
+    height: 150px;
+    margin-left: 60px;
+
 }

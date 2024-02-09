@@ -32,7 +32,7 @@ import Us from "./Components/HomeComponents/Us";
 import CardUpdateForm from "./Components/PaymentComponent/CardUpdateForm";
 import UpdatedPaymentCards from "./Components/PaymentComponent/UpdatedPaymentCards";
 import ContactUs from "./Components/HomeComponents/ContactUs";
-import JoinStaff from "./Components/HomeComponents/JoinStaff";
+import ChatBotHelper from "./Components/ChatbotComponent/ChatBotHelper";
 
 
 
@@ -98,7 +98,7 @@ function App() {
         <Route path = "/getSpot" element = {<GetASpot/>}/>
         <Route path = "/us" element = {<Us/>}/>
         <Route path = "/ContactUs" element = {<ContactUs/>}/>
-        <Route path = "/joinUsStaff" element = {<JoinStaff/>}/>
+        
         
       
 
@@ -111,6 +111,7 @@ function App() {
    
     </BrowserRouter>
    
+    <ChatBotHelper/>
 
 
     </div>

@@ -13,7 +13,7 @@ import flowers from "../../Assets/Images/Home/flowers.png";
 import dog from "../../Assets/Images/Home/dog.png";
 // import butterfly from "../../Assets/Images/Home/butterfly.png";
 import Footer from '../HomeComponents/Footer';
-import {Link } from 'react-router-dom';
+// import {Link } from 'react-router-dom';
 
 
 
@@ -65,6 +65,7 @@ const ChildEnrollmentform =()=>{
     
     const handleSubmit = async (e) =>{
         e.preventDefault();
+
         if(!user){
             setError('You must be logged in');
             return 
@@ -193,8 +194,8 @@ const ChildEnrollmentform =()=>{
                     type="text"
                     onChange = {(e) =>setInitials(e.target.value)}
                     value = {initials}
-                    // className = {emptyFields.includes('initials') ? 'error': ''}
-                    className={` ${emptyFields.includes('initials') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('initials') ? 'error': ''}
+                    // className={` ${emptyFields.includes('initials') ? 'error' : ''} inputs`}
                 />
                 </div>
 
@@ -206,8 +207,8 @@ const ChildEnrollmentform =()=>{
                     type="text"
                     onChange = {(e) =>setFirstName(e.target.value)}
                     value = {firstName}
-                    // className = {emptyFields.includes('firstName') ? 'error': ''}
-                    className={` ${emptyFields.includes('firstName') ? 'error' : ''} inputs`}
+                    className = {emptyFields.includes('firstName') ? 'error': ''}
+                    // className={` ${emptyFields.includes('firstName') ? 'error' : ''} inputs`}
                 />
                 </div>
 
@@ -671,9 +672,9 @@ const ChildEnrollmentform =()=>{
                 </div>
                 </fieldset>
         
-                <Link to="/loginPage" >
+                
                 <button className = "common-button registration-button">REGISTER NOW</button>  
-                </Link>
+                
 
                 {error && <div className ="error ">{error}</div>}
 

@@ -1,9 +1,9 @@
-body {
+/* body {
     font-family: 'Arial, sans-serif';
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    background-image: url('Assets/Images/TeacherPage/background.jpg'); /* Add the path to your background image here */
+    background-image: url('Assets/Images/TeacherPage/background.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -11,8 +11,8 @@ body {
   
   body::before {
     content: "";
-    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white overlay */
-    position: fixed; /* Fixed to the viewport */
+    background: rgba(255, 255, 255, 0.6); 
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
@@ -95,7 +95,7 @@ body {
     top: 10px;
     left: 10px;
   }
-  
+   */
 
 /* CHalnai */
 

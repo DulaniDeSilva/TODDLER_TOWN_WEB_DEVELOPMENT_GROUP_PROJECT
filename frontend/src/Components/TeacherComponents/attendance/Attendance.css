@@ -1,7 +1,7 @@
 /* frontend/src/features/attendance/attendance.css */
-.attendance-container {
+/* .attendance-container {
     width: 100%;
-    height: calc(100vh - 60px); /* Subtracting any additional heights , like the header */
+    height: calc(100vh - 60px); 
     background-color: #F2DEFB;
     padding: 20px;
     box-sizing: border-box;
@@ -48,4 +48,4 @@
 .attendance-container button:hover {
     opacity: 0.9;
 }
-
+ */

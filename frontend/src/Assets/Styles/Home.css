@@ -5,11 +5,10 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 
-/* ######################################################## NAVIGATION BAR MAIN IMAGE ############################# */
+/* ######################### NAVIGATION BAR MAIN IMAGE ############################# ##############*/
 .navbarall{
     width: 100%;
     background-color: #F8BDEB;
-    /* width: 1542px; */
     padding: 1.6rem ;
     font-size: 1.2rem;
     position: fixed;
@@ -18,19 +17,27 @@ font-family: 'Ubuntu', sans-serif;
     /* font-family: 'IBM Plex Sans', sans-serif; */
     /* font-family: 'Merriweather', serif; */
     font-family: 'Ubuntu', sans-serif;
-    min-height: max-content;
+    /* min-height: max-content; */
     z-index: 1000;
     top:0;
     left:0;
+    display: inline-block;
   }
 
 .navbar-links{
-  padding-left: 40px;
+  padding-left: 60px;
+  width: 1000px;
+}
+
+.navbarall-afteruser{
+  display: flex;
+  flex-direction: row;
 }
 
 .navigationbarhome{
   color:dimgray;
 }
+
 
 .mainnav-logout button{
   background: none;
@@ -50,32 +57,11 @@ font-family: 'Ubuntu', sans-serif;
   padding: 5px;
 }
 
-.navigationbarhome{
-  position: relative;
-  left: 400px;
-}
-
-
 .main_image{
-  padding-top: 8px;
-  margin-top: 6.2rem;
-  width: 1542px;
-  
+  padding-top: 2rem;
+  margin-top: 6.0rem;
+  max-width: fit-content;
 }
-
-
-
-  
-
-
-
- 
-
-
-
-
-
-
 
   .mainimg{
     object-fit: cover;
@@ -98,8 +84,6 @@ font-family: 'Ubuntu', sans-serif;
    margin-top: 10%;
   }
 
-
-
   .mainimagebutterfly{
     display: flex;
     justify-content: flex-end;
@@ -113,10 +97,6 @@ font-family: 'Ubuntu', sans-serif;
   .main_image{
     background-color: #F8BDEB ;
   }
-
-
-
-  
 
 
   /* laptop large 1440px */
@@ -234,7 +214,7 @@ font-family: 'Ubuntu', sans-serif;
     }
   }
 
-/* ########################   Welcome  */
+/* ########################   Welcome ######################################### */
 .welcome{
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
@@ -245,8 +225,6 @@ font-family: 'Ubuntu', sans-serif;
   margin: 50px auto;
   width: 80%;
   padding: 2%;
-
- 
 }
 
 .welcome header{
@@ -265,31 +243,107 @@ font-family: 'Ubuntu', sans-serif;
   
 }
 
+/* ############################  Why Us     ###################################################### */
+ 
+ .us-image{
+  border-radius: 100px;
+  width:220px;
+  height:220px;
+}
+
+.us-component{
+  margin:20px;
+}
+
+.us-component header{
+  color:#6D2932;
+  padding:20px;
+  font-size: 2.8rem;
+  text-align: center;
+  letter-spacing: 1.2rem;
+}
+
+.us-component span{
+text-align: center;
+font-size: 1.8rem;
+letter-spacing: 2px;
+display: flex;
+margin-top: 45px;
+color:#3C0753;
+}
+
+.us-component span:hover{
+  color: #D63484;
+}
+
+.col12{
+background-color: #FFB996;
+border-radius: 15px;
+}
+
+.col14{
+background-color: #92C7CF;
+border-radius: 15px;
+}
+
+.col16{
+background-color: #BFD8AF;
+border-radius: 15px;
+}
+
+.col21{
+background-color: #FFCF81;
+border-radius: 15px;
+}
+
+.col23{
+background-color: #FDFFAB;
+border-radius: 15px;
+}
+
+.col25{
+background-color: #DC8686;
+border-radius: 15px;
+}
+
+.col32{
+background-color: #D0BFFF;
+border-radius: 15px;
+}
+.col34{
+background-color: #D7E5CA;
+border-radius: 15px;
+}
+
+.col36{
+background-color: #FFD9B7;
+border-radius: 15px;
+}
 
 
 
-
-
-  /* ####################################### SERVICES CARD ############################################### */
+  /* ########################## SERVICES CARD ############################################### */
 
   /* main div */
+  .category-cards h3{
+    margin-top: 100px;
+    color:#6D2932;
+    font-size: 2.8rem;
+    text-align: center;
+    letter-spacing: 1.2rem;
+  }
   .category-cards{
-    /* width: 90%; */
     margin-left: 10%;
   }
 
- 
   .categorycol{
     width:20%;
    position: relative;
    margin: 10px;
    margin-top:5%;
-   /* min-height: max-content; */
    border: 0.2rem solid black;
    border-radius:30px;
    height: 400px;
-   
-
   }
 
   .categorycol-01{
@@ -314,9 +368,11 @@ font-family: 'Ubuntu', sans-serif;
 
   .category-content span{
     text-align: center;
-    margin-top:15%;
+    margin-top:50px;
     font-size: 1.3rem;
     font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: #7E6363;
   }
   
   .category-content-button{
@@ -326,8 +382,8 @@ font-family: 'Ubuntu', sans-serif;
 
 
   .category-visit-image{
-    margin-top:20%;
-    padding-right: 10px;
+    margin-top:28%;
+    padding-right: 40px;
     width: 100%;
     height: 80%;
   }
@@ -339,7 +395,8 @@ font-family: 'Ubuntu', sans-serif;
       font-family: 'Merriweather', serif;
       font-size: 1.5rem;
       position: relative;
-      top: 3%;
+      top: 4px;
+      text-align: center;
       
     }
     
@@ -348,16 +405,22 @@ font-family: 'Ubuntu', sans-serif;
       font-size: 0.8rem;
       font-style: italic;
       position: relative;
-      top: 3%;
-
+      top: 2px;
+      text-align: center;
+      /* margin-top: 8%; */
+      margin-bottom:30%;
+      /* padding: 20%; */
     }
-    .icons{
+    .features-icons{
       min-height: 4.5rem;
       color:#F8BDEB;
-      
+      text-align: center;
+      margin-left:40%;
+      font-size: 4rem;
+      margin-bottom: 10%;
     }
     
-    .icons :hover{
+    .features-icons:hover{
       color: #940B92;
     }
     
@@ -371,23 +434,24 @@ font-family: 'Ubuntu', sans-serif;
     padding: 3%;
     min-height: fit-content;
     text-align: center;
-    /* background-color: #F8BDEB; */
+    padding: 20px;
     
   }
 
-  .teamcontainer{
-    padding: 20px;
-  }
 
   .teamcontainer h3{
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #ccc;
+    letter-spacing: 1.5rem;
   }
   .teamcontainer h6{
     font-size:1.2rem;
+    letter-spacing: 0.8rem;
   }
 
   .teamrow{
     padding: 10px;
+    margin-bottom: 10%;
   }
 
   .teamcolumn{
@@ -399,6 +463,17 @@ font-family: 'Ubuntu', sans-serif;
     display: grid;
     border-radius: 30px;
   }
+
+.teamcolumn span{
+  color: #7E6363;
+  letter-spacing: 0.3rem;
+}
+
+.teamcolumn p{
+  color: #A87C7C;
+  letter-spacing: 0.3rem;
+}
+
 
   .team-share{
     margin-top: 1em;
@@ -430,6 +505,7 @@ font-family: 'Ubuntu', sans-serif;
 
 .teamcards h6{
   margin-top: 1rem;
+  letter-spacing: 2rem;
 }
 .teamcolumn span{
   font-weight: bold;
@@ -438,61 +514,37 @@ font-family: 'Ubuntu', sans-serif;
   font-size:1.2rem;
 }
 
-.team-component-count{
+.team-component-count-name-count{
   font-size: 9.0rem;
   display: flex;
   flex-direction: column;
-  margin-top:20px;
+  margin-top:10px;
   color:#F8BDEB;
 }
 
 .team-component-count-name{
-  font-size:6.0rem;
+  font-size:4.0rem;
   color:#980678;
 }
 
 
-
-    
-
-
-
-
   
-  /* feauture componenet */
-  .featurescard{
-    margin: 100px;
-  
-  }
-  .featurecolumn {
-    position: relative;
-    text-align: center;
-   
-  }
-  .featurecolumn h3{
-    padding-top: 6px;
-    padding-bottom: 6px;
-  }
-  
-  .icons{
-    font-size: 3rem;
-    margin: 10px;
-    color:#F8BDEB;
-  }
-  
-  .icons :hover{
-    color: #940B92;
-  }
-  
-
-
 /* ################################################## Visiting list*/
+.waitinglist-topic h3{
+  text-align: center;
+  font-size: 3rem;
+  color: #6D2932;
+  letter-spacing: 1.5rem;
+  margin-top: 5%;
+  margin-bottom: 50px;
+}
+
 .waiting-list-container{
   background-color: #f7d9d7;
   /* padding: 3%; */
   border-radius: 20px;
   height: 500px;
-  margin-top: 10%;
+  /* margin-top: 10%; */
   margin-bottom:50px;
 }
 
@@ -513,11 +565,13 @@ font-family: 'Ubuntu', sans-serif;
   position: relative;
   top: 0px;
   font-weight: bold;
+  margin-bottom: 50px;
 }
 
 .waiting-list-col2 label{
   font-weight: bold;
   font-size: 1rem;
+  text-align: left ;
   margin: 2px;
 }
 
@@ -544,7 +598,7 @@ font-family: 'Ubuntu', sans-serif;
 
 
 
-.common-button{
+/* .common-button{
   border:none;
   padding: 15px 70px;
   border-radius:8px;
@@ -559,7 +613,7 @@ font-family: 'Ubuntu', sans-serif;
 .common-button:hover{
   background:#F8BDEB;
   
-}
+} */
 
 
 
@@ -747,70 +801,7 @@ font-family: 'Ubuntu', sans-serif;
 
 
 
-  /* ########################## US */
-  .us-image{
-    border-radius: 100px;
-    width:220px;
-    height:220px;
-  }
-
-  .us-component{
-    margin:20px;
-  }
-
-  .us-component header{
-    color:#ccc;
-    padding:20px;
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-.us-component span{
-  text-align: center;
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  display: flex;
-  margin-top: 60px;
-}
-
-.col12{
-  background-color: #FFB996;
-}
-
-.col14{
-  background-color: #92C7CF;
-}
-
-.col16{
-  background-color: #BFD8AF;
-}
-
-.col21{
-  background-color: #FFCF81;
-}
-
-.col23{
-  background-color: #FDFFAB;
-}
-
-.col25{
-  background-color: #DC8686;
-}
-
-.col32{
-  background-color: #D0BFFF;
-}
-.col34{
-  background-color: #D7E5CA;
-}
-
-.col36{
-  background-color: #FFD9B7;
-}
-
-
-
-
+ 
 
       
     

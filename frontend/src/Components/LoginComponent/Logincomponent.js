@@ -87,6 +87,7 @@ const Logincomponent = () =>{
               />
 
               <button disabled = {isLoading} className="login-button common-link" >Log in</button>
+              {error && <div className = "error">{error}</div>}
               <p className = "signup-link">No account?
               <Link to="/signupPage" >
                     Register
@@ -98,7 +99,7 @@ const Logincomponent = () =>{
                 Forgot Password?  
               </Link>
               </p>
-              {error && <div className = "error">{error}</div>}
+              
 
 
               </form>

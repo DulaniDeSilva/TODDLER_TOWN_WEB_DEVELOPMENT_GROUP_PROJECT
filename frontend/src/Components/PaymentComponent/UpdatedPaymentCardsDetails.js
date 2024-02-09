@@ -29,13 +29,13 @@ const UpdatedPaymentCardsDetails = ({paymentCard})=>{
     }
 
     return(
-        <div>
-
-            <h6><strong>Item Name:</strong>{paymentCard.cardNumber}</h6>
-            <p><strong>Description:</strong>{paymentCard.nameOnCard}</p>
-            <p><strong>Quantity</strong>{paymentCard.expiration}</p>
-            <p><strong>Date</strong>{paymentCard.cvv}</p>
+        <div className="cardDetails-maindiv">
             <button><span onClick={handleClick}><FontAwesomeIcon icon = {faTrash} ></FontAwesomeIcon></span></button>
+            <p><strong>Card Number:</strong>{paymentCard.cardNumber}</p>
+            <p><strong>Name on Card:</strong>{paymentCard.nameOnCard}</p>
+            <p><strong>Expiration: </strong>{paymentCard.expiration}</p>
+            <p><strong>CVV: </strong>{paymentCard.cvv}</p>
+          
             {/* <button><FontAwesomeIcon icon = {faEdit} ></FontAwesomeIcon></button> */}
             
            

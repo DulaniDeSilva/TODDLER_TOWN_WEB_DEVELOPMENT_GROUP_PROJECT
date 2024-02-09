@@ -40,13 +40,13 @@ const PaymentPage = ()=>{
 
         <Row>
           <Col>
-              <span>Existing cards:</span>
+              <span className = "paymentPage-span">Existing cards:</span>
               <CardDetails/>
               <UpdatedPaymentCards/>
           </Col>
 
           <Col>
-              <span>Add a new Payment card</span>
+              <span className = "paymentPage-span">Add a new Payment card</span>
               <CardUpdateForm/>
           </Col>
         </Row>

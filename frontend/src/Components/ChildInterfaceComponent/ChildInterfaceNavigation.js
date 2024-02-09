@@ -11,7 +11,7 @@ import CctvComponent from './CctvComponent';
 import Footer from '../HomeComponents/Footer';
 import HealthRecords from '../TeacherComponents/healthRecords/HealthRecords';
 import Attendance from '../CaregiverComponents/attendance/Attendance';
-
+import toddler_logo from "../../Assets/Images/LogSign/toddler_logo.png";
 // import PhoneVertificationComponent from '../PhoneVertification/PhoneVertificationComponent';
 
 // import Homenavigation from '../HomeComponents/Homenavigation';
@@ -89,6 +89,10 @@ export default function ChildInterfaceNavigation() {
             <FontAwesomeIcon icon = {faMessage}   className='child-nav-sidebar-icons' ></FontAwesomeIcon>
             <span>Send a message</span>
         </button>
+        </Row>
+
+        <Row className = 'child-nav-sidebar-row'>
+            <img  src={toddler_logo} alt = "" className = "child-nav-sidebar-logo"/> 
         </Row>
         </Col>
         

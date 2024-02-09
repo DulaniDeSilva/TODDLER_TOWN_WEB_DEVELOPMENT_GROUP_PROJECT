@@ -1,10 +1,18 @@
 .childinterface-navbarall{
-    background-color: #F8BDEB;
+    background-color: #1a1519;
     padding-left: 100px;
     font-size: 1.3rem;
     position: fixed;
     z-index: 999;
     width: 100%;
+    color: white;
+}
+
+.childinterface-navbar-links{
+   text-decoration-color: white;
+   /* background-color: white; */
+   font-weight: bold;
+   
 }
 
 

@@ -24,24 +24,25 @@ function Homenavigation() {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className=" navbar-links">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/ContactUs">Contact Us</Nav.Link>
-                    <Nav.Link href="/Blog">Blog</Nav.Link> 
+                    <Nav.Link href="/ContactUs" className = "navbarall-links">Contact Us</Nav.Link>
+                    <Nav.Link href="/Blog" className = "navbarall-links">Blog</Nav.Link> 
                     <NavDropdown title="Services" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/preschoolservice">Pre-School</NavDropdown.Item>
                       <NavDropdown.Item href="/toddlerservice">Child-Care</NavDropdown.Item>
                       <NavDropdown.Item href="/afterschoolservice">After-Schooler-Care</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href = "/getSpot">Get a Spot</Nav.Link>
-                    <Nav.Link href = "/joinUsStaff">Join Us</Nav.Link>
-
+                     
+                    
                     {user && (
-                    <div >
-                    <NavDropdown title="Go To Dashboard" id="basic-nav-dropdown">
+                    <div className='navbarall-afteruser'>
+                    <Nav.Link href="/childRegistrationPage">Registration Form</Nav.Link>
+                    <NavDropdown title="Dashboard" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/childInterface">Child Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/caregiverInterface">Care Giver Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/administratorInterface">Admin Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/teacherInterface">Teacher Interface</NavDropdown.Item>
                     </NavDropdown>
+                   
                     </div>
                     )}
 
