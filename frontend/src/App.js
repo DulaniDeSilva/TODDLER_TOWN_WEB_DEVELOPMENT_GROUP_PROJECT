@@ -33,7 +33,17 @@ import CardUpdateForm from "./Components/PaymentComponent/CardUpdateForm";
 import UpdatedPaymentCards from "./Components/PaymentComponent/UpdatedPaymentCards";
 import ContactUs from "./Components/HomeComponents/ContactUs";
 import ChatBotHelper from "./Components/ChatbotComponent/ChatBotHelper";
+import Write from "./Pages/Blog/write/Write";
+import Single from "./Pages/Blog/single/Single";
+import BlogPage from "./Pages/BlogPage";
+import DriverPage from "./Pages/DriverPage";
+// import blogHome from "./Pages/Blog/blogHome/blogHome";
 
+
+// ################# Chalani
+
+
+// #########################
 
 
 function App() {
@@ -53,13 +63,20 @@ function App() {
             <Route path = "/teacherInterface" element = {<TeacherPage/>}/>
             <Route path = "/caregiverInterface" element = {<CaregiverPage/>}/>
             <Route path = "/administratorInterface" element = {<AdministratorPage/>}/>
+            <Route path = "/driverInterface" element = {<DriverPage/>}/>
 
 
         {/* ####################################### */}
 
 
+        {/* ################  Chalani ############ */}
+          
+          <Route path="/write"  element={<Write/>}/>
+          <Route path="/post/:postId" element={<Single/>} />
+          {/* <Route path = "/blogHome" element = {<blogHome} */}
 
 
+        {/* ################################## */}
 
         <Route path='/' element = {<Home/>} />
       
@@ -98,6 +115,7 @@ function App() {
         <Route path = "/getSpot" element = {<GetASpot/>}/>
         <Route path = "/us" element = {<Us/>}/>
         <Route path = "/ContactUs" element = {<ContactUs/>}/>
+        <Route path = "/blog" element = {<BlogPage/>}/>
         
         
       

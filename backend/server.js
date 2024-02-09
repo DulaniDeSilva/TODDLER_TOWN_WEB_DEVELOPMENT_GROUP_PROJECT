@@ -68,11 +68,31 @@ app.use((err, req, res, next) => {
 
 
 // ##################################################
+// ############## Chalani Routes
+// const postRoute = require("./routes/posts");
+// const categoryRoute = require("./routes/categories");
+const postRoute = require('./routes/BlogRoutes/posts');
+const categoryRoute = require('./routes/BlogRoutes/categories');
+
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
+
+const pickupserviceRoutes = require('./routes/DriverRoutes/pickupserviceRoutes');
+const salaryDetailsRoutes = require('./routes/DriverRoutes/salarydetailsRoutes');
+// Routes
+app.use('/api/pickupservice', pickupserviceRoutes);
+app.use('/api/salarydetails', salaryDetailsRoutes);
 
 
 
 
 
+
+
+
+
+
+// ################################################
 
 const childrenRouter = require("./routes/children.js");
 app.use("/children", childrenRouter);

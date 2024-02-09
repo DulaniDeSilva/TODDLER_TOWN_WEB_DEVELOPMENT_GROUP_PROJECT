@@ -26,10 +26,10 @@ function Footer() {
                 
                  <Row className='contact'>
                     
-                    <p><FontAwesomeIcon icon={faMapMarkerAlt} /> 123 Main Street, Cityville</p>
+                    <p><FontAwesomeIcon icon={faMapMarkerAlt} /> ToddlerTown PreSchool, Kalagedihena, Gampaha</p>
                  </Row>   
                  <Row className='contact'>
-                    <p><FontAwesomeIcon icon={faPhone} /> 0123456789</p>
+                    <p><FontAwesomeIcon icon={faPhone} /> 071-3456789</p>
                  </Row>
 
                 

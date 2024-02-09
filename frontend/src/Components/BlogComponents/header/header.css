@@ -1,0 +1,35 @@
+.header {
+    margin-top: 0px;
+    position: relative; /* Added relative positioning to create a stacking context */
+}
+
+.headerTitles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lora', serif;
+    color: #444;
+    position: absolute;
+    top: 20%; /* Position at the center of the parent (.header) */
+    left: 50%;
+    transform: translate(-50%, -20%); /* Center the element both vertically and horizontally */
+}
+
+.headerS{
+    position: absolute;
+    top: 18%;
+    font-size: 20px;
+}
+
+.headerL{
+    position: absolute;
+    top: 20%;
+    font-size: 100px;
+}
+
+.headerImage{
+    width: 100%;
+    height: 250px;
+    margin-top: 0px;
+    object-fit: cover;
+}

@@ -25,7 +25,7 @@ function Homenavigation() {
                   <Nav className=" navbar-links">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/ContactUs" className = "navbarall-links">Contact Us</Nav.Link>
-                    <Nav.Link href="/Blog" className = "navbarall-links">Blog</Nav.Link> 
+                    <Nav.Link href="/blog" className = "navbarall-links">Blog</Nav.Link> 
                     <NavDropdown title="Services" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/preschoolservice">Pre-School</NavDropdown.Item>
                       <NavDropdown.Item href="/toddlerservice">Child-Care</NavDropdown.Item>
@@ -41,6 +41,7 @@ function Homenavigation() {
                     <NavDropdown.Item href="/caregiverInterface">Care Giver Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/administratorInterface">Admin Interface</NavDropdown.Item>
                     <NavDropdown.Item href="/teacherInterface">Teacher Interface</NavDropdown.Item>
+                    <NavDropdown.Item href="/driverInterface">Driver Interface</NavDropdown.Item>
                     </NavDropdown>
                    
                     </div>
