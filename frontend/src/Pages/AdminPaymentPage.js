@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../Assets/Styles/AdminPayment.css';
+// import '../Assets/Styles/AdminPayment.css';
+import '../Assets/Styles/StaffInterface.css';
 
 const AdminPaymentPage = () => {
     const [payments, setPayments] = useState([]);
@@ -22,7 +23,7 @@ const AdminPaymentPage = () => {
     }, []);
 
     return (
-        <div className='AdminPaymentPage'>
+        <div className='information-container'>
       <h2>Summary of All Payments</h2>
       {payments.length > 0 ? (
         <table className='AdminPaymentTable'>

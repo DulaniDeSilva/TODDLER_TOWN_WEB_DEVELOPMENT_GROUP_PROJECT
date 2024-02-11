@@ -12,7 +12,8 @@ import Information from '../Components/AdminisratorComponents/Information/Inform
 import CCTVManagement from '../Components/AdminisratorComponents/CCTV/CCTVManagement';
 // import Inventory from '../Components/AdminisratorComponents/inventory/Inventory';
 import StaffSalary from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails'
-
+import InventoryPage from './InventoryPage';
+import AdminPaymentPage from './AdminPaymentPage';
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';
 import healthImage from '../Assets/Images/Administrator/health.jpg';
@@ -26,8 +27,7 @@ import inventoryImage from '../Assets/Images/Administrator/inventory.jpg'
 import salaryImage from '../Assets/Images/Administrator/salary.jpg'
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
-import InventoryPage from './InventoryPage';
-import AdminPaymentPage from './AdminPaymentPage';
+
 
 
 
@@ -113,7 +113,7 @@ function AdministratorPage() {
           {activeComponent === 'activityPlans' && <ActivityPlans />}
           {activeComponent === 'healthRecords' && <HealthRecords />}
           {activeComponent === 'reports' && <Reports />}
-          {activeComponent === 'payment' && <SalaryDetails />}
+          {/* {activeComponent === 'payment' && <SalaryDetails />} */}
           {activeComponent === 'cctv' && <CCTVManagement />}
           {activeComponent === 'inventory' && <InventoryPage/>}
           {activeComponent === 'payment' && <AdminPaymentPage/>}
