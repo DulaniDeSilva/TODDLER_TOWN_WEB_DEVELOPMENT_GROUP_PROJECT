@@ -1,0 +1,26 @@
+.send-message-container{
+    margin-top: 7%;
+    padding:20px;
+}
+
+.send-message-container h3{
+    background-color: black;
+    color: white;
+    width: 60%;
+    border-radius: 20px;
+    padding: 3px;
+    letter-spacing: 0.8rem;
+    text-align: center;
+    margin-left: 20%;
+}
+
+.send-message-container form{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.send-message-container label{
+    text-align: left;
+    padding: 2px;
+    letter-spacing: 0.3rem;
+}

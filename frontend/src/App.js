@@ -38,6 +38,7 @@ import Single from "./Pages/Blog/single/Single";
 import BlogPage from "./Pages/BlogPage";
 import DriverPage from "./Pages/DriverPage";
 import CctvComponent from "./Components/ChildInterfaceComponent/CctvComponent";
+import AdminPaymentPage from "./Pages/AdminPaymentPage";
 // import blogHome from "./Pages/Blog/blogHome/blogHome";
 
 
@@ -61,11 +62,21 @@ function App() {
       <Routes>
 
         {/*################################## */}
-            <Route path = "/teacherInterface" element = {<TeacherPage/>}/>
-            <Route path = "/caregiverInterface" element = {<CaregiverPage/>}/>
-            <Route path = "/administratorInterface" element = {<AdministratorPage/>}/>
-            <Route path = "/driverInterface" element = {<DriverPage/>}/>
+          <Route path = "/administratorInterface" element = {<AdministratorPage/>}/>
+          <Route path = "/caregiverInterface" element = {<CaregiverPage/>}/>
+          <Route path = "/teacherInterface" element = {<TeacherPage/>}/>
+          <Route path = "/driverInterface" element = {<DriverPage/>}/>
+          <Route path = "/childInterface" element = {<ChildInterface/>}/>
 
+
+
+
+            {/* <Route path = "/administratorInterface" element = { (user && user.Type === 'Admin') ? (<AdministratorPage/>) : (<Navigate to= "/"/>)}/> */}
+            {/* <Route path = "/driverInterface" element = { (user && user.Type === 'Staff') ? (<DriverPage/>) : (<Navigate to= "/"/>)}/>  */}
+            {/* <Route path = "/teacherInterface" element = { (user && user.Type === 'Staff') ? (<TeacherPage/>) : (<Navigate to= "/"/>)}/>  */}
+            {/* <Route path = "/caregiverInterface" element = { (user && user.Type === 'Staff') ? (<CaregiverPage/>) : (<Navigate to= "/"/>)}/>   */}
+            {/* <Route path = "/childInterface" element = { (user && user.Type === 'parent') ? (<ChildInterface/>) : (<Navigate to= "/"/>)}/>   */}
+            
 
         {/* ####################################### */}
 
@@ -87,6 +98,7 @@ function App() {
         {/* <Route path = "/inventoryPage" element = { user ? (<InventoryPage/>) : (<Navigate to= "/loginPage"/>)}/> */}
 
         <Route path = "/inventoryPage" element = {<InventoryPage/>} />
+        <Route path = "/adminPaymentPage" element = {<AdminPaymentPage/>} />
 
 
         {/* <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/> */}
@@ -99,7 +111,7 @@ function App() {
         <Route path = "/childEnrollmentPage" element = {<ChildEnrollmentPage/>}/>
         <Route path = "/childRegistrationPage" element = {<ChildRegistrationPage/>}/>
 
-        <Route path = "/childInterface" element = {<ChildInterface/>}/>
+       
         
 
         <Route path = "/paymentPage" element = {<PaymentPage/>}/>

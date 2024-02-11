@@ -1,8 +1,8 @@
 .contactUs {
     padding: 5rem 0; 
-    background-color: #FBF8F1;
-    margin-top:2.5%;
+    margin-top:6%;
     padding-bottom: 0px;
+
 
   }
   .contentHeader {
@@ -71,7 +71,8 @@
   }
 
   .contactUs_left p:hover{
-    background-color: #FFD0EC;
+    /* background-color: #FFD0EC; */
+    background-color: #ccc;
   }
 
   .contactUs_left span{

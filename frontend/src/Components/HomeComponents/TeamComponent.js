@@ -3,14 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import img1 from "../../Assets/Images/Home/background.jpg";
+// import img1 from "../../Assets/Images/Home/background.jpg";
 import admin from "../../Assets/Images/Home/admin.jpg";
 import sub from "../../Assets/Images/Home/sub.jpg";
 import principle from "../../Assets/Images/Home/principle.jpg";
 
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -64,7 +64,7 @@ function TeamComponent() {
               <p >Principle</p>
               <div className = "team-share">
               <FontAwesomeIcon icon= {faFacebook} className='team-icons' ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faYoutube} className='team-icons'></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faLinkedin} className='team-icons'></FontAwesomeIcon>
               <FontAwesomeIcon icon= {faInstagram} className='team-icons' ></FontAwesomeIcon>
               </div>
             </Col>
@@ -77,7 +77,7 @@ function TeamComponent() {
               {/* <p> </p> */}
               <div className = "team-share">
               <FontAwesomeIcon icon= {faFacebook} className='team-icons'></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faYoutube} className='team-icons' ></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faLinkedin} className='team-icons'></FontAwesomeIcon>
               <FontAwesomeIcon icon= {faInstagram} className='team-icons' ></FontAwesomeIcon>
               </div>
             </Col>
@@ -90,7 +90,7 @@ function TeamComponent() {
               <p>  </p>
               <div className = "team-share">
               <FontAwesomeIcon icon= {faFacebook} className='team-icons' ></FontAwesomeIcon>
-              <FontAwesomeIcon icon= {faYoutube} className='team-icons'></FontAwesomeIcon>
+              <FontAwesomeIcon icon= {faLinkedin} className='team-icons'></FontAwesomeIcon>
               <FontAwesomeIcon icon= {faInstagram} className='team-icons' ></FontAwesomeIcon>
               </div>
             </Col>

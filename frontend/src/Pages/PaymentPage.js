@@ -1,5 +1,5 @@
-import React, {useEffect, useState } from 'react';
-import { useAuthContext } from '../hooks/useAuthContext';
+// import React, {useEffect, useState } from 'react';
+// import { useAuthContext } from '../hooks/useAuthContext';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -11,16 +11,15 @@ import PaymentDetail from '../Components/PaymentComponent/PaymentDetail';
 
 import CardDetails from '../Components/PaymentComponent/CardDetails';
 // import PaymentCardPay from '../Components/PaymentComponent/PaymentCardPay';
-import { useChildEnrollmentContext } from '../hooks/useChildEnrollmentContext';
-import { usePaymentCardContext } from '../hooks/usePaymentCardContext';
+// import { useChildEnrollmentContext } from '../hooks/useChildEnrollmentContext';
+// import { usePaymentCardContext } from '../hooks/usePaymentCardContext';
 import CardUpdateForm from '../Components/PaymentComponent/CardUpdateForm';
 import UpdatedPaymentCards from '../Components/PaymentComponent/UpdatedPaymentCards';
-
 
 const PaymentPage = ()=>{
   
   
-  const {user} = useAuthContext();
+  // const {user} = useAuthContext();
   // const [PaymentType, setPaymentType] = useState('');
 
   // const handleProceedToPay = (e) =>{
@@ -102,7 +101,14 @@ const PaymentPage = ()=>{
 
 
         <div>
-        <button className='cardUpdateForm-button common-button '>Proceed to Pay</button>
+        
+          <button className='cardUpdateForm-button common-button '
+          onClick = {()=>{
+            const link = 'https://online.boc.lk/T001/channel.jsp';
+            window.open(link, '_blank');
+          }}>Proceed to Pay</button>
+        
+        
         </div>
         </div>
     )

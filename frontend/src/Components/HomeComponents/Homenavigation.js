@@ -12,6 +12,26 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 function Homenavigation() {
   const {user} = useAuthContext();
 
+  //defining dasboard links
+  const dashboardLinks = {
+    parent: ['/childInterface'],
+    staff : ['/teacherInterface', '/caregiverInterface', '/driverInterface'],
+    admin: ['//administratorInterface']
+  };
+
+  const renderDashboardLinks = () =>{
+    if(!user || !user.userType)
+      return null;
+    const userType = user.userType;
+    if(!dashboardLinks[userType])
+      return null;
+    return dashboardLinks[userType].map((link, index)=>(
+      <NavDropdown.Item key = {index} href = {link}>
+        {userType === 'parent' ? 'Child Interface': userType === 'staff' ? 'Teacher Interface': 'Admin Interface'}
+      </NavDropdown.Item>
+    ));
+  }
+
   
 
   return (
@@ -46,7 +66,32 @@ function Homenavigation() {
                     </div>
                     )}
 
-                    
+
+                    {/* {user.userType === 'Admin' && (
+                      <div className='navbarall-afteruser'>
+                        <Nav.Link href="/administratorInterface">Admin Interface</Nav.Link>
+                      </div>
+                    )}
+
+                    {user.userType === 'Staff' && (
+                      <div className='navbarall-afteruser'>
+                        <Nav.Link href="/childInterface">Child Interface</Nav.Link>
+                      </div>
+                    )}
+
+                    {user.userType === 'Parent' && (
+                      <div className='navbarall-afteruser'>
+                      <NavDropdown title="Dashboard" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="/childInterface">Child Interface</NavDropdown.Item>
+                      <NavDropdown.Item href="/caregiverInterface">Care Giver Interface</NavDropdown.Item>
+                      <NavDropdown.Item href="/administratorInterface">Admin Interface</NavDropdown.Item>
+                      <NavDropdown.Item href="/teacherInterface">Teacher Interface</NavDropdown.Item>
+                      <NavDropdown.Item href="/driverInterface">Driver Interface</NavDropdown.Item>
+                      </NavDropdown>
+                      </div>
+                    )}
+
+                     */}
 
 
 

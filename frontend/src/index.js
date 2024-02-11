@@ -29,5 +29,5 @@ root.render(
     </PaymentContextProvider>
     </ChildEnrollmentContextProvider>
   </AuthContextProvider>
-  </React.StrictMode>
+   </React.StrictMode>
 );

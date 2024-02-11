@@ -6,14 +6,13 @@ import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 import ChildEnrollmentPage from '../../Pages/ChildEnrollmentPage';
 import PaymentPage from '../../Pages/PaymentPage';
-import WaitingList from '../HomeComponents/WaitingList';
-// import CctvComponent from './CctvComponent';
 import Footer from '../HomeComponents/Footer';
 import HealthRecords from '../TeacherComponents/healthRecords/HealthRecords';
 import Attendance from '../CaregiverComponents/attendance/Attendance';
 import toddler_logo from "../../Assets/Images/LogSign/toddler_logo.png";
 import PhoneRegisterComponent from '../PhoneVertification/PhoneRegisterComponent';
 import ChildEnrollmentform from '../ChildEnrollmentComponent/ChildEnrollmentform';
+import SendMessageComponent from './SendMessageComponent';
 // import PhoneVertificationComponent from '../PhoneVertification/PhoneVertificationComponent';
 
 // import Homenavigation from '../HomeComponents/Homenavigation';
@@ -36,7 +35,7 @@ export default function ChildInterfaceNavigation() {
             case 'cctv':
                 return <PhoneRegisterComponent/>;
             case 'message':
-                return <WaitingList/>;
+                return <SendMessageComponent/>;
             case 'health':
                 return <HealthRecords/>;
             case 'curriculum':

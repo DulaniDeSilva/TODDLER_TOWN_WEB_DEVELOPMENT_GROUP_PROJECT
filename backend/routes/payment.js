@@ -6,7 +6,7 @@ const {
     getSinglePayment,
     deletePayment,
     updatePayment
-
+    
 } = require('../controllers/paymentcontroller');
 const requireAuth = require('../middlerware/requireAuth');
 
@@ -20,6 +20,7 @@ router.get("/", getPayment);
 
 //get a single payment
 router.get("/:id", getSinglePayment);
+
 
 //post a new inventory
 router.post("/", createPayment);
