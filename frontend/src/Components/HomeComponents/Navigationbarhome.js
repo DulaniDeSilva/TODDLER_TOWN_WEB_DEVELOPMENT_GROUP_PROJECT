@@ -16,7 +16,7 @@ const Navigationbarhome = () =>{
         <div  >
                
                     {user &&(
-                        <div >
+                        <div className='navigationbarhome-logout'>
                         <span>{user.email}</span>
                         <Link to = "/" className='common-link' >
                             <button onClick = {handleClick} className = "common-button" >Log out</button>

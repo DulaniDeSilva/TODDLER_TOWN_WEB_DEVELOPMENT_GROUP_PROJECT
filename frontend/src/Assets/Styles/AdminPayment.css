@@ -1,0 +1,21 @@
+.AdminPaymentPage h2{
+    padding: 20px;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    text-decoration: underline;
+}
+
+.AdminPaymentTable{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.AdminPaymentTable tr{
+    text-align: center !important;
+    padding:30px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+}
+
+
+

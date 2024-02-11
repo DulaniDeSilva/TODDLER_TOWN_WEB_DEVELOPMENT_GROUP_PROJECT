@@ -26,7 +26,7 @@ font-family: 'Ubuntu', sans-serif;
 
 .navbar-links{
   padding-left: 60px;
-  width: 1000px;
+  width: 1200px;
 }
 
 .navbarall-afteruser{
@@ -37,6 +37,16 @@ font-family: 'Ubuntu', sans-serif;
 .navigationbarhome{
   color:dimgray;
 }
+
+.navigationbarhome-logout{
+  position: relative;
+  right: 200px;
+  display: flex;
+}
+.navigationbarhome-logout span{
+  padding-top: 30px;
+}
+
 
 
 .mainnav-logout button{
@@ -764,7 +774,7 @@ border-radius: 15px;
   }
   
 
-  /* caurasal */
+  /* ######################### caurasal ############### */
   .carousel{
     /* margin: 100px; */
     margin-left: 100px;
@@ -794,11 +804,38 @@ border-radius: 15px;
     height: 150px;
     border-radius: 100px;
     padding: 10px;
+    position: relative;
+    bottom: 50px;
   }
   .carousel-content{
-    margin-top: 10px;
+    /* margin-top: 5px; */
+    position: relative;
+    bottom: 10px;
   }
 
+.carousel-content-news{
+ font-weight: bold;
+  font-size: 4rem;
+  position: relative;
+  bottom: 30px;
+  letter-spacing: 0.5rem;
+  color: rgb(122, 116, 116);
+  
+}
+
+.carousel-content-news-button{
+  padding: 20px 50px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  border-radius: 100px;
+  position: relative;
+  bottom:20px;
+  border:none;
+
+}
 
 
  

@@ -125,6 +125,10 @@ app.use("/paymentCard", paymentCardRouter);
 const phoneRouter = require('./routes/phone');
 app.use("/phone", phoneRouter);
 
+const adminPaymentRouter =  require('./routes/adminPayment');
+app.use("/adminPayment", adminPaymentRouter);
+
+
 app.get("/", (req, res, next)=>{
     res.send("Starting...");
     next();

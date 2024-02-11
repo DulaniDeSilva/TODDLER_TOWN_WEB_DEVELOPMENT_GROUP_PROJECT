@@ -28,7 +28,7 @@ const Signupcomponent = () =>{
     }
 
 
-    if(userType === 'Admin' && secretKey !== "Jungle"){
+    if(userType === 'Admin' && secretKey !== "ToddlerAdmin"){
       alert("Invalid Admin");
     }else if(userType === "Staff" && secretKey !== "ToddlerStaff"){
       alert("Invalid Staff");

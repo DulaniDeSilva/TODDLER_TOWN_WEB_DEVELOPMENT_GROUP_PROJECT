@@ -194,8 +194,8 @@ const ChildEnrollmentform =()=>{
                     type="text"
                     onChange = {(e) =>setInitials(e.target.value)}
                     value = {initials}
-                    className = {emptyFields.includes('initials') ? 'error': ''}
-                    // className={` ${emptyFields.includes('initials') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('initials') ? 'error': ''}
+                    className={` ${emptyFields.includes('initials') ? 'error' : ''} inputs`}
                 />
                 </div>
 
@@ -207,8 +207,8 @@ const ChildEnrollmentform =()=>{
                     type="text"
                     onChange = {(e) =>setFirstName(e.target.value)}
                     value = {firstName}
-                    className = {emptyFields.includes('firstName') ? 'error': ''}
-                    // className={` ${emptyFields.includes('firstName') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('firstName') ? 'error': ''}
+                    className={` ${emptyFields.includes('firstName') ? 'error' : ''} inputs`}
                 />
                 </div>
 
@@ -273,8 +273,9 @@ const ChildEnrollmentform =()=>{
                     name = "gender"
                     onChange = {(e) =>setGender(e.target.value)}
                     value = {gender}
-                    // className = {emptyFields.includes('gender') ? 'error': ''}
-                    className={` ${emptyFields.includes('gender') ? 'error' : ''} inputs`}
+                    // className = {emptyFields.includes('gender') ? 'error': ''} 
+                    className={` ${emptyFields.includes('gender') ? 'error' : ''} selectinput`}
+                    // className={` ${emptyFields.includes('gender') ? 'error' : ''} inputs`}
                 >   
                     <option>Choose ...</option>
                     <option>Male</option>
@@ -328,7 +329,7 @@ const ChildEnrollmentform =()=>{
                     name = 'serviceType'
                     onChange = {(e) =>setServiceType(e.target.value)}
                     value = {serviceType}
-                    className={` ${emptyFields.includes('serviceType') ? 'error' : ''} inputs`}
+                    className={` ${emptyFields.includes('serviceType') ? 'error' : ''} selectinput`}
                     // className = {emptyFields.includes('serviceType') ? 'error': ''}
                 >
                     <option>Choose ...</option>

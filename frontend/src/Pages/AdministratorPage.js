@@ -10,8 +10,9 @@ import Reports from '../Components/AdminisratorComponents/report/Reports';
 import SalaryDetails from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails';
 import Information from '../Components/AdminisratorComponents/Information/Information';
 import CCTVManagement from '../Components/AdminisratorComponents/CCTV/CCTVManagement';
-import Inventory from '../Components/AdminisratorComponents/inventory/Inventory';
+// import Inventory from '../Components/AdminisratorComponents/inventory/Inventory';
 import StaffSalary from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails'
+
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';
 import healthImage from '../Assets/Images/Administrator/health.jpg';
@@ -26,6 +27,8 @@ import salaryImage from '../Assets/Images/Administrator/salary.jpg'
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
 import InventoryPage from './InventoryPage';
+import AdminPaymentPage from './AdminPaymentPage';
+
 
 
 function AdministratorPage() {
@@ -113,6 +116,7 @@ function AdministratorPage() {
           {activeComponent === 'payment' && <SalaryDetails />}
           {activeComponent === 'cctv' && <CCTVManagement />}
           {activeComponent === 'inventory' && <InventoryPage/>}
+          {activeComponent === 'payment' && <AdminPaymentPage/>}
           {activeComponent === 'staffSalary' && <StaffSalary />}
 
         </div>
