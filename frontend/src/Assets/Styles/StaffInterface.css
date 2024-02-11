@@ -1,19 +1,22 @@
-/* frontend/src/App.css */
-
-body {
-  font-family: 'Arial, sans-serif';
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; 
-  background-image: url('../Images/TeacherPage/background.jpg'); /* Add the path to your background image here */
+/* administratorStyles.css */
+.staff-page {
+  background-image: url('../Images/Administrator/backImage.png'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100%; 
+  width: 100%;  
+  font-family: 'Arial, sans-serif';
+  /* background-image: url('../Images/Administrator/background.jpg');  */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  background-color: rgba(255, 255, 255, 0.2); 
 }
 
-body::before {
+.staff-page body::before {
   content: "";
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white overlay */
+ 
   position: fixed; /* Fixed to the viewport */
   top: 0;
   left: 0;
@@ -22,32 +25,36 @@ body::before {
   z-index: -1;
 }
 
-.container {
+.staff-page .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0px;
 }
 
-.header {
+.staff-page .header {
   font-size: 50px;   
   color: #393972;    
   padding: 0px 0;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 150px; /* Adjust this value as needed */
 }
 
-.tab-container {
+.staff-page .tab-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 20px; /* Adjust this value as needed */
 }
 
-.tab {
-  width: 45%; 
+
+.staff-page .tab {
+  width: calc(45% - 60px); /* Adjust the width and gap as needed */
+  margin-bottom: 10px; /* Add a gap between tiles */
   height: 50%;
+  margin-left: 60px; /* Adjust the left margin */
+  margin-right: 60px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 5px;
   border-radius: 4px;
@@ -55,14 +62,15 @@ body::before {
   position: relative;
 }
 
-.tab img {
+
+.staff-page .tab img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.tab button {
+.staff-page .tab button {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -76,13 +84,13 @@ body::before {
   font-size: 16px;
 }
 
-.tab button:hover {
+.staff-page .tab button:hover {
   background-color: #b387c7;
   cursor: pointer;
   transform: translateX(-50%) scale(1.05);
 }
 
-.content-full-page {
+.staff-page .content-full-page {
   width: 100%;
   min-height: calc(100vh - 450px); 
   background-color: #F2DEFB;
@@ -90,7 +98,7 @@ body::before {
   box-sizing: border-box;
 }
 
-.app-logo {
+.staff-page .app-logo {
   width: 200px;  
   height: 200px; 
   position: absolute;

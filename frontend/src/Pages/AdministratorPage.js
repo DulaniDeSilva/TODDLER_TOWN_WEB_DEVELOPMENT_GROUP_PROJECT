@@ -1,6 +1,6 @@
 //frontend/src/pages/adminpage.js
 import React, { useState, useRef } from 'react';
-import '../App.css';
+import '../Assets/Styles/StaffInterface.css';
 
 import Attendance from '../Components/AdminisratorComponents/attendance/Attendance';
 import LessonPlans from '../Components/TeacherComponents/lessonPlans/LessonPlans';
@@ -21,7 +21,7 @@ import reportImage from '../Assets/Images/Administrator/report.jpg';
 import activityPlanImage from '../Assets/Images/Administrator/activityPlan.jpg'
 import informationImage from '../Assets/Images/Administrator/information.jpg'
 import cctvImage from '../Assets/Images/Administrator/cctv.jpeg'
-import inventoryImage from '../Assets/Images/Administrator/cctv.jpeg'
+import inventoryImage from '../Assets/Images/Administrator/inventory.jpg'
 import salaryImage from '../Assets/Images/Administrator/salary.jpg'
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
@@ -29,6 +29,7 @@ import InventoryPage from './InventoryPage';
 
 
 function AdministratorPage() {
+  
     const [activeComponent, setActiveComponent] = useState('');
     const contentRef = useRef(null);
   
@@ -38,9 +39,9 @@ function AdministratorPage() {
     }
   
     return (
-      <div className="App container">
+      <div className="staff-page">
         <h1 className="header">Hi, Vimukthi!</h1>
-        { <img src={logo} alt="App Logo" className="app-logo" /> }
+        <img src={logo} alt="App Logo" className="app-logo" />
   
         <div className="tab-container">
   
@@ -116,6 +117,7 @@ function AdministratorPage() {
 
         </div>
       </div>
+     
     );
   }
   

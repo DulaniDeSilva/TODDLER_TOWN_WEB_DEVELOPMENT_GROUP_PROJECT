@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import '../App.css';
+import '../Assets/Styles/StaffInterface.css';
 
 import Attendance from '../Components/CaregiverComponents/attendance/Attendance';
 import ActivityPlans from '../Components/CaregiverComponents/activityPlans/ActivityPlans';
@@ -10,7 +10,7 @@ import SalaryDetails from '../Components/CaregiverComponents/salaryDetails/Salar
 
 import attendanceImage from '../Assets/Images/Caregiver/calendar.jpg'
 import healthImage from '../Assets/Images/Caregiver/health.jpg';
-import activityPlanImage from '../Assets/Images/Caregiver/ActivityPlan.jpg';
+import activityPlanImage from '../Assets/Images/Caregiver/children-having-fun-summer-camp.jpg';
 import salaryImage from '../Assets/Images/Caregiver/salary.jpg';
 import reportImage from '../Assets/Images/Caregiver/report.jpg';
 
@@ -28,7 +28,7 @@ function CaregiverPage() {
 
 
     return (
-        <div className="App container">
+      <div className="staff-page">
       <h1 className="header">Hi, Priyanthi!</h1>
       { <img src={logo} alt="App Logo" className="app-logo" /> }
 
@@ -39,7 +39,7 @@ function CaregiverPage() {
         </div>
 
         <div className="tab">
-        <img src={require('../Assets/Images/Administrator/activityPlan.jpg').default} alt="Activity" />
+        <img src={activityPlanImage} alt="ActivityImage" />
             <button onClick={() => handleButtonClick('activityPlans')}>Activity Plans</button>
           </div>
 
