@@ -36,6 +36,7 @@ const healthRecordsRoutes = require('./routes/TeacherRoutes/healthRecords');
 const lessonPlanRoutes = require('./routes/TeacherRoutes/LessonPlanRoutes');
 const activityPlanRoutes = require('./routes/CaregiverRoutes/ActivityPlanRoutes');
 const staffRoutes = require('./routes/AdministratorRoutes/StaffRoutes');
+const childrenRoutes = require('./routes/AdministratorRoutes/childrenRoutes');
 
 
 
@@ -45,6 +46,7 @@ app.use('/api/healthRecords', healthRecordsRoutes);
 app.use('/api/lessonPlans', lessonPlanRoutes);
 app.use('/api/activityPlans', activityPlanRoutes);
 app.use('/api/staff', staffRoutes);
+app.use('/api/childrens', childrenRoutes);
 
 
 

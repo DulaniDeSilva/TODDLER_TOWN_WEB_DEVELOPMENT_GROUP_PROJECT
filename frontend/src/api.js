@@ -6,6 +6,7 @@ const LESSON_PLAN_ENDPOINT = `${BASE_URL}/api/lessonPlans`;
 const ACTIVITY_PLAN_ENDPOINT = `${BASE_URL}/api/activityPlans`;
 const HEALTH_RECORD_ENDPOINT = `${BASE_URL}/api/healthRecords`;
 const STAFF_ENDPOINT = `${BASE_URL}/api/staff`;
+const CHILD_ENDPOINT = `${BASE_URL}/api/child`;
 export const addLessonPlan = async (lessonPlan) => {
     try {
         const response = await axios.post(`${LESSON_PLAN_ENDPOINT}/add`, lessonPlan);
@@ -142,7 +143,7 @@ export const updateHealthRecord = async (regNumber, data) => {
 // staff information
 export const getAcademicStaff = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}/api/academicStaff`);
+        const response = await axios.get(`${STAFF_ENDPOINT}/academic`);
         return response.data;
     } catch (error) {
         console.error("Failed to fetch academic staff:", error);
@@ -152,7 +153,7 @@ export const getAcademicStaff = async () => {
 
 export const addAcademicStaff = async (staffInfo) => {
     try {
-        const response = await axios.post(`${BASE_URL}/api/academicStaff/add`, staffInfo);
+        const response = await axios.post(`${STAFF_ENDPOINT}/academic/add`, staffInfo);
         return response.data;
     } catch (error) {
         console.error("Failed to add academic staff:", error);
@@ -162,7 +163,7 @@ export const addAcademicStaff = async (staffInfo) => {
 
 export const updateAcademicStaff = async (staffId, updatedInfo) => {
     try {
-        const response = await axios.put(`${BASE_URL}/api/academicStaff/update/${staffId}`, updatedInfo);
+        const response = await axios.put(`${STAFF_ENDPOINT}/academic/update/${staffId}`, updatedInfo);
         return response.data;
     } catch (error) {
         console.error(`Failed to update academic staff ${staffId}:`, error);
@@ -170,12 +171,54 @@ export const updateAcademicStaff = async (staffId, updatedInfo) => {
     }
 };
 
-export const deleteAcademicStaff = async (staffId) => {
+export const deleteAcademicStaff = async (emp_id) => {
     try {
-        const response = await axios.delete(`${STAFF_ENDPOINT}/academic/delete/${staffId}`);
+        const response = await axios.delete(`${STAFF_ENDPOINT}/academic/${emp_id}`);
+        return response.data;
+    } catch (error) {
+        throw new Error(`Failed to delete staff: ${error.message}`);
+    }
+};
+
+
+
+// Child information
+export const getChild = async () => {
+    try {
+        const response = await axios.get(CHILD_ENDPOINT);
+        return response.data;
+    } catch (error) {
+        console.error("Failed to fetch child:", error);
+        throw error;
+    }
+};
+
+export const addChild = async (childInfo) => {
+    try {
+        const response = await axios.post(`${CHILD_ENDPOINT}/add`, childInfo);
+        return response.data;
+    } catch (error) {
+        console.error("Failed to add child:", error);
+        throw error;
+    }
+};
+
+export const updateChild = async (enrollmentNo, updatedInfo) => {
+    try {
+        const response = await axios.put(`${CHILD_ENDPOINT}/update/${enrollmentNo}`, updatedInfo);
+        return response.data;
+    } catch (error) {
+        console.error(`Failed to update child ${enrollmentNo}:`, error);
+        throw error;
+    }
+};
+
+export const deleteChild = async (enrollmentNo) => {
+    try {
+        const response = await axios.delete(`${CHILD_ENDPOINT}/delete/${enrollmentNo}`);
         return response.data; // Assuming your API returns data with a success message
     } catch (error) {
-        console.error(`Failed to delete academic staff ${staffId}:`, error);
+        console.error(`Failed to delete child ${enrollmentNo}:`, error);
         throw error;
     }
 };

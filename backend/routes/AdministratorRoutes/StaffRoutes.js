@@ -14,6 +14,7 @@ router.post('/academic/add', async (req, res) => {
   }
 });
 
+
 // Route to add non-academic staff
 router.post('/nonAcademic/add', async (req, res) => {
   try {
@@ -44,6 +45,21 @@ router.get('/nonAcademic', async (req, res) => {
     res.status(400).json({ error: 'Failed to get non-academic staff.', details: err });
   }
 });
+
+// Route to delete academic staff by ID
+router.delete('/academic/:emp_id', async (req, res) => {
+  try {
+    const deletedAcademicStaff = await AcademicStaff.findByIdAndDelete(req.params.emp_id);
+    if (!deletedAcademicStaff) {
+      return res.status(404).json({ error: 'Academic staff not found.' });
+    }
+    res.json({ message: 'Academic staff deleted!', staff: deletedAcademicStaff });
+  } catch (err) {
+    res.status(400).json({ error: 'Failed to delete academic staff.', details: err });
+  }
+});
+
+
 
 // Other routes for updating and deleting staff records can be added similarly
 module.exports = router;

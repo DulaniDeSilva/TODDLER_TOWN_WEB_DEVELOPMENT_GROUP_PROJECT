@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './Attendance.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function Attendance() {
     const [students, setStudents] = useState([
