@@ -62,9 +62,9 @@ const Attendance = () => {
 
   return (
     <div className="information-container">
-      <h1>Attendance Management</h1>
+      <h3><b>Attendance Management</b></h3>
       <div>
-        <h2>Mark Attendance</h2>
+        <h5>Mark Attendance</h5>
         <input
           type="date"
           value={selectedDate}
@@ -92,7 +92,7 @@ const Attendance = () => {
 
       </div>
       <div>
-        <h2>View Attendance</h2>
+        <h5>View Attendance</h5>
         <input
           type="date"
           value={selectedDate}

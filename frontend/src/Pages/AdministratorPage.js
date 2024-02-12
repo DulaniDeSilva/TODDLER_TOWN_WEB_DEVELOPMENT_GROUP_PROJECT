@@ -15,6 +15,7 @@ import StaffSalary from '../Components/AdminisratorComponents/salaryDetails/Sala
 import InventoryPage from './InventoryPage';
 import AdminPaymentPage from './AdminPaymentPage';
 import StaffAttendancePage from '../Components/AdminisratorComponents/attendance/Attendance';
+import ChildPickupPage from '../Components/DriverComponents/pickupservice/Pickupservice';
 
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';
@@ -109,7 +110,7 @@ function AdministratorPage() {
 
           <div className="tab">
             <img src={pickupimage} alt="pickup" />
-            <button onClick={() => handleButtonClick('staffSalary')}>Child Pickup</button>
+            <button onClick={() => handleButtonClick('childPickup')}>Child Pickup</button>
           </div>
   
   
@@ -132,6 +133,7 @@ function AdministratorPage() {
           {activeComponent === 'inventory' && <InventoryPage/>}
           {activeComponent === 'payment' && <AdminPaymentPage/>}
           {activeComponent === 'staffSalary' && <StaffSalary />}
+          {activeComponent === 'childPickup' && <ChildPickupPage />}
 
         </div>
       </div>
