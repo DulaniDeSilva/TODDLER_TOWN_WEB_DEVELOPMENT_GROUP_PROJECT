@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addHealthRecord, searchHealthRecordByRegNumber, updateHealthRecord } from '../../../api';
-import './HealthRecords.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function HealthRecords() {
   const [regNumber, setRegNumber] = useState('');
@@ -128,7 +128,7 @@ function HealthRecords() {
   };
 
   return (
-    <div className="health-record-form">
+    <div className="information-container">
       <h2 className="container">Health Records management</h2>
       <button onClick={() => { setAddSectionVisible(true); setUpdateSectionVisible(false); setViewSectionVisible(false); }}>Add health data</button>
       <button onClick={() => { setUpdateSectionVisible(true); setAddSectionVisible(false); setViewSectionVisible(false); }}>Update health data</button>

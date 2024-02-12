@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './Inventory.css';  // Assuming you'll have a separate CSS file
+import '../../../Assets/Styles/StaffInterface.css';  // Assuming you'll have a separate CSS file
 
 function Inventory() {
     const [showInventory, setShowInventory] = useState(false);
 
-    return (
-        <div className="inventory-container">
+    return ( 
+        <div className="information-container">
             <h2>Inventory</h2>
 
             {!showInventory && <button className="main-tab" onClick={() => setShowInventory(true)}>Inventory</button>}

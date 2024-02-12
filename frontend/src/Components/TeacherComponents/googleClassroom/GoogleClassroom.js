@@ -1,7 +1,7 @@
 // frontend/src/features/googleClassroom/GoogleClassroom.js
 
 import React from 'react';
-import './GoogleClassroom.css'; 
+import '../../../Assets/Styles/StaffInterface.css'; 
 
 function GoogleClassroom() {
   const redirectToGoogleClassroom = () => {
@@ -9,7 +9,7 @@ function GoogleClassroom() {
   };
 
   return (
-    <div className="container content-full-page">
+    <div className="information-container">
       <h2 className="container">Access Google Classroom</h2>
       <div className="button-container">
         <button onClick={redirectToGoogleClassroom}>Go to Google Classroom</button>

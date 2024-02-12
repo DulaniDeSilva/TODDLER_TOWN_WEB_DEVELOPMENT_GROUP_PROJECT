@@ -3,6 +3,8 @@ const router = express.Router();
 const AcademicStaff = require('../../models/AdministratorModels/AcademicStaffModel');
 const NonAcademicStaff = require('../../models/AdministratorModels/NonAcademicStaffModel');
 
+
+
 // Route to add academic staff
 router.post('/academic/add', async (req, res) => {
   try {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './salary.css'; // Ensure this path is correct
+import '../../../Assets/Styles/StaffInterface.css'; // Ensure this path is correct
 
 function SalaryDetails() {
     const [salaries, setSalaries] = useState([]);
@@ -92,7 +92,7 @@ function SalaryDetails() {
     );
 
     return (
-        <div className="container">
+        <div className="lesson-plans-container">
             <h4 className="headerr">Salary Management</h4>
             <div className="button-container">
                 <button onClick={() => handleModeChange('view')}>View Salary</button>

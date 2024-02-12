@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './HealthRecords.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function HealthRecords() {
     const [view, setView] = useState('');  
@@ -17,7 +17,7 @@ function HealthRecords() {
     };
 
     return (
-        <div className="container">
+        <div className="lesson-plans-container">
             <h2 className="headerh">Health Records Management</h2>
             
             <div className="button-containerr">

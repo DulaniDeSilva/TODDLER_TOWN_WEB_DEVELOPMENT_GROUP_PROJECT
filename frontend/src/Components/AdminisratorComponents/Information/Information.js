@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../../../Assets/Styles/StaffInterface.css';
 import { deleteAcademicStaff, addAcademicStaff, getAcademicStaff, updateAcademicStaff } from '../../../api';
 import ChildInformation from './childInformation';
 
+
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
+
 function Information() {
-    const [showChildInfo, setShowChildInfo] = useState(false);
+    const [showChildInfo, setShowChildInfo] = useState(false); 
     const [showStaffInfo, setShowStaffInfo] = useState(false);
     const [showAddForm, setShowAddForm] = useState(false);
     const [showDeleteForm, setShowDeleteForm] = useState(false);
     const [showUpdateForm, setShowUpdateForm] = useState(false);
-    const [showTableView, setShowTableView] = useState(false);
-
+    
     const [formData, setFormData] = useState({
         emp_id: '',
         emp_type: '',
@@ -56,7 +61,7 @@ function Information() {
             });
         }
     };
-
+    
     const handleDeleteFormSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -72,12 +77,7 @@ function Information() {
         }
     };
 
-    const handleViewButtonClick = () => {
-        setShowStaffInfo(!showStaffInfo);
-        setShowAddForm(false);
-        setShowDeleteForm(false);
-        setShowUpdateForm(false);
-    };
+    
 
     const handleUpdateFormSubmit = async (e) => {
         e.preventDefault();
@@ -106,7 +106,9 @@ function Information() {
             });
         }
     };
-
+    const handleCancel = () => {
+        setShowStaffInfo(false);
+    };
     const fetchStaffList = async () => {
         try {
             const staffData = await getAcademicStaff();
@@ -118,7 +120,7 @@ function Information() {
 
     useEffect(() => {
         fetchStaffList();
-    }, []);
+    }, []); 
 
     return (
         <div className="information-container">
@@ -127,11 +129,11 @@ function Information() {
             {!showChildInfo && <button className="main-tab" onClick={() => setShowChildInfo(true)}>Child Information</button>}
             {showChildInfo && (
                 <div>
-                    <ChildInformation showChildInfo={showChildInfo} setShowChildInfo={setShowChildInfo} />
+                    <ChildInformation showChildInfo={showChildInfo} setShowChildInfo={setShowChildInfo} /> 
                 </div>
             )}
 
-            {!showStaffInfo && <button className="main-tab" onClick={handleViewButtonClick}>Staff Information</button>}
+            {!showStaffInfo && <button className="main-tab" onClick={() => setShowStaffInfo(true)}>Staff Information</button>}
             {showStaffInfo && (
                 <div>
                     <h3><b>Staff Information</b></h3>
@@ -139,15 +141,28 @@ function Information() {
                         <button onClick={() => setShowAddForm(true)}>Add</button>
                         <button onClick={() => setShowDeleteForm(true)}>Delete</button>
                         <button onClick={() => setShowUpdateForm(true)}>Update</button>
-                        <button onClick={handleViewButtonClick}>View</button>
-                        <button>Print</button>
+                        <button onClick={() => setShowUpdateForm(true)}>View</button> 
+                        <button onClick={() => setShowUpdateForm(true)}>Print</button>
+                        <button onClick={handleCancel}>Cancel</button>
+                        
+            
+                        
                     </div>
 
                     {showAddForm && (
                         <div>
                             <h4><b>Add New Staff Member</b></h4>
                             <form onSubmit={handleAddFormSubmit}>
-                                {/* ... (input fields for adding new staff member) */}
+                                <label>Employee ID: <input type="text" name="emp_id" value={formData.emp_id} onChange={handleInputChange} required /></label>
+                                <label>Employee Type: <input type="text" name="emp_type" value={formData.emp_type} onChange={handleInputChange} /></label>
+                                <label>Name: <input type="text" name="name" value={formData.name} onChange={handleInputChange} /></label>
+                                <label>Date of Birth: <input type="text" name="dob" value={formData.dob} onChange={handleInputChange} /></label>
+                                <label>Address: <input type="text" name="address" value={formData.address} onChange={handleInputChange} /></label>
+                                <label>Gender: <input type="text" name="gender" value={formData.gender} onChange={handleInputChange} /></label>
+                                <label>NIC: <input type="text" name="NIC" value={formData.NIC} onChange={handleInputChange} /></label>
+                                <label>Qualifications: <input type="text" name="qualifications" value={formData.qualifications} onChange={handleInputChange} /></label>
+                                <label>Year Joined: <input type="text" name="year_joined" value={formData.year_joined} onChange={handleInputChange} /></label>
+                                <label>Salary: <input type="text" name="salary" value={formData.salary} onChange={handleInputChange} /></label>
                                 <button type="submit">Submit</button>
                             </form>
                         </div>
@@ -156,8 +171,9 @@ function Information() {
                     {showDeleteForm && (
                         <div>
                             <h4><b>Delete Staff Member</b></h4>
+                            
                             <form onSubmit={handleDeleteFormSubmit}>
-                                {/* ... (input fields for deleting staff member) */}
+                                <label>Employee ID to Delete: <input type="text" name="emp_id" value={formData.emp_id} onChange={handleInputChange} required /></label>
                                 <button type="submit">Delete</button>
                             </form>
                         </div>
@@ -167,12 +183,12 @@ function Information() {
                         <div>
                             <h4><b>Update Staff Member</b></h4>
                             <form onSubmit={handleUpdateFormSubmit}>
+                                <label>Employee ID to Update: <input type="text" name="emp_id" value={formData.emp_id} onChange={handleInputChange} required /></label>
                                 {/* ... (input fields for updating staff member data) */}
                                 <button type="submit">Update</button>
                             </form>
                         </div>
                     )}
-
                     {showStaffInfo && (
                         <div>
                             {staffList.length > 0 && (
@@ -219,5 +235,4 @@ function Information() {
         </div>
     );
 }
-
 export default Information;

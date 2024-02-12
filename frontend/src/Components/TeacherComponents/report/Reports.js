@@ -1,6 +1,6 @@
 // src/features/reports/Reports.js
 import React, { useState } from 'react';
-import './Reports.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function Reports() {
     const [reportType, setReportType] = useState(''); // 'academic', 'attendance', or 'health'
@@ -28,7 +28,7 @@ function Reports() {
     };
 
     return (
-        <div className="container">
+        <div className="information-container">
             <h2 className="headerr">Generate Reports</h2>
             <div>
                 <label className="label">Select Report Type:</label>

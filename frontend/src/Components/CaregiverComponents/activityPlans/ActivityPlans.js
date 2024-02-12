@@ -124,7 +124,7 @@ function ActivityPlans() {
   };
 
   return (
-    <div className="lesson-plans-container">
+    <div className="information-container">
         <h2 className="container">Activity Planning</h2>
       <button onClick={() => { setAddSectionVisible(true); setUpdateSectionVisible(false); setTrackSectionVisible(false); }}>Add Activity Plan</button>
       <button onClick={() => { setUpdateSectionVisible(true); setAddSectionVisible(false); setTrackSectionVisible(false); }}>Update Activity Plan</button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { addLessonPlan, getLessonPlanByMonth, updateLessonPlan, updateLessonPlanTracking } from '../../../api'; // Import your API functions
-import './LessonPlans.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function LessonPlans() {
   const months = [
@@ -124,7 +124,7 @@ function LessonPlans() {
   };
 
   return (
-    <div className="lesson-plan-form">
+    <div className="information-container">
         <h2 className="container">Lesson Planning</h2>
       <button onClick={() => { setAddSectionVisible(true); setUpdateSectionVisible(false); setTrackSectionVisible(false); }}>Add Lesson Plan</button>
       <button onClick={() => { setUpdateSectionVisible(true); setAddSectionVisible(false); setTrackSectionVisible(false); }}>Update Lesson Plan</button>

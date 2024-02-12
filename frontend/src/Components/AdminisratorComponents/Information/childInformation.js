@@ -56,6 +56,11 @@ function ChildInformation({ showChildInfo, setShowChildInfo }) {
         console.log('Update button clicked');
     };
 
+    const handlePrint = () => {
+        // Implement your update function here
+        console.log('print button clicked');
+    };
+
     const handleCancel = () => {
         setShowChildInfo(false);
     };
@@ -80,6 +85,7 @@ function ChildInformation({ showChildInfo, setShowChildInfo }) {
                     <button onClick={handleDelete}>Delete</button>
                     <button onClick={handleView}>View</button>
                     <button onClick={handleUpdate}>Update</button>
+                    <button onClick={handlePrint}>Print</button>
                     <button onClick={handleCancel}>Cancel</button>
                 </div>
             )}

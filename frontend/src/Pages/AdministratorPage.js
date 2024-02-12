@@ -14,6 +14,8 @@ import CCTVManagement from '../Components/AdminisratorComponents/CCTV/CCTVManage
 import StaffSalary from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails'
 import InventoryPage from './InventoryPage';
 import AdminPaymentPage from './AdminPaymentPage';
+import StaffAttendancePage from '../Components/AdminisratorComponents/staffAttendance';
+
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';
 import healthImage from '../Assets/Images/Administrator/health.jpg';
@@ -25,6 +27,8 @@ import informationImage from '../Assets/Images/Administrator/information.jpg'
 import cctvImage from '../Assets/Images/Administrator/cctv.jpeg'
 import inventoryImage from '../Assets/Images/Administrator/inventory.jpg'
 import salaryImage from '../Assets/Images/Administrator/salary.jpg'
+import emailImage from '../Assets/Images/Administrator/email.jpg';
+import pickupimage from '../Assets/Images/Caregiver/pickup.jpg';
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
 
@@ -97,6 +101,16 @@ function AdministratorPage() {
             <img src={salaryImage} alt="Salary" />
             <button onClick={() => handleButtonClick('staffSalary')}>Staff Salary Management</button>
           </div>
+
+          <div className="tab">
+            <img src={emailImage} alt="email" />
+            <button onClick={() => handleButtonClick('staffSalary')}>See Messages</button>
+          </div>
+
+          <div className="tab">
+            <img src={pickupimage} alt="pickup" />
+            <button onClick={() => handleButtonClick('staffSalary')}>Child Pickup</button>
+          </div>
   
   
           
@@ -107,7 +121,7 @@ function AdministratorPage() {
         </div>
   
         <div ref={contentRef} className="content-full-page">
-          {activeComponent === 'attendance' && <Attendance />}
+          {activeComponent === 'attendance' && <StaffAttendancePage />}
           {activeComponent === 'information' && <Information />}
           {activeComponent === 'lessonPlans' && <LessonPlans />}
           {activeComponent === 'activityPlans' && <ActivityPlans />}

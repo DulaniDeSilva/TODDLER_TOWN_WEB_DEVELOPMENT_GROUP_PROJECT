@@ -4,6 +4,7 @@ import '../Assets/Styles/InventorySystem/Navbar.css';
 import '../Assets/Styles/InventorySystem/InventoryDetails.css';
 import '../Assets/Styles/InventorySystem/InventoryPage.css';
 import '../Assets/Styles/InventorySystem/Inventoryform.css';
+import '../Assets/Styles/StaffInterface.css';
 
 import { useInventoryContext } from '../hooks/useInventoryContext';
 import InventoryDetails from '../Components/InventoryComponents/InventoryDetails';
@@ -50,7 +51,7 @@ const InventoryPage = ()=>{
 
     return(
         <div className='pages'>
-        <div className="InventoryHome">
+        <div className="information-container">
         
         <Row>
             <Col>

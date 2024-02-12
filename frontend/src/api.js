@@ -7,6 +7,40 @@ const ACTIVITY_PLAN_ENDPOINT = `${BASE_URL}/api/activityPlans`;
 const HEALTH_RECORD_ENDPOINT = `${BASE_URL}/api/healthRecords`;
 const STAFF_ENDPOINT = `${BASE_URL}/api/staff`;
 const CHILD_ENDPOINT = `${BASE_URL}/api/child`;
+const ATTENDANCE_ENDPOINT = `${BASE_URL}/api/staffAttendance`;
+
+export const addAttendance = async (date, attendanceData) => {
+    try {
+        // Check if there is already an attendance record for the given date
+        const existingAttendance = await getAttendance(date);
+        if (existingAttendance) {
+            // Update existing attendance record
+            const updatedAttendance = {
+                ...existingAttendance,
+                ...attendanceData,
+            };
+            await axios.put(`${ATTENDANCE_ENDPOINT}/update/${date}`, updatedAttendance);
+            return updatedAttendance;
+        } else {
+            // Create new attendance record
+            await axios.post(`${ATTENDANCE_ENDPOINT}/add`, { date, ...attendanceData });
+            return { date, ...attendanceData };
+        }
+    } catch (error) {
+        console.error(`Failed to add/update attendance for ${date}:`, error);
+        throw error;
+    }
+};
+export const getAttendance = async (date) => {
+    try {
+        const response = await axios.get(`${ATTENDANCE_ENDPOINT}/${date}`);
+        return response.data;
+    } catch (error) {
+        console.error(`Failed to fetch attendance for ${date}:`, error);
+        throw error;
+    }
+};
+
 export const addLessonPlan = async (lessonPlan) => {
     try {
         const response = await axios.post(`${LESSON_PLAN_ENDPOINT}/add`, lessonPlan);

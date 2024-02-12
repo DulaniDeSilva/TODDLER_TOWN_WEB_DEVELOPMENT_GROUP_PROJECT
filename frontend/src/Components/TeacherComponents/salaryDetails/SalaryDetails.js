@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../../../Assets/Styles/StaffInterface.css';
 
 function SalaryDetails() {
     const [salaries, setSalaries] = useState([]);
@@ -14,7 +15,7 @@ function SalaryDetails() {
     }, [regNumber]);
 
     return (
-        <div>
+        <div className="information-container">
             <h4>Salary Details</h4>
             <input 
                 type="text" 

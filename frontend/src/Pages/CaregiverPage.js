@@ -13,6 +13,8 @@ import healthImage from '../Assets/Images/Caregiver/health.jpg';
 import activityPlanImage from '../Assets/Images/Caregiver/children-having-fun-summer-camp.jpg';
 import salaryImage from '../Assets/Images/Caregiver/salary.jpg';
 import reportImage from '../Assets/Images/Caregiver/report.jpg';
+import pickupImage from '../Assets/Images/Caregiver/pickup.jpg';
+
 
 import logo from '../Assets/Images/TeacherPage/logo.png';
 
@@ -41,6 +43,11 @@ function CaregiverPage() {
         <div className="tab">
         <img src={activityPlanImage} alt="ActivityImage" />
             <button onClick={() => handleButtonClick('activityPlans')}>Activity Plans</button>
+          </div>
+
+          <div className="tab">
+        <img src={pickupImage} alt="pickupImage" />
+            <button onClick={() => handleButtonClick('activityPlans')}>Pickup Data</button>
           </div>
 
 
