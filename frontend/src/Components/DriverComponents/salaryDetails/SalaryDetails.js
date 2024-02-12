@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './SalaryDetails.css';
+import '../../../Assets/Styles/StaffInterface.css';
 
 
 function SalaryDetails() {
@@ -11,7 +11,7 @@ function SalaryDetails() {
     ]);
 
     return (
-        <div>
+        <div className="information-container">
             <h4>Salary Details</h4>
             <table border="1" cellPadding="10">
                 <thead>

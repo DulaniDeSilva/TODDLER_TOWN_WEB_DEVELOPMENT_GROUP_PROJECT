@@ -1,4 +1,7 @@
 import React, { useState, useRef } from 'react';
+
+import '../Assets/Styles/StaffInterface.css';
+
 import logo from '../Assets/Images/Driver/logo.png'
 import pickupserviceImage from '../Assets/Images/Driver/pickupservice.jpg'
 import salaryImage from '../Assets/Images/Driver/salary.jpg'
@@ -16,7 +19,7 @@ function DriverPage() {
   }
 
   return (
-    <div className="App container">
+    <div className="staff-page">
       <h1 className="header">Hi, Nimal!</h1>
       { <img src={logo} alt="App Logo" className="app-logo" /> }
 

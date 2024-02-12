@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Pickupservice.css';
+import '../../../Assets/Styles/StaffInterface.css';
 import axios from 'axios';
 
 function Pickupservice() {
@@ -41,7 +41,7 @@ function Pickupservice() {
   };
 
     return (
-        <div className="container">
+        <div className="information-container">
             <h2 className="headerh">Pickup Service</h2>
             
             <div className="button-containerr">
