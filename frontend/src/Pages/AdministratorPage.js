@@ -14,7 +14,7 @@ import CCTVManagement from '../Components/AdminisratorComponents/CCTV/CCTVManage
 import StaffSalary from '../Components/AdminisratorComponents/salaryDetails/SalaryDetails'
 import InventoryPage from './InventoryPage';
 import AdminPaymentPage from './AdminPaymentPage';
-import StaffAttendancePage from '../Components/AdminisratorComponents/staffAttendance';
+import StaffAttendancePage from '../Components/AdminisratorComponents/attendance/Attendance';
 
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';

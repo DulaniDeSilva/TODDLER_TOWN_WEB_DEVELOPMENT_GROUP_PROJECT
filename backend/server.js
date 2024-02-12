@@ -37,7 +37,8 @@ const lessonPlanRoutes = require('./routes/TeacherRoutes/LessonPlanRoutes');
 const activityPlanRoutes = require('./routes/CaregiverRoutes/ActivityPlanRoutes');
 const staffRoutes = require('./routes/AdministratorRoutes/StaffRoutes');
 const childrenRoutes = require('./routes/AdministratorRoutes/childrenRoutes');
-const staffAttendanceRoutes = require('./routes/AdministratorRoutes/attendanceRoutes');
+const attendanceRoutes = require('./routes/AdministratorRoutes/attendanceRoutes'); // Import the AttendanceRoutes
+const staffSalaryRoutes = require('./routes/AdministratorRoutes/staffSalaryRoutes');
 
 
 
@@ -48,7 +49,8 @@ app.use('/api/lessonPlans', lessonPlanRoutes);
 app.use('/api/activityPlans', activityPlanRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/childrens', childrenRoutes);
-app.use('/api/staffAttendance', staffAttendanceRoutes);
+app.use('/api/attendance', attendanceRoutes);
+app.use('/api/staffSalary', staffSalaryRoutes);
 
 
 
