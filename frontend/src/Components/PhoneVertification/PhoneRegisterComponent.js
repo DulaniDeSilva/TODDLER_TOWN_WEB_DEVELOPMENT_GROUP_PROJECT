@@ -4,7 +4,7 @@ import CctvComponent from '../ChildInterfaceComponent/CctvComponent';
 // import {Link } from 'react-router-dom';
 
 
-
+//initialization
 const PhoneRegisterComponent =()=>{
     const {dispatch} = usePhoneContext();
     const [phoneNumber, setPhonenumber] = useState('');

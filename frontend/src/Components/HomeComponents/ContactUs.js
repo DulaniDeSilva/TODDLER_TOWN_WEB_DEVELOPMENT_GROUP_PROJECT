@@ -44,7 +44,7 @@ function ContactUs(props) {
          
               <p><FontAwesomeIcon icon={faPhone}  className = "contactUs-icon"/> <span>012-3456789</span></p>
               <p> <FontAwesomeIcon icon={faEnvelope} className = "contactUs-icon" /> <span>toddlertown@gmail.com</span></p>
-              <p><FontAwesomeIcon icon={faMapMarkerAlt} className = "contactUs-icon" /><span> 123 Main Street, Cityville</span></p>
+              <p><FontAwesomeIcon icon={faMapMarkerAlt} className = "contactUs-icon" /><span>Toddler Town Preschool, Kalagedihena, Gampaha</span></p>
           
           </Col>
 

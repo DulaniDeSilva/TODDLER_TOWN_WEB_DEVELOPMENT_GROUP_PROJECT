@@ -1,3 +1,4 @@
+//importing dependencies
 const { json } = require("body-parser");
 const Phone = require("../models/phoneModel");
 
@@ -6,6 +7,8 @@ const mongoose = require("mongoose");
 const dotenv = require('dotenv');
 const twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
+
+//send verification code
   const sendVerificationCode = async (req, res) => {
     const { phoneNumber } = req.body;
   

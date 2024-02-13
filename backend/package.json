@@ -25,5 +25,8 @@
     "passport": "^0.7.0",
     "twilio": "^4.21.0",
     "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }

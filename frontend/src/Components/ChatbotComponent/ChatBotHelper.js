@@ -33,8 +33,6 @@ const ChatBotHelper = () => {
   
   const steps = [
 
-  
-
     {
       id: "1",
       message: "Hello! Welcome to Toddler Town",
@@ -51,9 +49,9 @@ const ChatBotHelper = () => {
         { value: 1, label: "Opening Hours?", trigger: "4" },
         { value: 2, label: "Open in Week ends?", trigger: "5" },
         { value: 3, label: "Contact Number?", trigger: "6" },
-        { value: 4, label: "Special Events and Activities", trigger: "7" },
+        { value: 4, label: "Located in", trigger: "7" },
         { value: 5, label: "More information", trigger: "8" },
-        { value: 8, label: "Do you want to leave", trigger: "17" }
+        { value: 6, label: "Do you want to leave", trigger: "13" }
       ]
     },
     {
@@ -61,141 +59,113 @@ const ChatBotHelper = () => {
       component: (
         <div>From 6.30 am to 6.00 pm</div>
       ),
-      
-      trigger: "2"
+      trigger: '3',
     },
     {
       id: "5",
       message: "Yes ",
-      trigger: "2"
+      trigger: '3',
     },
     {
       id: "6",
       message: " 076-2234598 ",
-      trigger: "2"
+      trigger: '3',
     },
     {
       id: "7",
-      component: (
-        // link the blog page
-        <Link to="/parentInterface"> 
-         Explore ToddlerTown world 
-      </Link>
-      ),
-      
-      trigger: "2"
+      message: "Kalagedihena, Gampaha",
+      trigger: "3"
     },
     {
       id: "8",
-      message:"Want to know about services?",
-      trigger: "9"
+      options: [
+        { value: 1, label: "Services", trigger: "9" },
+        { value: 2, label: "Contact Administrator", trigger: "10" },
+        { value: 3, label: "Admission Fees", trigger: "11" },
+        { value: 4, label: "Facilities", trigger: "12" },
+        { value: 5, label: "Do you want to leave", trigger: "13" }
+      ]
     },
 
     {
       id: "9",
-      options: [
-        { value: 1, label: "Enroll to Toddler Town", trigger: "10" },
-        { value: 2, label: "Call admin", trigger: "11" },
-        { value: 3, label: "Contact Toddler Town", trigger: "12" },
-        { value: 4, label: "About Toddler Care", trigger: "13" },
-        { value: 5, label: "About PreSchool", trigger: "14" },
-        { value: 6, label: "About After school Care", trigger: "15" },
-        { value: 7, label: "Join as a staff member", trigger: "16" },
-        { value: 20, label: "Back", trigger: "3" },
-        { value: 8, label: "Do you want to leave", trigger: "17" }
-
-
-      ]
+      component: (
+        <div>
+          <ul>
+            <li>
+              Pre School
+            </li>
+            <li>
+              ToddlerCare
+            </li>
+            <li>
+              After School Care
+            </li>
+          </ul>
+        </div>
+      ),
+      trigger: "8"
+      
     },
     
     {
       id: "10",
       component: (
-        // link the contact admin call/ contactUs page
-        <Link to="/parentInterface"> 
-         Contact Admin
-      </Link>
+        <div>You can Contact Administrator through Contact Us page</div>
       ),
-      trigger: "9"
+      trigger: "8",
       
     },
     {
       id: "11",
       component: (
-        // link the contact us 
-        <Link to="/parentInterface">
-          You can Contact Us
-      </Link>
-      ),
-      trigger: "9"
+        <BotRedirect
+        message="Contact Administrator"
+        url="admin@gmail.com"
+      />
+    ),
+      
+      trigger: "8"
     },
     {
       id: "12",
       component: (
-        //link the Contact us
-        <Link to="/parentInterface">
-          You can contact us
-      </Link>
+        <div>
+          <ul>
+            <li>
+             We have provided meal
+            </li>
+            <li>
+             Curriculer Management
+            </li>
+            <li>
+            Online Payments
+            </li>
+            
+          </ul>
+        </div>
       ),
-      trigger: "9"
-    },
-    {
-      id: "13",
-      component: (
-        //link the toldler care 
-        <Link to="/parentInterface">
-          Welcome to Tolder Care
-      </Link>
-      ),
-      trigger: "9"
-    },
-    {
-      id: "14",
-      component: (
-        //link the preschool
-        <Link to="/parentInterface">
-          Welcome to ToddlerTown PreSchool
-      </Link>
-      ),
-      trigger: "9"
-    },
-    {
-      id: "15",
-      component: (
-        //link the Afterschool
-        <Link to="/parentInterface">
-          Welcome to ToddlerTown Afterschool Care
-      </Link>
-      ),
-      trigger: "9"
-    },
-    {
-      id: "16",
-      component: (
-        //vacancies page
-        <Link to="/parentInterface">
-          Join as a Staff
-      </Link>
-      ),
-      trigger: "9"
-    },
-    {
-      id: "17",
-      options: [
-        { value: 1, label: "Yes", trigger: "18" },
-        { value: 2, label: "No", trigger: "19" },
-      ]
-    },
-    {
-      id: "18",
-      message: "It's been a pleasure assisting you. Have a wonderful day!",
-      end: true,
+      trigger: "8"
     },
     
     {
-      id: "19",
+      id: "13",
+      options: [
+        { value: 1, label: "No", trigger: "14" },
+        { value: 2, label: "Yes", trigger: "15" },
+      ]
+    },
+    {
+      id: "14",
       message: " ",
       trigger: "2"
+      
+    },
+    
+    {
+      id: "15",
+      message: "It's been a pleasure assisting you. Have a wonderful day!",
+      end: true,
     },
     
   ];
@@ -206,10 +176,12 @@ const ChatBotHelper = () => {
         <ChatBot
          steps={steps} 
          floating={true}
+        
+         //cache={false}
         // botAvatar={"T"}
         //  userAvatar="url_to_user_avatar_image"
         headerTitle={"ToddlerTown ChatChum"}
-        placeholder={"Please select the what do you want to know"}
+        placeholder={"Please select what you want to know"}
         floatingStyle={{
           background: '#4B0082', 
           color: '#fff',         
