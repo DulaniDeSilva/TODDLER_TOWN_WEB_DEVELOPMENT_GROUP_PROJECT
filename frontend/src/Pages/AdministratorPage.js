@@ -1,4 +1,4 @@
-//frontend/src/pages/adminpage.js
+
 import React, { useState, useRef } from 'react';
 import '../Assets/Styles/StaffInterface.css';
 

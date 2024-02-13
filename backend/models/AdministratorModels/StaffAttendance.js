@@ -20,8 +20,7 @@ const staffAttendanceSchema = new mongoose.Schema({
 });
 staffAttendanceSchema.statics.addStaffAttendance = async function(date, attendanceData) {
     try {
-        // Perform the operation to add staff attendance
-        // This could involve creating a new document in the collection
+        
         const addedAttendance = await this.create({ date, attendanceData });
         return addedAttendance;
     } catch (error) {

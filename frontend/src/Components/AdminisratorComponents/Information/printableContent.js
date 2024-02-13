@@ -15,7 +15,7 @@ const PrintableContent = ({ staffList }) => (
                         <th>Qualifications</th>
                         <th>Year Joined</th>
                         <th>Salary</th>
-                        {/* Add more columns as needed */}
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +30,7 @@ const PrintableContent = ({ staffList }) => (
                             <td>{staff.qualifications}</td>
                             <td>{staff.year_joined}</td>
                             <td>{staff.salary}</td>
-                            {/* Add more columns as needed */}
+                            
                         </tr>
                     ))}
                 </tbody>

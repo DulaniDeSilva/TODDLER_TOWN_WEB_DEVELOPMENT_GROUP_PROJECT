@@ -28,9 +28,11 @@ const PORT = process.env.PORT || 3001;
 //     origin: 'http://localhost:3000' // assuming your React frontend runs on port 3000
 // };
 // app.use(cors(corsOptions)); // Consider restricting CORS in production
-// app.use(express.json());
+// app.use(express.json());y
 
-// Routes
+
+
+//NILMI'S ROUTES
 const healthRecordsRoutes = require('./routes/TeacherRoutes/healthRecords');
 //const attendanceRoutes = require('./routes/AttendanceRoutes');
 const lessonPlanRoutes = require('./routes/TeacherRoutes/LessonPlanRoutes');
@@ -38,11 +40,11 @@ const activityPlanRoutes = require('./routes/CaregiverRoutes/ActivityPlanRoutes'
 const staffRoutes = require('./routes/AdministratorRoutes/StaffRoutes');
 const childrenRoutes = require('./routes/AdministratorRoutes/childrenRoutes');
 const attendanceRoutes = require('./routes/AdministratorRoutes/attendanceRoutes'); // Import the AttendanceRoutes
-const staffSalaryRoutes = require('./routes/AdministratorRoutes/staffSalaryRoutes');
+const staffSalaryRoutes = require('./routes/AdministratorRoutes/staffSalaryRoutes.js');
 
 
 
-// Consistent route structure
+
 //app.use('/api/attendance', attendanceRoutes); 
 app.use('/api/healthRecords', healthRecordsRoutes);
 app.use('/api/lessonPlans', lessonPlanRoutes);

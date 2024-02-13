@@ -1,9 +1,8 @@
-// routes/LessonPlanRoutes.js
 
 const router = require('express').Router();
 const LessonPlan = require('../../models/TeacherModels/LessonPlanModel');
 
-// POST - Add a new lesson plan
+//  Add a new lesson plan
 router.post('/add', async (req, res) => {
   try {
     const newLessonPlan = new LessonPlan(req.body);
@@ -14,7 +13,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// GET - Fetch all lesson plans
+// Fetch all lesson plans
 router.get('/', async (req, res) => {
   try {
     const lessonPlans = await LessonPlan.find();
@@ -24,7 +23,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET - Fetch a lesson plan by month
+//Fetch a lesson plan by month
 router.get('/month/:month', async (req, res) => {
   try {
     const lessonPlan = await LessonPlan.findOne({ month: req.params.month });
@@ -35,7 +34,7 @@ router.get('/month/:month', async (req, res) => {
   }
 });
 
-// PUT - Update lesson plan tracking by month
+//Update lesson plan tracking by month
 router.put('/update/:month', async (req, res) => {
   try {
     const lessonPlan = await LessonPlan.findOneAndUpdate({ month: req.params.month }, req.body, { new: true });

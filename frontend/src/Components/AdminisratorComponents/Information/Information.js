@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../../../Assets/Styles/StaffInterface.css';
 import { deleteAcademicStaff, addAcademicStaff, getAcademicStaff, updateAcademicStaff } from '../../../api';
 import {getChild, getChildByEnrollmentNo, addChild, updateChild, deleteChild} from '../../../api'
-import ChildInformation from './childInformation';
+// import ChildInformation from './childInformation';
 import PrintableContent from './printableContent'; // Import the PrintableContent component
 
 const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
@@ -354,6 +354,7 @@ function Information() {
         setShowUpdateChildForm(false);
 
         setShowViewStaff(false);
+        setShowViewChild(false);
     };
 
     const handleShowChildAddForm = () => {
@@ -464,7 +465,7 @@ function Information() {
                 <form onSubmit={handleUpdateChildFormSubmit}>
                     <label>Name: <input type="text" name="name" value={childFormData.name} onChange={handleChildInputChange} required /></label>
                     <label>Initials: <input type="text" name="initials" value={childFormData.initials} onChange={handleChildInputChange} required /></label>
-                    {/* Add other editable fields here */}
+                    
                     <button type="submit">Update Child Data</button>
                 </form>
             </div>
@@ -503,7 +504,7 @@ function Information() {
                     <th>Mother's Name</th>
                     <th>Mother's Address</th>
                     <th>Mother's Occupation</th>
-                    {/* Add more headers as needed */}
+                   
                 </tr>
             </thead>
             <tbody>
@@ -524,7 +525,7 @@ function Information() {
                         <td>{child.motherName}</td>
                         <td>{child.motherAddress}</td>
                         <td>{child.motherOccupation}</td>
-                        {/* Add more fields as needed */}
+                       
                     </tr>
                 ))}
             </tbody>
@@ -581,7 +582,7 @@ function Information() {
                             <h4><b>Update Staff Member</b></h4>
                             <form onSubmit={handleUpdateFormSubmit}>
                                 <label>Employee ID to Update: <input type="text" name="emp_id" value={formData.emp_id} onChange={handleInputChange} required /></label>
-                                {/* ... (input fields for updating staff member data) */}
+                                
                                 <button type="submit">Update</button>
                             </form>
                         </div>
@@ -601,7 +602,7 @@ function Information() {
                                         <th>Qualifications</th>
                                         <th>Year Joined</th>
                                         <th>Salary</th>
-                                        {/* Add more columns as needed */}
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -616,7 +617,7 @@ function Information() {
                                             <td>{staff.qualifications}</td>
                                             <td>{staff.year_joined}</td>
                                             <td>{staff.salary}</td>
-                                            {/* Add more columns as needed */}
+                                            
                                         </tr>
                                     ))}
                                 </tbody>

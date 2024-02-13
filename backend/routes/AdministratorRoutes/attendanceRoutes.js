@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Attendance = require('../../models/AdministratorModels/AttendanceModel');
 
-// POST - Add a new attendance entry for a given date
+// Add a new attendance entry for a given date
 router.post('/add', async (req, res) => {
   try {
     const { date, attendanceList } = req.body;
@@ -25,7 +25,7 @@ router.post('/add', async (req, res) => {
 
 
 
-// GET - Fetch all attendance records
+// Fetch all attendance records
 router.get('/', async (req, res) => {
   try {
     const attendanceRecords = await Attendance.find();
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET - Fetch attendance record by date
+// Fetch attendance record by date
 router.get('/:date', async (req, res) => {
   try {
     const { date } = req.params;
@@ -49,7 +49,7 @@ router.get('/:date', async (req, res) => {
   }
 });
 
-// PUT - Update attendance record by date
+// Update attendance record by date
 router.put('/update/:date', async (req, res) => {
   try {
     const { date } = req.params;

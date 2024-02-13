@@ -1,4 +1,4 @@
-/* administratorStyles.css */
+
 .staff-page {
   background-image: url('../Images/Administrator/backImage.png'); 
   background-size: cover;
@@ -7,7 +7,7 @@
   height: 100%; 
   width: 100%;  
   font-family: 'Arial, sans-serif';
-  /* background-image: url('../Images/Administrator/background.jpg');  */
+  
   margin: 0;
   padding: 0;
   overflow-x: hidden; 
@@ -17,7 +17,7 @@
 .staff-page body::before {
   content: "";
  
-  position: fixed; /* Fixed to the viewport */
+  position: fixed; 
   top: 0;
   left: 0;
   right: 0;
@@ -36,7 +36,7 @@
   color: #393972;    
   padding: 0px 0;
   text-align: center;
-  margin-top: 150px; /* Adjust this value as needed */
+  margin-top: 150px; 
 }
 
 .staff-page .tab-container {
@@ -45,15 +45,15 @@
   gap: 5px;
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-top: 20px; /* Adjust this value as needed */
+  margin-top: 20px; 
 }
 
 
 .staff-page .tab {
-  width: calc(45% - 60px); /* Adjust the width and gap as needed */
-  margin-bottom: 10px; /* Add a gap between tiles */
+  width: calc(45% - 60px); 
+  margin-bottom: 10px;
   height: 50%;
-  margin-left: 60px; /* Adjust the left margin */
+  margin-left: 60px; 
   margin-right: 60px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 5px;
@@ -110,10 +110,10 @@
 .lesson-plans-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Add a gap between elements */
+  gap: 20px; 
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-top: 20px; /* Adjust this value as needed */
+  margin-top: 20px; 
 }
 
 
@@ -141,7 +141,7 @@
 .lesson-plans-container label {
   display: block;
   font-size: 20px;
-  text-align: left; /* Align labels to the left */
+  text-align: left; 
 }
 .lesson-plans-container select,
 .lesson-plans-container input,
@@ -235,15 +235,15 @@
 .lesson-plans-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Add a gap between elements */
+  gap: 10px; 
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-top: 20px; /* Adjust this value as needed */
+  margin-top: 20px; 
   text-align: left;
 }
 
 .information-container h3 {
-  font-size: 20px; /* Increase font size for the main headings */
+  font-size: 20px;
   text-align: left;
 }
 
@@ -258,7 +258,7 @@
 .information-container input,
 .information-container textarea {
   padding: 2px;
-  margin: 0px 0; /* Adjust the margin as needed */
+  margin: 0px 0; 
   border-radius: 4px;
   border: 0px solid #ccc;
   font-size: 20px;
@@ -269,15 +269,15 @@
 
 
 .information-container button {
-  padding: 8px 40px; /* Adjust padding for buttons */
-  font-size: 16px; /* Decrease font size for buttons */
+  padding: 8px 40px; 
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   background-color: #ce9cdf;
   color: white;
   transition: background-color 0.3s;
   cursor: pointer;
-  margin-right: 20px; /* Add space between buttons */
+  margin-right: 20px; 
   margin-bottom: 20px;
   text-align: left;
 }
@@ -299,24 +299,24 @@
 .information-container table {
   width: 100%;
   border-collapse: collapse;
-  /* margin-top: 0px; Add some space between the table and other elements */
+  
   text-align: left;
 }
 
 .information-container th,
 .information-container td {
-  border: 1px solid #ddd; /* Add borders to separate rows and columns */
+  border: 1px solid #ddd; 
   padding: 8px;
   text-align: left;
 }
 
 .information-container th {
-  background-color: #ce9cdf; /* Add background color to table headings */
+  background-color: #ce9cdf; 
   color: white;
   text-align: left;
 }
 .information-container form label {
   display: block;
   margin-bottom: 0px; 
-  text-align: left; /* Align labels to the left */
+  text-align: left; 
 }

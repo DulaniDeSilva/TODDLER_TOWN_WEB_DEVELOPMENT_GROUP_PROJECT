@@ -63,5 +63,4 @@ router.delete('/academic/:emp_id', async (req, res) => {
 
 
 
-// Other routes for updating and deleting staff records can be added similarly
 module.exports = router;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CCTVManagement.css'; // Make sure the path to your CSS file is correct
+import '../../../Assets/Styles/StaffInterface.css'; 
 
 function CCTV() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -18,7 +18,7 @@ function CCTV() {
     };
 
     return (
-        <div className="cctv-container">
+        <div className="information-container">
             <h2>CCTV Footage</h2>
             {!isAuthenticated ? (
                 <div>

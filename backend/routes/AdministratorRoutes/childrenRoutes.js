@@ -1,9 +1,9 @@
-// routes/ChildRoutes.js
+
 
 const router = require('express').Router();
 const Child = require('../../models/Children');
 
-// POST - Add a new child
+//Add a new child
 router.post('/add', async (req, res) => {
   try {
     const newChild = new Child(req.body);
@@ -14,7 +14,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// GET - Fetch all children
+//Fetch all children
 router.get('/', async (req, res) => {
   try {
     const children = await Child.find();
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET - Fetch a child by enrollment number
+//Fetch a child by enrollment number
 router.get('/enrollment/:enrollmentNo', async (req, res) => {
   try {
     const child = await Child.findOne({ enrollmentNo: req.params.enrollmentNo });
@@ -35,7 +35,7 @@ router.get('/enrollment/:enrollmentNo', async (req, res) => {
   }
 });
 
-// PUT - Update child by enrollment number
+//Update child by enrollment number
 router.put('/update/:enrollmentNo', async (req, res) => {
   try {
     const child = await Child.findOneAndUpdate({ enrollmentNo: req.params.enrollmentNo }, req.body, { new: true });
@@ -46,7 +46,7 @@ router.put('/update/:enrollmentNo', async (req, res) => {
   }
 });
 
-// DELETE - Delete child by enrollment number
+//Delete child by enrollment number
 router.delete('/delete/:enrollmentNo', async (req, res) => {
   try {
     const deletedChild = await Child.findOneAndDelete({ enrollmentNo: req.params.enrollmentNo });

@@ -166,7 +166,7 @@ export const updateHealthRecord = async (regNumber, data) => {
     }
 };
 
-// Add these functions to your api.js file
+
 
 // staff information
 export const getAcademicStaff = async () => {

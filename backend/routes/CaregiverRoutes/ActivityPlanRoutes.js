@@ -1,9 +1,9 @@
-// routes/ActivityPlanRoutes.js
+
 
 const router = require('express').Router();
 const ActivityPlan = require('../../models/CareGiverModels/ActivityPlanModel');
 
-// POST - Add a new lesson plan
+// Add a new lesson plan
 router.post('/add', async (req, res) => {
   try {
     const newActivityPlan = new ActivityPlan(req.body);
@@ -14,7 +14,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-// GET - Fetch all lesson plans
+// Fetch all lesson plans
 router.get('/', async (req, res) => {
   try {
     const activityPlans = await ActivityPlan.find();
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET - Fetch a activity plan by month
+// Fetch a activity plan by month
 router.get('/month/:month', async (req, res) => {
   try {
     const activityPlan = await ActivityPlan.findOne({ month: req.params.month });
@@ -35,7 +35,7 @@ router.get('/month/:month', async (req, res) => {
   }
 });
 
-// PUT - Update Activity plan tracking by month
+// Update Activity plan tracking by month
 router.put('/update/:month', async (req, res) => {
   try {
     const activityPlan = await ActivityPlan.findOneAndUpdate({ month: req.params.month }, req.body, { new: true });
