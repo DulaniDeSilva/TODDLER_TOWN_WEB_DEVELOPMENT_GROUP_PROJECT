@@ -39,6 +39,7 @@ import BlogPage from "./Pages/BlogPage";
 import DriverPage from "./Pages/DriverPage";
 import CctvComponent from "./Components/ChildInterfaceComponent/CctvComponent";
 import AdminPaymentPage from "./Pages/AdminPaymentPage";
+import AdminMessagePage from "./Pages/AdminMessagePage";
 // import blogHome from "./Pages/Blog/blogHome/blogHome";
 
 
@@ -99,6 +100,7 @@ function App() {
 
         <Route path = "/inventoryPage" element = {<InventoryPage/>} />
         <Route path = "/adminPaymentPage" element = {<AdminPaymentPage/>} />
+        <Route path = "/adminMessagePage" element = {<AdminMessagePage/>}/>
 
 
         {/* <Route path = "/login" element = {!user ? <Login/> : <Navigate to = "/"/>}/> */}

@@ -10,6 +10,16 @@ const getPayment = async(req, res)=>{
     res.status(200).json(payment);
 }
 
+
+// if not using authentication user base
+// const getPayment = async (req, res) => {
+//     const payment = await Payment.find({}).sort({createdAt:-1});
+//     res.status(200).json(payment);
+// }
+
+
+
+
 //get single payment
 const getSinglePayment = async(req, res)=>{
     const {id} = req.params;
@@ -60,7 +70,7 @@ const createPayment = async (req, res)=>{
     }
 }
 
-//delete a inventory
+//delete a payment
 const deletePayment = async (req, res)=>{
     const {id} = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)){
@@ -75,7 +85,7 @@ const deletePayment = async (req, res)=>{
 
 }
 
-//update a inventory
+//update a payment
 const updatePayment = async(req, res) => {
     const {id} = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)){

@@ -20,7 +20,7 @@ const userSchema = new Schema({
     }
 });
 
-//static signup method
+//static signup method: can call directly on the model
 userSchema.statics.signup = async function(email, password,userType){
 
     //validation

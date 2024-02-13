@@ -34,8 +34,9 @@ const PaymentPage = ()=>{
            <div>
                 <PaymentDetail/>
            </div>
-        <PaymentTable/>    
-        {/* <CardUpdateForm/> */}
+
+          <PaymentTable/>    
+
 
         <Row className='PaymentPage-section'>
           <Col>
@@ -51,56 +52,7 @@ const PaymentPage = ()=>{
         </Row>
 
        </div>
-{/* 
-      <form onSubmit = {handleProceedToPay}>
-        <fieldset className='paymentPage-fieldset'>
-
-        <div className = "login-container">
-        <label>
-            <input 
-              className="radio"
-              type = "radio"
-              name = "PaymentType"
-              value = "Existing_Card"
-              onChange={(e) => setPaymentType(e.target.value)}
-            />
-            <span className = "paymentPage-span">Existing Card</span>
-        </label>
-
-        
-        <label>
-            <input 
-              className="radio"
-              type = "radio"
-              name = "PaymentType"
-              value = "New_Card"
-              onChange={(e) => setPaymentType(e.target.value)}
-            />
-            <span class>New Card</span>
-        </label>
-
-
-        </div>
-        
-
-
-        {PaymentType === "Existing_Card"?(
-                <div>
-                  <CardDetails/>
-                  <UpdatedPaymentCards/>
-               </div> ):null}
-
-        {PaymentType === "New_Card"?(
-                <div>
-                  <CardUpdateForm/>
-                </div> ):null}
-              
-        </fieldset>
-      </form> */}
-
-
-
-        <div>
+      <div>
         
           <button className='cardUpdateForm-button common-button '
           onClick = {()=>{

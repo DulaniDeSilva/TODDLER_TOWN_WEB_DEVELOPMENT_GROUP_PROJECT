@@ -3,26 +3,21 @@ const WaitingList = require("../models/WaitinglistModel");
 const mongoose = require("mongoose");
 
 //get all subscriptions
-const getWaitingList = async(req, res)=>{
-    const user_id = req.user._id;
-    const waitingList = await WaitingList.find({user_id}).sort({createdAt:-1});
+// const getWaitingList = async(req, res)=>{
+//     const user_id = req.user._id;
+//     const waitingList = await WaitingList.find({user_id}).sort({createdAt:-1});
 
-    res.status(200).json(waitingList);
-}
+//     res.status(200).json(waitingList);
+// }
 
-//get single inventory
-const getSingleWaitingList = async(req, res)=>{
-    const {id} = req.params;
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:"No such subscription"});
+// internal or external user get all the messages
+const getWaitingListAll = async (req, res)=>{
+    try{
+        const waitingList =  await WaitingList.find({}).sort({createdAt:-1});
+        res.status(200).json(waitingList);
+    }catch(error){
+        res.status(500).json({error:error.message});
     }
-    const waitingList = await WaitingList.findById(id);
-
-    if(!WaitingList){
-        return res.status(404).json({error: "No such subscription"});
-    }
-    res.status(200).json(waitingList);
-
 }
 
 //create a new subscription
@@ -53,7 +48,6 @@ const getSingleWaitingList = async(req, res)=>{
 //     }
 // }
 
-
 const createWaitingList = async (req, res)=>{
     
     //adding to the db
@@ -67,48 +61,57 @@ const createWaitingList = async (req, res)=>{
     }
 }
 
+const updateWaitingList = async (req, res)=>{
+    const {id} = req.params;
+    try{
+        if(!mongoose.Types.ObjectId.isValid(id)){
+            return res.status(404).json({error: 'Invalid Subscription'});
+        }
+        const updatedWaitingList = await WaitingList.findOneAndUpdate(
+            {_id:id},
+            {...req.body},
+            {new:true}
+        );
+        if(!updatedWaitingList){
+            return res.status(404).json({error: 'No such subscription'});
+        }
+        res.status(200).json({message: 'Waiting list entry updated successfully', data:updatedWaitingList});
+    }catch(error){
+        res.status(500).json({error:error.message});
+    }
+}
 
-
-
-
-
-//delete a subscription
+//deleting a entry
 const deleteWaitingList = async (req, res)=>{
     const {id} = req.params;
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:"No such subscription"});
+    try{
+        if(!mongoose.Types.ObjectId.isValid(id)){
+            return res.status(404).json({error:'Invalid Subscription Id'});
+        }
+        const deleteWaitingList = await WaitingList.findOneAndDelete({_id:id});
+        if(!deleteWaitingList){
+            return res.status(404).json({error: 'No such subscription'});
+        }
+        res.status(200).json({message: 'Waiting list entry deleted successfully', data:deleteWaitingList});
+    }catch(error){
+        res.status(500).json({error:error.message});
     }
-    const waitingList = await WaitingList.findOneAndDelete({_id: id});
-    if(!waitingList){
-        return res.status(404).json({error: "No such subscription"});
-    }
-    res.status(200).json(waitingList);
-
-
 }
 
-//update a subscription
-const updateWaitingList = async(req, res) => {
-    const {id} = req.params;
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:"No such waitingList"});
-    }
 
-    const waitingList = await WaitingList.findOneAndUpdate({_id:id},{
-        ...req.body
-    })
-    if(!waitingList){
-        return res.status(404).json({error: "No such subscription"})
-    }
-    res.status(200).json(waitingList);
 
-}
+
+
+
 
 
 module.exports = {
     // getWaitingList,
     // getSingleWaitingList,
     createWaitingList,
+    getWaitingListAll,
+    deleteWaitingList,
+    updateWaitingList
     // deleteWaitingList,
     // updateWaitingList,
 

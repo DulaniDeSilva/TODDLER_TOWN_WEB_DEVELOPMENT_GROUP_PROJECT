@@ -133,7 +133,7 @@ const createChild = async (req, res)=>{
     }
 }
 
-//delete a inventory
+//delete a child
 const deleteChild = async (req, res)=>{
     const {id} = req.params;
     if(!mongoose.Types.ObjectId.isValid(id)){

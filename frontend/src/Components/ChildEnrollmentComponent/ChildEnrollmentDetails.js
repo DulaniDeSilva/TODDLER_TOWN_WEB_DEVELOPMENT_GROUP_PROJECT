@@ -103,7 +103,7 @@ const ChildEnrollmentDetails = ({child})=>{
                 <p><strong><FontAwesomeIcon icon = {faICursor} className = "childenrollment-icon"></FontAwesomeIcon>CVV:</strong> {child.cvv}</p>
                </Row>
 
-                <button><span onClick = {handleClick}>Do not press..delete</span></button>
+                {/* <button><span onClick = {handleClick}>Do not press..delete</span></button> */}
         </div>
 
                 

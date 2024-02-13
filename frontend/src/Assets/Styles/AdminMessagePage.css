@@ -1,0 +1,33 @@
+.admin-message-page{
+   width: 80%;
+   margin-left:10%;
+   margin-top: 5%;
+}
+
+.admin-message-page h2{
+    text-align: center;
+    padding: 20px;
+    text-decoration: underline;
+}
+
+.admin-message-page table{
+    border: 1px solid #ccc;
+}
+
+.admin-message-page tr{
+    border: 1px solid #ccc;
+}
+
+.admin-message-page th{
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.3rem;
+    background-color: wheat;
+}
+
+
+.admin-message-page td{
+    border: 1px solid #ccc;
+    text-align: center;
+    padding:20px;
+}

@@ -12,33 +12,9 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 function Homenavigation() {
   const {user} = useAuthContext();
 
-  //defining dasboard links
-  const dashboardLinks = {
-    parent: ['/childInterface'],
-    staff : ['/teacherInterface', '/caregiverInterface', '/driverInterface'],
-    admin: ['//administratorInterface']
-  };
-
-  const renderDashboardLinks = () =>{
-    if(!user || !user.userType)
-      return null;
-    const userType = user.userType;
-    if(!dashboardLinks[userType])
-      return null;
-    return dashboardLinks[userType].map((link, index)=>(
-      <NavDropdown.Item key = {index} href = {link}>
-        {userType === 'parent' ? 'Child Interface': userType === 'staff' ? 'Teacher Interface': 'Admin Interface'}
-      </NavDropdown.Item>
-    ));
-  }
-
-  
-
   return (
   <div className='navbarall'>
                
-              
-
             <Navbar expand="lg"  >
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

@@ -2,6 +2,9 @@ const express = require('express');
 
 const {
     createWaitingList,
+    getWaitingListAll,
+    deleteWaitingList,
+    updateWaitingList
     // getWaitingList,
     // getSingleWaitingList,
     // deleteWaitingList,
@@ -12,19 +15,16 @@ const {
 
 const router = express.Router();
 
-//require auth for all inventory routes
-// router.use(requireAuth)
-
-// let Inventory = require("../models/inventoryModel");
-
-//getting all the inventory list
-// router.get("/", getWaitingList);
-
-//get a single inventory
-// router.get("/:id", getSingleWaitingList);
 
 //post a new inventory
 router.post("/", createWaitingList);
+
+router.get("/",getWaitingListAll);
+
+router.delete("/:id", deleteWaitingList);
+
+router.patch("/:id",updateWaitingList);
+
 
 //delete a inventory
 // router.delete("/:id",deleteWaitingList); 
