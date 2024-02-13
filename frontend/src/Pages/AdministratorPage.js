@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import '../Assets/Styles/StaffInterface.css';
 
-import Attendance from '../Components/AdminisratorComponents/attendance/Attendance';
+//import Attendance from '../Components/AdminisratorComponents/attendance/Attendance';
 import LessonPlans from '../Components/TeacherComponents/lessonPlans/LessonPlans';
 import ActivityPlans from '../Components/CaregiverComponents/activityPlans/ActivityPlans'
 import HealthRecords from '../Components/TeacherComponents/healthRecords/HealthRecords';
@@ -16,7 +16,7 @@ import InventoryPage from './InventoryPage';
 import AdminPaymentPage from './AdminPaymentPage';
 import StaffAttendancePage from '../Components/AdminisratorComponents/attendance/Attendance';
 import ChildPickupPage from '../Components/DriverComponents/pickupservice/Pickupservice';
-
+import AdminMessagePage from './AdminMessagePage';
 
 import attendanceImage from '../Assets/Images/Administrator/calendar.jpg';
 import healthImage from '../Assets/Images/Administrator/health.jpg';
@@ -48,7 +48,7 @@ function AdministratorPage() {
   
     return (
       <div className="staff-page">
-        <h1 className="header">Hi, Vimukthi!</h1>
+        <h1 className="header">Hi!</h1>
         <img src={logo} alt="App Logo" className="app-logo" />
   
         <div className="tab-container">
@@ -83,10 +83,10 @@ function AdministratorPage() {
             <button onClick={() => handleButtonClick('healthRecords')}>Health Record Management</button>
           </div>
   
-          <div className="tab">
+          {/* <div className="tab">
             <img src={reportImage} alt="Report" />
             <button onClick={() => handleButtonClick('reports')}>Generate Reports</button>
-          </div>
+          </div> */}
   
           <div className="tab">
             <img src={lessonPlanImage} alt="Lesson" />
@@ -105,7 +105,7 @@ function AdministratorPage() {
 
           <div className="tab">
             <img src={emailImage} alt="email" />
-            <button onClick={() => handleButtonClick('staffSalary')}>See Messages</button>
+            <button onClick={() => handleButtonClick('adminMessages')}>See Messages</button>
           </div>
 
           <div className="tab">
@@ -127,13 +127,14 @@ function AdministratorPage() {
           {activeComponent === 'lessonPlans' && <LessonPlans />}
           {activeComponent === 'activityPlans' && <ActivityPlans />}
           {activeComponent === 'healthRecords' && <HealthRecords />}
-          {activeComponent === 'reports' && <Reports />}
+          {/* {activeComponent === 'reports' && <Reports />} */}
           {/* {activeComponent === 'payment' && <SalaryDetails />} */}
           {activeComponent === 'cctv' && <CCTVManagement />}
           {activeComponent === 'inventory' && <InventoryPage/>}
           {activeComponent === 'payment' && <AdminPaymentPage/>}
           {activeComponent === 'staffSalary' && <StaffSalary />}
           {activeComponent === 'childPickup' && <ChildPickupPage />}
+          {activeComponent === 'adminMessages' && <AdminMessagePage />}
 
         </div>
       </div>

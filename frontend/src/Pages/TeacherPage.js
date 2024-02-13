@@ -30,7 +30,7 @@ function TeacherPage() {
 
     return (
       <div className="staff-page">
-      <h1 className="header">Hi, Ridmi!</h1>
+      <h1 className="header">Hi!</h1>
       { <img src={logo} alt="App Logo" className="app-logo" /> }
 
       <div className="tab-container">

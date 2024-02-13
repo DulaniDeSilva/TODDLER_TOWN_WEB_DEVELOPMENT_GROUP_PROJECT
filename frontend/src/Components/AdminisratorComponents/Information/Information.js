@@ -5,8 +5,10 @@ import { deleteAcademicStaff, addAcademicStaff, getAcademicStaff, updateAcademic
 import {getChild, getChildByEnrollmentNo, addChild, updateChild, deleteChild} from '../../../api'
 // import ChildInformation from './childInformation';
 import PrintableContent from './printableContent'; // Import the PrintableContent component
+import ReactDOM from 'react-dom';
 
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
+
+
 
 function Information() {
     const [showChildInfo, setShowChildInfo] = useState(false);
@@ -314,6 +316,21 @@ function Information() {
         setShowViewStaff(false);
         setShowViewChild(false);
     };
+    const handleShowViewStaff  = () => {
+        setShowChildInfo(true);
+        setShowStaffInfo(false);
+
+        setShowAddForm(false);
+        setShowChildAddForm(false);
+        setShowDeleteForm(false);
+        setShowChildDeleteForm(false);
+
+        setShowUpdateForm(false);
+        setShowUpdateChildForm(false);
+
+        setShowViewStaff(true);
+        setShowViewChild(false);
+    };
 
     const handleShowAddForm = () => {
         setShowChildInfo(false);
@@ -405,13 +422,45 @@ function Information() {
         setShowViewChild(false);
     };
 
+    const handleShowViewChild  = () => {
+        setShowChildInfo(true);
+        setShowStaffInfo(false);
+
+        setShowAddForm(false);
+        setShowChildAddForm(false);
+        setShowDeleteForm(false);
+        setShowChildDeleteForm(false);
+
+        setShowUpdateForm(false);
+        setShowUpdateChildForm(false);
+
+        setShowViewStaff(false);
+        setShowViewChild(true);
+    };
+
+
     
 
 
 
     const handlePrint = () => {
+        // Create a hidden div element
+        const printDiv = document.createElement('div');
+        printDiv.style.visibility = 'hidden';
+        printDiv.style.position = 'absolute';
+        printDiv.style.top = '-9999px';
+        document.body.appendChild(printDiv);
+    
+        // Render PrintableContent component inside the hidden div
+        ReactDOM.render(<PrintableContent staffList={staffList} />, printDiv);
+    
+        // Print the contents of the hidden div
         window.print();
+    
+        // Remove the hidden div after printing
+        document.body.removeChild(printDiv);
     };
+    
 
     return (
         <div className="information-container">
@@ -425,7 +474,7 @@ function Information() {
                         <button onClick={handleShowChildAddForm}>Add</button>
                         <button onClick={handleShowChildDeleteForm}>Delete</button>
                         <button onClick={handleShowUpdateChildForm}>Update</button>
-                        <button onClick={() => setShowViewChild(true)}>View</button>
+                        <button onClick={handleShowViewChild}>View</button>
                         <button onClick={handlePrint}>Print</button>
                         <button onClick={handleCancel}>Cancel</button>
                     </div>
@@ -543,7 +592,7 @@ function Information() {
                         <button onClick={handleShowAddForm}>Add</button>
                         <button onClick={handleShowDeleteForm}>Delete</button>
                         <button onClick={handleShowUpdateForm}>Update</button>
-                        <button onClick={() => setShowViewStaff(true)}>View</button>
+                        <button onClick={handleShowViewStaff}>View</button>
                         <button onClick={handlePrint}>Print</button>
                         <button onClick={handleCancel}>Cancel</button>
                     </div>
