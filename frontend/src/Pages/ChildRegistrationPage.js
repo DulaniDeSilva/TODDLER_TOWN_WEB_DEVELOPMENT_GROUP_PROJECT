@@ -9,3 +9,8 @@ export default function ChildRegistrationPage() {
     </div>
   )
 }
+
+
+
+//  newParent@gmail.com
+//  NewP@rentdjsj87389@#$
