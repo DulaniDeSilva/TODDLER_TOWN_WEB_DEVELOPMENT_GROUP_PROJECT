@@ -1,6 +1,0 @@
-{"web":{"client_id":"692525393770-p5fm2qgt713shqjmeegkn4mapr18396p.apps.googleusercontent.com",
-"project_id":"ordinal-thinker-406215","auth_uri":"https://accounts.google.com/o/oauth2/auth",
-"token_uri":"https://oauth2.googleapis.com/token",
-"auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
-"client_secret":"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",
-"redirect_uris":["http://localhost:3001/auth/google/callback"]}}
